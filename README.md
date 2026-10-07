@@ -87,6 +87,10 @@ Perintah `all` menjalankan tujuh test case. Suite `tt_generic` menambahkan test 
 
 Gunakan Quartus Standard 25.1 beserta device support yang sesuai. [Panduan programming](docs/FPGA_PROGRAMMING.md) memuat urutan JTAG, pin UART, reset, dan pemeriksaan hasil. Hash image tercatat di [build evidence](evidence/build_evidence.json).
 
+### Folder Quartus Ready
+
+Paket [ImplementationReadyQuartus](ImplementationReadyQuartus/README_MULAI_DI_SINI.md) dapat disalin langsung ke laptop lab atau onsite. Pilih [DE10-Nano](ImplementationReadyQuartus/IGOR_DE10_NANO/quartus/igor.qpf) atau [DE10-Lite](ImplementationReadyQuartus/MAX10_10M50DAF484C7G/quartus/igor_max10.qpf), lalu klik `BUKA_PROJECT_QUARTUS.bat` dalam folder board. Kedua paket menyertakan RTL, ROM, source constraints, SOF, dan report. [Receipt paket](ImplementationReadyQuartus/VERIFIKASI_PAKET.json) mencatat top, device, reference check, serta hash image terbaru.
+
 ## Bukti yang bisa dibuka
 
 <table>

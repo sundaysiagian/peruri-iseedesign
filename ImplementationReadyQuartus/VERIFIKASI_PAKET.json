@@ -1,26 +1,34 @@
 [
   {
-    "folder": "MAX10_10M50DAF484C7G",
-    "revision": "igor_max10",
-    "top": "igor_de10_lite_top",
-    "device": "10M50DAF484C7G",
-    "referenced_files": 20,
-    "sof_sha256": "456949b9c86da8d747af7e505193444dc23f33d7e42251b72abbba64b08c2cb5",
-    "sof_bytes": 3216574,
-    "quartus_project_open": "PASS",
-    "quartus_errors": 0,
-    "quartus_warnings": 0
-  },
-  {
     "folder": "IGOR_DE10_NANO",
     "revision": "igor",
     "top": "igor_uart_top",
     "device": "5CSEBA6U23I7",
     "referenced_files": 20,
-    "sof_sha256": "846fe403ad0bb7b11958eb547ed75324abb32028d9950f69d1aa0462388fe47e",
+    "source_package": "fpga_de10_nano",
+    "source_copy": "canonical compiled project",
+    "project_reference_check": "PASS",
+    "sof_sha256": "4236365161b23d5371216da504ee134e80d4911016471ae01df7927cc6d12cae",
     "sof_bytes": 6690361,
-    "quartus_project_open": "PASS",
-    "quartus_errors": 0,
-    "quartus_warnings": 0
+    "quartus_shell_project_open": "PASS",
+    "quartus_project_open_errors": 0,
+    "quartus_project_open_warnings": 0,
+    "checked_on": "2026-10-07 Asia/Jakarta"
+  },
+  {
+    "folder": "MAX10_10M50DAF484C7G",
+    "revision": "igor_max10",
+    "top": "igor_de10_lite_top",
+    "device": "10M50DAF484C7G",
+    "referenced_files": 20,
+    "source_package": "fpga_de10_lite",
+    "source_copy": "canonical compiled project",
+    "project_reference_check": "PASS",
+    "sof_sha256": "456949b9c86da8d747af7e505193444dc23f33d7e42251b72abbba64b08c2cb5",
+    "sof_bytes": 3216574,
+    "quartus_shell_project_open": "PASS",
+    "quartus_project_open_errors": 0,
+    "quartus_project_open_warnings": 0,
+    "checked_on": "2026-10-07 Asia/Jakarta"
   }
 ]

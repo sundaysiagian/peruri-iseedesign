@@ -1,0 +1,11 @@
+* text=auto eol=lf
+*.bat text eol=crlf
+*.ps1 text eol=crlf
+*.sof -text
+*.rbf -text
+*.png -text
+*.jpg -text
+*.pdf -text
+*.docx -text
+*.gz -text
+*.zip -text

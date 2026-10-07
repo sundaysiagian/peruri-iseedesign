@@ -26,6 +26,13 @@ jobs:
         run: python verification/run.py all
       - name: Check generic synthesized gate
         run: python verification/run.py tt_generic
+      - name: Run motor serializer and controller RTL tests
+        working-directory: robot/jetauto/FPGA_UART_TTL_MULTISPEED
+        run: |
+          iverilog -g2012 -s tb_multispeed -o /tmp/igor_motor_packets rtl/stm_packet_tx_multispeed.v tb/tb_multispeed.v
+          vvp /tmp/igor_motor_packets
+          iverilog -g2012 -s tb_multispeed_control -o /tmp/igor_motor_control rtl/stm_packet_tx_multispeed.v rtl/stm_uart_multispeed_top.v tb/tb_multispeed_control.v
+          vvp /tmp/igor_motor_control
       - name: Check motor packet encoding without serial access
         run: |
           python robot/jetauto/verify_driver.py

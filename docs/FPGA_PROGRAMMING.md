@@ -13,6 +13,8 @@
 
 Gunakan Quartus Standard 25.1 dengan device support sesuai FPGA. Folder board harus tetap utuh karena QSF mengacu ke RTL dan ROM melalui path relatif. `.sof` adalah konfigurasi SRAM sementara yang perlu dimuat lagi setelah power-off.
 
+Folder [ImplementationReadyQuartus](../ImplementationReadyQuartus/README_MULAI_DI_SINI.md) menyediakan salinan portable kedua project. Launcher `BUKA_PROJECT_QUARTUS.bat` tersedia dalam masing-masing folder. Image dan source pada paket ini disinkronkan dengan project canonical di atas.
+
 ## Langkah programming
 
 1. Clone repository atau download ZIP dan ekstrak seluruh isi.

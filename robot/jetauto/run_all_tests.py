@@ -60,7 +60,10 @@ try:
     provenance = json.loads((root / 'FPGA_UART_TTL_MULTISPEED/evidence/build_provenance.json').read_text(encoding='utf-8'))
     assert hashlib.sha256((root / provenance['sof_path']).read_bytes()).hexdigest() == provenance['sof_sha256']
     for relative, digest in provenance['source_sha256'].items():
-        assert hashlib.sha256((root / 'FPGA_UART_TTL_MULTISPEED' / relative).read_bytes()).hexdigest() == digest, relative
+        source_bytes = (root / 'FPGA_UART_TTL_MULTISPEED' / relative).read_bytes()
+        if provenance.get('source_sha256_normalization') == 'CRLF to LF':
+            source_bytes = source_bytes.replace(b'\r\n', b'\n')
+        assert hashlib.sha256(source_bytes).hexdigest() == digest, relative
     results.append({'test': 'Source and SOF hashes', 'status': 'PASS'})
     if args.run:
         flags = ['--run', '--wheels-raised', '--supply-on']

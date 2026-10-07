@@ -1,10 +1,11 @@
 @echo off
 setlocal
 cd /d "%~dp0quartus"
-set "QEXE=D:\Quartus-Program\quartus\bin64\quartus.exe"
-if exist "%QEXE%" (
- start "" "%QEXE%" "igor.qpf"
+if defined QUARTUS_ROOTDIR (
+  start "" "%QUARTUS_ROOTDIR%\bin64\quartus.exe" "igor.qpf"
+) else if exist "D:\Quartus-Program\quartus\bin64\quartus.exe" (
+  start "" "D:\Quartus-Program\quartus\bin64\quartus.exe" "igor.qpf"
 ) else (
- start "" "igor.qpf"
+  start "" "igor.qpf"
 )
 endlocal

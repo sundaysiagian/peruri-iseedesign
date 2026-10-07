@@ -34,6 +34,6 @@
 | [igor_neural_rom](../rtl/igor_neural_rom.v) | ROM bobot dan bias, address 13 bit |
 | [igor_de10_nano_wrapper](../rtl/igor_de10_nano_wrapper.v) | Wrapper scene alternatif, bukan UART top aktif |
 
-Root `rtl/` digunakan oleh regresi. Kedua project FPGA mempunyai copy source untuk menjaga folder board portable. Perubahan common RTL harus disinkronkan ke copy board, kemudian diverifikasi serta dibuild ulang.
+Root `rtl/` digunakan oleh regresi. Kedua project FPGA mempunyai copy source untuk menjaga folder board portable. Lite menggunakan atribut RAM M9K pada costmap/ROM serta wrapper MAX 10 sendiri. Nano menggunakan M10K dan wrapper Cyclone V. Validator memeriksa perbedaan target yang spesifik ini. Perubahan common RTL harus disinkronkan ke copy board, kemudian diverifikasi serta dibuild ulang.
 
 Detail bit flow ada pada [ARCHITECTURE.md](ARCHITECTURE.md). Detail FSM dan setiap modul tersedia dalam [Flowchart 28 halaman](flowcharts/IGOR_RTL_Flowchart.io).

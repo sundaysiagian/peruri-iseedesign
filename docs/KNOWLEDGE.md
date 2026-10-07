@@ -36,7 +36,7 @@ Repository ini adalah paket source dan bukti yang dipilih untuk proyek IGOR. Mul
 4. Timeout, emergency, dan invalid input harus meniadakan izin.
 5. Model neural integer tetap menjadi pembanding saat arithmetic diubah.
 6. Port dan protocol planner tidak ditukar dengan UART STM.
-7. Setiap perubahan RTL membutuhkan sinkronisasi copy board dan test ulang.
+7. Setiap perubahan common RTL membutuhkan sinkronisasi copy board dan test ulang. Lite mempertahankan atribut RAM M9K dan wrapper MAX 10 sendiri, sedangkan Nano memakai M10K.
 
 ## Urutan pekerjaan berikutnya
 

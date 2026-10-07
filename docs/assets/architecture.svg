@@ -46,6 +46,8 @@
     <text x="602" y="716" font-size="16" font-weight="700">permit 1 · v 5 unsigned · omega 7 signed · fault 8</text>
   </g>
   <g fill="none" stroke="#182a3f" stroke-width="1.7">
+    <path d="M890 125H825" marker-end="url(#arrow)"/>
+    <path d="M1028 100V85H157V100" marker-end="url(#arrow)"/>
     <path d="M157 180V252" marker-end="url(#arrow)"/>
     <path d="M577 180V210H405V270M577 210H575V270M577 210H745V270M745 210H915V270" marker-end="url(#arrow)"/>
     <path d="M280 300H305V235H915M405 235V270M575 235V270M745 235V270M915 235V270" marker-end="url(#arrow)"/>
@@ -54,6 +56,8 @@
     <path d="M602 659V689" marker-end="url(#arrow)"/>
     <path d="M1028 180V218H1127V465" marker-end="url(#arrow)"/>
   </g>
+  <rect x="363" y="239" width="317" height="20" rx="4" fill="#f8fafc"/>
+  <rect x="340" y="390" width="550" height="24" rx="4" fill="#f8fafc"/>
   <g font-family="Arial, sans-serif" font-size="12" fill="#41536b">
     <text x="171" y="215">write broadcast</text>
     <text x="370" y="252">per port: address 14 + bank 1 · data 8</text>

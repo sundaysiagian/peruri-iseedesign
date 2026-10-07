@@ -1,5 +1,5 @@
 Timing Analyzer report for igor
-Wed Sep 30 23:02:04 2026
+Tue Oct  6 17:03:09 2026
 Quartus Prime Version 25.1std.0 Build 1129 10/21/2025 SC Standard Edition
 
 
@@ -104,7 +104,7 @@ on the Quartus Prime software download page.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;  48.4%      ;
+;     Processor 2            ;  48.5%      ;
 ;     Processor 3            ;  48.4%      ;
 ;     Processor 4            ;  48.3%      ;
 +----------------------------+-------------+
@@ -115,7 +115,7 @@ on the Quartus Prime software download page.
 +---------------+--------+--------------------------+
 ; SDC File Path ; Status ; Read at                  ;
 +---------------+--------+--------------------------+
-; igor.sdc      ; OK     ; Wed Sep 30 23:01:50 2026 ;
+; igor.sdc      ; OK     ; Tue Oct  6 17:02:45 2026 ;
 +---------------+--------+--------------------------+
 
 
@@ -590,8 +590,8 @@ Info: Running Quartus Prime Timing Analyzer
     Info: Altera and sold by Altera or its authorized distributors.  Please
     Info: refer to the Altera Software License Subscription Agreements 
     Info: on the Quartus Prime software download page.
-    Info: Processing started: Wed Sep 30 23:01:47 2026
-Info: Command: quartus_sta igor
+    Info: Processing started: Tue Oct  6 17:02:40 2026
+Info: Command: quartus_sta fpga_de10_nano\quartus\igor
 Info: qsta_default_script.tcl version: #1
 Info (20032): Parallel compilation is enabled and will use up to 4 processors
 Info (21076): High junction temperature operating condition is not set. Assuming a default value of '100'.
@@ -723,8 +723,8 @@ Info (332101): Design is fully constrained for setup requirements
 Info (332101): Design is fully constrained for hold requirements
 Info: Quartus Prime Timing Analyzer was successful. 0 errors, 0 warnings
     Info: Peak virtual memory: 5526 megabytes
-    Info: Processing ended: Wed Sep 30 23:02:04 2026
-    Info: Elapsed time: 00:00:17
-    Info: Total CPU time (on all processors): 00:00:38
+    Info: Processing ended: Tue Oct  6 17:03:09 2026
+    Info: Elapsed time: 00:00:29
+    Info: Total CPU time (on all processors): 00:01:03
 
 

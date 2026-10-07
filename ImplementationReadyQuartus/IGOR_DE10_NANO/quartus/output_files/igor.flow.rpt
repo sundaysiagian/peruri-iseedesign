@@ -1,5 +1,5 @@
 Flow report for igor
-Wed Sep 30 23:02:04 2026
+Tue Oct  6 17:03:09 2026
 Quartus Prime Version 25.1std.0 Build 1129 10/21/2025 SC Standard Edition
 
 
@@ -41,7 +41,7 @@ on the Quartus Prime software download page.
 +---------------------------------------------------------------------------------------+
 ; Flow Summary                                                                          ;
 +---------------------------------+-----------------------------------------------------+
-; Flow Status                     ; Successful - Wed Sep 30 23:01:47 2026               ;
+; Flow Status                     ; Successful - Tue Oct  6 17:02:39 2026               ;
 ; Quartus Prime Version           ; 25.1std.0 Build 1129 10/21/2025 SC Standard Edition ;
 ; Revision Name                   ; igor                                                ;
 ; Top-level Entity Name           ; igor_uart_top                                       ;
@@ -68,7 +68,7 @@ on the Quartus Prime software download page.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 09/30/2026 22:58:58 ;
+; Start date & time ; 10/06/2026 16:50:49 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; igor                ;
 +-------------------+---------------------+
@@ -79,7 +79,7 @@ on the Quartus Prime software download page.
 +--------------------------+-------------------------------+---------------+-------------+------------+
 ; Assignment Name          ; Value                         ; Default Value ; Entity Name ; Section Id ;
 +--------------------------+-------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID    ; 1098648279763.179078393813176 ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID    ; 1098648279763.179128024828928 ; --            ; --          ; --         ;
 ; NUM_PARALLEL_PROCESSORS  ; 4                             ; --            ; --          ; --         ;
 ; PROJECT_OUTPUT_DIRECTORY ; output_files                  ; --            ; --          ; --         ;
 ; TOP_LEVEL_ENTITY         ; igor_uart_top                 ; igor          ; --          ; --         ;
@@ -91,11 +91,11 @@ on the Quartus Prime software download page.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:39     ; 1.0                     ; 4962 MB             ; 00:00:21                           ;
-; Fitter               ; 00:01:55     ; 1.3                     ; 6714 MB             ; 00:04:51                           ;
-; Assembler            ; 00:00:11     ; 1.0                     ; 5290 MB             ; 00:00:10                           ;
-; Timing Analyzer      ; 00:00:17     ; 2.4                     ; 5526 MB             ; 00:00:38                           ;
-; Total                ; 00:03:02     ; --                      ; --                  ; 00:06:00                           ;
+; Analysis & Synthesis ; 00:00:40     ; 1.0                     ; 4949 MB             ; 00:00:21                           ;
+; Fitter               ; 00:02:56     ; 1.3                     ; 6714 MB             ; 00:06:35                           ;
+; Assembler            ; 00:00:25     ; 1.0                     ; 5290 MB             ; 00:00:22                           ;
+; Timing Analyzer      ; 00:00:29     ; 2.4                     ; 5526 MB             ; 00:01:03                           ;
+; Total                ; 00:04:30     ; --                      ; --                  ; 00:08:21                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -114,10 +114,10 @@ on the Quartus Prime software download page.
 ------------
 ; Flow Log ;
 ------------
-quartus_map igor
-quartus_fit igor
-quartus_asm igor
-quartus_sta igor
+quartus_map "C:/Users/William Anthony/Documents/Codex/2026-09-30/files-mentioned-by-the-user-draft/outputs/IGOR_VERIFICATION_ASIC_DELIVERABLES/fpga_de10_nano/quartus/igor"
+quartus_fit "C:/Users/William Anthony/Documents/Codex/2026-09-30/files-mentioned-by-the-user-draft/outputs/IGOR_VERIFICATION_ASIC_DELIVERABLES/fpga_de10_nano/quartus/igor"
+quartus_asm fpga_de10_nano\quartus\igor
+quartus_sta fpga_de10_nano\quartus\igor
 
 
 
