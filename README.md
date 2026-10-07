@@ -3,6 +3,7 @@
 </p>
 
 <p align="center">
+  <strong>IGOR · Indonesian Gated Onboard Robotics</strong><br>
   <strong>Peruri Chip Hackathon 2026</strong><br>
   <strong>ISeeDesignITB</strong><br>
   Perencanaan lokal di FPGA dengan alur data yang terlihat, hasil numerik yang diperiksa, dan gerbang izin pada keluaran.
@@ -23,11 +24,36 @@
   <a href="docs/TECHNICAL_REPORT.md">Laporan teknis</a>
 </p>
 
+## Mengapa IGOR
+
+Robot pengangkut material perlu mengambil keputusan cepat sekaligus menjaga pekerja dan barang di sekitarnya. Usulan gerak dapat menjadi tidak layak ketika peta belum lengkap, informasi sudah kedaluwarsa, atau pengaturan berubah. IGOR dirancang sebagai prosesor pendamping yang memeriksa pilihan gerak dan menentukan izin pada rangkaian FPGA.
+
+Proposal tim menempatkan logistik internal PERURI sebagai penerapan awal yang diusulkan. Repository ini memuat fondasi teknisnya: pemeriksa lintasan, pemilih gerak, gerbang izin, inti inferensi, serta perangkat pengujian yang dapat ditelusuri dari source hingga hasil. Pilot pada rute nyata merupakan tahap pengembangan berikutnya.
+
 ## Dari peta menjadi keputusan yang bisa diperiksa
 
 IGOR mengevaluasi kandidat gerak pada costmap 128 × 128 menggunakan empat evaluator paralel. Setiap evaluator menangani 128 kandidat dengan 20 pose per kandidat. Hasil terbaik melewati `igor_safety_security_gate`, lalu tersedia sebagai izin, kode kecepatan, kode kecepatan sudut, dan status kesalahan.
 
 Repository ini menyatukan RTL, model numerik, bobot BRAM, testbench, proyek Quartus, bitstream `.sof`, diagram, dan bukti implementasi. Neural core **24 → 64 → 64 → 4** tersedia sebagai jalur inferensi terpisah. Subset gerbang keselamatan juga disiapkan dalam antarmuka TinyTapeout.
+
+### Alur kerja yang tersedia
+
+1. **Masukkan peta dan konfigurasi.** Host mengirim instruksi melalui UART **115200 baud, 8N1**, dalam paket delapan byte dengan CRC8. Peta 128 × 128 sel ditulis ke bank yang sedang tidak digunakan.
+2. **Aktifkan peta lengkap.** Pengelola memeriksa kelengkapan dan nomor urut sebelum mengaktifkan bank peta sekaligus. Empat salinan memori memberi setiap evaluator port baca sendiri.
+3. **Periksa 512 pilihan gerak.** Empat tile DWA bekerja paralel, masing-masing mengevaluasi 128 kandidat pada 20 pose perkiraan. Kandidat yang melewati rintangan, keluar peta, atau mengalami kesalahan aritmetika dibatalkan.
+4. **Pilih hasil terbaik.** Selector memilih skor terendah dengan aturan indeks terendah saat skor sama.
+5. **Putuskan izin.** `igor_safety_security_gate` memeriksa validitas peta, konfigurasi, hasil, deadline, batas gerak, dan masukan penghentian. Pada `igor_top`, izin serta kedua keluaran perintah hanya berasal dari gerbang ini. Saat syarat gagal, gerbang menutup izin dan menolkan perintah.
+6. **Baca hasil dan status.** Keluaran berupa izin **1 bit**, kode kecepatan **5 bit**, laju belok bertanda **7 bit**, kode gangguan **8 bit**, dan penghitung kejadian **32 bit**. Konversi hasil menjadi setpoint roda dan pengiriman ke motor berada pada tahap integrasi sistem.
+
+Pemeriksa memakai model robot sebagai titik pada costmap yang rintangannya telah diperluas oleh host. Validasi bentuk robot, pengereman, dan respons fisik mengikuti tahap pengujian perangkat. Spesifikasi bilangan serta batas antarmuka tersedia pada [arsitektur](docs/ARCHITECTURE.md).
+
+### Inti AI dan sistem tanpa laptop
+
+Proposal menempatkan pengendali **Soft Actor-Critic (SAC)** sebagai alternatif penentu gerak DWA/DWB. Inti inferensi fixed-point **24 → 64 → 64 → 4** sudah memiliki ROM, instruksi, dan pengujian numerik tersendiri. Penyatuan keluaran AI dengan pemeriksa lintasan dan gerbang menjadi target **Fase 1**. Pengujian DWA dan neural yang ditampilkan di bawah mengukur kedua jalur secara terpisah.
+
+DE10-Nano memiliki **FPGA fabric** untuk komputasi dan gerbang, serta **HPS ARM** yang dapat menjalankan Linux. Jalur yang tersedia saat ini memakai UART host untuk pengujian awal. Integrasi sensor, transfer peta melalui HPS, bridge gerbang menuju controller motor, dan pengukuran sensor hingga motor merupakan tahap berikutnya. Target latensi sistem **p99 ≤ 5 ms** berbeda dari hasil kernel **158,76 µs**.
+
+Paket [JetAuto](docs/JETAUTO.md) menyediakan pengujian motor dan referensi UART STM **1 Mbps**. Proyek motor tersebut merupakan alat uji transport tersendiri. [Referensi receiver DE10-Nano](robot/jetauto/UART_RX_BUZZER_REFERENCE/README.md) menjelaskan decode paket dan perbedaan pin terhadap transmitter motor. Untuk STM yang hanya diakses melalui USB, tersedia [template transport HPS USB host](robot/hps_usb).
 
 ## Hasil utama
 
@@ -36,13 +62,17 @@ Repository ini menyatukan RTL, model numerik, bobot BRAM, testbench, proyek Quar
 | Evaluasi DWA | **512 kandidat × 20 pose** | [RTL dan arsitektur](docs/ARCHITECTURE.md) |
 | Waktu kernel DWA | **7.938 siklus · 158,76 µs pada 50 MHz** | [Enam scene](evidence/audit/scene_latency.csv) |
 | Inferensi neural | **400 keluaran cocok tepat pada 100 vektor** | [Hasil model pembanding](verification/neural_cocotb_results.json) |
+| Waktu kernel neural | **18.192 siklus · 363,84 µs pada 50 MHz** | [Analisis performa](docs/PERFORMANCE.md) |
+| Pemeriksaan RTL tercatat | **29.382 pemeriksaan tanpa kesalahan** | [Manifest bukti simulasi](evidence/waveforms/MANIFEST_BUKTI.json) |
 | Regresi gerbang | **13.078 kasus · 12/12 bin hasil fungsional** | [Coverage](verification/gate_functional_coverage.json) |
 | Regresi cocotb lokal | **8 test case pada 6 suite** | [Metodologi](docs/VERIFICATION.md) |
 | Fault injection | **9 skenario menghasilkan izin = 0** | [Daftar pengujian](evidence/audit/fault_status.csv) |
 | Implementasi FPGA | **DE10-Nano dan DE10-Lite** | [Resource dan timing](docs/PERFORMANCE.md) |
 | Diagram modul | **1 file `.io` dengan 28 halaman** | [Buka sumber diagram](docs/flowcharts/IGOR_RTL_Flowchart.io) |
 
-Angka waktu pada tabel adalah hasil kernel simulasi. Cakupan pengukuran, asumsi daya, dan tahapan integrasi dijelaskan pada [catatan hasil](docs/RESULTS_AND_SCOPE.md).
+Angka waktu pada tabel adalah hasil kernel simulasi. Evaluasi DWA lengkap memerlukan 7.938 siklus pada keenam scene yang direkam. Angka ini tidak menyatakan waktu hingga roda bergerak atau keunggulan terhadap CPU yang belum dibandingkan pada beban identik. Cakupan pengukuran, asumsi daya, dan tahapan integrasi dijelaskan pada [catatan hasil](docs/RESULTS_AND_SCOPE.md).
+
+Implementasi DE10-Nano memakai **4.964 ALM, 131 M10K, dan 10 DSP**, dengan timing memenuhi clock **50 MHz**. Power Analyzer menghasilkan estimasi **506,69 mW** secara vectorless dengan confidence rendah. Ini estimasi rangkaian FPGA, bukan pengukuran konsumsi seluruh board dan HPS. Laporan asli serta hasil DE10-Lite tersedia pada [resource, timing, dan daya](docs/PERFORMANCE.md).
 
 ## Arsitektur dalam satu pandangan
 
