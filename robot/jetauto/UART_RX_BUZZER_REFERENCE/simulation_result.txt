@@ -1,0 +1,8 @@
+Checked: 2026-10-07
+Method: Icarus Verilog, compile with -g2012 and run with vvp.
+Testbench: tb_uart_gpio_buzzer
+Exit code: 0
+PASS: 314 capture frames + 5 generated frames; GPIO atomic CRC commit; bad CRC/stop/length/timeout rejected; active/passive beep and cooldown; baud tolerance
+tb_uart_gpio_buzzer.v:97: $finish called at 43854973000 (1ps)
+Top-level source compilation: de10_nano_uart_buzzer, exit code 0.
+Scope: offline simulation and source compilation. No FPGA programming or physical motor commands during this verification.

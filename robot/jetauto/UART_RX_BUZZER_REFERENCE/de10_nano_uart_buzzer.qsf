@@ -1,0 +1,39 @@
+# Pins verified against Terasic DE10-Nano rev. A/B manual, Tables 3-5/7/8/10.
+set_global_assignment -name FAMILY "Cyclone V"
+set_global_assignment -name DEVICE 5CSEBA6U23I7
+set_global_assignment -name TOP_LEVEL_ENTITY de10_nano_uart_buzzer
+set_global_assignment -name PROJECT_OUTPUT_DIRECTORY quartus_output
+set_global_assignment -name VERILOG_FILE uart_rx_8n1.v
+set_global_assignment -name VERILOG_FILE com9_packet_rx.v
+set_global_assignment -name VERILOG_FILE uart_gpio_buzzer_demo.v
+set_global_assignment -name VERILOG_FILE de10_nano_uart_buzzer.v
+set_global_assignment -name SDC_FILE de10_nano_uart_buzzer.sdc
+set_global_assignment -name RESERVE_ALL_UNUSED_PINS "AS INPUT TRI-STATED"
+set_location_assignment PIN_V11 -to FPGA_CLK1_50
+set_location_assignment PIN_AH17 -to KEY0_N
+# JP1 pin 1, GPIO_0[0]: UART input, 3.3V logic.
+set_location_assignment PIN_V12 -to UART_RX
+# JP1 pin 2, GPIO_0[1]: buzzer driver logic input.
+set_location_assignment PIN_E8 -to BUZZER_CTRL
+# JP1 pins 3..10, GPIO_0[2..9]: 8-bit GPIO mask output.
+set_location_assignment PIN_W12 -to {GPIO_MASK_OUT[0]}
+set_location_assignment PIN_D11 -to {GPIO_MASK_OUT[1]}
+set_location_assignment PIN_D8 -to {GPIO_MASK_OUT[2]}
+set_location_assignment PIN_AH13 -to {GPIO_MASK_OUT[3]}
+set_location_assignment PIN_AF7 -to {GPIO_MASK_OUT[4]}
+set_location_assignment PIN_AH14 -to {GPIO_MASK_OUT[5]}
+set_location_assignment PIN_AF4 -to {GPIO_MASK_OUT[6]}
+set_location_assignment PIN_AH3 -to {GPIO_MASK_OUT[7]}
+set_location_assignment PIN_W15 -to {LED[0]}
+set_location_assignment PIN_AA24 -to {LED[1]}
+set_location_assignment PIN_V16 -to {LED[2]}
+set_location_assignment PIN_V15 -to {LED[3]}
+set_location_assignment PIN_AF26 -to {LED[4]}
+set_location_assignment PIN_AE26 -to {LED[5]}
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FPGA_CLK1_50
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to KEY0_N
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to UART_RX
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to BUZZER_CTRL
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to {GPIO_MASK_OUT[*]}
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to {LED[*]}
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to UART_RX

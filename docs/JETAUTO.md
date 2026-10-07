@@ -6,6 +6,8 @@ UART planner IGOR memakai **115200 baud** dan paket delapan byte. Controller STM
 
 Folder: [robot/jetauto](../robot/jetauto). Proyek empat speed: [stm_uart_multispeed.qpf](../robot/jetauto/FPGA_UART_TTL_MULTISPEED/quartus/stm_uart_multispeed.qpf). Top: **`stm_uart_multispeed_top`**. Serializer: **`stm_packet_tx_multispeed`**.
 
+Referensi decode arah RX tersedia pada [UART_RX_BUZZER_REFERENCE](../robot/jetauto/UART_RX_BUZZER_REFERENCE/README.md), lengkap dengan proyek Quartus dan testbench capture UART. Framing dan CRC cocok dengan transport STM. Perhatikan bahwa E8 pada proyek referensi menjadi kontrol buzzer, sementara E8 pada proyek motor menjadi UART TX. Konvensi GPIO `10` hex dalam demo receiver bukan command STM yang sudah dikonfirmasi.
+
 ## Protocol motor
 
 | Field | Isi |
