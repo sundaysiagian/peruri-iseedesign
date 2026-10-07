@@ -1,0 +1,6 @@
+<testsuites name="results">
+  <testsuite name="all" package="all">
+    <property name="random_seed" value="1791355042" />
+    <testcase name="wrapper_registers_and_fail_closed" classname="test" file="C:\Users\William Anthony\Documents\Codex\2026-09-30\files-mentioned-by-the-user-draft\outputs\peruri-iseedesign\test\test.py" lineno="21" time="4.165701627731323" sim_time_ns="226486.001" ratio_time="54369.23266233693" />
+  </testsuite>
+</testsuites>

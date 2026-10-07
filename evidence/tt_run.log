@@ -1,0 +1,23 @@
+C:\Users\William Anthony\Documents\Codex\2026-09-30\files-mentioned-by-the-user-draft\outputs\IGOR_VERIFICATION_ASIC_DELIVERABLES\verification\run.py:8: UserWarning: Python runners and associated APIs are an experimental feature and subject to change.
+  from cocotb.runner import get_runner
+     -.--ns INFO     gpi                                ..mbed\gpi_embed.cpp:81   in set_program_name_in_venv        Did not detect Python virtual environment. Using system-wide Python interpreter
+     -.--ns INFO     gpi                                ..\gpi\GpiCommon.cpp:101  in gpi_print_registered_impl       VPI registered
+     0.00ns INFO     cocotb                             Running on Icarus Verilog version 12.0 (devel)
+     0.00ns INFO     cocotb                             Running tests with cocotb v1.9.2 from C:\Users\William Anthony\Documents\Codex\2026-09-30\files-mentioned-by-the-user-draft\outputs\IGOR_VERIFICATION_ASIC_DELIVERABLES\.runtime\python\cocotb
+     0.00ns INFO     cocotb                             Seeding Python random module with 1791280157
+     0.00ns INFO     cocotb.regression                  Found test test.wrapper_registers_and_fail_closed
+     0.00ns INFO     cocotb.regression                  running wrapper_registers_and_fail_closed (1/1)
+226486.00ns INFO     cocotb.regression                  wrapper_registers_and_fail_closed passed
+226486.00ns INFO     cocotb.regression                  ************************************************************************************************
+                                                        ** TEST                                    STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                        ************************************************************************************************
+                                                        ** test.wrapper_registers_and_fail_closed   PASS      226486.00           1.75     129545.12  **
+                                                        ************************************************************************************************
+                                                        ** TESTS=1 PASS=1 FAIL=0 SKIP=0                       226486.00           1.85     122227.84  **
+                                                        ************************************************************************************************
+                                                        
+VCD info: dumpfile tb.fst opened for output.
+INFO: Running command iverilog -o 'C:\Users\William Anthony\Documents\Codex\2026-09-30\files-mentioned-by-the-user-draft\outputs\IGOR_VERIFICATION_ASIC_DELIVERABLES\verification\build\tt\sim.vvp' -D COCOTB_SIM=1 -s tb -g2012 -g2012 'C:\Users\William Anthony\Documents\Codex\2026-09-30\files-mentioned-by-the-user-draft\outputs\IGOR_VERIFICATION_ASIC_DELIVERABLES\asic_cmos5l\src\project.v' 'C:\Users\William Anthony\Documents\Codex\2026-09-30\files-mentioned-by-the-user-draft\outputs\IGOR_VERIFICATION_ASIC_DELIVERABLES\asic_cmos5l\src\igor_safety_security_gate.v' 'C:\Users\William Anthony\Documents\Codex\2026-09-30\files-mentioned-by-the-user-draft\outputs\IGOR_VERIFICATION_ASIC_DELIVERABLES\asic_cmos5l\test\tb.v' in directory C:\Users\William Anthony\Documents\Codex\2026-09-30\files-mentioned-by-the-user-draft\outputs\IGOR_VERIFICATION_ASIC_DELIVERABLES\verification\build\tt
+INFO: Running command vvp -M 'C:/Users/William Anthony/Documents/Codex/2026-09-30/files-mentioned-by-the-user-draft/outputs/IGOR_VERIFICATION_ASIC_DELIVERABLES/.runtime/python/cocotb/libs' -m cocotbvpi_icarus 'C:\Users\William Anthony\Documents\Codex\2026-09-30\files-mentioned-by-the-user-draft\outputs\IGOR_VERIFICATION_ASIC_DELIVERABLES\verification\build\tt\sim.vvp' in directory C:\Users\William Anthony\Documents\Codex\2026-09-30\files-mentioned-by-the-user-draft\outputs\IGOR_VERIFICATION_ASIC_DELIVERABLES\asic_cmos5l\test
+INFO: Results file: C:\Users\William Anthony\Documents\Codex\2026-09-30\files-mentioned-by-the-user-draft\outputs\IGOR_VERIFICATION_ASIC_DELIVERABLES\evidence\cocotb_tt.xml
+SUITE PASS: tt

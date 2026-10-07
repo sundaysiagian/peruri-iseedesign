@@ -1,0 +1,3 @@
+UART FULL MAP CHECKS=16405 ERRORS=0
+TEST PASSED
+../tb/igor_uart_full_map_tb.v:53: $finish called at 432432680000 (1ps)

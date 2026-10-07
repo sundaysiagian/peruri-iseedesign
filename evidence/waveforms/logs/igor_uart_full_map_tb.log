@@ -1,0 +1,3 @@
+UART FULL MAP CHECKS=16403 ERRORS=0
+TEST PASSED
+C:\Users\William Anthony\Documents\Codex\2026-09-30\files-mentioned-by-the-user-draft\outputs\IGOR_DE10_NANO\tb\igor_uart_full_map_tb.v:50: $finish called at 432419120000 (1ps)

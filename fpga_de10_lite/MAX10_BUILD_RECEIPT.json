@@ -1,0 +1,21 @@
+{
+  "status": "READY_FOR_LAB_PROGRAMMING",
+  "device": "10M50DAF484C7G",
+  "board": "DE10-Lite",
+  "top": "igor_de10_lite_top",
+  "quartus": "25.1std.0 Build 1129",
+  "verified_at_utc": "2026-10-01T03:39:34.9430039Z",
+  "sof": "quartus/output_files/igor_max10.sof",
+  "sha256": "456949B9C86DA8D747AF7E505193444DC23F33D7E42251B72ABBBA64B08C2CB5",
+  "bytes": 3216574,
+  "stages": [
+    "map PASS",
+    "fit PASS",
+    "asm PASS",
+    "sta PASS"
+  ],
+  "setup_slack_ns": 1.14,
+  "minimum_hold_slack_ns": 0.107,
+  "fmax_mhz": 53.02,
+  "hardware_test": "Not performed; physical JTAG/UART validation pending"
+}

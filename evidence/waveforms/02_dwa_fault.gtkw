@@ -1,0 +1,29 @@
+[*]
+[*] GTKWave Analyzer v3.3.100 (w)1999-2019 BSI
+[*] Thu Oct 01 09:33:51 2026
+[*]
+[dumpfile] "vcd/igor_top.vcd"
+[dumpfile_mtime] "Thu Oct 01 05:32:02 2026"
+[dumpfile_size] 69502001
+[savefile] "02_dwa_fault.gtkw"
+[timestart] 6718600000
+[size] 1500 500
+[pos] -1 -1
+*-15.215957 6718670000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[sst_width] 197
+[signals_width] 200
+[sst_expanded] 1
+[sst_vpaned_height] 118
+@24
+igor_top_tb.start
+igor_top_tb.busy
+igor_top_tb.done
+igor_top_tb.enable
+igor_top_tb.estop
+igor_top_tb.protective
+igor_top_tb.fault[7:0]
+igor_top_tb.vcmd[4:0]
+igor_top_tb.wcmd[6:0]
+igor_top_tb.error_count[31:0]
+[pattern_trace] 1
+[pattern_trace] 0

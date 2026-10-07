@@ -1,0 +1,4 @@
+VCD info: dumpfile waveform/igor_units.vcd opened for output.
+UNIT CHECKS=23 ERRORS=0
+TEST PASSED
+C:\Users\William Anthony\Documents\Codex\2026-09-30\files-mentioned-by-the-user-draft\outputs\IGOR_DE10_NANO\tb\igor_units_tb.v:41: $finish called at 37000 (1ps)

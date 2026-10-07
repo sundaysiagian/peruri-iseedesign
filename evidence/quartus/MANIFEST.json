@@ -1,0 +1,142 @@
+{
+  "document": {
+    "file": "Proposal_IGOR_ISeeDesignITB.docx",
+    "sha256": "7e7d8f395832da73644d1ba9c42f44a7736bcaf8b81c095876bdcb9a4a53c996",
+    "images": 10,
+    "gtkwave_screenshots": 6,
+    "quartus_screenshots": 2,
+    "diagrams": 2,
+    "authored_text_semicolons": 0
+  },
+  "boards": {
+    "DE10_NANO": {
+      "sof_sha256": "846fe403ad0bb7b11958eb547ed75324abb32028d9950f69d1aa0462388fe47e",
+      "worst_setup_ns": 0.146,
+      "worst_hold_ns": 0.12,
+      "minimum_reported_fmax_MHz": 50.37
+    },
+    "DE10_LITE": {
+      "sof_sha256": "456949b9c86da8d747af7e505193444dc23f33d7e42251b72abbba64b08c2cb5",
+      "worst_setup_ns": 1.14,
+      "worst_hold_ns": 0.107,
+      "minimum_reported_fmax_MHz": 53.02
+    }
+  },
+  "files": [
+    {
+      "path": "arsitektur_hps_fpga.png",
+      "bytes": 62725,
+      "sha256": "9226173720e552386b5c2a2ddedf6ce857865abab1b80b37f13e2761f5a5fe4e"
+    },
+    {
+      "path": "lite_resource.png",
+      "bytes": 99505,
+      "sha256": "d3fce060a5cdda05eec3822af3bf5893add4b28fbf88fe7e6a58778fbbc7d3cf"
+    },
+    {
+      "path": "nano_resource.png",
+      "bytes": 99523,
+      "sha256": "923d55b5eca92c2df5504d210536df9178c08094c8066bdc2e3620f1214d508f"
+    },
+    {
+      "path": "PERHITUNGAN_LATENSI.json",
+      "bytes": 1515,
+      "sha256": "d87773c63809d9c55079eeb30e1b9b5085cdf76f313de6e8beb91fba12dfb2a3"
+    },
+    {
+      "path": "README.md",
+      "bytes": 1641,
+      "sha256": "08df948addf6a2655d8746ff16907d50006635557afc8ced99ea27afe5927ab9"
+    },
+    {
+      "path": "reports/DE10_LITE/igor_max10.asm.rpt",
+      "bytes": 10615,
+      "sha256": "254df40cc3d995156a0f7a3da10b70dc7a7cf108b48248490b1808c682fe99b7"
+    },
+    {
+      "path": "reports/DE10_LITE/igor_max10.fit.rpt",
+      "bytes": 355575,
+      "sha256": "41856e36145dec188f63379876da5e383522810269cdb0b4bbd0ae904079417c"
+    },
+    {
+      "path": "reports/DE10_LITE/igor_max10.fit.summary",
+      "bytes": 706,
+      "sha256": "b464f4dca047b6a6745b4bc2648191e627420b121c3151604939dd63d4564e2d"
+    },
+    {
+      "path": "reports/DE10_LITE/igor_max10.flow.rpt",
+      "bytes": 7291,
+      "sha256": "6306829254c1b570c345f7282a670fdae0a8ba6f5d24a4ccdf023bb56dec23ba"
+    },
+    {
+      "path": "reports/DE10_LITE/igor_max10.map.summary",
+      "bytes": 534,
+      "sha256": "e64ddefe0e02bd9345e45d424dc3f43631b7fb09c8a1b51533c7a6036c150fb8"
+    },
+    {
+      "path": "reports/DE10_LITE/igor_max10.qsf",
+      "bytes": 1930,
+      "sha256": "e659eb35585d877b91d3fb105d789a6a9d50e25cb6044a1b9a52a925aa100306"
+    },
+    {
+      "path": "reports/DE10_LITE/igor_max10.sdc",
+      "bytes": 1018,
+      "sha256": "48f3f051209cfb1e87f9a33b6038b8c041dc4da7071907474d63e866214f95c4"
+    },
+    {
+      "path": "reports/DE10_LITE/igor_max10.sta.rpt",
+      "bytes": 72878,
+      "sha256": "8753f1a3ece083fb0f8130305a5754c56fee95b04c427720c7b1ddba71b25497"
+    },
+    {
+      "path": "reports/DE10_LITE/igor_max10.sta.summary",
+      "bytes": 1536,
+      "sha256": "a1413f74df0528a3718658696df9075dee141b5398fab6b529d9d54be9a822f2"
+    },
+    {
+      "path": "reports/DE10_NANO/igor.asm.rpt",
+      "bytes": 9865,
+      "sha256": "43b6a1a157c6089ceb96e6ab603c09796df6808eb68c710d2102240934cf3dc1"
+    },
+    {
+      "path": "reports/DE10_NANO/igor.fit.rpt",
+      "bytes": 416525,
+      "sha256": "3293b5b3f781317c0f696d925319f66fca2e5e0959d64824d3cc64bc86000477"
+    },
+    {
+      "path": "reports/DE10_NANO/igor.fit.summary",
+      "bytes": 703,
+      "sha256": "e0dd086b7c738fb022482cd157aa1a82837eadb15d56f8e9ed899f5dab8a71bf"
+    },
+    {
+      "path": "reports/DE10_NANO/igor.flow.rpt",
+      "bytes": 7286,
+      "sha256": "d2e5bcd1d6a24608a77d8053b1658f9e99d83c8181af1096ad001c132c95ab07"
+    },
+    {
+      "path": "reports/DE10_NANO/igor.map.summary",
+      "bytes": 539,
+      "sha256": "84e2564f19dc160c22bebed428be766eed0989a6b077032000438c0a4264dc49"
+    },
+    {
+      "path": "reports/DE10_NANO/igor.qsf",
+      "bytes": 1924,
+      "sha256": "9b90c1e4fb023e4deb785967b1f942524fe8889f29f291759b0e9e26964a57ab"
+    },
+    {
+      "path": "reports/DE10_NANO/igor.sdc",
+      "bytes": 940,
+      "sha256": "988edb01791e9504770b4066b0cec815e4149665bddda7e557fc68352cdcd372"
+    },
+    {
+      "path": "reports/DE10_NANO/igor.sta.rpt",
+      "bytes": 78981,
+      "sha256": "9630c557ef5eac969e94e797f16aafde631de6fb566a1c32d8399d90d207457a"
+    },
+    {
+      "path": "reports/DE10_NANO/igor.sta.summary",
+      "bytes": 1991,
+      "sha256": "828efd5dd0d9f54b3b0734a27f6703fff600ec423bb3d12470f19a6dd6c190bb"
+    }
+  ]
+}

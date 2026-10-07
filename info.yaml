@@ -1,0 +1,39 @@
+project:
+  title: IGOR Safety Gate Prototype
+  author: William Anthony / ISeeDesignITB
+  discord: ''
+  description: Fail-closed IGOR velocity safety gate with a register interface. ASIC
+    subset, not full DWA or neural accelerator.
+  language: Verilog
+  clock_hz: 50000000
+  tiles: 1x1
+  top_module: tt_um_wlmoi_igor_gate
+  source_files:
+  - project.v
+  - igor_safety_security_gate.v
+pinout:
+  ui[0]: write_enable
+  ui[1]: register_address_bit0
+  ui[2]: register_address_bit1
+  ui[3]: register_address_bit2
+  ui[4]: register_address_bit3
+  ui[5]: read_select_bit0
+  ui[6]: read_select_bit1
+  ui[7]: read_select_bit2
+  uo[0]: read_data_bit0
+  uo[1]: read_data_bit1
+  uo[2]: read_data_bit2
+  uo[3]: read_data_bit3
+  uo[4]: read_data_bit4
+  uo[5]: read_data_bit5
+  uo[6]: read_data_bit6
+  uo[7]: read_data_bit7
+  uio[0]: write_data_bit0 (input)
+  uio[1]: write_data_bit1 (input)
+  uio[2]: write_data_bit2 (input)
+  uio[3]: write_data_bit3 (input)
+  uio[4]: write_data_bit4 (input)
+  uio[5]: write_data_bit5 (input)
+  uio[6]: write_data_bit6 (input)
+  uio[7]: write_data_bit7 (input)
+yaml_version: 6

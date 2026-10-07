@@ -1,0 +1,84 @@
+{
+  "simulation_rerun": "PASS",
+  "viewer": "GTKWave 3.3.100",
+  "screenshots": [
+    {
+      "file": "01_dwa_normal.png",
+      "bytes": 40477,
+      "sha256": "c92a00af494da22c901d1c16ba437b17dbd515bc58f74c9e535a72ea301d0dea"
+    },
+    {
+      "file": "05_dwa_result.png",
+      "bytes": 37700,
+      "sha256": "65604e6c604eb0677fec66a2df838593d4a296e1e64fa249b3343d973ef2f519"
+    },
+    {
+      "file": "02_dwa_fault.png",
+      "bytes": 33745,
+      "sha256": "773e4d4933320bffb6f68fb287abeacefaa3499ac60529cc09448d7d0ab4aa76"
+    },
+    {
+      "file": "03_neural.png",
+      "bytes": 34185,
+      "sha256": "c046d5d95e58ea98ddde3bcb3debd12e5e9a73056baef545a5be6a985190ab39"
+    },
+    {
+      "file": "06_neural_result.png",
+      "bytes": 34474,
+      "sha256": "7dfe681909b66239b38c3aad8da06857fba1a8baef2f45a1f24da38191a9b754"
+    },
+    {
+      "file": "04_uart.png",
+      "bytes": 35723,
+      "sha256": "6519d7024276580959f15d78bb02c4c668bdbf27d89eb3384570aa99efeb196a"
+    }
+  ],
+  "vcd_sources": [
+    {
+      "file": "vcd/igor_neural.vcd",
+      "bytes": 97695541,
+      "sha256": "9d17131279ebb790d7e37e0202efe20e0b3c13c325c8a48d13fa07a5c8d574f1"
+    },
+    {
+      "file": "vcd/igor_top.vcd",
+      "bytes": 69502001,
+      "sha256": "cd1b683bda0fe3752f4c6e74181995787c49377e90445a6bdf38726df6bb0447"
+    },
+    {
+      "file": "vcd/igor_uart.vcd",
+      "bytes": 2226632,
+      "sha256": "7e780ddc1ba3f2b817b08c92c94d5bdb7373795aba398a49615a258e69416879"
+    },
+    {
+      "file": "vcd/igor_units.vcd",
+      "bytes": 12151,
+      "sha256": "5612e2c2b74d636d42800a3a435c1a1bf40510eced1ecd58eb70b3e51e5cda38"
+    },
+    {
+      "file": "vcd/igor_wrapper.vcd",
+      "bytes": 5195230,
+      "sha256": "fc954ba5d2656a79da89bbb03b6aee158d723313e120308ce94e09bd1120ebf5"
+    }
+  ],
+  "checks": {
+    "unit": 23,
+    "dwa": 12399,
+    "wrapper": 8,
+    "neural": 500,
+    "uart_fast": 44,
+    "uart_full_map": 16403,
+    "uart_release_baud": 5
+  },
+  "errors": 0,
+  "neural_slice": "Exact prefix of vcd/igor_neural.vcd through timestamp 375000000 ps; waveform values unchanged",
+  "document": {
+    "file": "Proposal_IGOR_ISeeDesignITB.docx",
+    "sha256": "7e7d8f395832da73644d1ba9c42f44a7736bcaf8b81c095876bdcb9a4a53c996",
+    "figures": 10,
+    "gtkwave_screenshot_count": 6,
+    "quartus_screenshot_count": 2,
+    "template_sections_checked": true,
+    "identity_checked": true
+  },
+  "total_checks": 29382
+}

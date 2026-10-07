@@ -1,0 +1,15 @@
+{
+  "cocotb_testcases": {
+    "gate": 1,
+    "neural": 2,
+    "top": 2,
+    "uart": 1,
+    "tt": 1,
+    "tt_generic": 1
+  },
+  "total_tests": 8,
+  "sof_sha256": "4236365161b23d5371216da504ee134e80d4911016471ae01df7927cc6d12cae",
+  "minimum_all_timing_slack_ns": 0.12,
+  "board_test": "not available",
+  "gds": "not verified"
+}

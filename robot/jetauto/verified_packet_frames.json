@@ -1,0 +1,13 @@
+{
+  "baud": 1000000,
+  "rps": 1.0,
+  "duration_s": 2.0,
+  "frames": [
+    "AA 55 03 16 01 04 00 00 00 00 00 01 00 00 00 00 02 00 00 00 00 03 00 00 00 00 07",
+    "AA 55 02 08 6C 07 64 00 84 03 01 00 5D",
+    "AA 55 03 16 01 04 00 00 00 80 3F 01 00 00 80 3F 02 00 00 80 BF 03 00 00 80 BF 0D",
+    "AA 55 03 16 01 04 00 00 00 80 BF 01 00 00 80 BF 02 00 00 80 3F 03 00 00 80 3F 4C"
+  ],
+  "physical_laptop_result": "User confirmed both directions worked and stopped on COM9",
+  "fpga_physical_result": "not tested"
+}

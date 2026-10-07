@@ -1,0 +1,124 @@
+`timescale 1ns/1ps
+module tb_packet;
+ reg clk=0,reset=1,start=0; reg [1:0] command=0;
+ wire tx,busy,done;
+ always #10 clk=~clk;
+ stm_packet_tx dut(clk,reset,start,command,tx,busy,done);
+ reg [7:0] expected[0:127]; reg [7:0] received;
+ integer c,n,b,total=0;
+ initial begin
+ $dumpfile("stm_uart.vcd"); $dumpvars(0,tb_packet);
+ expected[0]=8'haa;
+ expected[1]=8'h55;
+ expected[2]=8'h03;
+ expected[3]=8'h16;
+ expected[4]=8'h01;
+ expected[5]=8'h04;
+ expected[6]=8'h00;
+ expected[7]=8'h00;
+ expected[8]=8'h00;
+ expected[9]=8'h00;
+ expected[10]=8'h00;
+ expected[11]=8'h01;
+ expected[12]=8'h00;
+ expected[13]=8'h00;
+ expected[14]=8'h00;
+ expected[15]=8'h00;
+ expected[16]=8'h02;
+ expected[17]=8'h00;
+ expected[18]=8'h00;
+ expected[19]=8'h00;
+ expected[20]=8'h00;
+ expected[21]=8'h03;
+ expected[22]=8'h00;
+ expected[23]=8'h00;
+ expected[24]=8'h00;
+ expected[25]=8'h00;
+ expected[26]=8'h07;
+ expected[32]=8'haa;
+ expected[33]=8'h55;
+ expected[34]=8'h02;
+ expected[35]=8'h08;
+ expected[36]=8'h6c;
+ expected[37]=8'h07;
+ expected[38]=8'h64;
+ expected[39]=8'h00;
+ expected[40]=8'h84;
+ expected[41]=8'h03;
+ expected[42]=8'h01;
+ expected[43]=8'h00;
+ expected[44]=8'h5d;
+ expected[64]=8'haa;
+ expected[65]=8'h55;
+ expected[66]=8'h03;
+ expected[67]=8'h16;
+ expected[68]=8'h01;
+ expected[69]=8'h04;
+ expected[70]=8'h00;
+ expected[71]=8'h00;
+ expected[72]=8'h00;
+ expected[73]=8'h80;
+ expected[74]=8'h3f;
+ expected[75]=8'h01;
+ expected[76]=8'h00;
+ expected[77]=8'h00;
+ expected[78]=8'h80;
+ expected[79]=8'h3f;
+ expected[80]=8'h02;
+ expected[81]=8'h00;
+ expected[82]=8'h00;
+ expected[83]=8'h80;
+ expected[84]=8'hbf;
+ expected[85]=8'h03;
+ expected[86]=8'h00;
+ expected[87]=8'h00;
+ expected[88]=8'h80;
+ expected[89]=8'hbf;
+ expected[90]=8'h0d;
+ expected[96]=8'haa;
+ expected[97]=8'h55;
+ expected[98]=8'h03;
+ expected[99]=8'h16;
+ expected[100]=8'h01;
+ expected[101]=8'h04;
+ expected[102]=8'h00;
+ expected[103]=8'h00;
+ expected[104]=8'h00;
+ expected[105]=8'h80;
+ expected[106]=8'hbf;
+ expected[107]=8'h01;
+ expected[108]=8'h00;
+ expected[109]=8'h00;
+ expected[110]=8'h80;
+ expected[111]=8'hbf;
+ expected[112]=8'h02;
+ expected[113]=8'h00;
+ expected[114]=8'h00;
+ expected[115]=8'h80;
+ expected[116]=8'h3f;
+ expected[117]=8'h03;
+ expected[118]=8'h00;
+ expected[119]=8'h00;
+ expected[120]=8'h80;
+ expected[121]=8'h3f;
+ expected[122]=8'h4c;
+ repeat(4) @(negedge clk); reset=0;
+ for(c=0;c<4;c=c+1) begin
+  @(negedge clk); command=c; start=1;
+  @(negedge clk); start=0;
+  for(n=0;n<(c==1 ? 13:27);n=n+1) begin
+   // First start bit is already active. Later starts follow the stop bit.
+   if(n!=0) @(negedge tx);
+   #500; if(tx!==0) $fatal(1,"Bad start bit");
+   for(b=0;b<8;b=b+1) begin #1000; received[b]=tx; end
+   #1000; if(tx!==1) $fatal(1,"Bad stop bit");
+   if(received!==expected[c*32+n]) $fatal(1,"Packet %0d byte %0d got %h expected %h",c,n,received,expected[c*32+n]);
+   total=total+1;
+  end
+  wait(!busy); repeat(3) @(negedge clk);
+ end
+ $display("PASS: %0d UART bytes match SDK, all four commands, 1 Mbps 8N1",total);
+ $finish;
+ end
+ initial begin #3000000; $fatal(1,"Timeout"); end
+endmodule

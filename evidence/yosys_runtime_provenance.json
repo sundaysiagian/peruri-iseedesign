@@ -1,0 +1,8 @@
+[
+  {
+    "name": "yowasp-runtime",
+    "version": "1.96",
+    "wheel": "yowasp_runtime-1.96-py3-none-any.whl",
+    "sha256": "4ff456a4a6dff9d689c7feac9f68fb1492bed4cf873450d7b41259fa31645783"
+  }
+]

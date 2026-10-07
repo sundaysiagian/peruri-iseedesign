@@ -1,0 +1,28 @@
+[*]
+[*] GTKWave Analyzer v3.3.100 (w)1999-2019 BSI
+[*] Thu Oct 01 11:05:44 2026
+[*]
+[dumpfile] "igor_uart_115200.vcd"
+[dumpfile_mtime] "Thu Oct 01 11:04:18 2026"
+[dumpfile_size] 2561
+[savefile] "04_uart.gtkw"
+[timestart] 0
+[size] 1500 500
+[pos] -1 -1
+*-27.889509 1381200000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[sst_width] 197
+[signals_width] 140
+[sst_expanded] 1
+[sst_vpaned_height] 118
+@24
+igor_uart_115200_tb.key[1:0]
+igor_uart_115200_tb.rx
+igor_uart_115200_tb.tx
+igor_uart_115200_tb.rv
+igor_uart_115200_tb.rb[7:0]
+igor_uart_115200_tb.re
+igor_uart_115200_tb.received
+igor_uart_115200_tb.checks
+igor_uart_115200_tb.error_count
+[pattern_trace] 1
+[pattern_trace] 0

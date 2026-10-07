@@ -1,0 +1,2 @@
+PASS: boot STOP, buzzer, disarmed motor rejected, forward timeout STOP, backward arm-clear STOP
+tb\tb_control.v:34: $finish called at 3162130000 (1ps)

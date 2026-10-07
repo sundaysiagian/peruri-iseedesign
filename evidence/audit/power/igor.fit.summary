@@ -1,0 +1,20 @@
+Fitter Status : Successful - Tue Oct  6 12:31:57 2026
+Quartus Prime Version : 25.1std.0 Build 1129 10/21/2025 SC Standard Edition
+Revision Name : igor
+Top-level Entity Name : igor_uart_top
+Family : Cyclone V
+Device : 5CSEBA6U23I7
+Timing Models : Final
+Logic utilization (in ALMs) : 4,964 / 41,910 ( 12 % )
+Total registers : 1554
+Total pins : 17 / 314 ( 5 % )
+Total virtual pins : 0
+Total block memory bits : 1,051,008 / 5,662,720 ( 19 % )
+Total RAM Blocks : 131 / 553 ( 24 % )
+Total DSP Blocks : 10 / 112 ( 9 % )
+Total HSSI RX PCSs : 0
+Total HSSI PMA RX Deserializers : 0
+Total HSSI TX PCSs : 0
+Total HSSI PMA TX Serializers : 0
+Total PLLs : 0 / 6 ( 0 % )
+Total DLLs : 0 / 4 ( 0 % )

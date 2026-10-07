@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="740" viewBox="0 0 1200 740" role="img" aria-labelledby="title desc">
+  <title id="title">IGOR architecture and bit flow</title>
+  <desc id="desc">UART connects configuration, map manager, and a separate neural core. Four rollout tiles read four replicated double-bank costmaps, then a selector and safety gate produce command codes.</desc>
+  <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#182a3f"/></marker></defs>
+  <rect width="1200" height="740" rx="18" fill="#f8fafc"/>
+  <g font-family="Arial, sans-serif" text-anchor="middle" fill="#182a3f">
+    <text x="600" y="42" font-size="24" font-weight="700">IGOR · architecture and bit flow</text>
+    <text x="600" y="66" font-size="13">DWA planner path and separate neural inference · 50 MHz</text>
+    <g stroke="#182a3f" stroke-width="1.5" fill="#fff">
+      <rect x="35" y="100" width="245" height="80" rx="8"/>
+      <rect x="330" y="100" width="495" height="80" rx="8"/>
+      <rect x="890" y="100" width="275" height="80" rx="8"/>
+      <rect x="35" y="252" width="245" height="96" rx="8"/>
+      <rect x="330" y="270" width="150" height="78" rx="8"/>
+      <rect x="500" y="270" width="150" height="78" rx="8"/>
+      <rect x="670" y="270" width="150" height="78" rx="8"/>
+      <rect x="840" y="270" width="150" height="78" rx="8"/>
+      <rect x="437" y="439" width="330" height="80" rx="8"/>
+      <rect x="437" y="579" width="330" height="80" rx="8" fill="#e4f5f1"/>
+      <rect x="891" y="465" width="274" height="111" rx="8" fill="#eaf0ff"/>
+    </g>
+    <text x="157" y="130" font-size="17" font-weight="700">Map upload manager</text>
+    <text x="157" y="151" font-size="13">sequence 32 · address 15 · data 8</text>
+    <text x="157" y="170" font-size="12">begin / write / commit · 1 bit each</text>
+    <text x="577" y="133" font-size="18" font-weight="700">Configuration and execution control</text>
+    <text x="577" y="157" font-size="14">cfg_data 32 · lock 1 · ready / estop / start 1 each</text>
+    <text x="1027" y="129" font-size="18" font-weight="700">UART host interface</text>
+    <text x="1027" y="153" font-size="14">115200 8N1 · 8-byte packets</text>
+    <text x="1027" y="172" font-size="12">Dispatch / readback to both paths</text>
+    <text x="157" y="279" font-size="17" font-weight="700">Costmap banks × 4</text>
+    <text x="157" y="302" font-size="13">2 × 16 KiB per copy</text>
+    <text x="157" y="323" font-size="13">4 independent read ports</text>
+    <text x="157" y="340" font-size="12">128 KiB total</text>
+    <text x="405" y="297" font-size="16" font-weight="700">Tile 0</text><text x="405" y="320" font-size="12">128 candidates</text><text x="405" y="338" font-size="12">20 poses each</text>
+    <text x="575" y="297" font-size="16" font-weight="700">Tile 1</text><text x="575" y="320" font-size="12">128 candidates</text><text x="575" y="338" font-size="12">20 poses each</text>
+    <text x="745" y="297" font-size="16" font-weight="700">Tile 2</text><text x="745" y="320" font-size="12">128 candidates</text><text x="745" y="338" font-size="12">20 poses each</text>
+    <text x="915" y="297" font-size="16" font-weight="700">Tile 3</text><text x="915" y="320" font-size="12">128 candidates</text><text x="915" y="338" font-size="12">20 poses each</text>
+    <text x="602" y="470" font-size="18" font-weight="700">Best candidate selector</text>
+    <text x="602" y="494" font-size="14">index 9 · 4 critic values 32 each</text>
+    <text x="602" y="610" font-size="18" font-weight="700">Safety and security gate</text>
+    <text x="602" y="636" font-size="14">Validity · faults · limits · deadline</text>
+    <text x="1028" y="493" font-size="17" font-weight="700">Separate neural core</text>
+    <text x="1028" y="517" font-size="18">24 → 64 → 64 → 4</text>
+    <text x="1028" y="540" font-size="12">Inputs / outputs signed 16 bit</text>
+    <text x="1028" y="559" font-size="12">Accumulator 40 · ROM address 13</text>
+    <text x="602" y="716" font-size="16" font-weight="700">permit 1 · v 5 unsigned · omega 7 signed · fault 8</text>
+  </g>
+  <g fill="none" stroke="#182a3f" stroke-width="1.7">
+    <path d="M157 180V252" marker-end="url(#arrow)"/>
+    <path d="M577 180V210H405V270M577 210H575V270M577 210H745V270M745 210H915V270" marker-end="url(#arrow)"/>
+    <path d="M280 300H305V235H915M405 235V270M575 235V270M745 235V270M915 235V270" marker-end="url(#arrow)"/>
+    <path d="M405 348V382H915M575 348V382M745 348V382M915 348V382M602 382V439" marker-end="url(#arrow)"/>
+    <path d="M602 519V579" marker-end="url(#arrow)"/>
+    <path d="M602 659V689" marker-end="url(#arrow)"/>
+    <path d="M1028 180V218H1127V465" marker-end="url(#arrow)"/>
+  </g>
+  <g font-family="Arial, sans-serif" font-size="12" fill="#41536b">
+    <text x="171" y="215">write broadcast</text>
+    <text x="370" y="252">per port: address 14 + bank 1 · data 8</text>
+    <text x="350" y="406">indices 4×9 · scores / costs / goals / velocities 4×32 each</text>
+    <text x="620" y="553">selected result + status checks</text>
+    <text x="1027" y="605" text-anchor="middle">Neural outputs read back independently</text>
+  </g>
+</svg>

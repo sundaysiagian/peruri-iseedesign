@@ -1,0 +1,40 @@
+{
+  "classification": "analytical nominal serialization model, not measured board or motor latency",
+  "assumptions": [
+    "115200 nominal baud",
+    "8N1 = 10 bits per byte",
+    "8 byte request + 8 byte response",
+    "one successful status poll",
+    "request/response sequential without overlap in this model",
+    "no USB, OS, parser, interbyte or retry overhead"
+  ],
+  "dwa_cycles": 7938,
+  "clock_hz": 50000000,
+  "dwa_ms": 0.15876,
+  "neural_separate_ms": 0.36384,
+  "transaction_ms": 1.3888888888888888,
+  "map_only_transactions": 16384,
+  "map_only_seconds": 22.755555555555556,
+  "cli_full_transactions": 16392,
+  "cli_full_seconds": 22.766666666666666,
+  "cli_full_at_divider_434_seconds": 22.7652096,
+  "preloaded_start_status_command_ms": 4.166666666666667,
+  "preloaded_plus_cycle_read_ms": 5.555555555555555,
+  "target_sensor_to_controller_p99_ms": 5,
+  "measured_sensor_to_motor_ms": null,
+  "target_stage_budget_ms": {
+    "sensor": 1.5,
+    "costmap": 1.0,
+    "dispatch_transfer_commit": 0.5,
+    "kernel_and_gate": 0.2,
+    "readback_dispatch": 0.3,
+    "controller_accept": 0.5,
+    "reserve": 1.0
+  },
+  "map_bytes": 16384,
+  "minimum_payload_MB_s_for_0_5ms": 32.768,
+  "proposed_bus_32bit_50MHz_ideal_MB_s": 200.0,
+  "proposed_bus_ideal_map_us": 81.92,
+  "kernel_percent_of_20ms_period": 0.7938000000000001,
+  "note": "Kernel may overlap UART start response. Do not blindly add kernel latency again. Current HPS and motor path are not implemented."
+}

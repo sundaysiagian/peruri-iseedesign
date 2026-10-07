@@ -1,0 +1,43 @@
+name: RTL verification
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  cocotb:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+      - name: Python 3.11
+        uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: '3.11'
+      - name: Install Icarus and dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y iverilog
+          python -m pip install -r requirements.txt
+      - name: Validate release files and documentation
+        run: python scripts/validate_repository.py
+      - name: Run all RTL suites
+        run: python verification/run.py all
+      - name: Check generic synthesized gate
+        run: python verification/run.py tt_generic
+      - name: Check motor packet encoding without serial access
+        run: |
+          python robot/jetauto/verify_driver.py
+          python robot/jetauto/test_rtl_packets_on_stm.py
+      - name: Save evidence
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
+        with:
+          name: igor-verification
+          path: |
+            evidence/cocotb_*.xml
+            verification/*results.json
+            verification/*coverage.json
+            robot/jetauto/offline_verification.json
+          if-no-files-found: error

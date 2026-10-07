@@ -1,0 +1,10 @@
+VCD info: dumpfile waveform/igor_top.vcd opened for output.
+SCENE 0 index=496 score=3392 enable=1 latency=7938 candidate_checks=512
+SCENE 1 index=0 score=0 enable=0 latency=7938 candidate_checks=512
+SCENE 2 index=0 score=0 enable=0 latency=7938 candidate_checks=512
+SCENE 3 index=450 score=13591 enable=1 latency=7938 candidate_checks=512
+SCENE 4 index=496 score=3392 enable=1 latency=7938 candidate_checks=512
+SCENE 5 index=436 score=9436 enable=1 latency=7938 candidate_checks=512
+CHECKS=12399 ERRORS=0
+TEST PASSED
+C:\Users\William Anthony\Documents\Codex\2026-09-30\files-mentioned-by-the-user-draft\outputs\IGOR_DE10_NANO\tb\igor_top_tb.v:147: $finish called at 10007971000 (1ps)

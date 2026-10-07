@@ -1,0 +1,21 @@
+{
+  "igor_best_candidate_selector.v": "ece9eb3d48a11febbe502d313cc1f48d2c4edc42ec3a32fe58b3d382bdf54ba7",
+  "igor_candidate_generator.v": "06516bb38b54db2ef305a9f79188b07e0230c6761f56bb97e23f4a67d9b78dce",
+  "igor_config_registers.v": "6d9f039702d49957edbf11b2e3d56a06e5f629bbf47222a54e97b2bb36a4a1a6",
+  "igor_costmap_bank.v": "08432c9dc6e35f9d1092abd8eab475192d004b8ea96f606ef9fe5b36c6397ac8",
+  "igor_costmap_manager.v": "315ef94c25947a587bd01c5b569733ff0a5c4b6927007e97cb0522c82f5244dd",
+  "igor_de10_nano_wrapper.v": "8757c000d2578aa63ebe524bafc816dcc9a9d68750903753c29fd078c1d2bc35",
+  "igor_kinematic_step.v": "1b850ad2f420ada928e44bd635c6130f9867d31d077658d6cbe225437610e3a8",
+  "igor_neural_core.v": "90cfafbd2ce60cef8118e2d74c8be9f33ebf988f28c03eaa1990f187aa5f4445",
+  "igor_neural_rom.v": "4bed1d98c76b0b071eeef30bc016cfb06e4c47fffc240872b2200d3788c0a418",
+  "igor_rollout_tile.v": "cf32d383303e445be01d0d85353fd6f5fc62cce37de1b61e58c87c1d6c4257a7",
+  "igor_safety_security_gate.v": "6aa5369fe2c29005a8fa9d6b30563fa1b2c7825a0ba1e9f9084b409d26e3c316",
+  "igor_score_accumulator.v": "8b649cb5cc7da5f1b663b381d22be15727ccd2984c8c7b7fdcfcf9fc3c18f562",
+  "igor_status_logger.v": "df51f538fa6a66832d19c4cf038a386af7d7f0ae20ab17f99b579755021d0ec0",
+  "igor_top.v": "607188d33ad8fef8211017affe5c6fbb5c43bda2a8676fb3ea0971a69074f768",
+  "igor_trig_lut.v": "a7a0efad622407fefb26b285e5dcdb35baefed6a550f6ce98b1b65d84f60b7f5",
+  "igor_uart_protocol.v": "76c350bc364767fd6ca9ee7c63f806749145779044cf1db14929c3ff6eff137a",
+  "igor_uart_rx.v": "c03c8ec8c50ec822aceb743b73f62f907926402716ec8c68b4c0776290450b4e",
+  "igor_uart_top.v": "c233e66c3c8596ff997d137863bc7863bb57d8d8fb8093f31f515ea88b00117c",
+  "igor_uart_tx.v": "2c60e05dc1815857832d4ddb09e4b8b16b53a18706f11b377ec6ed1d195cb0d0"
+}

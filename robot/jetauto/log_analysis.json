@@ -1,0 +1,12 @@
+{
+  "host_frames_checked": 2791,
+  "host_frame_validation": "PASS",
+  "receive_valid_frames": 4306,
+  "receive_invalid_crc_candidates": 0,
+  "receive_function_counts": {
+    "8": 4111,
+    "0": 195
+  },
+  "motor_function_rx_frames": 0,
+  "interpretation": "Host writes and valid framing verified. Physical outcomes must be read per run, including the partial four-speed result. No motor ACK or encoder feedback is defined in this SDK."
+}

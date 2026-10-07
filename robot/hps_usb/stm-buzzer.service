@@ -1,0 +1,13 @@
+[Unit]
+Description=STM USB RRC buzzer bring-up on DE10-Nano HPS
+After=multi-user.target
+
+[Service]
+Type=oneshot
+EnvironmentFile=/etc/stm-usb.env
+ExecStart=/usr/bin/python3 /opt/stm-usb/bringup_usb.py --port ${STM_PORT} --buzzer
+TimeoutStartSec=15
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target

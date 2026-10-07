@@ -1,0 +1,27 @@
+[
+  {
+    "fault": "truncated",
+    "permit": 0,
+    "status": "PASS"
+  },
+  {
+    "fault": "nonsequential",
+    "permit": 0,
+    "status": "PASS"
+  },
+  {
+    "fault": "replay",
+    "permit": 0,
+    "status": "PASS"
+  },
+  {
+    "fault": "write_after_lock",
+    "permit": 0,
+    "status": "PASS"
+  },
+  {
+    "fault": "unknown_map",
+    "permit": 0,
+    "status": "PASS"
+  }
+]

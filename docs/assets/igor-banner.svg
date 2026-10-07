@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="350" viewBox="0 0 1200 350" role="img" aria-labelledby="title desc">
+  <title id="title">IGOR FPGA local planner</title>
+  <desc id="desc">Four parallel evaluators, 158.76 microsecond simulated DWA kernel, 400 exact neural outputs, and two compiled FPGA targets.</desc>
+  <rect width="1200" height="350" rx="20" fill="#0b1220"/>
+  <path d="M825 0v350M900 0v350M975 0v350M1050 0v350M1125 0v350M750 75h450M750 150h450M750 225h450M750 300h450" stroke="#17283d" stroke-width="1"/>
+  <rect x="46" y="33" width="236" height="26" rx="13" fill="#152c37"/>
+  <text x="164" y="51" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" letter-spacing="1.4" fill="#7de3d0">ISEEDESIGNITB · PERURI 2026</text>
+  <text x="44" y="139" font-family="Arial, sans-serif" font-size="76" font-weight="700" letter-spacing="3" fill="#f8fafc">IGOR</text>
+  <text x="48" y="180" font-family="Arial, sans-serif" font-size="22" fill="#c6d5e5">Four-tile FPGA planning. Inspectable decisions.</text>
+  <text x="48" y="209" font-family="Arial, sans-serif" font-size="15" fill="#8ba5bd">RTL · Integer neural inference · Safety gate · TinyTapeout prototype</text>
+  <g font-family="Arial, sans-serif">
+    <rect x="48" y="246" width="249" height="72" rx="12" fill="#132136" stroke="#253a51"/>
+    <text x="67" y="275" font-size="25" font-weight="700" fill="#6de0c8">158.76 µs</text><text x="67" y="299" font-size="13" fill="#b9cadb">DWA kernel · simulation at 50 MHz</text>
+    <rect x="312" y="246" width="249" height="72" rx="12" fill="#132136" stroke="#253a51"/>
+    <text x="331" y="275" font-size="25" font-weight="700" fill="#f8fafc">512 × 20</text><text x="331" y="299" font-size="13" fill="#b9cadb">Candidates × poses per run</text>
+    <rect x="576" y="246" width="249" height="72" rx="12" fill="#132136" stroke="#253a51"/>
+    <text x="595" y="275" font-size="25" font-weight="700" fill="#f8fafc">400 / 400</text><text x="595" y="299" font-size="13" fill="#b9cadb">Exact neural outputs · 100 vectors</text>
+    <rect x="840" y="246" width="312" height="72" rx="12" fill="#132136" stroke="#253a51"/>
+    <text x="859" y="275" font-size="25" font-weight="700" fill="#f8fafc">Nano + Lite</text><text x="859" y="299" font-size="13" fill="#b9cadb">Separate compiled FPGA targets</text>
+  </g>
+  <g fill="#1b3548" stroke="#72e0cc" stroke-width="2">
+    <rect x="928" y="57" width="156" height="139" rx="13"/>
+    <rect x="945" y="74" width="57" height="45" rx="5"/><rect x="1010" y="74" width="57" height="45" rx="5"/>
+    <rect x="945" y="127" width="57" height="45" rx="5"/><rect x="1010" y="127" width="57" height="45" rx="5"/>
+    <path d="M940 43v14m22-14v14m22-14v14m22-14v14m22-14v14m22-14v14m22-14v14M940 196v14m22-14v14m22-14v14m22-14v14m22-14v14m22-14v14m22-14v14M914 70h14m-14 22h14m-14 22h14m-14 22h14m-14 22h14m-14 22h14M1084 70h14m-14 22h14m-14 22h14m-14 22h14m-14 22h14m-14 22h14"/>
+  </g>
+  <text x="1006" y="188" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#a4d8d0">FOUR PARALLEL TILES</text>
+</svg>

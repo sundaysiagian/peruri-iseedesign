@@ -1,0 +1,2 @@
+PASS: boot STOP, buzzer, disarmed rejection, repeated motor frames, bounded deadline, arm-clear STOP, held-button suppression
+tb\tb_control.v:42: $finish called at 16672500000 (1ps)

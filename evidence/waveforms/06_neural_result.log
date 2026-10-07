@@ -1,0 +1,7 @@
+GTK_VERSION VCD
+LOADED outputs/BUKTI_SIMULASI_GTKWAVE/igor_neural_first_inference.vcd
+ADDED 8 igor_neural_tb.start igor_neural_tb.busy igor_neural_tb.done igor_neural_tb.fault {igor_neural_tb.cycles[31:0]} {igor_neural_tb.oi[1:0]} {igor_neural_tb.output_value[15:0]} {igor_neural_tb.error_count[31:0]}
+DECIMAL_COMMANDS ::gtkwave::/Edit/Data_Format/Signed_Decimal ::gtkwave::/Edit/Data_Format/Decimal
+CONFIGURED 06_neural_result
+SCREENSHOT 06_neural_result
+Exiting.

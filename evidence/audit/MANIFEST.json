@@ -1,0 +1,289 @@
+{
+  "audit_date": "2026-10-06",
+  "files": {
+    "Audit_Bukti_RTL_dan_Klaim_IGOR.docx": {
+      "bytes": 50862,
+      "sha256": "d6a95c05bb30d016790a6b03344aeaa5b3c84e1f0058fb2157b03e392475f3f4"
+    },
+    "fault_result_excerpt.csv": {
+      "bytes": 367,
+      "sha256": "421aa83c19a95b59f1e47e3fdcc19cd089f0bef58a3df20f76c2a4200830fd7a"
+    },
+    "fault_status.csv": {
+      "bytes": 1387,
+      "sha256": "59bb40458701c16e044ab4d80a6ee33e82154e5bb43d1c453a84024b96c698f1"
+    },
+    "igor_top_audit_tb.v": {
+      "bytes": 14793,
+      "sha256": "dea3fad90d59d4355aef3b326c46a99569b83036b780678f0f90012aefd45ec7"
+    },
+    "igor_uart_crc_audit_tb.v": {
+      "bytes": 3643,
+      "sha256": "bc84a1ff4abe947934a23e8a9321f518c8203734517debbae28fb1137c3e1e91"
+    },
+    "jtag_probe.log": {
+      "bytes": 1666,
+      "sha256": "b41d563548e06534f160c38e935118e35a7b0052fcbd8dde7e1167b9246d1a40"
+    },
+    "README.md": {
+      "bytes": 741,
+      "sha256": "851fc1959158d6d745f45878670e3f5e8b4bcc8ab65cdf77428d5c74e71f6921"
+    },
+    "RTL_SHA256.json": {
+      "bytes": 1806,
+      "sha256": "9e07660a8ddd38fb80cac1f016871a0aafd8b6f1a45f9f312bf8b6149252123b"
+    },
+    "scene_latency.csv": {
+      "bytes": 193,
+      "sha256": "71f7b579db4c264fc364bfeba14779cbabcbb612b105284d3ab53295a07c1225"
+    },
+    "test_summary.csv": {
+      "bytes": 662885,
+      "sha256": "38e5500d9084d88b7c837628087c18d5d884c7c4097f024529edf8ff2204713c"
+    },
+    "top_audit.log": {
+      "bytes": 620,
+      "sha256": "972ce5154f4ad4e1c77763b93bc2549a7609e7148e37b255cb7cb847d64cdf35"
+    },
+    "uart_audit.log": {
+      "bytes": 122,
+      "sha256": "bc229c7c467cf8a1f75d9cf114e3b75fbcb283203dcaae7cc319c7424d5c976a"
+    },
+    "power/igor.fit.summary": {
+      "bytes": 703,
+      "sha256": "b1a4478a2f92f673e91d45a1f2c9bb440fdebfe3a25592fdbad04b2fe7667ad2"
+    },
+    "power/igor.pow.rpt": {
+      "bytes": 54967,
+      "sha256": "088503213cb4d781688020d05da86d12d7079db2a3be80a78a34ea5d615a9a92"
+    },
+    "power/igor.pow.summary": {
+      "bytes": 535,
+      "sha256": "982ac019ec655d51f410b260ba8e8bd9165f76ea48ecc15fd672dc8f97e26796"
+    },
+    "power/igor.qsf": {
+      "bytes": 1924,
+      "sha256": "9b90c1e4fb023e4deb785967b1f942524fe8889f29f291759b0e9e26964a57ab"
+    },
+    "power/igor.sdc": {
+      "bytes": 940,
+      "sha256": "988edb01791e9504770b4066b0cec815e4149665bddda7e557fc68352cdcd372"
+    },
+    "power/igor.sta.summary": {
+      "bytes": 1991,
+      "sha256": "828efd5dd0d9f54b3b0734a27f6703fff600ec423bb3d12470f19a6dd6c190bb"
+    },
+    "power/power_vectorless.log": {
+      "bytes": 3045,
+      "sha256": "7d6dec416aa39d32626c46f6fb8132bf695bcbeaa459bdb086f97ac71249d085"
+    },
+    "power/rebuild.log": {
+      "bytes": 45887,
+      "sha256": "ea392abf21095c6b8c8d5b3ec0e6a38deeb0d60d32a837e0c26a50ab19284a5c"
+    },
+    "reproduction/Run-Audit.ps1": {
+      "bytes": 825,
+      "sha256": "a76728652d32e15f6fcd5e952f6c3026359b3b3243c9d18e17ce7ebfa9012a81"
+    },
+    "reproduction/rtl/igor_best_candidate_selector.v": {
+      "bytes": 1430,
+      "sha256": "ece9eb3d48a11febbe502d313cc1f48d2c4edc42ec3a32fe58b3d382bdf54ba7"
+    },
+    "reproduction/rtl/igor_candidate_generator.v": {
+      "bytes": 835,
+      "sha256": "06516bb38b54db2ef305a9f79188b07e0230c6761f56bb97e23f4a67d9b78dce"
+    },
+    "reproduction/rtl/igor_config_registers.v": {
+      "bytes": 882,
+      "sha256": "6d9f039702d49957edbf11b2e3d56a06e5f629bbf47222a54e97b2bb36a4a1a6"
+    },
+    "reproduction/rtl/igor_costmap_bank.v": {
+      "bytes": 438,
+      "sha256": "08432c9dc6e35f9d1092abd8eab475192d004b8ea96f606ef9fe5b36c6397ac8"
+    },
+    "reproduction/rtl/igor_costmap_manager.v": {
+      "bytes": 1750,
+      "sha256": "315ef94c25947a587bd01c5b569733ff0a5c4b6927007e97cb0522c82f5244dd"
+    },
+    "reproduction/rtl/igor_de10_nano_wrapper.v": {
+      "bytes": 2156,
+      "sha256": "8757c000d2578aa63ebe524bafc816dcc9a9d68750903753c29fd078c1d2bc35"
+    },
+    "reproduction/rtl/igor_kinematic_step.v": {
+      "bytes": 1000,
+      "sha256": "1b850ad2f420ada928e44bd635c6130f9867d31d077658d6cbe225437610e3a8"
+    },
+    "reproduction/rtl/igor_neural_core.v": {
+      "bytes": 2876,
+      "sha256": "90cfafbd2ce60cef8118e2d74c8be9f33ebf988f28c03eaa1990f187aa5f4445"
+    },
+    "reproduction/rtl/igor_neural_rom.v": {
+      "bytes": 552,
+      "sha256": "4bed1d98c76b0b071eeef30bc016cfb06e4c47fffc240872b2200d3788c0a418"
+    },
+    "reproduction/rtl/igor_rollout_tile.v": {
+      "bytes": 3160,
+      "sha256": "cf32d383303e445be01d0d85353fd6f5fc62cce37de1b61e58c87c1d6c4257a7"
+    },
+    "reproduction/rtl/igor_safety_security_gate.v": {
+      "bytes": 1521,
+      "sha256": "6aa5369fe2c29005a8fa9d6b30563fa1b2c7825a0ba1e9f9084b409d26e3c316"
+    },
+    "reproduction/rtl/igor_score_accumulator.v": {
+      "bytes": 346,
+      "sha256": "8b649cb5cc7da5f1b663b381d22be15727ccd2984c8c7b7fdcfcf9fc3c18f562"
+    },
+    "reproduction/rtl/igor_status_logger.v": {
+      "bytes": 609,
+      "sha256": "df51f538fa6a66832d19c4cf038a386af7d7f0ae20ab17f99b579755021d0ec0"
+    },
+    "reproduction/rtl/igor_top.v": {
+      "bytes": 4470,
+      "sha256": "607188d33ad8fef8211017affe5c6fbb5c43bda2a8676fb3ea0971a69074f768"
+    },
+    "reproduction/rtl/igor_trig_lut.v": {
+      "bytes": 7081,
+      "sha256": "a7a0efad622407fefb26b285e5dcdb35baefed6a550f6ce98b1b65d84f60b7f5"
+    },
+    "reproduction/rtl/igor_uart_protocol.v": {
+      "bytes": 2844,
+      "sha256": "76c350bc364767fd6ca9ee7c63f806749145779044cf1db14929c3ff6eff137a"
+    },
+    "reproduction/rtl/igor_uart_rx.v": {
+      "bytes": 1137,
+      "sha256": "c03c8ec8c50ec822aceb743b73f62f907926402716ec8c68b4c0776290450b4e"
+    },
+    "reproduction/rtl/igor_uart_top.v": {
+      "bytes": 2550,
+      "sha256": "c233e66c3c8596ff997d137863bc7863bb57d8d8fb8093f31f515ea88b00117c"
+    },
+    "reproduction/rtl/igor_uart_tx.v": {
+      "bytes": 753,
+      "sha256": "2c60e05dc1815857832d4ddb09e4b8b16b53a18706f11b377ec6ed1d195cb0d0"
+    },
+    "reproduction/tb/igor_neural_tb.v": {
+      "bytes": 1713,
+      "sha256": "ffd91e5df127eda82487cece3601e1180a20bb32e243d97b02472f41d74bd259"
+    },
+    "reproduction/tb/igor_top_tb.v": {
+      "bytes": 14793,
+      "sha256": "dea3fad90d59d4355aef3b326c46a99569b83036b780678f0f90012aefd45ec7"
+    },
+    "reproduction/tb/igor_uart_full_map_tb.v": {
+      "bytes": 3643,
+      "sha256": "bc84a1ff4abe947934a23e8a9321f518c8203734517debbae28fb1137c3e1e91"
+    },
+    "reproduction/tb/igor_uart_tb.v": {
+      "bytes": 3176,
+      "sha256": "2fffad2938bd309d9f1648b84a5b6648f107453c5f8398e08789b308cc9e8cb9"
+    },
+    "reproduction/tb/igor_units_tb.v": {
+      "bytes": 2741,
+      "sha256": "941650cd5d3c7da2c6ad8f05b4836843d183a65d2eab47be89de56d767d1480b"
+    },
+    "reproduction/tb/igor_wrapper_tb.v": {
+      "bytes": 1393,
+      "sha256": "b979c5833ffdec5a89bd937f246a8ed8713012f8e4c6ab732cec65a90b31d0fb"
+    },
+    "reproduction/assets/neural_24_64_64_4/bram_b1.mem": {
+      "bytes": 386,
+      "sha256": "8d64c335ab813a9699c91e5cce6a738e7fb8a5439687f9945f014f48f461cdd8"
+    },
+    "reproduction/assets/neural_24_64_64_4/bram_b2.mem": {
+      "bytes": 386,
+      "sha256": "0cab6f999d6b0c2a1799197b33f1f3239ca515eba167dffd4b2ae35e30778667"
+    },
+    "reproduction/assets/neural_24_64_64_4/bram_b3.mem": {
+      "bytes": 84,
+      "sha256": "8252250b53d63f495ba2aee85e84b0b02604388c1086ff11e35294216f1bd451"
+    },
+    "reproduction/assets/neural_24_64_64_4/bram_unified_weights.mem": {
+      "bytes": 30182,
+      "sha256": "e63854e8dd87aaf99bf96b418a623af917ad0ef1d0eef71b66300eb1a4bd4c89"
+    },
+    "reproduction/assets/neural_24_64_64_4/bram_unified_weights_padded.mem": {
+      "bytes": 49152,
+      "sha256": "445ec098ee5e46c1fd30cd1f3ea6a32dcbd5770fa723b13a82f5b8ddbc06d82f"
+    },
+    "reproduction/assets/neural_24_64_64_4/bram_w1.mem": {
+      "bytes": 7752,
+      "sha256": "82d7c0d1e8d2f98987e25a1a0940dee4a28cb89c8790e24d7ccae47fe50cd2a9"
+    },
+    "reproduction/assets/neural_24_64_64_4/bram_w2.mem": {
+      "bytes": 20552,
+      "sha256": "80cc4dc5f9158cb44567ee54b99efcc65356b66512ea8d76ce3681b1c64d987e"
+    },
+    "reproduction/assets/neural_24_64_64_4/bram_w3.mem": {
+      "bytes": 1350,
+      "sha256": "faf2f5f352737b4c81fd2da3d2384f4291e7d904ec9f67865efda501ade62ad9"
+    },
+    "reproduction/assets/neural_24_64_64_4/test_inputs.mem": {
+      "bytes": 12000,
+      "sha256": "4772a1549583d440b9ed0059470f0c816c0df49eb1a7be364665de7df1625aed"
+    },
+    "reproduction/assets/neural_24_64_64_4/test_outputs.mem": {
+      "bytes": 2000,
+      "sha256": "245405e4764b85de94c5ef9cb70d00a4115b7b0fe20d070e286fa1e41540ea2b"
+    },
+    "reproduction/assets/neural_24_64_64_4/weights_q8_8.h": {
+      "bytes": 27599,
+      "sha256": "3936101aad3a64257e7c6cce62c0d3de47d7366185f72826cbd2f0ea209d0ef2"
+    },
+    "reproduction/tb/test_vectors/best.json": {
+      "bytes": 882,
+      "sha256": "33a20e9be3fb16d478a8c157075d282c19d5e09530e4677378a59aedb2560c07"
+    },
+    "reproduction/tb/test_vectors/expected_0.hex": {
+      "bytes": 17920,
+      "sha256": "1d3282af954cfbe06fbe8ad327c8af8c7ff4af59138674268d3995666452cafb"
+    },
+    "reproduction/tb/test_vectors/expected_1.hex": {
+      "bytes": 17920,
+      "sha256": "f86e4719ef0a4c4c81d05ba40dca7c69e9c2a4b98dcd59ce0f787a3803b06026"
+    },
+    "reproduction/tb/test_vectors/expected_2.hex": {
+      "bytes": 17920,
+      "sha256": "cb767993a6920474050ffa9a3024cda7c1854c232a5dda12746e8929a2c48a2d"
+    },
+    "reproduction/tb/test_vectors/expected_3.hex": {
+      "bytes": 17920,
+      "sha256": "2d3b863607103b71c0ed0797e8482b8ee5bb261e3be13115ce183ed84d5558e9"
+    },
+    "reproduction/tb/test_vectors/expected_4.hex": {
+      "bytes": 17920,
+      "sha256": "26161cf72e668137f7ec852cc4201af474948d0afdc5b593f46aceec3c941a12"
+    },
+    "reproduction/tb/test_vectors/expected_5.hex": {
+      "bytes": 17920,
+      "sha256": "d05c95947344efd0e51d91a8cbdf91a1433e756461f92f4db8ecf650885761e4"
+    },
+    "reproduction/tb/test_vectors/map_0.hex": {
+      "bytes": 65536,
+      "sha256": "4f1e9f974df4ff5ea2267ef4cfa828e0f36dd3db3ffdfc1361df726426e6485b"
+    },
+    "reproduction/tb/test_vectors/map_1.hex": {
+      "bytes": 65536,
+      "sha256": "b1f93ca59520f06e60f4d80572a9cd7ef21064aa683c7f0ab737509dcceed50c"
+    },
+    "reproduction/tb/test_vectors/map_2.hex": {
+      "bytes": 65536,
+      "sha256": "896a2eeaf8d3f0f570d3d32b3e6f5cc367708e05ec891d1da2c9ee7bf55ed23d"
+    },
+    "reproduction/tb/test_vectors/map_3.hex": {
+      "bytes": 65536,
+      "sha256": "9d95750799f220d87de007f232ff7a5d84c2110d488994d9cbd7fa10d30939b5"
+    },
+    "reproduction/tb/test_vectors/map_4.hex": {
+      "bytes": 65536,
+      "sha256": "1040f4d6f1c1930a2f28514d04c221c85b4facd917a9125948f896924e895da6"
+    },
+    "reproduction/tb/test_vectors/map_5.hex": {
+      "bytes": 65536,
+      "sha256": "e04bf1b917d96384df333dffcf60dfd75797d66d976362ff633394577a9caed3"
+    },
+    "reproduction/tb/test_vectors/neural_expected.hex": {
+      "bytes": 2400,
+      "sha256": "d4fd5e31c6fcd6421e447e0262d481a3be1de1e810e093b4e1b46692e1a2bdb4"
+    }
+  }
+}

@@ -1,0 +1,3 @@
+VCD info: dumpfile stm_uart.vcd opened for output.
+PASS: 94 UART bytes match SDK, all four commands, 1 Mbps 8N1
+tb/tb_packet.v:121: $finish called at 940400000 (1ps)

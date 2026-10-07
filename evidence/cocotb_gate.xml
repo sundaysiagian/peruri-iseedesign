@@ -1,0 +1,6 @@
+<testsuites name="results">
+  <testsuite name="all" package="all">
+    <property name="random_seed" value="1791354897" />
+    <testcase name="gate_truth_table_and_boundaries" classname="test_gate" file="C:\Users\William Anthony\Documents\Codex\2026-09-30\files-mentioned-by-the-user-draft\outputs\peruri-iseedesign\verification\test_gate.py" lineno="11" time="5.098708629608154" sim_time_ns="13078.001" ratio_time="2564.963395644177" />
+  </testsuite>
+</testsuites>

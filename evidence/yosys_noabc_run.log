@@ -1,0 +1,1087 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.69 (git sha1 9f75ca1f9, Release, Clang /workspace/YoWASP/yosys/wasi-sdk-33.0-x86_64-linux/share/cmake/../..//bin/clang++ 22.1.0)
+
+-- Running command `read_verilog src/project.v src/igor_safety_security_gate.v; synth -top tt_um_wlmoi_igor_gate -flatten -noabc; check; stat; write_json evidence/asic_generic_netlist.json; write_verilog -noattr evidence/asic_generic_netlist.v' --
+
+1. Executing Verilog-2005 frontend: src/project.v
+Parsing Verilog input from `src/project.v' to AST representation.
+Generating RTLIL representation for module `\tt_um_wlmoi_igor_gate'.
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend: src/igor_safety_security_gate.v
+Parsing Verilog input from `src/igor_safety_security_gate.v' to AST representation.
+Generating RTLIL representation for module `\igor_safety_security_gate'.
+Successfully finished Verilog frontend.
+
+3. Executing SYNTH pass.
+
+3.1. Executing HIERARCHY pass (managing design hierarchy).
+
+3.1.1. Analyzing design hierarchy..
+Top module:  \tt_um_wlmoi_igor_gate
+Used module:     \igor_safety_security_gate
+
+3.1.2. Analyzing design hierarchy..
+Top module:  \tt_um_wlmoi_igor_gate
+Used module:     \igor_safety_security_gate
+Removed 0 unused modules.
+Mapping positional arguments of cell tt_um_wlmoi_igor_gate.gate (igor_safety_security_gate).
+
+3.2. Executing PROC pass (convert processes to netlists).
+
+3.2.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+3.2.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 11 switch rules as full_case in process $proc$src/igor_safety_security_gate.v:18$15 in module igor_safety_security_gate.
+Marked 1 switch rules as full_case in process $proc$src/project.v:35$5 in module tt_um_wlmoi_igor_gate.
+Marked 1 switch rules as full_case in process $proc$src/project.v:16$1 in module tt_um_wlmoi_igor_gate.
+Removed a total of 0 dead cases.
+
+3.2.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 0 redundant assignments.
+Promoted 5 assignments to connections.
+
+3.2.4. Executing PROC_INIT pass (extract init attributes).
+
+3.2.5. Executing PROC_ARST pass (detect async resets in processes).
+
+3.2.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~15 debug messages>
+
+3.2.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\igor_safety_security_gate.$proc$src/igor_safety_security_gate.v:18$15'.
+     1/44: $11\fault_code[7:0]
+     2/44: $11\omega_command[6:0]
+     3/44: $11\v_command[4:0]
+     4/44: $11\motor_enable[0:0]
+     5/44: $10\fault_code[7:0]
+     6/44: $10\omega_command[6:0]
+     7/44: $10\v_command[4:0]
+     8/44: $10\motor_enable[0:0]
+     9/44: $9\fault_code[7:0]
+    10/44: $9\omega_command[6:0]
+    11/44: $9\v_command[4:0]
+    12/44: $9\motor_enable[0:0]
+    13/44: $8\fault_code[7:0]
+    14/44: $8\omega_command[6:0]
+    15/44: $8\v_command[4:0]
+    16/44: $8\motor_enable[0:0]
+    17/44: $7\fault_code[7:0]
+    18/44: $7\omega_command[6:0]
+    19/44: $7\v_command[4:0]
+    20/44: $7\motor_enable[0:0]
+    21/44: $6\fault_code[7:0]
+    22/44: $6\omega_command[6:0]
+    23/44: $6\v_command[4:0]
+    24/44: $6\motor_enable[0:0]
+    25/44: $5\fault_code[7:0]
+    26/44: $5\omega_command[6:0]
+    27/44: $5\v_command[4:0]
+    28/44: $5\motor_enable[0:0]
+    29/44: $4\fault_code[7:0]
+    30/44: $4\omega_command[6:0]
+    31/44: $4\v_command[4:0]
+    32/44: $4\motor_enable[0:0]
+    33/44: $3\fault_code[7:0]
+    34/44: $3\omega_command[6:0]
+    35/44: $3\v_command[4:0]
+    36/44: $3\motor_enable[0:0]
+    37/44: $2\fault_code[7:0]
+    38/44: $2\omega_command[6:0]
+    39/44: $2\v_command[4:0]
+    40/44: $2\motor_enable[0:0]
+    41/44: $1\fault_code[7:0]
+    42/44: $1\omega_command[6:0]
+    43/44: $1\v_command[4:0]
+    44/44: $1\motor_enable[0:0]
+Creating decoders for process `\tt_um_wlmoi_igor_gate.$proc$src/project.v:35$5'.
+     1/1: $1\uo_out[7:0]
+Creating decoders for process `\tt_um_wlmoi_igor_gate.$proc$src/project.v:16$1'.
+     1/10: $0\max_dw[6:0]
+     2/10: $0\max_w[6:0]
+     3/10: $0\previous_w[6:0]
+     4/10: $0\candidate_w[6:0]
+     5/10: $0\max_dv[4:0]
+     6/10: $0\max_v[4:0]
+     7/10: $0\previous_v[4:0]
+     8/10: $0\candidate_v[4:0]
+     9/10: $0\timeout[0:0]
+    10/10: $0\flags[7:0]
+
+3.2.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `\igor_safety_security_gate.\motor_enable' from process `\igor_safety_security_gate.$proc$src/igor_safety_security_gate.v:18$15'.
+No latch inferred for signal `\igor_safety_security_gate.\v_command' from process `\igor_safety_security_gate.$proc$src/igor_safety_security_gate.v:18$15'.
+No latch inferred for signal `\igor_safety_security_gate.\omega_command' from process `\igor_safety_security_gate.$proc$src/igor_safety_security_gate.v:18$15'.
+No latch inferred for signal `\igor_safety_security_gate.\fault_code' from process `\igor_safety_security_gate.$proc$src/igor_safety_security_gate.v:18$15'.
+No latch inferred for signal `\tt_um_wlmoi_igor_gate.\uo_out' from process `\tt_um_wlmoi_igor_gate.$proc$src/project.v:35$5'.
+
+3.2.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\tt_um_wlmoi_igor_gate.\flags' using process `\tt_um_wlmoi_igor_gate.$proc$src/project.v:16$1'.
+  created $dff cell `$procdff$943' with positive edge clock.
+Creating register for signal `\tt_um_wlmoi_igor_gate.\timeout' using process `\tt_um_wlmoi_igor_gate.$proc$src/project.v:16$1'.
+  created $dff cell `$procdff$944' with positive edge clock.
+Creating register for signal `\tt_um_wlmoi_igor_gate.\candidate_v' using process `\tt_um_wlmoi_igor_gate.$proc$src/project.v:16$1'.
+  created $dff cell `$procdff$945' with positive edge clock.
+Creating register for signal `\tt_um_wlmoi_igor_gate.\previous_v' using process `\tt_um_wlmoi_igor_gate.$proc$src/project.v:16$1'.
+  created $dff cell `$procdff$946' with positive edge clock.
+Creating register for signal `\tt_um_wlmoi_igor_gate.\max_v' using process `\tt_um_wlmoi_igor_gate.$proc$src/project.v:16$1'.
+  created $dff cell `$procdff$947' with positive edge clock.
+Creating register for signal `\tt_um_wlmoi_igor_gate.\max_dv' using process `\tt_um_wlmoi_igor_gate.$proc$src/project.v:16$1'.
+  created $dff cell `$procdff$948' with positive edge clock.
+Creating register for signal `\tt_um_wlmoi_igor_gate.\candidate_w' using process `\tt_um_wlmoi_igor_gate.$proc$src/project.v:16$1'.
+  created $dff cell `$procdff$949' with positive edge clock.
+Creating register for signal `\tt_um_wlmoi_igor_gate.\previous_w' using process `\tt_um_wlmoi_igor_gate.$proc$src/project.v:16$1'.
+  created $dff cell `$procdff$950' with positive edge clock.
+Creating register for signal `\tt_um_wlmoi_igor_gate.\max_w' using process `\tt_um_wlmoi_igor_gate.$proc$src/project.v:16$1'.
+  created $dff cell `$procdff$951' with positive edge clock.
+Creating register for signal `\tt_um_wlmoi_igor_gate.\max_dw' using process `\tt_um_wlmoi_igor_gate.$proc$src/project.v:16$1'.
+  created $dff cell `$procdff$952' with positive edge clock.
+
+3.2.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+3.2.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 11 empty switches in `\igor_safety_security_gate.$proc$src/igor_safety_security_gate.v:18$15'.
+Removing empty process `igor_safety_security_gate.$proc$src/igor_safety_security_gate.v:18$15'.
+Found and cleaned up 1 empty switch in `\tt_um_wlmoi_igor_gate.$proc$src/project.v:35$5'.
+Removing empty process `tt_um_wlmoi_igor_gate.$proc$src/project.v:35$5'.
+Found and cleaned up 3 empty switches in `\tt_um_wlmoi_igor_gate.$proc$src/project.v:16$1'.
+Removing empty process `tt_um_wlmoi_igor_gate.$proc$src/project.v:16$1'.
+Cleaned up 15 empty switches.
+
+3.2.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module igor_safety_security_gate.
+<suppressed ~128 debug messages>
+Optimizing module tt_um_wlmoi_igor_gate.
+<suppressed ~12 debug messages>
+
+3.3. Executing CHECK pass (checking for obvious problems).
+Checking module igor_safety_security_gate...
+Checking module tt_um_wlmoi_igor_gate...
+Found and reported 0 problems.
+
+3.4. Executing FLATTEN pass (flatten design).
+Deleting now unused module igor_safety_security_gate.
+<suppressed ~1 debug messages>
+
+3.5. Executing OPT_EXPR pass (perform const folding).
+Optimizing module tt_um_wlmoi_igor_gate.
+
+3.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \tt_um_wlmoi_igor_gate..
+Removed 5 unused cells and 359 unused wires.
+<suppressed ~6 debug messages>
+
+3.7. Executing CHECK pass (checking for obvious problems).
+Checking module tt_um_wlmoi_igor_gate...
+Found and reported 0 problems.
+
+3.8. Executing OPT pass (performing simple optimizations).
+
+3.8.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module tt_um_wlmoi_igor_gate.
+
+3.8.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\tt_um_wlmoi_igor_gate'.
+Computing hashes of 341 cells of `\tt_um_wlmoi_igor_gate'.
+Finding duplicate cells in `\tt_um_wlmoi_igor_gate'.
+Removed a total of 0 cells.
+
+3.8.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \tt_um_wlmoi_igor_gate..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+      Replacing known input bits on port A of cell $flatten\gate.$ternary$src/igor_safety_security_gate.v:16$10: \candidate_w -> { 1'0 \candidate_w [5:0] }
+      Replacing known input bits on port A of cell $flatten\gate.$ternary$src/igor_safety_security_gate.v:15$8: \gate.dw -> { 1'0 \gate.dw [6:0] }
+  Analyzing evaluation results.
+    dead port 1/2 on $mux $flatten\gate.$procmux$33.
+    dead port 1/2 on $mux $flatten\gate.$procmux$36.
+    dead port 1/2 on $mux $flatten\gate.$procmux$39.
+    dead port 1/2 on $mux $flatten\gate.$procmux$42.
+    dead port 2/2 on $mux $flatten\gate.$procmux$45.
+    dead port 2/2 on $mux $flatten\gate.$procmux$48.
+    dead port 2/2 on $mux $flatten\gate.$procmux$51.
+    dead port 1/2 on $mux $flatten\gate.$procmux$54.
+    dead port 1/2 on $mux $flatten\gate.$procmux$57.
+    dead port 2/2 on $mux $flatten\gate.$procmux$60.
+    dead port 1/2 on $mux $flatten\gate.$procmux$66.
+    dead port 1/2 on $mux $flatten\gate.$procmux$69.
+    dead port 1/2 on $mux $flatten\gate.$procmux$72.
+    dead port 1/2 on $mux $flatten\gate.$procmux$75.
+    dead port 2/2 on $mux $flatten\gate.$procmux$78.
+    dead port 2/2 on $mux $flatten\gate.$procmux$81.
+    dead port 2/2 on $mux $flatten\gate.$procmux$84.
+    dead port 1/2 on $mux $flatten\gate.$procmux$87.
+    dead port 1/2 on $mux $flatten\gate.$procmux$90.
+    dead port 2/2 on $mux $flatten\gate.$procmux$93.
+    dead port 1/2 on $mux $flatten\gate.$procmux$99.
+    dead port 1/2 on $mux $flatten\gate.$procmux$102.
+    dead port 1/2 on $mux $flatten\gate.$procmux$105.
+    dead port 1/2 on $mux $flatten\gate.$procmux$108.
+    dead port 2/2 on $mux $flatten\gate.$procmux$111.
+    dead port 2/2 on $mux $flatten\gate.$procmux$114.
+    dead port 2/2 on $mux $flatten\gate.$procmux$117.
+    dead port 1/2 on $mux $flatten\gate.$procmux$120.
+    dead port 1/2 on $mux $flatten\gate.$procmux$123.
+    dead port 2/2 on $mux $flatten\gate.$procmux$126.
+    dead port 1/2 on $mux $flatten\gate.$procmux$132.
+    dead port 1/2 on $mux $flatten\gate.$procmux$135.
+    dead port 1/2 on $mux $flatten\gate.$procmux$138.
+    dead port 1/2 on $mux $flatten\gate.$procmux$141.
+    dead port 2/2 on $mux $flatten\gate.$procmux$144.
+    dead port 2/2 on $mux $flatten\gate.$procmux$147.
+    dead port 2/2 on $mux $flatten\gate.$procmux$150.
+    dead port 1/2 on $mux $flatten\gate.$procmux$153.
+    dead port 1/2 on $mux $flatten\gate.$procmux$156.
+    dead port 2/2 on $mux $flatten\gate.$procmux$159.
+    dead port 1/2 on $mux $flatten\gate.$procmux$165.
+    dead port 1/2 on $mux $flatten\gate.$procmux$168.
+    dead port 1/2 on $mux $flatten\gate.$procmux$171.
+    dead port 2/2 on $mux $flatten\gate.$procmux$174.
+    dead port 2/2 on $mux $flatten\gate.$procmux$177.
+    dead port 2/2 on $mux $flatten\gate.$procmux$180.
+    dead port 1/2 on $mux $flatten\gate.$procmux$183.
+    dead port 1/2 on $mux $flatten\gate.$procmux$186.
+    dead port 2/2 on $mux $flatten\gate.$procmux$189.
+    dead port 1/2 on $mux $flatten\gate.$procmux$195.
+    dead port 1/2 on $mux $flatten\gate.$procmux$198.
+    dead port 1/2 on $mux $flatten\gate.$procmux$201.
+    dead port 2/2 on $mux $flatten\gate.$procmux$204.
+    dead port 2/2 on $mux $flatten\gate.$procmux$207.
+    dead port 2/2 on $mux $flatten\gate.$procmux$210.
+    dead port 1/2 on $mux $flatten\gate.$procmux$213.
+    dead port 1/2 on $mux $flatten\gate.$procmux$216.
+    dead port 2/2 on $mux $flatten\gate.$procmux$219.
+    dead port 1/2 on $mux $flatten\gate.$procmux$225.
+    dead port 1/2 on $mux $flatten\gate.$procmux$228.
+    dead port 1/2 on $mux $flatten\gate.$procmux$231.
+    dead port 2/2 on $mux $flatten\gate.$procmux$234.
+    dead port 2/2 on $mux $flatten\gate.$procmux$237.
+    dead port 2/2 on $mux $flatten\gate.$procmux$240.
+    dead port 1/2 on $mux $flatten\gate.$procmux$243.
+    dead port 1/2 on $mux $flatten\gate.$procmux$246.
+    dead port 2/2 on $mux $flatten\gate.$procmux$249.
+    dead port 1/2 on $mux $flatten\gate.$procmux$255.
+    dead port 1/2 on $mux $flatten\gate.$procmux$258.
+    dead port 1/2 on $mux $flatten\gate.$procmux$261.
+    dead port 2/2 on $mux $flatten\gate.$procmux$264.
+    dead port 2/2 on $mux $flatten\gate.$procmux$267.
+    dead port 2/2 on $mux $flatten\gate.$procmux$270.
+    dead port 1/2 on $mux $flatten\gate.$procmux$273.
+    dead port 1/2 on $mux $flatten\gate.$procmux$276.
+    dead port 2/2 on $mux $flatten\gate.$procmux$279.
+    dead port 1/2 on $mux $flatten\gate.$procmux$285.
+    dead port 1/2 on $mux $flatten\gate.$procmux$288.
+    dead port 2/2 on $mux $flatten\gate.$procmux$291.
+    dead port 2/2 on $mux $flatten\gate.$procmux$294.
+    dead port 2/2 on $mux $flatten\gate.$procmux$297.
+    dead port 1/2 on $mux $flatten\gate.$procmux$300.
+    dead port 1/2 on $mux $flatten\gate.$procmux$303.
+    dead port 2/2 on $mux $flatten\gate.$procmux$306.
+    dead port 1/2 on $mux $flatten\gate.$procmux$312.
+    dead port 1/2 on $mux $flatten\gate.$procmux$315.
+    dead port 2/2 on $mux $flatten\gate.$procmux$318.
+    dead port 2/2 on $mux $flatten\gate.$procmux$321.
+    dead port 2/2 on $mux $flatten\gate.$procmux$324.
+    dead port 1/2 on $mux $flatten\gate.$procmux$327.
+    dead port 1/2 on $mux $flatten\gate.$procmux$330.
+    dead port 2/2 on $mux $flatten\gate.$procmux$333.
+    dead port 1/2 on $mux $flatten\gate.$procmux$339.
+    dead port 1/2 on $mux $flatten\gate.$procmux$342.
+    dead port 2/2 on $mux $flatten\gate.$procmux$345.
+    dead port 2/2 on $mux $flatten\gate.$procmux$348.
+    dead port 2/2 on $mux $flatten\gate.$procmux$351.
+    dead port 1/2 on $mux $flatten\gate.$procmux$354.
+    dead port 1/2 on $mux $flatten\gate.$procmux$357.
+    dead port 2/2 on $mux $flatten\gate.$procmux$360.
+    dead port 1/2 on $mux $flatten\gate.$procmux$366.
+    dead port 1/2 on $mux $flatten\gate.$procmux$369.
+    dead port 2/2 on $mux $flatten\gate.$procmux$372.
+    dead port 2/2 on $mux $flatten\gate.$procmux$375.
+    dead port 2/2 on $mux $flatten\gate.$procmux$378.
+    dead port 1/2 on $mux $flatten\gate.$procmux$381.
+    dead port 1/2 on $mux $flatten\gate.$procmux$384.
+    dead port 2/2 on $mux $flatten\gate.$procmux$387.
+    dead port 1/2 on $mux $flatten\gate.$procmux$393.
+    dead port 2/2 on $mux $flatten\gate.$procmux$396.
+    dead port 2/2 on $mux $flatten\gate.$procmux$399.
+    dead port 2/2 on $mux $flatten\gate.$procmux$402.
+    dead port 1/2 on $mux $flatten\gate.$procmux$405.
+    dead port 1/2 on $mux $flatten\gate.$procmux$408.
+    dead port 2/2 on $mux $flatten\gate.$procmux$411.
+    dead port 1/2 on $mux $flatten\gate.$procmux$417.
+    dead port 2/2 on $mux $flatten\gate.$procmux$420.
+    dead port 2/2 on $mux $flatten\gate.$procmux$423.
+    dead port 2/2 on $mux $flatten\gate.$procmux$426.
+    dead port 1/2 on $mux $flatten\gate.$procmux$429.
+    dead port 1/2 on $mux $flatten\gate.$procmux$432.
+    dead port 2/2 on $mux $flatten\gate.$procmux$435.
+    dead port 1/2 on $mux $flatten\gate.$procmux$441.
+    dead port 2/2 on $mux $flatten\gate.$procmux$444.
+    dead port 2/2 on $mux $flatten\gate.$procmux$447.
+    dead port 2/2 on $mux $flatten\gate.$procmux$450.
+    dead port 1/2 on $mux $flatten\gate.$procmux$453.
+    dead port 1/2 on $mux $flatten\gate.$procmux$456.
+    dead port 2/2 on $mux $flatten\gate.$procmux$459.
+    dead port 1/2 on $mux $flatten\gate.$procmux$465.
+    dead port 2/2 on $mux $flatten\gate.$procmux$468.
+    dead port 2/2 on $mux $flatten\gate.$procmux$471.
+    dead port 2/2 on $mux $flatten\gate.$procmux$474.
+    dead port 1/2 on $mux $flatten\gate.$procmux$477.
+    dead port 1/2 on $mux $flatten\gate.$procmux$480.
+    dead port 2/2 on $mux $flatten\gate.$procmux$483.
+    dead port 2/2 on $mux $flatten\gate.$procmux$489.
+    dead port 2/2 on $mux $flatten\gate.$procmux$492.
+    dead port 2/2 on $mux $flatten\gate.$procmux$495.
+    dead port 1/2 on $mux $flatten\gate.$procmux$498.
+    dead port 1/2 on $mux $flatten\gate.$procmux$501.
+    dead port 2/2 on $mux $flatten\gate.$procmux$504.
+    dead port 2/2 on $mux $flatten\gate.$procmux$510.
+    dead port 2/2 on $mux $flatten\gate.$procmux$513.
+    dead port 2/2 on $mux $flatten\gate.$procmux$516.
+    dead port 1/2 on $mux $flatten\gate.$procmux$519.
+    dead port 1/2 on $mux $flatten\gate.$procmux$522.
+    dead port 2/2 on $mux $flatten\gate.$procmux$525.
+    dead port 2/2 on $mux $flatten\gate.$procmux$531.
+    dead port 2/2 on $mux $flatten\gate.$procmux$534.
+    dead port 2/2 on $mux $flatten\gate.$procmux$537.
+    dead port 1/2 on $mux $flatten\gate.$procmux$540.
+    dead port 1/2 on $mux $flatten\gate.$procmux$543.
+    dead port 2/2 on $mux $flatten\gate.$procmux$546.
+    dead port 2/2 on $mux $flatten\gate.$procmux$552.
+    dead port 2/2 on $mux $flatten\gate.$procmux$555.
+    dead port 2/2 on $mux $flatten\gate.$procmux$558.
+    dead port 1/2 on $mux $flatten\gate.$procmux$561.
+    dead port 1/2 on $mux $flatten\gate.$procmux$564.
+    dead port 2/2 on $mux $flatten\gate.$procmux$567.
+    dead port 2/2 on $mux $flatten\gate.$procmux$573.
+    dead port 2/2 on $mux $flatten\gate.$procmux$576.
+    dead port 1/2 on $mux $flatten\gate.$procmux$579.
+    dead port 1/2 on $mux $flatten\gate.$procmux$582.
+    dead port 2/2 on $mux $flatten\gate.$procmux$585.
+    dead port 2/2 on $mux $flatten\gate.$procmux$591.
+    dead port 2/2 on $mux $flatten\gate.$procmux$594.
+    dead port 1/2 on $mux $flatten\gate.$procmux$597.
+    dead port 1/2 on $mux $flatten\gate.$procmux$600.
+    dead port 2/2 on $mux $flatten\gate.$procmux$603.
+    dead port 2/2 on $mux $flatten\gate.$procmux$609.
+    dead port 2/2 on $mux $flatten\gate.$procmux$612.
+    dead port 1/2 on $mux $flatten\gate.$procmux$615.
+    dead port 1/2 on $mux $flatten\gate.$procmux$618.
+    dead port 2/2 on $mux $flatten\gate.$procmux$621.
+    dead port 2/2 on $mux $flatten\gate.$procmux$627.
+    dead port 2/2 on $mux $flatten\gate.$procmux$630.
+    dead port 1/2 on $mux $flatten\gate.$procmux$633.
+    dead port 1/2 on $mux $flatten\gate.$procmux$636.
+    dead port 2/2 on $mux $flatten\gate.$procmux$639.
+    dead port 2/2 on $mux $flatten\gate.$procmux$645.
+    dead port 1/2 on $mux $flatten\gate.$procmux$648.
+    dead port 1/2 on $mux $flatten\gate.$procmux$651.
+    dead port 2/2 on $mux $flatten\gate.$procmux$654.
+    dead port 2/2 on $mux $flatten\gate.$procmux$660.
+    dead port 1/2 on $mux $flatten\gate.$procmux$663.
+    dead port 1/2 on $mux $flatten\gate.$procmux$666.
+    dead port 2/2 on $mux $flatten\gate.$procmux$669.
+    dead port 2/2 on $mux $flatten\gate.$procmux$675.
+    dead port 1/2 on $mux $flatten\gate.$procmux$678.
+    dead port 1/2 on $mux $flatten\gate.$procmux$681.
+    dead port 2/2 on $mux $flatten\gate.$procmux$684.
+    dead port 2/2 on $mux $flatten\gate.$procmux$690.
+    dead port 1/2 on $mux $flatten\gate.$procmux$693.
+    dead port 1/2 on $mux $flatten\gate.$procmux$696.
+    dead port 2/2 on $mux $flatten\gate.$procmux$699.
+    dead port 1/2 on $mux $flatten\gate.$procmux$705.
+    dead port 1/2 on $mux $flatten\gate.$procmux$708.
+    dead port 2/2 on $mux $flatten\gate.$procmux$711.
+    dead port 1/2 on $mux $flatten\gate.$procmux$717.
+    dead port 1/2 on $mux $flatten\gate.$procmux$720.
+    dead port 2/2 on $mux $flatten\gate.$procmux$723.
+    dead port 1/2 on $mux $flatten\gate.$procmux$729.
+    dead port 1/2 on $mux $flatten\gate.$procmux$732.
+    dead port 2/2 on $mux $flatten\gate.$procmux$735.
+    dead port 1/2 on $mux $flatten\gate.$procmux$741.
+    dead port 1/2 on $mux $flatten\gate.$procmux$744.
+    dead port 2/2 on $mux $flatten\gate.$procmux$747.
+    dead port 1/2 on $mux $flatten\gate.$procmux$753.
+    dead port 2/2 on $mux $flatten\gate.$procmux$756.
+    dead port 1/2 on $mux $flatten\gate.$procmux$762.
+    dead port 2/2 on $mux $flatten\gate.$procmux$765.
+    dead port 1/2 on $mux $flatten\gate.$procmux$771.
+    dead port 2/2 on $mux $flatten\gate.$procmux$774.
+    dead port 1/2 on $mux $flatten\gate.$procmux$780.
+    dead port 2/2 on $mux $flatten\gate.$procmux$783.
+    dead port 2/2 on $mux $flatten\gate.$procmux$789.
+    dead port 2/2 on $mux $flatten\gate.$procmux$795.
+    dead port 2/2 on $mux $flatten\gate.$procmux$801.
+    dead port 2/2 on $mux $flatten\gate.$procmux$807.
+Removed 220 multiplexer ports.
+<suppressed ~312 debug messages>
+
+3.8.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \tt_um_wlmoi_igor_gate.
+Performed a total of 0 changes.
+
+3.8.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\tt_um_wlmoi_igor_gate'.
+Computing hashes of 121 cells of `\tt_um_wlmoi_igor_gate'.
+Finding duplicate cells in `\tt_um_wlmoi_igor_gate'.
+Removed a total of 0 cells.
+
+3.8.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+3.8.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \tt_um_wlmoi_igor_gate..
+Removed 0 unused cells and 220 unused wires.
+<suppressed ~1 debug messages>
+
+3.8.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module tt_um_wlmoi_igor_gate.
+
+3.8.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+3.8.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \tt_um_wlmoi_igor_gate..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~92 debug messages>
+
+3.8.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \tt_um_wlmoi_igor_gate.
+Performed a total of 0 changes.
+
+3.8.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\tt_um_wlmoi_igor_gate'.
+Computing hashes of 121 cells of `\tt_um_wlmoi_igor_gate'.
+Finding duplicate cells in `\tt_um_wlmoi_igor_gate'.
+Removed a total of 0 cells.
+
+3.8.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+3.8.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \tt_um_wlmoi_igor_gate..
+
+3.8.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module tt_um_wlmoi_igor_gate.
+
+3.8.16. Finished fast OPT passes. (There is nothing left to do.)
+
+3.9. Executing FSM pass (extract and optimize FSM).
+
+3.9.1. Executing FSM_DETECT pass (finding FSMs in design).
+
+3.9.2. Executing FSM_EXTRACT pass (extracting FSM from design).
+
+3.9.3. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+3.9.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \tt_um_wlmoi_igor_gate..
+
+3.9.5. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+3.9.6. Executing FSM_RECODE pass (re-assigning FSM state encoding).
+
+3.9.7. Executing FSM_INFO pass (dumping all available information on FSM cells).
+
+3.9.8. Executing FSM_MAP pass (mapping FSMs to basic logic).
+
+3.10. Executing OPT pass (performing simple optimizations).
+
+3.10.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module tt_um_wlmoi_igor_gate.
+
+3.10.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\tt_um_wlmoi_igor_gate'.
+Computing hashes of 121 cells of `\tt_um_wlmoi_igor_gate'.
+Finding duplicate cells in `\tt_um_wlmoi_igor_gate'.
+Removed a total of 0 cells.
+
+3.10.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \tt_um_wlmoi_igor_gate..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~92 debug messages>
+
+3.10.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \tt_um_wlmoi_igor_gate.
+Performed a total of 0 changes.
+
+3.10.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\tt_um_wlmoi_igor_gate'.
+Computing hashes of 121 cells of `\tt_um_wlmoi_igor_gate'.
+Finding duplicate cells in `\tt_um_wlmoi_igor_gate'.
+Removed a total of 0 cells.
+
+3.10.6. Executing OPT_DFF pass (perform DFF optimizations).
+Adding SRST signal on $procdff$943 ($dff) from module tt_um_wlmoi_igor_gate (D = $procmux$938_Y, Q = \flags, rval = 8'00000000).
+Adding EN signal on $auto$ff.cc:337:slice$954 ($sdff) from module tt_um_wlmoi_igor_gate (D = \uio_in, Q = \flags).
+Adding SRST signal on $procdff$944 ($dff) from module tt_um_wlmoi_igor_gate (D = $procmux$922_Y, Q = \timeout, rval = 1'0).
+Adding EN signal on $auto$ff.cc:337:slice$958 ($sdff) from module tt_um_wlmoi_igor_gate (D = \uio_in [0], Q = \timeout).
+Adding SRST signal on $procdff$945 ($dff) from module tt_um_wlmoi_igor_gate (D = $procmux$907_Y, Q = \candidate_v, rval = 5'00000).
+Adding EN signal on $auto$ff.cc:337:slice$962 ($sdff) from module tt_um_wlmoi_igor_gate (D = \uio_in [4:0], Q = \candidate_v).
+Adding SRST signal on $procdff$946 ($dff) from module tt_um_wlmoi_igor_gate (D = $procmux$893_Y, Q = \previous_v, rval = 5'00000).
+Adding EN signal on $auto$ff.cc:337:slice$966 ($sdff) from module tt_um_wlmoi_igor_gate (D = \uio_in [4:0], Q = \previous_v).
+Adding SRST signal on $procdff$947 ($dff) from module tt_um_wlmoi_igor_gate (D = $procmux$880_Y, Q = \max_v, rval = 5'00000).
+Adding EN signal on $auto$ff.cc:337:slice$970 ($sdff) from module tt_um_wlmoi_igor_gate (D = \uio_in [4:0], Q = \max_v).
+Adding SRST signal on $procdff$948 ($dff) from module tt_um_wlmoi_igor_gate (D = $procmux$868_Y, Q = \max_dv, rval = 5'00000).
+Adding EN signal on $auto$ff.cc:337:slice$974 ($sdff) from module tt_um_wlmoi_igor_gate (D = \uio_in [4:0], Q = \max_dv).
+Adding SRST signal on $procdff$949 ($dff) from module tt_um_wlmoi_igor_gate (D = $procmux$857_Y, Q = \candidate_w, rval = 7'0000000).
+Adding EN signal on $auto$ff.cc:337:slice$978 ($sdff) from module tt_um_wlmoi_igor_gate (D = \uio_in [6:0], Q = \candidate_w).
+Adding SRST signal on $procdff$950 ($dff) from module tt_um_wlmoi_igor_gate (D = $procmux$847_Y, Q = \previous_w, rval = 7'0000000).
+Adding EN signal on $auto$ff.cc:337:slice$982 ($sdff) from module tt_um_wlmoi_igor_gate (D = \uio_in [6:0], Q = \previous_w).
+Adding SRST signal on $procdff$951 ($dff) from module tt_um_wlmoi_igor_gate (D = $procmux$838_Y, Q = \max_w, rval = 7'0000000).
+Adding EN signal on $auto$ff.cc:337:slice$986 ($sdff) from module tt_um_wlmoi_igor_gate (D = \uio_in [6:0], Q = \max_w).
+Adding SRST signal on $procdff$952 ($dff) from module tt_um_wlmoi_igor_gate (D = $procmux$830_Y, Q = \max_dw, rval = 7'0000000).
+Adding EN signal on $auto$ff.cc:337:slice$990 ($sdff) from module tt_um_wlmoi_igor_gate (D = \uio_in [6:0], Q = \max_dw).
+
+3.10.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \tt_um_wlmoi_igor_gate..
+Removed 30 unused cells and 30 unused wires.
+<suppressed ~31 debug messages>
+
+3.10.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module tt_um_wlmoi_igor_gate.
+
+3.10.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+3.10.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \tt_um_wlmoi_igor_gate..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~52 debug messages>
+
+3.10.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \tt_um_wlmoi_igor_gate.
+Performed a total of 0 changes.
+
+3.10.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\tt_um_wlmoi_igor_gate'.
+Computing hashes of 101 cells of `\tt_um_wlmoi_igor_gate'.
+Finding duplicate cells in `\tt_um_wlmoi_igor_gate'.
+Removed a total of 0 cells.
+
+3.10.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+3.10.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \tt_um_wlmoi_igor_gate..
+
+3.10.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module tt_um_wlmoi_igor_gate.
+
+3.10.16. Finished fast OPT passes. (There is nothing left to do.)
+
+3.11. Executing WREDUCE pass (reducing word size of cells).
+Removed top 1 bits (of 3) from port B of cell tt_um_wlmoi_igor_gate.$procmux$824_CMP0 ($eq).
+Removed top 1 bits (of 3) from port B of cell tt_um_wlmoi_igor_gate.$procmux$825_CMP0 ($eq).
+Removed top 2 bits (of 3) from port B of cell tt_um_wlmoi_igor_gate.$procmux$826_CMP0 ($eq).
+Removed top 1 bits (of 4) from port B of cell tt_um_wlmoi_igor_gate.$procmux$846_CMP0 ($eq).
+Removed top 1 bits (of 4) from port B of cell tt_um_wlmoi_igor_gate.$procmux$856_CMP0 ($eq).
+Removed top 1 bits (of 4) from port B of cell tt_um_wlmoi_igor_gate.$procmux$867_CMP0 ($eq).
+Removed top 1 bits (of 4) from port B of cell tt_um_wlmoi_igor_gate.$procmux$879_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell tt_um_wlmoi_igor_gate.$procmux$892_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell tt_um_wlmoi_igor_gate.$procmux$906_CMP0 ($eq).
+Removed top 3 bits (of 4) from port B of cell tt_um_wlmoi_igor_gate.$procmux$921_CMP0 ($eq).
+Removed top 4 bits (of 8) from mux cell tt_um_wlmoi_igor_gate.$flatten\gate.$procmux$30 ($mux).
+Removed top 1 bits (of 8) from port B of cell tt_um_wlmoi_igor_gate.$flatten\gate.$gt$src/igor_safety_security_gate.v:30$27 ($gt).
+Converting cell tt_um_wlmoi_igor_gate.$flatten\gate.$sub$src/igor_safety_security_gate.v:14$6 ($sub) from unsigned to signed.
+Removed top 1 bits (of 8) from port A of cell tt_um_wlmoi_igor_gate.$flatten\gate.$sub$src/igor_safety_security_gate.v:14$6 ($sub).
+Removed top 1 bits (of 8) from port B of cell tt_um_wlmoi_igor_gate.$flatten\gate.$sub$src/igor_safety_security_gate.v:14$6 ($sub).
+Removed top 4 bits (of 8) from wire tt_um_wlmoi_igor_gate.$flatten\gate.$11\fault_code[7:0].
+
+3.12. Executing PEEPOPT pass (run peephole optimizers).
+
+3.13. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \tt_um_wlmoi_igor_gate..
+Removed 0 unused cells and 1 unused wires.
+<suppressed ~1 debug messages>
+
+3.14. Executing ALUMACC pass (create $alu and $macc cells).
+Extracting $alu and $macc cells in module tt_um_wlmoi_igor_gate:
+  creating $macc model for $flatten\gate.$sub$src/igor_safety_security_gate.v:17$12 ($sub).
+  creating $macc model for $flatten\gate.$sub$src/igor_safety_security_gate.v:17$13 ($sub).
+  creating $macc model for $flatten\gate.$neg$src/igor_safety_security_gate.v:15$7 ($neg).
+  creating $macc model for $flatten\gate.$neg$src/igor_safety_security_gate.v:16$9 ($neg).
+  creating $macc model for $flatten\gate.$sub$src/igor_safety_security_gate.v:14$6 ($sub).
+  creating $alu model for $macc $flatten\gate.$sub$src/igor_safety_security_gate.v:14$6.
+  creating $alu model for $macc $flatten\gate.$neg$src/igor_safety_security_gate.v:16$9.
+  creating $alu model for $macc $flatten\gate.$neg$src/igor_safety_security_gate.v:15$7.
+  creating $alu model for $macc $flatten\gate.$sub$src/igor_safety_security_gate.v:17$13.
+  creating $alu model for $macc $flatten\gate.$sub$src/igor_safety_security_gate.v:17$12.
+  creating $alu model for $flatten\gate.$gt$src/igor_safety_security_gate.v:29$23 ($gt): new $alu
+  creating $alu model for $flatten\gate.$gt$src/igor_safety_security_gate.v:29$24 ($gt): new $alu
+  creating $alu model for $flatten\gate.$gt$src/igor_safety_security_gate.v:30$26 ($gt): new $alu
+  creating $alu model for $flatten\gate.$gt$src/igor_safety_security_gate.v:30$27 ($gt): new $alu
+  creating $alu model for $flatten\gate.$ge$src/igor_safety_security_gate.v:17$11 ($ge): merged with $flatten\gate.$sub$src/igor_safety_security_gate.v:17$12.
+  creating $alu cell for $flatten\gate.$gt$src/igor_safety_security_gate.v:30$27: $auto$alumacc.cc:548:replace_alu$999
+  creating $alu cell for $flatten\gate.$gt$src/igor_safety_security_gate.v:30$26: $auto$alumacc.cc:548:replace_alu$1010
+  creating $alu cell for $flatten\gate.$gt$src/igor_safety_security_gate.v:29$24: $auto$alumacc.cc:548:replace_alu$1021
+  creating $alu cell for $flatten\gate.$gt$src/igor_safety_security_gate.v:29$23: $auto$alumacc.cc:548:replace_alu$1032
+  creating $alu cell for $flatten\gate.$sub$src/igor_safety_security_gate.v:17$12, $flatten\gate.$ge$src/igor_safety_security_gate.v:17$11: $auto$alumacc.cc:548:replace_alu$1043
+  creating $alu cell for $flatten\gate.$sub$src/igor_safety_security_gate.v:17$13: $auto$alumacc.cc:548:replace_alu$1056
+  creating $alu cell for $flatten\gate.$neg$src/igor_safety_security_gate.v:15$7: $auto$alumacc.cc:548:replace_alu$1059
+  creating $alu cell for $flatten\gate.$neg$src/igor_safety_security_gate.v:16$9: $auto$alumacc.cc:548:replace_alu$1062
+  creating $alu cell for $flatten\gate.$sub$src/igor_safety_security_gate.v:14$6: $auto$alumacc.cc:548:replace_alu$1065
+  created 9 $alu and 0 $macc cells.
+
+3.15. Executing SHARE pass (SAT-based resource sharing).
+
+3.16. Executing OPT pass (performing simple optimizations).
+
+3.16.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module tt_um_wlmoi_igor_gate.
+
+3.16.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\tt_um_wlmoi_igor_gate'.
+Computing hashes of 121 cells of `\tt_um_wlmoi_igor_gate'.
+Finding duplicate cells in `\tt_um_wlmoi_igor_gate'.
+Removed a total of 0 cells.
+
+3.16.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \tt_um_wlmoi_igor_gate..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~52 debug messages>
+
+3.16.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \tt_um_wlmoi_igor_gate.
+Performed a total of 0 changes.
+
+3.16.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\tt_um_wlmoi_igor_gate'.
+Computing hashes of 121 cells of `\tt_um_wlmoi_igor_gate'.
+Finding duplicate cells in `\tt_um_wlmoi_igor_gate'.
+Removed a total of 0 cells.
+
+3.16.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+3.16.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \tt_um_wlmoi_igor_gate..
+Removed 0 unused cells and 5 unused wires.
+<suppressed ~1 debug messages>
+
+3.16.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module tt_um_wlmoi_igor_gate.
+
+3.16.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+3.16.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \tt_um_wlmoi_igor_gate..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~52 debug messages>
+
+3.16.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \tt_um_wlmoi_igor_gate.
+Performed a total of 0 changes.
+
+3.16.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\tt_um_wlmoi_igor_gate'.
+Computing hashes of 121 cells of `\tt_um_wlmoi_igor_gate'.
+Finding duplicate cells in `\tt_um_wlmoi_igor_gate'.
+Removed a total of 0 cells.
+
+3.16.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+3.16.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \tt_um_wlmoi_igor_gate..
+
+3.16.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module tt_um_wlmoi_igor_gate.
+
+3.16.16. Finished fast OPT passes. (There is nothing left to do.)
+
+3.17. Executing MEMORY pass.
+
+3.17.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+3.17.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+3.17.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+
+3.17.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+3.17.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+
+3.17.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \tt_um_wlmoi_igor_gate..
+
+3.17.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+3.17.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+3.17.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \tt_um_wlmoi_igor_gate..
+
+3.17.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+3.18. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \tt_um_wlmoi_igor_gate..
+
+3.19. Executing OPT pass (performing simple optimizations).
+
+3.19.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module tt_um_wlmoi_igor_gate.
+<suppressed ~5 debug messages>
+
+3.19.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\tt_um_wlmoi_igor_gate'.
+Computing hashes of 121 cells of `\tt_um_wlmoi_igor_gate'.
+Finding duplicate cells in `\tt_um_wlmoi_igor_gate'.
+Removed a total of 0 cells.
+
+3.19.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+3.19.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \tt_um_wlmoi_igor_gate..
+
+3.19.5. Finished fast OPT passes.
+
+3.20. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+3.21. Executing OPT pass (performing simple optimizations).
+
+3.21.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module tt_um_wlmoi_igor_gate.
+
+3.21.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\tt_um_wlmoi_igor_gate'.
+Computing hashes of 121 cells of `\tt_um_wlmoi_igor_gate'.
+Finding duplicate cells in `\tt_um_wlmoi_igor_gate'.
+Removed a total of 0 cells.
+
+3.21.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \tt_um_wlmoi_igor_gate..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~49 debug messages>
+
+3.21.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \tt_um_wlmoi_igor_gate.
+    Consolidated identical input bits for $mux cell $flatten\gate.$procmux$30:
+      Old ports: A=4'0000, B=4'1011, Y=$auto$wreduce.cc:513:run$994 [3:0]
+      New ports: A=1'0, B=1'1, Y=$auto$wreduce.cc:513:run$994 [0]
+      New connections: $auto$wreduce.cc:513:run$994 [3:1] = { $auto$wreduce.cc:513:run$994 [0] 1'0 $auto$wreduce.cc:513:run$994 [0] }
+    Consolidated identical input bits for $mux cell $flatten\gate.$procmux$162:
+      Old ports: A={ 4'0000 $auto$wreduce.cc:513:run$994 [3:0] }, B=8'00001010, Y=$flatten\gate.$10\fault_code[7:0]
+      New ports: A=$auto$wreduce.cc:513:run$994 [3:0], B=4'1010, Y=$flatten\gate.$10\fault_code[7:0] [3:0]
+      New connections: $flatten\gate.$10\fault_code[7:0] [7:4] = 4'0000
+  Optimizing cells in module \tt_um_wlmoi_igor_gate.
+    Consolidated identical input bits for $mux cell $flatten\gate.$procmux$282:
+      Old ports: A=$flatten\gate.$10\fault_code[7:0], B=8'00001001, Y=$flatten\gate.$9\fault_code[7:0]
+      New ports: A=$flatten\gate.$10\fault_code[7:0] [3:0], B=4'1001, Y=$flatten\gate.$9\fault_code[7:0] [3:0]
+      New connections: $flatten\gate.$9\fault_code[7:0] [7:4] = 4'0000
+    Consolidated identical input bits for $mux cell $flatten\gate.$procmux$162:
+      Old ports: A=$auto$wreduce.cc:513:run$994 [3:0], B=4'1010, Y=$flatten\gate.$10\fault_code[7:0] [3:0]
+      New ports: A={ $auto$wreduce.cc:513:run$994 [0] $auto$wreduce.cc:513:run$994 [0] }, B=2'10, Y=$flatten\gate.$10\fault_code[7:0] [1:0]
+      New connections: $flatten\gate.$10\fault_code[7:0] [3:2] = { $flatten\gate.$10\fault_code[7:0] [1] 1'0 }
+  Optimizing cells in module \tt_um_wlmoi_igor_gate.
+    Consolidated identical input bits for $mux cell $flatten\gate.$procmux$282:
+      Old ports: A=$flatten\gate.$10\fault_code[7:0] [3:0], B=4'1001, Y=$flatten\gate.$9\fault_code[7:0] [3:0]
+      New ports: A={ $flatten\gate.$10\fault_code[7:0] [1] $flatten\gate.$10\fault_code[7:0] [1:0] }, B=3'101, Y={ $flatten\gate.$9\fault_code[7:0] [3] $flatten\gate.$9\fault_code[7:0] [1:0] }
+      New connections: $flatten\gate.$9\fault_code[7:0] [2] = 1'0
+    Consolidated identical input bits for $mux cell $flatten\gate.$procmux$390:
+      Old ports: A=$flatten\gate.$9\fault_code[7:0], B=8'00001000, Y=$flatten\gate.$8\fault_code[7:0]
+      New ports: A=$flatten\gate.$9\fault_code[7:0] [3:0], B=4'1000, Y=$flatten\gate.$8\fault_code[7:0] [3:0]
+      New connections: $flatten\gate.$8\fault_code[7:0] [7:4] = 4'0000
+  Optimizing cells in module \tt_um_wlmoi_igor_gate.
+    Consolidated identical input bits for $mux cell $flatten\gate.$procmux$486:
+      Old ports: A=$flatten\gate.$8\fault_code[7:0], B=8'00000111, Y=$flatten\gate.$7\fault_code[7:0]
+      New ports: A=$flatten\gate.$8\fault_code[7:0] [3:0], B=4'0111, Y=$flatten\gate.$7\fault_code[7:0] [3:0]
+      New connections: $flatten\gate.$7\fault_code[7:0] [7:4] = 4'0000
+    Consolidated identical input bits for $mux cell $flatten\gate.$procmux$390:
+      Old ports: A=$flatten\gate.$9\fault_code[7:0] [3:0], B=4'1000, Y=$flatten\gate.$8\fault_code[7:0] [3:0]
+      New ports: A={ $flatten\gate.$9\fault_code[7:0] [3] $flatten\gate.$9\fault_code[7:0] [1:0] }, B=3'100, Y={ $flatten\gate.$8\fault_code[7:0] [3] $flatten\gate.$8\fault_code[7:0] [1:0] }
+      New connections: $flatten\gate.$8\fault_code[7:0] [2] = 1'0
+  Optimizing cells in module \tt_um_wlmoi_igor_gate.
+    Consolidated identical input bits for $mux cell $flatten\gate.$procmux$570:
+      Old ports: A=8'00000110, B=$flatten\gate.$7\fault_code[7:0], Y=$flatten\gate.$6\fault_code[7:0]
+      New ports: A=4'0110, B=$flatten\gate.$7\fault_code[7:0] [3:0], Y=$flatten\gate.$6\fault_code[7:0] [3:0]
+      New connections: $flatten\gate.$6\fault_code[7:0] [7:4] = 4'0000
+  Optimizing cells in module \tt_um_wlmoi_igor_gate.
+    Consolidated identical input bits for $mux cell $flatten\gate.$procmux$642:
+      Old ports: A=8'00000101, B=$flatten\gate.$6\fault_code[7:0], Y=$flatten\gate.$5\fault_code[7:0]
+      New ports: A=4'0101, B=$flatten\gate.$6\fault_code[7:0] [3:0], Y=$flatten\gate.$5\fault_code[7:0] [3:0]
+      New connections: $flatten\gate.$5\fault_code[7:0] [7:4] = 4'0000
+  Optimizing cells in module \tt_um_wlmoi_igor_gate.
+    Consolidated identical input bits for $mux cell $flatten\gate.$procmux$702:
+      Old ports: A=8'00000100, B=$flatten\gate.$5\fault_code[7:0], Y=$flatten\gate.$4\fault_code[7:0]
+      New ports: A=4'0100, B=$flatten\gate.$5\fault_code[7:0] [3:0], Y=$flatten\gate.$4\fault_code[7:0] [3:0]
+      New connections: $flatten\gate.$4\fault_code[7:0] [7:4] = 4'0000
+  Optimizing cells in module \tt_um_wlmoi_igor_gate.
+    Consolidated identical input bits for $mux cell $flatten\gate.$procmux$750:
+      Old ports: A=$flatten\gate.$4\fault_code[7:0], B=8'00000011, Y=$flatten\gate.$3\fault_code[7:0]
+      New ports: A=$flatten\gate.$4\fault_code[7:0] [3:0], B=4'0011, Y=$flatten\gate.$3\fault_code[7:0] [3:0]
+      New connections: $flatten\gate.$3\fault_code[7:0] [7:4] = 4'0000
+  Optimizing cells in module \tt_um_wlmoi_igor_gate.
+    Consolidated identical input bits for $mux cell $flatten\gate.$procmux$786:
+      Old ports: A=$flatten\gate.$3\fault_code[7:0], B=8'00000010, Y=$flatten\gate.$2\fault_code[7:0]
+      New ports: A=$flatten\gate.$3\fault_code[7:0] [3:0], B=4'0010, Y=$flatten\gate.$2\fault_code[7:0] [3:0]
+      New connections: $flatten\gate.$2\fault_code[7:0] [7:4] = 4'0000
+  Optimizing cells in module \tt_um_wlmoi_igor_gate.
+    Consolidated identical input bits for $mux cell $flatten\gate.$procmux$810:
+      Old ports: A=8'00000001, B=$flatten\gate.$2\fault_code[7:0], Y=\fault_code
+      New ports: A=4'0001, B=$flatten\gate.$2\fault_code[7:0] [3:0], Y=\fault_code [3:0]
+      New connections: \fault_code [7:4] = 4'0000
+  Optimizing cells in module \tt_um_wlmoi_igor_gate.
+Performed a total of 14 changes.
+
+3.21.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\tt_um_wlmoi_igor_gate'.
+Computing hashes of 121 cells of `\tt_um_wlmoi_igor_gate'.
+Finding duplicate cells in `\tt_um_wlmoi_igor_gate'.
+Removed a total of 0 cells.
+
+3.21.6. Executing OPT_SHARE pass.
+
+3.21.7. Executing OPT_DFF pass (perform DFF optimizations).
+
+3.21.8. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \tt_um_wlmoi_igor_gate..
+
+3.21.9. Executing OPT_EXPR pass (perform const folding).
+Optimizing module tt_um_wlmoi_igor_gate.
+<suppressed ~1 debug messages>
+
+3.21.10. Rerunning OPT passes. (Maybe there is more to do..)
+
+3.21.11. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \tt_um_wlmoi_igor_gate..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~48 debug messages>
+
+3.21.12. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \tt_um_wlmoi_igor_gate.
+Performed a total of 0 changes.
+
+3.21.13. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\tt_um_wlmoi_igor_gate'.
+Computing hashes of 120 cells of `\tt_um_wlmoi_igor_gate'.
+Finding duplicate cells in `\tt_um_wlmoi_igor_gate'.
+Removed a total of 0 cells.
+
+3.21.14. Executing OPT_SHARE pass.
+
+3.21.15. Executing OPT_DFF pass (perform DFF optimizations).
+
+3.21.16. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \tt_um_wlmoi_igor_gate..
+Removed 0 unused cells and 1 unused wires.
+<suppressed ~1 debug messages>
+
+3.21.17. Executing OPT_EXPR pass (perform const folding).
+Optimizing module tt_um_wlmoi_igor_gate.
+
+3.21.18. Rerunning OPT passes. (Maybe there is more to do..)
+
+3.21.19. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \tt_um_wlmoi_igor_gate..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~48 debug messages>
+
+3.21.20. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \tt_um_wlmoi_igor_gate.
+Performed a total of 0 changes.
+
+3.21.21. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\tt_um_wlmoi_igor_gate'.
+Computing hashes of 120 cells of `\tt_um_wlmoi_igor_gate'.
+Finding duplicate cells in `\tt_um_wlmoi_igor_gate'.
+Removed a total of 0 cells.
+
+3.21.22. Executing OPT_SHARE pass.
+
+3.21.23. Executing OPT_DFF pass (perform DFF optimizations).
+
+3.21.24. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \tt_um_wlmoi_igor_gate..
+
+3.21.25. Executing OPT_EXPR pass (perform const folding).
+Optimizing module tt_um_wlmoi_igor_gate.
+
+3.21.26. Finished fast OPT passes. (There is nothing left to do.)
+
+3.22. Executing TECHMAP pass (map to technology primitives).
+
+3.22.1. Executing Verilog-2005 frontend: /share/techmap.v
+Parsing Verilog input from `/share/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu_brent_kung'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `$__div_mod_u'.
+Generating RTLIL representation for module `$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Generating RTLIL representation for module `$connect'.
+Generating RTLIL representation for module `$input_port'.
+Successfully finished Verilog frontend.
+
+3.22.2. Continuing TECHMAP pass.
+Using template $paramod$2ab573529e9e52125e975201e39a54c8a2a98782\_90_alu for cells of type $alu.
+Using template $paramod$38e8498ccdc425801fe5312e427e3cf0d9089c58\_90_alu for cells of type $alu.
+Using template $paramod$fd7bfb1a4f3a7c2ac1a35670d0fa64ccc7b91841\_90_alu for cells of type $alu.
+Using template $paramod$b18e16801adf491a64caa0542270798e5d4ac6b6\_90_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $reduce_or.
+Using extmapper simplemap for cells of type $not.
+Using extmapper simplemap for cells of type $or.
+Using extmapper simplemap for cells of type $reduce_and.
+Using template $paramod$dbcdc7e8aa1a4080cea2deda6fdc8772064f4d90\_90_alu for cells of type $alu.
+Using template $paramod$befd47b1c77b68561d11d0cb61a0fae29b79f34c\_90_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $sdffe.
+Using extmapper simplemap for cells of type $logic_and.
+Using extmapper simplemap for cells of type $eq.
+Using extmapper simplemap for cells of type $pmux.
+Using extmapper simplemap for cells of type $logic_not.
+Using extmapper simplemap for cells of type $and.
+Using extmapper simplemap for cells of type $mux.
+Using extmapper simplemap for cells of type $logic_or.
+Using extmapper simplemap for cells of type $pos.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000001000 for cells of type $fa.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000001000 for cells of type $lcu.
+Using extmapper simplemap for cells of type $xor.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000000101 for cells of type $fa.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000000101 for cells of type $lcu.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000000111 for cells of type $fa.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000000111 for cells of type $lcu.
+No more expansions possible.
+<suppressed ~887 debug messages>
+
+3.23. Executing OPT pass (performing simple optimizations).
+
+3.23.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module tt_um_wlmoi_igor_gate.
+<suppressed ~399 debug messages>
+
+3.23.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\tt_um_wlmoi_igor_gate'.
+Computing hashes of 782 cells of `\tt_um_wlmoi_igor_gate'.
+Finding duplicate cells in `\tt_um_wlmoi_igor_gate'.
+Computing hashes of 752 cells of `\tt_um_wlmoi_igor_gate'.
+Finding duplicate cells in `\tt_um_wlmoi_igor_gate'.
+Computing hashes of 741 cells of `\tt_um_wlmoi_igor_gate'.
+Finding duplicate cells in `\tt_um_wlmoi_igor_gate'.
+<suppressed ~123 debug messages>
+Removed a total of 41 cells.
+
+3.23.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+3.23.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \tt_um_wlmoi_igor_gate..
+Removed 56 unused cells and 501 unused wires.
+<suppressed ~57 debug messages>
+
+3.23.5. Finished fast OPT passes.
+
+3.24. Executing HIERARCHY pass (managing design hierarchy).
+Attribute `top' found on module `tt_um_wlmoi_igor_gate'. Setting top module to tt_um_wlmoi_igor_gate.
+
+3.24.1. Analyzing design hierarchy..
+Top module:  \tt_um_wlmoi_igor_gate
+
+3.24.2. Analyzing design hierarchy..
+Top module:  \tt_um_wlmoi_igor_gate
+Removed 0 unused modules.
+
+3.25. Printing statistics.
+
+=== tt_um_wlmoi_igor_gate ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      312 wires
+      877 wire bits
+       48 public wires
+      228 public wire bits
+        8 ports
+       43 port bits
+      685 cells
+      162   $_AND_
+      200   $_MUX_
+       94   $_NOT_
+      102   $_OR_
+       57   $_SDFFE_PN0P_
+       69   $_XOR_
+        1   $scopeinfo
+
+3.26. Executing CHECK pass (checking for obvious problems).
+Checking module tt_um_wlmoi_igor_gate...
+Found and reported 0 problems.
+
+4. Executing CHECK pass (checking for obvious problems).
+Checking module tt_um_wlmoi_igor_gate...
+Found and reported 0 problems.
+
+5. Printing statistics.
+
+=== tt_um_wlmoi_igor_gate ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      312 wires
+      877 wire bits
+       48 public wires
+      228 public wire bits
+        8 ports
+       43 port bits
+      685 cells
+      162   $_AND_
+      200   $_MUX_
+       94   $_NOT_
+      102   $_OR_
+       57   $_SDFFE_PN0P_
+       69   $_XOR_
+        1   $scopeinfo
+
+6. Executing JSON backend.
+
+7. Executing Verilog backend.
+
+7.1. Executing BMUXMAP pass.
+
+7.2. Executing DEMUXMAP pass.
+Dumping module `\tt_um_wlmoi_igor_gate'.
+
+End of script. Logfile hash: cf3137b057, time: 0.49s, user: 0.50s, system: 0.00s
+Yosys 0.69 (git sha1 9f75ca1f9, Release, Clang /workspace/YoWASP/yosys/wasi-sdk-33.0-x86_64-linux/share/cmake/../..//bin/clang++ 22.1.0)
+Time spent: 16% 23x opt_expr (0 sec), 11% 20x opt_clean (0 sec), ...

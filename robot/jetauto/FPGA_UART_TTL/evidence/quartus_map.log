@@ -1,0 +1,49 @@
+TBBmalloc: skip allocation functions replacement in ucrtbase.dll: unknown prologue for function _msize
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 25.1std.0 Build 1129 10/21/2025 SC Standard Edition
+    Info: Copyright (C) 2025  Altera Corporation. All rights reserved.
+    Info: Your use of Altera Corporation's design tools, logic functions 
+    Info: and other software and tools, and any partner logic 
+    Info: functions, and any output files from any of the foregoing 
+    Info: (including device programming or simulation files), and any 
+    Info: associated documentation or information are expressly subject 
+    Info: to the terms and conditions of the Altera Program License 
+    Info: Subscription Agreement, the Altera Quartus Prime License Agreement,
+    Info: the Altera IP License Agreement, or other applicable license
+    Info: agreement, including, without limitation, that your use is for
+    Info: the sole purpose of programming logic devices manufactured by
+    Info: Altera and sold by Altera or its authorized distributors.  Please
+    Info: refer to the Altera Software License Subscription Agreements 
+    Info: on the Quartus Prime software download page.
+    Info: Processing started: Tue Oct  6 16:04:58 2026
+Info: Command: quartus_map "C:/Users/William Anthony/Documents/Codex/2026-09-30/files-mentioned-by-the-user-draft/outputs/STM_UART_DE10_NANO/quartus/stm_uart"
+Info (20032): Parallel compilation is enabled and will use up to 4 processors
+Info (12021): Found 1 design units, including 1 entities, in source file /users/william anthony/documents/codex/2026-09-30/files-mentioned-by-the-user-draft/outputs/stm_uart_de10_nano/rtl/stm_packet_tx.v
+    Info (12023): Found entity 1: stm_packet_tx File: C:/Users/William Anthony/Documents/Codex/2026-09-30/files-mentioned-by-the-user-draft/outputs/STM_UART_DE10_NANO/rtl/stm_packet_tx.v Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file /users/william anthony/documents/codex/2026-09-30/files-mentioned-by-the-user-draft/outputs/stm_uart_de10_nano/rtl/stm_uart_demo_top.v
+    Info (12023): Found entity 1: stm_uart_demo_top File: C:/Users/William Anthony/Documents/Codex/2026-09-30/files-mentioned-by-the-user-draft/outputs/STM_UART_DE10_NANO/rtl/stm_uart_demo_top.v Line: 2
+Info (12127): Elaborating entity "stm_uart_demo_top" for the top level hierarchy
+Warning (10230): Verilog HDL assignment warning at stm_uart_demo_top.v(37): truncated value with size 32 to match size of target (2) File: C:/Users/William Anthony/Documents/Codex/2026-09-30/files-mentioned-by-the-user-draft/outputs/STM_UART_DE10_NANO/rtl/stm_uart_demo_top.v Line: 37
+Info (12128): Elaborating entity "stm_packet_tx" for hierarchy "stm_packet_tx:sender" File: C:/Users/William Anthony/Documents/Codex/2026-09-30/files-mentioned-by-the-user-draft/outputs/STM_UART_DE10_NANO/rtl/stm_uart_demo_top.v Line: 27
+Warning (10230): Verilog HDL assignment warning at stm_packet_tx.v(10): truncated value with size 32 to match size of target (5) File: C:/Users/William Anthony/Documents/Codex/2026-09-30/files-mentioned-by-the-user-draft/outputs/STM_UART_DE10_NANO/rtl/stm_packet_tx.v Line: 10
+Warning (10230): Verilog HDL assignment warning at stm_packet_tx.v(120): truncated value with size 32 to match size of target (16) File: C:/Users/William Anthony/Documents/Codex/2026-09-30/files-mentioned-by-the-user-draft/outputs/STM_UART_DE10_NANO/rtl/stm_packet_tx.v Line: 120
+Warning (10230): Verilog HDL assignment warning at stm_packet_tx.v(125): truncated value with size 32 to match size of target (16) File: C:/Users/William Anthony/Documents/Codex/2026-09-30/files-mentioned-by-the-user-draft/outputs/STM_UART_DE10_NANO/rtl/stm_packet_tx.v Line: 125
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "LED[6]" is stuck at GND File: C:/Users/William Anthony/Documents/Codex/2026-09-30/files-mentioned-by-the-user-draft/outputs/STM_UART_DE10_NANO/rtl/stm_uart_demo_top.v Line: 4
+    Warning (13410): Pin "LED[7]" is stuck at GND File: C:/Users/William Anthony/Documents/Codex/2026-09-30/files-mentioned-by-the-user-draft/outputs/STM_UART_DE10_NANO/rtl/stm_uart_demo_top.v Line: 4
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 3 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 1 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "SW[2]" File: C:/Users/William Anthony/Documents/Codex/2026-09-30/files-mentioned-by-the-user-draft/outputs/STM_UART_DE10_NANO/rtl/stm_uart_demo_top.v Line: 3
+Info (21057): Implemented 231 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 8 input pins
+    Info (21059): Implemented 9 output pins
+    Info (21061): Implemented 214 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 9 warnings
+    Info: Peak virtual memory: 4857 megabytes
+    Info: Processing ended: Tue Oct  6 16:05:17 2026
+    Info: Elapsed time: 00:00:19
+    Info: Total CPU time (on all processors): 00:00:02

@@ -1,0 +1,73 @@
+{
+  "cocotb_testcases": 8,
+  "suite_reports": [
+    [
+      "gate",
+      1,
+      "PASS",
+      "evidence/cocotb_gate.xml"
+    ],
+    [
+      "neural",
+      2,
+      "PASS",
+      "evidence/cocotb_neural.xml"
+    ],
+    [
+      "top",
+      2,
+      "PASS",
+      "evidence/cocotb_top.xml"
+    ],
+    [
+      "tt",
+      1,
+      "PASS",
+      "evidence/cocotb_tt.xml"
+    ],
+    [
+      "tt_generic",
+      1,
+      "PASS",
+      "evidence/cocotb_tt_generic.xml"
+    ],
+    [
+      "uart",
+      1,
+      "PASS",
+      "evidence/cocotb_uart.xml"
+    ]
+  ],
+  "gate_cases": 13078,
+  "covered_fault_bins": 12,
+  "neural_outputs_checked": 400,
+  "dwa_tested_cycles": 7938,
+  "neural_tested_cycles": 18192,
+  "flowchart_pages": 28,
+  "sof_images": [
+    {
+      "path": "fpga_de10_nano/quartus/output_files/igor.sof",
+      "bytes": 6690361,
+      "sha256": "4236365161b23d5371216da504ee134e80d4911016471ae01df7927cc6d12cae"
+    },
+    {
+      "path": "fpga_de10_lite/quartus/output_files/igor_max10.sof",
+      "bytes": 3216574,
+      "sha256": "456949b9c86da8d747af7e505193444dc23f33d7e42251b72abbba64b08c2cb5"
+    },
+    {
+      "path": "robot/jetauto/FPGA_UART_TTL/quartus/output_files/stm_uart.sof",
+      "bytes": 6690373,
+      "sha256": "0f49097e0428947cf77c31c726577efc8516986139b75a2c971590a0b5641fa2"
+    },
+    {
+      "path": "robot/jetauto/FPGA_UART_TTL_MULTISPEED/quartus/output_files/stm_uart_multispeed.sof",
+      "bytes": 6690406,
+      "sha256": "dfe036d6722e721433706d76ec26669bad10de6dfe3d53ccb25362d222358ce3"
+    }
+  ],
+  "board_physical_test": "not performed",
+  "post_troubleshooting_motor_motion": "not confirmed",
+  "repository_prepared": "2026-10-07 Asia/Jakarta",
+  "source_evidence_as_of": "2026-10-06 Asia/Jakarta"
+}

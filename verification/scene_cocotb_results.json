@@ -1,0 +1,36 @@
+{
+  "status": "PASS",
+  "scenes": [
+    {
+      "scene": 0,
+      "cycles": 7938,
+      "permit": 1
+    },
+    {
+      "scene": 1,
+      "cycles": 7938,
+      "permit": 0
+    },
+    {
+      "scene": 2,
+      "cycles": 7938,
+      "permit": 0
+    },
+    {
+      "scene": 3,
+      "cycles": 7938,
+      "permit": 1
+    },
+    {
+      "scene": 4,
+      "cycles": 7938,
+      "permit": 1
+    },
+    {
+      "scene": 5,
+      "cycles": 7938,
+      "permit": 1
+    }
+  ],
+  "scope": "Six supplied scenes, audit deadline/freshness parameters, not all possible maps"
+}

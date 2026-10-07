@@ -1,0 +1,7 @@
+GTK_VERSION VCD
+LOADED outputs/IGOR_DE10_NANO/simulation/waveform/igor_top.vcd
+ADDED 10 igor_top_tb.start igor_top_tb.busy igor_top_tb.done igor_top_tb.enable igor_top_tb.estop igor_top_tb.protective {igor_top_tb.fault[7:0]} {igor_top_tb.vcmd[4:0]} {igor_top_tb.wcmd[6:0]} {igor_top_tb.error_count[31:0]}
+DECIMAL_COMMANDS ::gtkwave::/Edit/Data_Format/Signed_Decimal ::gtkwave::/Edit/Data_Format/Decimal
+CONFIGURED 02_dwa_fault
+SCREENSHOT 02_dwa_fault
+Exiting.

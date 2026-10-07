@@ -1,0 +1,41 @@
+{
+  "device": "5CSEBA6U23I7",
+  "top_module": "stm_uart_multispeed_top",
+  "speed_rpm": [
+    15,
+    30,
+    60,
+    90
+  ],
+  "hold_seconds": 6,
+  "refresh_ms": 50,
+  "sof_path": "FPGA_UART_TTL_MULTISPEED/quartus/output_files/stm_uart_multispeed.sof",
+  "sof_sha256": "dfe036d6722e721433706d76ec26669bad10de6dfe3d53ccb25362d222358ce3",
+  "quartus_phases": {
+    "map": "PASS",
+    "fit": "PASS",
+    "asm": "PASS",
+    "sta": "PASS"
+  },
+  "simulation": {
+    "serial_frames": 10,
+    "serial_bytes": 256,
+    "status": "PASS"
+  },
+  "alms": 194,
+  "registers": 176,
+  "dsp_blocks": 0,
+  "block_memory_bits": 0,
+  "minimum_reported_timing_slack_ns": 0.16,
+  "fpga_physical_test": "not performed, DE10-Nano board unavailable",
+  "laptop_four_speed_test": "partial, rear-left did not move in later stages",
+  "source_sha256": {
+    "rtl/stm_packet_tx_multispeed.v": "2c93afa1ea31475abd7e44b566600a87379dfeacf1ff076ac9a1f87c848c1696",
+    "rtl/stm_uart_multispeed_top.v": "8f65f52ec8fabfd017c313493aa2bc6a66a0d1eb1ead2a47b1fe17dd427a7b2b",
+    "tb/tb_multispeed.v": "28f6d22b93f1284d965b880b66dfb4cf193983c51ef75915f2453c30d3745c95",
+    "tb/tb_multispeed_control.v": "9eb123d092bb2842d2c50c8da0b15755cc081f0661cb73cd21fd365cd07cbd3d",
+    "quartus/stm_uart_multispeed.qsf": "6dcb703ba5a843b581b6a91d5b349941da680122f19c889ba63bcf5be449f81c",
+    "quartus/stm_uart.sdc": "bbd1e306e72d8c47de069679392bdeaf78d3952a07c514f9a747714f744fc1eb",
+    "quartus/pin_assignment.tcl": "2dc605304363e5edf86553b11dd7ff5a9ea2639efa2ebc0e7058eb1f309084f3"
+  }
+}

@@ -1,0 +1,62 @@
+[
+  {
+    "index": 496,
+    "v": 15,
+    "w": 0,
+    "cost": 0,
+    "goal": 3392,
+    "velocity": 0,
+    "score": 3392,
+    "valid": 1
+  },
+  {
+    "index": 0,
+    "v": 0,
+    "w": 0,
+    "cost": 0,
+    "goal": 0,
+    "velocity": 0,
+    "score": 0,
+    "valid": 0
+  },
+  {
+    "index": 0,
+    "v": 0,
+    "w": 0,
+    "cost": 0,
+    "goal": 0,
+    "velocity": 0,
+    "score": 0,
+    "valid": 0
+  },
+  {
+    "index": 450,
+    "v": 14,
+    "w": -14,
+    "cost": 341,
+    "goal": 7879,
+    "velocity": 256,
+    "score": 13591,
+    "valid": 1
+  },
+  {
+    "index": 496,
+    "v": 15,
+    "w": 0,
+    "cost": 0,
+    "goal": 3392,
+    "velocity": 0,
+    "score": 3392,
+    "valid": 1
+  },
+  {
+    "index": 436,
+    "v": 13,
+    "w": 4,
+    "cost": 0,
+    "goal": 8924,
+    "velocity": 512,
+    "score": 9436,
+    "valid": 1
+  }
+]

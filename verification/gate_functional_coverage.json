@@ -1,0 +1,21 @@
+{
+  "seed": 16523109,
+  "cases": 13078,
+  "fault_bins": {
+    "0": 1218,
+    "1": 2899,
+    "2": 1477,
+    "3": 760,
+    "4": 358,
+    "5": 203,
+    "6": 92,
+    "7": 47,
+    "8": 21,
+    "9": 25,
+    "10": 4481,
+    "11": 1497
+  },
+  "covered_bins": 12,
+  "total_bins": 12,
+  "kind": "functional outcome bins, not RTL line/toggle coverage"
+}

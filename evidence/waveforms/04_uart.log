@@ -1,0 +1,7 @@
+GTK_VERSION VCD
+LOADED outputs/BUKTI_SIMULASI_GTKWAVE/igor_uart_115200.vcd
+ADDED 9 {igor_uart_115200_tb.key[1:0]} igor_uart_115200_tb.rx igor_uart_115200_tb.tx igor_uart_115200_tb.rv {igor_uart_115200_tb.rb[7:0]} igor_uart_115200_tb.re igor_uart_115200_tb.received igor_uart_115200_tb.checks igor_uart_115200_tb.error_count
+DECIMAL_COMMANDS ::gtkwave::/Edit/Data_Format/Signed_Decimal ::gtkwave::/Edit/Data_Format/Decimal
+CONFIGURED 04_uart
+SCREENSHOT 04_uart
+Exiting.

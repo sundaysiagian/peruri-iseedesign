@@ -1,0 +1,38 @@
+name: TinyTapeout physical flow
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  gds:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          submodules: recursive
+      - name: Build GDS
+        uses: TinyTapeout/tt-gds-action@ihp-cmos5l
+        with:
+          pdk: ihp-sg13cmos5l
+  precheck:
+    needs: gds
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: TinyTapeout/tt-gds-action/precheck@ihp-cmos5l
+  gl_test:
+    needs: gds
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          submodules: recursive
+      - uses: TinyTapeout/tt-gds-action/gl_test@ihp-cmos5l
+  viewer:
+    if: ${{ vars.TT_ENABLE_PAGES == 'true' }}
+    needs: gds
+    runs-on: ubuntu-24.04
+    permissions:
+      pages: write
+      id-token: write
+    steps:
+      - uses: TinyTapeout/tt-gds-action/viewer@ihp-cmos5l

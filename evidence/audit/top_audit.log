@@ -1,0 +1,11 @@
+VCD info: dumpfile waveform/igor_top.vcd opened for output.
+SCENE 0 index=496 score=3392 enable=1 latency=7938 candidate_checks=512
+SCENE 1 index=0 score=0 enable=0 latency=7938 candidate_checks=512
+SCENE 2 index=0 score=0 enable=0 latency=7938 candidate_checks=512
+SCENE 3 index=450 score=13591 enable=1 latency=7938 candidate_checks=512
+SCENE 4 index=496 score=3392 enable=1 latency=7938 candidate_checks=512
+SCENE 5 index=436 score=9436 enable=1 latency=7938 candidate_checks=512
+AUDIT ASSERTION SAMPLES=556939
+CHECKS=12402 ERRORS=0
+TEST PASSED
+../tb/igor_top_tb.v:153: $finish called at 11139891000 (1ps)

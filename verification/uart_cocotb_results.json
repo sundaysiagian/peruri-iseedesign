@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "valid_response_crc": true,
+  "bad_crc_rejected": true,
+  "fault_latched": true,
+  "reset_recovers": true,
+  "divider": 8,
+  "scope": "IGOR A5/5A protocol, not STM RRC"
+}

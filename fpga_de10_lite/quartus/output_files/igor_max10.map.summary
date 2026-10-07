@@ -1,0 +1,16 @@
+Analysis & Synthesis Status : Successful - Thu Oct  1 10:31:53 2026
+Quartus Prime Version : 25.1std.0 Build 1129 10/21/2025 SC Standard Edition
+Revision Name : igor_max10
+Top-level Entity Name : igor_de10_lite_top
+Family : MAX 10
+Total logic elements : 19,167
+    Total combinational functions : 18,757
+    Dedicated logic registers : 1,539
+Total registers : 1539
+Total pins : 19
+Total virtual pins : 0
+Total memory bits : 1,051,008
+Embedded Multiplier 9-bit elements : 19
+Total PLLs : 0
+UFM blocks : 0
+ADC blocks : 0

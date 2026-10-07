@@ -1,0 +1,10 @@
+fault,test_case,status,motor_enable,evidence,scope
+replay,MAP-02 replay,SIMULATION PASS,0,top_audit.log and fault_result_excerpt.csv,"Specific scenario, not exhaustive or physical test"
+upload terpotong,MAP-07 partial rejects,SIMULATION PASS,0,top_audit.log and fault_result_excerpt.csv,"Specific scenario, not exhaustive or physical test"
+alamat tidak berurutan,MAP-04 missing byte,SIMULATION PASS,0,top_audit.log and fault_result_excerpt.csv,"Specific scenario, not exhaustive or physical test"
+CRC salah,AUDIT CRC revokes enabled command,SIMULATION PASS,0,uart_audit.log and igor_uart_crc_audit_tb.v,"Specific scenario, not exhaustive or physical test"
+write setelah lock,CFG-02 locked write,SIMULATION PASS,0,top_audit.log and fault_result_excerpt.csv,"Specific scenario, not exhaustive or physical test"
+peta unknown,SCENE 2,SIMULATION PASS,0,top_audit.log and scene_latency.csv,"Specific scenario, not exhaustive or physical test"
+semua kandidat terblokir,SCENE 1,SIMULATION PASS,0,top_audit.log and scene_latency.csv,"Specific scenario, not exhaustive or physical test"
+timeout,TIME-04 missing tile timeout,SIMULATION PASS,0,top_audit.log and fault_result_excerpt.csv,"Specific scenario, not exhaustive or physical test"
+emergency,SAFE-04 estop during run,SIMULATION PASS,0,top_audit.log and fault_result_excerpt.csv,"Specific scenario, not exhaustive or physical test"

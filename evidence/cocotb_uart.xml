@@ -1,0 +1,6 @@
+<testsuites name="results">
+  <testsuite name="all" package="all">
+    <property name="random_seed" value="1791354948" />
+    <testcase name="uart_crc_response_and_fault_latch" classname="test_uart" file="C:\Users\William Anthony\Documents\Codex\2026-09-30\files-mentioned-by-the-user-draft\outputs\peruri-iseedesign\verification\test_uart.py" lineno="30" time="0.060434818267822266" sim_time_ns="85630.001" ratio_time="1416898.4610911387" />
+  </testsuite>
+</testsuites>

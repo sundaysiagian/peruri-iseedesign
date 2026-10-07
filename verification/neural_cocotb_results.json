@@ -1,0 +1,9 @@
+{
+  "vectors": 100,
+  "outputs_checked": 400,
+  "cycles": [
+    18192
+  ],
+  "oracle": "Independent Python integer matrix MAC, floor Q8.8, ReLU, clipping",
+  "status": "PASS"
+}

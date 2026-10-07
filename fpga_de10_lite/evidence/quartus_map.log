@@ -1,0 +1,347 @@
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 25.1std.0 Build 1129 10/21/2025 SC Standard Edition
+    Info: Copyright (C) 2025  Altera Corporation. All rights reserved.
+    Info: Your use of Altera Corporation's design tools, logic functions 
+    Info: and other software and tools, and any partner logic 
+    Info: functions, and any output files from any of the foregoing 
+    Info: (including device programming or simulation files), and any 
+    Info: associated documentation or information are expressly subject 
+    Info: to the terms and conditions of the Altera Program License 
+    Info: Subscription Agreement, the Altera Quartus Prime License Agreement,
+    Info: the Altera IP License Agreement, or other applicable license
+    Info: agreement, including, without limitation, that your use is for
+    Info: the sole purpose of programming logic devices manufactured by
+    Info: Altera and sold by Altera or its authorized distributors.  Please
+    Info: refer to the Altera Software License Subscription Agreements 
+    Info: on the Quartus Prime software download page.
+    Info: Processing started: Thu Oct  1 10:24:04 2026
+Info: Command: quartus_map igor_max10
+Info (20032): Parallel compilation is enabled and will use up to 4 processors
+Info (12021): Found 1 design units, including 1 entities, in source file /users/william anthony/documents/codex/2026-09-30/files-mentioned-by-the-user-draft/outputs/max10_10m50daf484c7g/rtl/igor_best_candidate_selector.v
+    Info (12023): Found entity 1: igor_best_candidate_selector File: C:/Users/William Anthony/Documents/Codex/2026-09-30/files-mentioned-by-the-user-draft/outputs/MAX10_10M50DAF484C7G/rtl/igor_best_candidate_selector.v Line: 6
+Info (12021): Found 1 design units, including 1 entities, in source file /users/william anthony/documents/codex/2026-09-30/files-mentioned-by-the-user-draft/outputs/max10_10m50daf484c7g/rtl/igor_candidate_generator.v
+    Info (12023): Found entity 1: igor_candidate_generator File: C:/Users/William Anthony/Documents/Codex/2026-09-30/files-mentioned-by-the-user-draft/outputs/MAX10_10M50DAF484C7G/rtl/igor_candidate_generator.v Line: 6
+Info (12021): Found 1 design units, including 1 entities, in source file /users/william anthony/documents/codex/2026-09-30/files-mentioned-by-the-user-draft/outputs/max10_10m50daf484c7g/rtl/igor_config_registers.v
+    Info (12023): Found entity 1: igor_config_registers File: C:/Users/William Anthony/Documents/Codex/2026-09-30/files-mentioned-by-the-user-draft/outputs/MAX10_10M50DAF484C7G/rtl/igor_config_registers.v Line: 6
+Info (12021): Found 1 design units, including 1 entities, in source file /users/william anthony/documents/codex/2026-09-30/files-mentioned-by-the-user-draft/outputs/max10_10m50daf484c7g/rtl/igor_costmap_bank.v
+    Info (12023): Found entity 1: igor_costmap_bank File: C:/Users/William Anthony/Documents/Codex/2026-09-30/files-mentioned-by-the-user-draft/outputs/MAX10_10M50DAF484C7G/rtl/igor_costmap_bank.v Line: 6
+Info (12021): Found 1 design units, including 1 entities, in source file /users/william anthony/documents/codex/2026-09-30/files-mentioned-by-the-user-draft/outputs/max10_10m50daf484c7g/rtl/igor_costmap_manager.v
+    Info (12023): Found entity 1: igor_costmap_manager File: C:/Users/William Anthony/Documents/Codex/2026-09-30/files-mentioned-by-the-user-draft/outputs/MAX10_10M50DAF484C7G/rtl/igor_costmap_manager.v Line: 6
+Info (12021): Found 1 design units, including 1 entities, in source file /users/william anthony/documents/codex/2026-09-30/files-mentioned-by-the-user-draft/outputs/max10_10m50daf484c7g/rtl/igor_de10_lite_top.v
+    Info (12023): Found entity 1: igor_de10_lite_top File: C:/Users/William Anthony/Documents/Codex/2026-09-30/files-mentioned-by-the-user-draft/outputs/MAX10_10M50DAF484C7G/rtl/igor_de10_lite_top.v Line: 6
+Info (12021): Found 1 design units, including 1 entities, in source file /users/william anthony/documents/codex/2026-09-30/files-mentioned-by-the-user-draft/outputs/max10_10m50daf484c7g/rtl/igor_kinematic_step.v
+    Info (12023): Found entity 1: igor_kinematic_step File: C:/Users/William Anthony/Documents/Codex/2026-09-30/files-mentioned-by-the-user-draft/outputs/MAX10_10M50DAF484C7G/rtl/igor_kinematic_step.v Line: 6
+Info (12021): Found 1 design units, including 1 entities, in source file /users/william anthony/documents/codex/2026-09-30/files-mentioned-by-the-user-draft/outputs/max10_10m50daf484c7g/rtl/igor_neural_core.v
+    Info (12023): Found entity 1: igor_neural_core File: C:/Users/William Anthony/Documents/Codex/2026-09-30/files-mentioned-by-the-user-draft/outputs/MAX10_10M50DAF484C7G/rtl/igor_neural_core.v Line: 6
+Info (12021): Found 1 design units, including 1 entities, in source file /users/william anthony/documents/codex/2026-09-30/files-mentioned-by-the-user-draft/outputs/max10_10m50daf484c7g/rtl/igor_neural_rom.v
+    Info (12023): Found entity 1: igor_neural_rom File: C:/Users/William Anthony/Documents/Codex/2026-09-30/files-mentioned-by-the-user-draft/outputs/MAX10_10M50DAF484C7G/rtl/igor_neural_rom.v Line: 6
+Info (12021): Found 1 design units, including 1 entities, in source file /users/william anthony/documents/codex/2026-09-30/files-mentioned-by-the-user-draft/outputs/max10_10m50daf484c7g/rtl/igor_rollout_tile.v
+    Info (12023): Found entity 1: igor_rollout_tile File: C:/Users/William Anthony/Documents/Codex/2026-09-30/files-mentioned-by-the-user-draft/outputs/MAX10_10M50DAF484C7G/rtl/igor_rollout_tile.v Line: 6
+Info (12021): Found 1 design units, including 1 entities, in source file /users/william anthony/documents/codex/2026-09-30/files-mentioned-by-the-user-draft/outputs/max10_10m50daf484c7g/rtl/igor_safety_security_gate.v
+    Info (12023): Found entity 1: igor_safety_security_gate File: C:/Users/William Anthony/Documents/Codex/2026-09-30/files-mentioned-by-the-user-draft/outputs/MAX10_10M50DAF484C7G/rtl/igor_safety_security_gate.v Line: 6
+Info (12021): Found 1 design units, including 1 entities, in source file /users/william anthony/documents/codex/2026-09-30/files-mentioned-by-the-user-draft/outputs/max10_10m50daf484c7g/rtl/igor_score_accumulator.v
+    Info (12023): Found entity 1: igor_score_accumulator File: C:/Users/William Anthony/Documents/Codex/2026-09-30/files-mentioned-by-the-user-draft/outputs/MAX10_10M50DAF484C7G/rtl/igor_score_accumulator.v Line: 6
+Info (12021): Found 1 design units, including 1 entities, in source file /users/william anthony/documents/codex/2026-09-30/files-mentioned-by-the-user-draft/outputs/max10_10m50daf484c7g/rtl/igor_status_logger.v
+    Info (12023): Found entity 1: igor_status_logger File: C:/Users/William Anthony/Documents/Codex/2026-09-30/files-mentioned-by-the-user-draft/outputs/MAX10_10M50DAF484C7G/rtl/igor_status_logger.v Line: 6
+Info (12021): Found 1 design units, including 1 entities, in source file /users/william anthony/documents/codex/2026-09-30/files-mentioned-by-the-user-draft/outputs/max10_10m50daf484c7g/rtl/igor_top.v
+    Info (12023): Found entity 1: igor_top File: C:/Users/William Anthony/Documents/Codex/2026-09-30/files-mentioned-by-the-user-draft/outputs/MAX10_10M50DAF484C7G/rtl/igor_top.v Line: 6
+Info (12021): Found 1 design units, including 1 entities, in source file /users/william anthony/documents/codex/2026-09-30/files-mentioned-by-the-user-draft/outputs/max10_10m50daf484c7g/rtl/igor_trig_lut.v
+    Info (12023): Found entity 1: igor_trig_lut File: C:/Users/William Anthony/Documents/Codex/2026-09-30/files-mentioned-by-the-user-draft/outputs/MAX10_10M50DAF484C7G/rtl/igor_trig_lut.v Line: 6
+Info (12021): Found 1 design units, including 1 entities, in source file /users/william anthony/documents/codex/2026-09-30/files-mentioned-by-the-user-draft/outputs/max10_10m50daf484c7g/rtl/igor_uart_protocol.v
+    Info (12023): Found entity 1: igor_uart_protocol File: C:/Users/William Anthony/Documents/Codex/2026-09-30/files-mentioned-by-the-user-draft/outputs/MAX10_10M50DAF484C7G/rtl/igor_uart_protocol.v Line: 6
+Info (12021): Found 1 design units, including 1 entities, in source file /users/william anthony/documents/codex/2026-09-30/files-mentioned-by-the-user-draft/outputs/max10_10m50daf484c7g/rtl/igor_uart_rx.v
+    Info (12023): Found entity 1: igor_uart_rx File: C:/Users/William Anthony/Documents/Codex/2026-09-30/files-mentioned-by-the-user-draft/outputs/MAX10_10M50DAF484C7G/rtl/igor_uart_rx.v Line: 6
+Info (12021): Found 1 design units, including 1 entities, in source file /users/william anthony/documents/codex/2026-09-30/files-mentioned-by-the-user-draft/outputs/max10_10m50daf484c7g/rtl/igor_uart_top.v
+    Info (12023): Found entity 1: igor_uart_top File: C:/Users/William Anthony/Documents/Codex/2026-09-30/files-mentioned-by-the-user-draft/outputs/MAX10_10M50DAF484C7G/rtl/igor_uart_top.v Line: 6
+Info (12021): Found 1 design units, including 1 entities, in source file /users/william anthony/documents/codex/2026-09-30/files-mentioned-by-the-user-draft/outputs/max10_10m50daf484c7g/rtl/igor_uart_tx.v
+    Info (12023): Found entity 1: igor_uart_tx File: C:/Users/William Anthony/Documents/Codex/2026-09-30/files-mentioned-by-the-user-draft/outputs/MAX10_10M50DAF484C7G/rtl/igor_uart_tx.v Line: 6
+Info (12127): Elaborating entity "igor_de10_lite_top" for the top level hierarchy
+Info (12128): Elaborating entity "igor_uart_top" for hierarchy "igor_uart_top:system" File: C:/Users/William Anthony/Documents/Codex/2026-09-30/files-mentioned-by-the-user-draft/outputs/MAX10_10M50DAF484C7G/rtl/igor_de10_lite_top.v Line: 11
+Info (12128): Elaborating entity "igor_uart_protocol" for hierarchy "igor_uart_top:system|igor_uart_protocol:serial" File: C:/Users/William Anthony/Documents/Codex/2026-09-30/files-mentioned-by-the-user-draft/outputs/MAX10_10M50DAF484C7G/rtl/igor_uart_top.v Line: 14
+Info (12128): Elaborating entity "igor_uart_rx" for hierarchy "igor_uart_top:system|igor_uart_protocol:serial|igor_uart_rx:receiver" File: C:/Users/William Anthony/Documents/Codex/2026-09-30/files-mentioned-by-the-user-draft/outputs/MAX10_10M50DAF484C7G/rtl/igor_uart_protocol.v Line: 11
+Info (12128): Elaborating entity "igor_uart_tx" for hierarchy "igor_uart_top:system|igor_uart_protocol:serial|igor_uart_tx:transmitter" File: C:/Users/William Anthony/Documents/Codex/2026-09-30/files-mentioned-by-the-user-draft/outputs/MAX10_10M50DAF484C7G/rtl/igor_uart_protocol.v Line: 12
+Info (12128): Elaborating entity "igor_top" for hierarchy "igor_uart_top:system|igor_top:core" File: C:/Users/William Anthony/Documents/Codex/2026-09-30/files-mentioned-by-the-user-draft/outputs/MAX10_10M50DAF484C7G/rtl/igor_uart_top.v Line: 21
+Info (12128): Elaborating entity "igor_config_registers" for hierarchy "igor_uart_top:system|igor_top:core|igor_config_registers:cfg" File: C:/Users/William Anthony/Documents/Codex/2026-09-30/files-mentioned-by-the-user-draft/outputs/MAX10_10M50DAF484C7G/rtl/igor_top.v Line: 17
+Info (12128): Elaborating entity "igor_costmap_manager" for hierarchy "igor_uart_top:system|igor_top:core|igor_costmap_manager:maps" File: C:/Users/William Anthony/Documents/Codex/2026-09-30/files-mentioned-by-the-user-draft/outputs/MAX10_10M50DAF484C7G/rtl/igor_top.v Line: 19
+Info (12128): Elaborating entity "igor_costmap_bank" for hierarchy "igor_uart_top:system|igor_top:core|igor_costmap_bank:tiles[0].memory" File: C:/Users/William Anthony/Documents/Codex/2026-09-30/files-mentioned-by-the-user-draft/outputs/MAX10_10M50DAF484C7G/rtl/igor_top.v Line: 29
+Info (12128): Elaborating entity "igor_rollout_tile" for hierarchy "igor_uart_top:system|igor_top:core|igor_rollout_tile:tiles[0].tile" File: C:/Users/William Anthony/Documents/Codex/2026-09-30/files-mentioned-by-the-user-draft/outputs/MAX10_10M50DAF484C7G/rtl/igor_top.v Line: 30
+Info (12128): Elaborating entity "igor_candidate_generator" for hierarchy "igor_uart_top:system|igor_top:core|igor_rollout_tile:tiles[0].tile|igor_candidate_generator:gen" File: C:/Users/William Anthony/Documents/Codex/2026-09-30/files-mentioned-by-the-user-draft/outputs/MAX10_10M50DAF484C7G/rtl/igor_rollout_tile.v Line: 17
+Info (12128): Elaborating entity "igor_kinematic_step" for hierarchy "igor_uart_top:system|igor_top:core|igor_rollout_tile:tiles[0].tile|igor_kinematic_step:stepper" File: C:/Users/William Anthony/Documents/Codex/2026-09-30/files-mentioned-by-the-user-draft/outputs/MAX10_10M50DAF484C7G/rtl/igor_rollout_tile.v Line: 18
+Info (12128): Elaborating entity "igor_trig_lut" for hierarchy "igor_uart_top:system|igor_top:core|igor_rollout_tile:tiles[0].tile|igor_kinematic_step:stepper|igor_trig_lut:s" File: C:/Users/William Anthony/Documents/Codex/2026-09-30/files-mentioned-by-the-user-draft/outputs/MAX10_10M50DAF484C7G/rtl/igor_kinematic_step.v Line: 12
+Info (12128): Elaborating entity "igor_score_accumulator" for hierarchy "igor_uart_top:system|igor_top:core|igor_rollout_tile:tiles[0].tile|igor_score_accumulator:acc" File: C:/Users/William Anthony/Documents/Codex/2026-09-30/files-mentioned-by-the-user-draft/outputs/MAX10_10M50DAF484C7G/rtl/igor_rollout_tile.v Line: 21
+Info (12128): Elaborating entity "igor_rollout_tile" for hierarchy "igor_uart_top:system|igor_top:core|igor_rollout_tile:tiles[1].tile" File: C:/Users/William Anthony/Documents/Codex/2026-09-30/files-mentioned-by-the-user-draft/outputs/MAX10_10M50DAF484C7G/rtl/igor_top.v Line: 30
+Info (12128): Elaborating entity "igor_rollout_tile" for hierarchy "igor_uart_top:system|igor_top:core|igor_rollout_tile:tiles[2].tile" File: C:/Users/William Anthony/Documents/Codex/2026-09-30/files-mentioned-by-the-user-draft/outputs/MAX10_10M50DAF484C7G/rtl/igor_top.v Line: 30
+Info (12128): Elaborating entity "igor_rollout_tile" for hierarchy "igor_uart_top:system|igor_top:core|igor_rollout_tile:tiles[3].tile" File: C:/Users/William Anthony/Documents/Codex/2026-09-30/files-mentioned-by-the-user-draft/outputs/MAX10_10M50DAF484C7G/rtl/igor_top.v Line: 30
+Info (12128): Elaborating entity "igor_best_candidate_selector" for hierarchy "igor_uart_top:system|igor_top:core|igor_best_candidate_selector:selector" File: C:/Users/William Anthony/Documents/Codex/2026-09-30/files-mentioned-by-the-user-draft/outputs/MAX10_10M50DAF484C7G/rtl/igor_top.v Line: 33
+Info (12128): Elaborating entity "igor_safety_security_gate" for hierarchy "igor_uart_top:system|igor_top:core|igor_safety_security_gate:gate" File: C:/Users/William Anthony/Documents/Codex/2026-09-30/files-mentioned-by-the-user-draft/outputs/MAX10_10M50DAF484C7G/rtl/igor_top.v Line: 42
+Info (12128): Elaborating entity "igor_status_logger" for hierarchy "igor_uart_top:system|igor_top:core|igor_status_logger:logger" File: C:/Users/William Anthony/Documents/Codex/2026-09-30/files-mentioned-by-the-user-draft/outputs/MAX10_10M50DAF484C7G/rtl/igor_top.v Line: 43
+Info (12128): Elaborating entity "igor_neural_rom" for hierarchy "igor_uart_top:system|igor_neural_rom:inspection_rom" File: C:/Users/William Anthony/Documents/Codex/2026-09-30/files-mentioned-by-the-user-draft/outputs/MAX10_10M50DAF484C7G/rtl/igor_uart_top.v Line: 23
+Warning (10030): Net "memory.data_a" at igor_neural_rom.v(8) has no driver or initial value, using a default initial value '0' File: C:/Users/William Anthony/Documents/Codex/2026-09-30/files-mentioned-by-the-user-draft/outputs/MAX10_10M50DAF484C7G/rtl/igor_neural_rom.v Line: 8
+Warning (10030): Net "memory.waddr_a" at igor_neural_rom.v(8) has no driver or initial value, using a default initial value '0' File: C:/Users/William Anthony/Documents/Codex/2026-09-30/files-mentioned-by-the-user-draft/outputs/MAX10_10M50DAF484C7G/rtl/igor_neural_rom.v Line: 8
+Warning (10030): Net "memory.we_a" at igor_neural_rom.v(8) has no driver or initial value, using a default initial value '0' File: C:/Users/William Anthony/Documents/Codex/2026-09-30/files-mentioned-by-the-user-draft/outputs/MAX10_10M50DAF484C7G/rtl/igor_neural_rom.v Line: 8
+Info (12128): Elaborating entity "igor_neural_core" for hierarchy "igor_uart_top:system|igor_neural_core:neural" File: C:/Users/William Anthony/Documents/Codex/2026-09-30/files-mentioned-by-the-user-draft/outputs/MAX10_10M50DAF484C7G/rtl/igor_uart_top.v Line: 24
+Warning (276020): Inferred RAM node "igor_uart_top:system|igor_neural_core:neural|inputs_rtl_0" from synchronous design logic.  Pass-through logic has been added to match the read-during-write behavior of the original design.
+Warning (276020): Inferred RAM node "igor_uart_top:system|igor_neural_core:neural|h1_rtl_0" from synchronous design logic.  Pass-through logic has been added to match the read-during-write behavior of the original design.
+Warning (276020): Inferred RAM node "igor_uart_top:system|igor_neural_core:neural|h2_rtl_0" from synchronous design logic.  Pass-through logic has been added to match the read-during-write behavior of the original design.
+Info (276014): Found 11 instances of uninferred RAM logic
+    Info (276013): RAM logic "igor_uart_top:system|igor_top:core|igor_rollout_tile:tiles[0].tile|igor_kinematic_step:stepper|igor_trig_lut:c|Ram0" is uninferred because MIF is not supported for the selected family File: C:/Users/William Anthony/Documents/Codex/2026-09-30/files-mentioned-by-the-user-draft/outputs/MAX10_10M50DAF484C7G/rtl/igor_trig_lut.v Line: 8
+    Info (276013): RAM logic "igor_uart_top:system|igor_top:core|igor_rollout_tile:tiles[0].tile|igor_kinematic_step:stepper|igor_trig_lut:s|Ram0" is uninferred because MIF is not supported for the selected family File: C:/Users/William Anthony/Documents/Codex/2026-09-30/files-mentioned-by-the-user-draft/outputs/MAX10_10M50DAF484C7G/rtl/igor_trig_lut.v Line: 8
+    Info (276013): RAM logic "igor_uart_top:system|igor_top:core|igor_rollout_tile:tiles[1].tile|igor_kinematic_step:stepper|igor_trig_lut:c|Ram0" is uninferred because MIF is not supported for the selected family File: C:/Users/William Anthony/Documents/Codex/2026-09-30/files-mentioned-by-the-user-draft/outputs/MAX10_10M50DAF484C7G/rtl/igor_trig_lut.v Line: 8
+    Info (276013): RAM logic "igor_uart_top:system|igor_top:core|igor_rollout_tile:tiles[1].tile|igor_kinematic_step:stepper|igor_trig_lut:s|Ram0" is uninferred because MIF is not supported for the selected family File: C:/Users/William Anthony/Documents/Codex/2026-09-30/files-mentioned-by-the-user-draft/outputs/MAX10_10M50DAF484C7G/rtl/igor_trig_lut.v Line: 8
+    Info (276013): RAM logic "igor_uart_top:system|igor_top:core|igor_rollout_tile:tiles[2].tile|igor_kinematic_step:stepper|igor_trig_lut:c|Ram0" is uninferred because MIF is not supported for the selected family File: C:/Users/William Anthony/Documents/Codex/2026-09-30/files-mentioned-by-the-user-draft/outputs/MAX10_10M50DAF484C7G/rtl/igor_trig_lut.v Line: 8
+    Info (276013): RAM logic "igor_uart_top:system|igor_top:core|igor_rollout_tile:tiles[2].tile|igor_kinematic_step:stepper|igor_trig_lut:s|Ram0" is uninferred because MIF is not supported for the selected family File: C:/Users/William Anthony/Documents/Codex/2026-09-30/files-mentioned-by-the-user-draft/outputs/MAX10_10M50DAF484C7G/rtl/igor_trig_lut.v Line: 8
+    Info (276013): RAM logic "igor_uart_top:system|igor_top:core|igor_rollout_tile:tiles[3].tile|igor_kinematic_step:stepper|igor_trig_lut:c|Ram0" is uninferred because MIF is not supported for the selected family File: C:/Users/William Anthony/Documents/Codex/2026-09-30/files-mentioned-by-the-user-draft/outputs/MAX10_10M50DAF484C7G/rtl/igor_trig_lut.v Line: 8
+    Info (276013): RAM logic "igor_uart_top:system|igor_top:core|igor_rollout_tile:tiles[3].tile|igor_kinematic_step:stepper|igor_trig_lut:s|Ram0" is uninferred because MIF is not supported for the selected family File: C:/Users/William Anthony/Documents/Codex/2026-09-30/files-mentioned-by-the-user-draft/outputs/MAX10_10M50DAF484C7G/rtl/igor_trig_lut.v Line: 8
+    Info (276013): RAM logic "igor_uart_top:system|igor_neural_core:neural|igor_neural_rom:weights|memory" is uninferred because MIF is not supported for the selected family File: C:/Users/William Anthony/Documents/Codex/2026-09-30/files-mentioned-by-the-user-draft/outputs/MAX10_10M50DAF484C7G/rtl/igor_neural_rom.v Line: 8
+    Info (276004): RAM logic "igor_uart_top:system|igor_neural_core:neural|outputs" is uninferred due to inappropriate RAM size File: C:/Users/William Anthony/Documents/Codex/2026-09-30/files-mentioned-by-the-user-draft/outputs/MAX10_10M50DAF484C7G/rtl/igor_neural_core.v Line: 10
+    Info (276013): RAM logic "igor_uart_top:system|igor_neural_rom:inspection_rom|memory" is uninferred because MIF is not supported for the selected family File: C:/Users/William Anthony/Documents/Codex/2026-09-30/files-mentioned-by-the-user-draft/outputs/MAX10_10M50DAF484C7G/rtl/igor_neural_rom.v Line: 8
+Info (19000): Inferred 7 megafunctions from design logic
+    Info (276029): Inferred altsyncram megafunction from the following design logic: "igor_uart_top:system|igor_top:core|igor_costmap_bank:tiles[0].memory|memory_rtl_0" 
+        Info (286033): Parameter OPERATION_MODE set to DUAL_PORT
+        Info (286033): Parameter WIDTH_A set to 8
+        Info (286033): Parameter WIDTHAD_A set to 15
+        Info (286033): Parameter NUMWORDS_A set to 32768
+        Info (286033): Parameter WIDTH_B set to 8
+        Info (286033): Parameter WIDTHAD_B set to 15
+        Info (286033): Parameter NUMWORDS_B set to 32768
+        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
+        Info (286033): Parameter OUTDATA_REG_B set to UNREGISTERED
+        Info (286033): Parameter ADDRESS_ACLR_B set to NONE
+        Info (286033): Parameter OUTDATA_ACLR_B set to NONE
+        Info (286033): Parameter ADDRESS_REG_B set to CLOCK0
+        Info (286033): Parameter INDATA_ACLR_A set to NONE
+        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
+        Info (286033): Parameter RAM_BLOCK_TYPE set to M9K
+        Info (286033): Parameter READ_DURING_WRITE_MODE_MIXED_PORTS set to OLD_DATA
+    Info (276029): Inferred altsyncram megafunction from the following design logic: "igor_uart_top:system|igor_top:core|igor_costmap_bank:tiles[1].memory|memory_rtl_0" 
+        Info (286033): Parameter OPERATION_MODE set to DUAL_PORT
+        Info (286033): Parameter WIDTH_A set to 8
+        Info (286033): Parameter WIDTHAD_A set to 15
+        Info (286033): Parameter NUMWORDS_A set to 32768
+        Info (286033): Parameter WIDTH_B set to 8
+        Info (286033): Parameter WIDTHAD_B set to 15
+        Info (286033): Parameter NUMWORDS_B set to 32768
+        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
+        Info (286033): Parameter OUTDATA_REG_B set to UNREGISTERED
+        Info (286033): Parameter ADDRESS_ACLR_B set to NONE
+        Info (286033): Parameter OUTDATA_ACLR_B set to NONE
+        Info (286033): Parameter ADDRESS_REG_B set to CLOCK0
+        Info (286033): Parameter INDATA_ACLR_A set to NONE
+        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
+        Info (286033): Parameter RAM_BLOCK_TYPE set to M9K
+        Info (286033): Parameter READ_DURING_WRITE_MODE_MIXED_PORTS set to OLD_DATA
+    Info (276029): Inferred altsyncram megafunction from the following design logic: "igor_uart_top:system|igor_top:core|igor_costmap_bank:tiles[2].memory|memory_rtl_0" 
+        Info (286033): Parameter OPERATION_MODE set to DUAL_PORT
+        Info (286033): Parameter WIDTH_A set to 8
+        Info (286033): Parameter WIDTHAD_A set to 15
+        Info (286033): Parameter NUMWORDS_A set to 32768
+        Info (286033): Parameter WIDTH_B set to 8
+        Info (286033): Parameter WIDTHAD_B set to 15
+        Info (286033): Parameter NUMWORDS_B set to 32768
+        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
+        Info (286033): Parameter OUTDATA_REG_B set to UNREGISTERED
+        Info (286033): Parameter ADDRESS_ACLR_B set to NONE
+        Info (286033): Parameter OUTDATA_ACLR_B set to NONE
+        Info (286033): Parameter ADDRESS_REG_B set to CLOCK0
+        Info (286033): Parameter INDATA_ACLR_A set to NONE
+        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
+        Info (286033): Parameter RAM_BLOCK_TYPE set to M9K
+        Info (286033): Parameter READ_DURING_WRITE_MODE_MIXED_PORTS set to OLD_DATA
+    Info (276029): Inferred altsyncram megafunction from the following design logic: "igor_uart_top:system|igor_top:core|igor_costmap_bank:tiles[3].memory|memory_rtl_0" 
+        Info (286033): Parameter OPERATION_MODE set to DUAL_PORT
+        Info (286033): Parameter WIDTH_A set to 8
+        Info (286033): Parameter WIDTHAD_A set to 15
+        Info (286033): Parameter NUMWORDS_A set to 32768
+        Info (286033): Parameter WIDTH_B set to 8
+        Info (286033): Parameter WIDTHAD_B set to 15
+        Info (286033): Parameter NUMWORDS_B set to 32768
+        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
+        Info (286033): Parameter OUTDATA_REG_B set to UNREGISTERED
+        Info (286033): Parameter ADDRESS_ACLR_B set to NONE
+        Info (286033): Parameter OUTDATA_ACLR_B set to NONE
+        Info (286033): Parameter ADDRESS_REG_B set to CLOCK0
+        Info (286033): Parameter INDATA_ACLR_A set to NONE
+        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
+        Info (286033): Parameter RAM_BLOCK_TYPE set to M9K
+        Info (286033): Parameter READ_DURING_WRITE_MODE_MIXED_PORTS set to OLD_DATA
+    Info (276029): Inferred altsyncram megafunction from the following design logic: "igor_uart_top:system|igor_neural_core:neural|inputs_rtl_0" 
+        Info (286033): Parameter OPERATION_MODE set to DUAL_PORT
+        Info (286033): Parameter WIDTH_A set to 16
+        Info (286033): Parameter WIDTHAD_A set to 5
+        Info (286033): Parameter NUMWORDS_A set to 24
+        Info (286033): Parameter WIDTH_B set to 16
+        Info (286033): Parameter WIDTHAD_B set to 5
+        Info (286033): Parameter NUMWORDS_B set to 24
+        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
+        Info (286033): Parameter OUTDATA_REG_B set to UNREGISTERED
+        Info (286033): Parameter ADDRESS_ACLR_B set to NONE
+        Info (286033): Parameter OUTDATA_ACLR_B set to NONE
+        Info (286033): Parameter ADDRESS_REG_B set to CLOCK0
+        Info (286033): Parameter INDATA_ACLR_A set to NONE
+        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
+        Info (286033): Parameter READ_DURING_WRITE_MODE_MIXED_PORTS set to OLD_DATA
+    Info (276029): Inferred altsyncram megafunction from the following design logic: "igor_uart_top:system|igor_neural_core:neural|h1_rtl_0" 
+        Info (286033): Parameter OPERATION_MODE set to DUAL_PORT
+        Info (286033): Parameter WIDTH_A set to 16
+        Info (286033): Parameter WIDTHAD_A set to 6
+        Info (286033): Parameter NUMWORDS_A set to 64
+        Info (286033): Parameter WIDTH_B set to 16
+        Info (286033): Parameter WIDTHAD_B set to 6
+        Info (286033): Parameter NUMWORDS_B set to 64
+        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
+        Info (286033): Parameter OUTDATA_REG_B set to UNREGISTERED
+        Info (286033): Parameter ADDRESS_ACLR_B set to NONE
+        Info (286033): Parameter OUTDATA_ACLR_B set to NONE
+        Info (286033): Parameter ADDRESS_REG_B set to CLOCK0
+        Info (286033): Parameter INDATA_ACLR_A set to NONE
+        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
+        Info (286033): Parameter READ_DURING_WRITE_MODE_MIXED_PORTS set to OLD_DATA
+    Info (276029): Inferred altsyncram megafunction from the following design logic: "igor_uart_top:system|igor_neural_core:neural|h2_rtl_0" 
+        Info (286033): Parameter OPERATION_MODE set to DUAL_PORT
+        Info (286033): Parameter WIDTH_A set to 16
+        Info (286033): Parameter WIDTHAD_A set to 6
+        Info (286033): Parameter NUMWORDS_A set to 64
+        Info (286033): Parameter WIDTH_B set to 16
+        Info (286033): Parameter WIDTHAD_B set to 6
+        Info (286033): Parameter NUMWORDS_B set to 64
+        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
+        Info (286033): Parameter OUTDATA_REG_B set to UNREGISTERED
+        Info (286033): Parameter ADDRESS_ACLR_B set to NONE
+        Info (286033): Parameter OUTDATA_ACLR_B set to NONE
+        Info (286033): Parameter ADDRESS_REG_B set to CLOCK0
+        Info (286033): Parameter INDATA_ACLR_A set to NONE
+        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
+        Info (286033): Parameter READ_DURING_WRITE_MODE_MIXED_PORTS set to OLD_DATA
+Info (278001): Inferred 10 megafunctions from design logic
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "igor_uart_top:system|igor_top:core|igor_rollout_tile:tiles[0].tile|igor_kinematic_step:stepper|Mult0" File: C:/Users/William Anthony/Documents/Codex/2026-09-30/files-mentioned-by-the-user-draft/outputs/MAX10_10M50DAF484C7G/rtl/igor_kinematic_step.v Line: 14
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "igor_uart_top:system|igor_top:core|igor_rollout_tile:tiles[0].tile|igor_kinematic_step:stepper|Mult1" File: C:/Users/William Anthony/Documents/Codex/2026-09-30/files-mentioned-by-the-user-draft/outputs/MAX10_10M50DAF484C7G/rtl/igor_kinematic_step.v Line: 14
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "igor_uart_top:system|igor_top:core|igor_rollout_tile:tiles[1].tile|igor_kinematic_step:stepper|Mult0" File: C:/Users/William Anthony/Documents/Codex/2026-09-30/files-mentioned-by-the-user-draft/outputs/MAX10_10M50DAF484C7G/rtl/igor_kinematic_step.v Line: 14
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "igor_uart_top:system|igor_top:core|igor_rollout_tile:tiles[1].tile|igor_kinematic_step:stepper|Mult1" File: C:/Users/William Anthony/Documents/Codex/2026-09-30/files-mentioned-by-the-user-draft/outputs/MAX10_10M50DAF484C7G/rtl/igor_kinematic_step.v Line: 14
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "igor_uart_top:system|igor_top:core|igor_rollout_tile:tiles[2].tile|igor_kinematic_step:stepper|Mult0" File: C:/Users/William Anthony/Documents/Codex/2026-09-30/files-mentioned-by-the-user-draft/outputs/MAX10_10M50DAF484C7G/rtl/igor_kinematic_step.v Line: 14
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "igor_uart_top:system|igor_top:core|igor_rollout_tile:tiles[2].tile|igor_kinematic_step:stepper|Mult1" File: C:/Users/William Anthony/Documents/Codex/2026-09-30/files-mentioned-by-the-user-draft/outputs/MAX10_10M50DAF484C7G/rtl/igor_kinematic_step.v Line: 14
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "igor_uart_top:system|igor_top:core|igor_rollout_tile:tiles[3].tile|igor_kinematic_step:stepper|Mult0" File: C:/Users/William Anthony/Documents/Codex/2026-09-30/files-mentioned-by-the-user-draft/outputs/MAX10_10M50DAF484C7G/rtl/igor_kinematic_step.v Line: 14
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "igor_uart_top:system|igor_top:core|igor_rollout_tile:tiles[3].tile|igor_kinematic_step:stepper|Mult1" File: C:/Users/William Anthony/Documents/Codex/2026-09-30/files-mentioned-by-the-user-draft/outputs/MAX10_10M50DAF484C7G/rtl/igor_kinematic_step.v Line: 14
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "igor_uart_top:system|igor_neural_core:neural|Mult0" File: C:/Users/William Anthony/Documents/Codex/2026-09-30/files-mentioned-by-the-user-draft/outputs/MAX10_10M50DAF484C7G/rtl/igor_neural_core.v Line: 15
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "igor_uart_top:system|igor_neural_core:neural|Mult1" File: C:/Users/William Anthony/Documents/Codex/2026-09-30/files-mentioned-by-the-user-draft/outputs/MAX10_10M50DAF484C7G/rtl/igor_neural_core.v Line: 39
+Info (12130): Elaborated megafunction instantiation "igor_uart_top:system|igor_top:core|igor_costmap_bank:tiles[0].memory|altsyncram:memory_rtl_0"
+Info (12133): Instantiated megafunction "igor_uart_top:system|igor_top:core|igor_costmap_bank:tiles[0].memory|altsyncram:memory_rtl_0" with the following parameter:
+    Info (12134): Parameter "OPERATION_MODE" = "DUAL_PORT"
+    Info (12134): Parameter "WIDTH_A" = "8"
+    Info (12134): Parameter "WIDTHAD_A" = "15"
+    Info (12134): Parameter "NUMWORDS_A" = "32768"
+    Info (12134): Parameter "WIDTH_B" = "8"
+    Info (12134): Parameter "WIDTHAD_B" = "15"
+    Info (12134): Parameter "NUMWORDS_B" = "32768"
+    Info (12134): Parameter "ADDRESS_ACLR_A" = "NONE"
+    Info (12134): Parameter "OUTDATA_REG_B" = "UNREGISTERED"
+    Info (12134): Parameter "ADDRESS_ACLR_B" = "NONE"
+    Info (12134): Parameter "OUTDATA_ACLR_B" = "NONE"
+    Info (12134): Parameter "ADDRESS_REG_B" = "CLOCK0"
+    Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
+    Info (12134): Parameter "RAM_BLOCK_TYPE" = "M9K"
+    Info (12134): Parameter "READ_DURING_WRITE_MODE_MIXED_PORTS" = "OLD_DATA"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_jdi1.tdf
+    Info (12023): Found entity 1: altsyncram_jdi1 File: C:/Users/William Anthony/Documents/Codex/2026-09-30/files-mentioned-by-the-user-draft/outputs/MAX10_10M50DAF484C7G/quartus/db/altsyncram_jdi1.tdf Line: 32
+Info (12021): Found 1 design units, including 1 entities, in source file db/decode_c7a.tdf
+    Info (12023): Found entity 1: decode_c7a File: C:/Users/William Anthony/Documents/Codex/2026-09-30/files-mentioned-by-the-user-draft/outputs/MAX10_10M50DAF484C7G/quartus/db/decode_c7a.tdf Line: 23
+Info (12021): Found 1 design units, including 1 entities, in source file db/mux_s1b.tdf
+    Info (12023): Found entity 1: mux_s1b File: C:/Users/William Anthony/Documents/Codex/2026-09-30/files-mentioned-by-the-user-draft/outputs/MAX10_10M50DAF484C7G/quartus/db/mux_s1b.tdf Line: 23
+Info (12130): Elaborated megafunction instantiation "igor_uart_top:system|igor_neural_core:neural|altsyncram:inputs_rtl_0"
+Info (12133): Instantiated megafunction "igor_uart_top:system|igor_neural_core:neural|altsyncram:inputs_rtl_0" with the following parameter:
+    Info (12134): Parameter "OPERATION_MODE" = "DUAL_PORT"
+    Info (12134): Parameter "WIDTH_A" = "16"
+    Info (12134): Parameter "WIDTHAD_A" = "5"
+    Info (12134): Parameter "NUMWORDS_A" = "24"
+    Info (12134): Parameter "WIDTH_B" = "16"
+    Info (12134): Parameter "WIDTHAD_B" = "5"
+    Info (12134): Parameter "NUMWORDS_B" = "24"
+    Info (12134): Parameter "ADDRESS_ACLR_A" = "NONE"
+    Info (12134): Parameter "OUTDATA_REG_B" = "UNREGISTERED"
+    Info (12134): Parameter "ADDRESS_ACLR_B" = "NONE"
+    Info (12134): Parameter "OUTDATA_ACLR_B" = "NONE"
+    Info (12134): Parameter "ADDRESS_REG_B" = "CLOCK0"
+    Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
+    Info (12134): Parameter "READ_DURING_WRITE_MODE_MIXED_PORTS" = "OLD_DATA"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_a7g1.tdf
+    Info (12023): Found entity 1: altsyncram_a7g1 File: C:/Users/William Anthony/Documents/Codex/2026-09-30/files-mentioned-by-the-user-draft/outputs/MAX10_10M50DAF484C7G/quartus/db/altsyncram_a7g1.tdf Line: 28
+Info (12130): Elaborated megafunction instantiation "igor_uart_top:system|igor_neural_core:neural|altsyncram:h1_rtl_0"
+Info (12133): Instantiated megafunction "igor_uart_top:system|igor_neural_core:neural|altsyncram:h1_rtl_0" with the following parameter:
+    Info (12134): Parameter "OPERATION_MODE" = "DUAL_PORT"
+    Info (12134): Parameter "WIDTH_A" = "16"
+    Info (12134): Parameter "WIDTHAD_A" = "6"
+    Info (12134): Parameter "NUMWORDS_A" = "64"
+    Info (12134): Parameter "WIDTH_B" = "16"
+    Info (12134): Parameter "WIDTHAD_B" = "6"
+    Info (12134): Parameter "NUMWORDS_B" = "64"
+    Info (12134): Parameter "ADDRESS_ACLR_A" = "NONE"
+    Info (12134): Parameter "OUTDATA_REG_B" = "UNREGISTERED"
+    Info (12134): Parameter "ADDRESS_ACLR_B" = "NONE"
+    Info (12134): Parameter "OUTDATA_ACLR_B" = "NONE"
+    Info (12134): Parameter "ADDRESS_REG_B" = "CLOCK0"
+    Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
+    Info (12134): Parameter "READ_DURING_WRITE_MODE_MIXED_PORTS" = "OLD_DATA"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_k7g1.tdf
+    Info (12023): Found entity 1: altsyncram_k7g1 File: C:/Users/William Anthony/Documents/Codex/2026-09-30/files-mentioned-by-the-user-draft/outputs/MAX10_10M50DAF484C7G/quartus/db/altsyncram_k7g1.tdf Line: 28
+Info (12130): Elaborated megafunction instantiation "igor_uart_top:system|igor_top:core|igor_rollout_tile:tiles[0].tile|igor_kinematic_step:stepper|lpm_mult:Mult0" File: C:/Users/William Anthony/Documents/Codex/2026-09-30/files-mentioned-by-the-user-draft/outputs/MAX10_10M50DAF484C7G/rtl/igor_kinematic_step.v Line: 14
+Info (12133): Instantiated megafunction "igor_uart_top:system|igor_top:core|igor_rollout_tile:tiles[0].tile|igor_kinematic_step:stepper|lpm_mult:Mult0" with the following parameter: File: C:/Users/William Anthony/Documents/Codex/2026-09-30/files-mentioned-by-the-user-draft/outputs/MAX10_10M50DAF484C7G/rtl/igor_kinematic_step.v Line: 14
+    Info (12134): Parameter "LPM_WIDTHA" = "9"
+    Info (12134): Parameter "LPM_WIDTHB" = "16"
+    Info (12134): Parameter "LPM_WIDTHP" = "25"
+    Info (12134): Parameter "LPM_WIDTHR" = "25"
+    Info (12134): Parameter "LPM_WIDTHS" = "1"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
+Info (12021): Found 1 design units, including 1 entities, in source file db/mult_dfs.tdf
+    Info (12023): Found entity 1: mult_dfs File: C:/Users/William Anthony/Documents/Codex/2026-09-30/files-mentioned-by-the-user-draft/outputs/MAX10_10M50DAF484C7G/quartus/db/mult_dfs.tdf Line: 29
+Info (12130): Elaborated megafunction instantiation "igor_uart_top:system|igor_neural_core:neural|lpm_mult:Mult0" File: C:/Users/William Anthony/Documents/Codex/2026-09-30/files-mentioned-by-the-user-draft/outputs/MAX10_10M50DAF484C7G/rtl/igor_neural_core.v Line: 15
+Info (12133): Instantiated megafunction "igor_uart_top:system|igor_neural_core:neural|lpm_mult:Mult0" with the following parameter: File: C:/Users/William Anthony/Documents/Codex/2026-09-30/files-mentioned-by-the-user-draft/outputs/MAX10_10M50DAF484C7G/rtl/igor_neural_core.v Line: 15
+    Info (12134): Parameter "LPM_WIDTHA" = "16"
+    Info (12134): Parameter "LPM_WIDTHB" = "12"
+    Info (12134): Parameter "LPM_WIDTHP" = "28"
+    Info (12134): Parameter "LPM_WIDTHR" = "28"
+    Info (12134): Parameter "LPM_WIDTHS" = "1"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
+Info (12021): Found 1 design units, including 1 entities, in source file db/mult_qgs.tdf
+    Info (12023): Found entity 1: mult_qgs File: C:/Users/William Anthony/Documents/Codex/2026-09-30/files-mentioned-by-the-user-draft/outputs/MAX10_10M50DAF484C7G/quartus/db/mult_qgs.tdf Line: 29
+Info (12130): Elaborated megafunction instantiation "igor_uart_top:system|igor_neural_core:neural|lpm_mult:Mult1" File: C:/Users/William Anthony/Documents/Codex/2026-09-30/files-mentioned-by-the-user-draft/outputs/MAX10_10M50DAF484C7G/rtl/igor_neural_core.v Line: 39
+Info (12133): Instantiated megafunction "igor_uart_top:system|igor_neural_core:neural|lpm_mult:Mult1" with the following parameter: File: C:/Users/William Anthony/Documents/Codex/2026-09-30/files-mentioned-by-the-user-draft/outputs/MAX10_10M50DAF484C7G/rtl/igor_neural_core.v Line: 39
+    Info (12134): Parameter "LPM_WIDTHA" = "7"
+    Info (12134): Parameter "LPM_WIDTHB" = "7"
+    Info (12134): Parameter "LPM_WIDTHP" = "14"
+    Info (12134): Parameter "LPM_WIDTHR" = "14"
+    Info (12134): Parameter "LPM_WIDTHS" = "1"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
+Info (12021): Found 1 design units, including 1 entities, in source file db/mult_sks.tdf
+    Info (12023): Found entity 1: mult_sks File: C:/Users/William Anthony/Documents/Codex/2026-09-30/files-mentioned-by-the-user-draft/outputs/MAX10_10M50DAF484C7G/quartus/db/mult_sks.tdf Line: 29
+Info (13000): Registers with preset signals will power-up high File: C:/Users/William Anthony/Documents/Codex/2026-09-30/files-mentioned-by-the-user-draft/outputs/MAX10_10M50DAF484C7G/rtl/igor_uart_tx.v Line: 11
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 21 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 2 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "SW[0]" File: C:/Users/William Anthony/Documents/Codex/2026-09-30/files-mentioned-by-the-user-draft/outputs/MAX10_10M50DAF484C7G/rtl/igor_de10_lite_top.v Line: 7
+    Warning (15610): No output dependent on input pin "SW[1]" File: C:/Users/William Anthony/Documents/Codex/2026-09-30/files-mentioned-by-the-user-draft/outputs/MAX10_10M50DAF484C7G/rtl/igor_de10_lite_top.v Line: 7
+Info (21057): Implemented 19590 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 8 input pins
+    Info (21059): Implemented 11 output pins
+    Info (21061): Implemented 19376 logic cells
+    Info (21064): Implemented 176 RAM segments
+    Info (21062): Implemented 19 DSP elements
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 9 warnings
+    Info: Peak virtual memory: 4946 megabytes
+    Info: Processing ended: Thu Oct  1 10:31:54 2026
+    Info: Elapsed time: 00:07:50
+    Info: Total CPU time (on all processors): 00:07:45

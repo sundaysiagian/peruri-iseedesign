@@ -1,0 +1,67 @@
++------------------------------------------------------------+
+; Summary                                                    ;
++-----------------------------------+------------------------+
+; Check                             ; Number of Issues Found ;
++-----------------------------------+------------------------+
+; no_clock                          ; 0                      ;
+; multiple_clock                    ; 0                      ;
+; pos_neg_clock_domain              ; 0                      ;
+; generated_clock                   ; 0                      ;
+; virtual_clock                     ; 1                      ;
+; no_input_delay                    ; 5                      ;
+; no_output_delay                   ; 11                     ;
+; partial_input_delay               ; 0                      ;
+; partial_output_delay              ; 0                      ;
+; io_min_max_delay_consistency      ; 0                      ;
+; reference_pin                     ; 0                      ;
+; generated_io_delay                ; 0                      ;
+; latency_override                  ; 0                      ;
+; partial_multicycle                ; 0                      ;
+; multicycle_consistency            ; 0                      ;
+; loops                             ; 0                      ;
+; latches                           ; 0                      ;
+; pll_cross_check                   ; 0                      ;
+; uncertainty                       ; 0                      ;
+; partial_min_max_delay             ; 0                      ;
+; clock_assignments_on_output_ports ; 0                      ;
+; input_delay_assigned_to_clock     ; 0                      ;
++-----------------------------------+------------------------+
+
++-------------------------------------+
+; Virtual Clock                       ;
++-------+-----------------------------+
+; Clock ; Reason                      ;
++-------+-----------------------------+
+;       ; No virtual clock was found. ;
++-------+-----------------------------+
+
++-------------------------------------------------+
+; No Input Delay                                  ;
++---------+---------------------------------------+
+; Port    ; Reason                                ;
++---------+---------------------------------------+
+; UART_RX ; No input delay was set on input port. ;
+; KEY[0]  ; No input delay was set on input port. ;
+; SW[3]   ; No input delay was set on input port. ;
+; KEY[1]  ; No input delay was set on input port. ;
+; SW[2]   ; No input delay was set on input port. ;
++---------+---------------------------------------+
+
++---------------------------------------------------+
+; No Output Delay                                   ;
++---------+-----------------------------------------+
+; Port    ; Reason                                  ;
++---------+-----------------------------------------+
+; UART_TX ; No output delay was set on output port. ;
+; LEDR[0] ; No output delay was set on output port. ;
+; LEDR[1] ; No output delay was set on output port. ;
+; LEDR[2] ; No output delay was set on output port. ;
+; LEDR[3] ; No output delay was set on output port. ;
+; LEDR[4] ; No output delay was set on output port. ;
+; LEDR[5] ; No output delay was set on output port. ;
+; LEDR[6] ; No output delay was set on output port. ;
+; LEDR[7] ; No output delay was set on output port. ;
+; LEDR[8] ; No output delay was set on output port. ;
+; LEDR[9] ; No output delay was set on output port. ;
++---------+-----------------------------------------+
+

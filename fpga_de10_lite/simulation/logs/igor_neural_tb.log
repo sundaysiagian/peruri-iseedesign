@@ -1,0 +1,4 @@
+VCD info: dumpfile waveform/igor_neural.vcd opened for output.
+NN latency=18192 CHECKS=500 ERRORS=0
+TEST PASSED
+C:\Users\William Anthony\Documents\Codex\2026-09-30\files-mentioned-by-the-user-draft\outputs\MAX10_10M50DAF484C7G\tb\igor_neural_tb.v:25: $finish called at 36436064000 (1ps)

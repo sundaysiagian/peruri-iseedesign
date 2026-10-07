@@ -1,0 +1,13 @@
+{
+  "top": "stm_uart_demo_top",
+  "device": "5CSEBA6U23I7",
+  "sof_sha256": "0f49097e0428947cf77c31c726577efc8516986139b75a2c971590a0b5641fa2",
+  "minimum_timing_slack_ns": 0.17,
+  "motor_rps": 1.0,
+  "hold_seconds": 2.0,
+  "refresh_seconds": 0.05,
+  "uart_baud": 1000000,
+  "laptop_stm_physical_test": "User confirmed both directions worked and stopped",
+  "fpga_to_stm_physical_test": "not performed",
+  "integration_with_igor": "not implemented"
+}
