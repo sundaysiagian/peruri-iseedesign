@@ -146,9 +146,7 @@ peruri-iseedesign/
 | Brian Albar Hadian | 13523048 |
 | Bennaya Jonathan R. P. Siagian | 13223099 |
 
-Pembimbing: **Anggera Bayuwindra, S.T., M.T., Ph.D.**
-
-Identitas commit dokumentasi: [**wlmoi**](https://github.com/wlmoi) · [16523109@std.stei.itb.ac.id](mailto:16523109@std.stei.itb.ac.id). Kepemilikan repository tetap berada pada `sundaysiagian/peruri-iseedesign`.
+Dosen Pembimbing: **Anggera Bayuwindra, S.T., M.T., Ph.D.**
 
 Template TinyTapeout dan komponen pihak ketiga dijelaskan dalam [referensi dan atribusi](docs/REFERENCES.md). Lihat [CONTRIBUTING.md](CONTRIBUTING.md) untuk cara mempertahankan hasil yang dapat direproduksi.
 
