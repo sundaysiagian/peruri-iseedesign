@@ -1,0 +1,18 @@
+Fitter Status : Successful - Thu Oct  1 10:36:50 2026
+Quartus Prime Version : 25.1std.0 Build 1129 10/21/2025 SC Standard Edition
+Revision Name : igor_max10
+Top-level Entity Name : igor_de10_lite_top
+Family : MAX 10
+Device : 10M50DAF484C7G
+Timing Models : Final
+Total logic elements : 18,984 / 49,760 ( 38 % )
+    Total combinational functions : 18,788 / 49,760 ( 38 % )
+    Dedicated logic registers : 1,539 / 49,760 ( 3 % )
+Total registers : 1539
+Total pins : 19 / 360 ( 5 % )
+Total virtual pins : 0
+Total memory bits : 1,051,008 / 1,677,312 ( 63 % )
+Embedded Multiplier 9-bit elements : 19 / 288 ( 7 % )
+Total PLLs : 0 / 4 ( 0 % )
+UFM blocks : 0 / 1 ( 0 % )
+ADC blocks : 0 / 2 ( 0 % )

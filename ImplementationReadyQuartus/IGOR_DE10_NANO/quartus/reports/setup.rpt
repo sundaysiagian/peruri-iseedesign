@@ -1,0 +1,1262 @@
+----------------
+; Command Info ;
+----------------
+Report Timing: Found 10 setup paths (0 violated).  Worst case slack is 0.607 
+
+Tcl Command:
+    report_timing -setup -file reports/setup.rpt -npaths 10 -detail full_path
+
+Options:
+    -setup 
+    -npaths 10 
+    -detail full_path 
+    -file {reports/setup.rpt} 
+
+Delay Model:
+    Slow 1100mV 100C Model
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Summary of Paths                                                                                                                                                          ;
++-------+--------------------------------------------------------------+-----------------------------+--------------+--------------+--------------+------------+------------+
+; Slack ; From Node                                                    ; To Node                     ; Launch Clock ; Latch Clock  ; Relationship ; Clock Skew ; Data Delay ;
++-------+--------------------------------------------------------------+-----------------------------+--------------+--------------+--------------+------------+------------+
+; 0.607 ; igor_top:core|igor_rollout_tile:tiles[1].tile|best_score[17] ; igor_top:core|previous_w[6] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 20.000       ; -0.487     ; 18.736     ;
+; 0.613 ; igor_top:core|igor_rollout_tile:tiles[1].tile|best_score[17] ; igor_top:core|previous_w[5] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 20.000       ; -0.483     ; 18.734     ;
+; 0.616 ; igor_top:core|igor_rollout_tile:tiles[1].tile|best_score[17] ; igor_top:core|previous_w[6] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 20.000       ; -0.487     ; 18.727     ;
+; 0.622 ; igor_top:core|igor_rollout_tile:tiles[1].tile|best_score[17] ; igor_top:core|previous_w[5] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 20.000       ; -0.483     ; 18.725     ;
+; 0.625 ; igor_top:core|igor_rollout_tile:tiles[0].tile|best_score[8]  ; igor_top:core|previous_w[6] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 20.000       ; -0.492     ; 18.713     ;
+; 0.630 ; igor_top:core|igor_rollout_tile:tiles[1].tile|best_score[17] ; igor_top:core|previous_w[6] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 20.000       ; -0.487     ; 18.713     ;
+; 0.631 ; igor_top:core|igor_rollout_tile:tiles[0].tile|best_score[8]  ; igor_top:core|previous_w[5] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 20.000       ; -0.488     ; 18.711     ;
+; 0.634 ; igor_top:core|igor_rollout_tile:tiles[0].tile|best_score[8]  ; igor_top:core|previous_w[6] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 20.000       ; -0.492     ; 18.704     ;
+; 0.636 ; igor_top:core|igor_rollout_tile:tiles[1].tile|best_score[17] ; igor_top:core|previous_w[5] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 20.000       ; -0.483     ; 18.711     ;
+; 0.639 ; igor_top:core|igor_rollout_tile:tiles[1].tile|best_score[17] ; igor_top:core|previous_w[6] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 20.000       ; -0.487     ; 18.704     ;
++-------+--------------------------------------------------------------+-----------------------------+--------------+--------------+--------------+------------+------------+
+
+Path #1: Setup slack is 0.607 
+===============================================================================
++-----------------------------------------------------------------------------------+
+; Path Summary                                                                      ;
++--------------------+--------------------------------------------------------------+
+; Property           ; Value                                                        ;
++--------------------+--------------------------------------------------------------+
+; From Node          ; igor_top:core|igor_rollout_tile:tiles[1].tile|best_score[17] ;
+; To Node            ; igor_top:core|previous_w[6]                                  ;
+; Launch Clock       ; FPGA_CLK1_50                                                 ;
+; Latch Clock        ; FPGA_CLK1_50                                                 ;
+; Data Arrival Time  ; 23.059                                                       ;
+; Data Required Time ; 23.666                                                       ;
+; Slack              ; 0.607                                                        ;
++--------------------+--------------------------------------------------------------+
+
++------------------------------------------------------------------------------------+
+; Statistics                                                                         ;
++------------------------+--------+-------+-------------+------------+-------+-------+
+; Property               ; Value  ; Count ; Total Delay ; % of Total ; Min   ; Max   ;
++------------------------+--------+-------+-------------+------------+-------+-------+
+; Setup Relationship     ; 20.000 ;       ;             ;            ;       ;       ;
+; Clock Skew             ; -0.487 ;       ;             ;            ;       ;       ;
+; Data Delay             ; 18.736 ;       ;             ;            ;       ;       ;
+; Number of Logic Levels ;        ; 15    ;             ;            ;       ;       ;
+; Physical Delays        ;        ;       ;             ;            ;       ;       ;
+;  Arrival Path          ;        ;       ;             ;            ;       ;       ;
+;   Clock                ;        ;       ;             ;            ;       ;       ;
+;    IC                  ;        ; 3     ; 2.688       ; 62         ; 0.000 ; 2.265 ;
+;    Cell                ;        ; 3     ; 1.635       ; 38         ; 0.310 ; 0.761 ;
+;   Data                 ;        ;       ;             ;            ;       ;       ;
+;    IC                  ;        ; 17    ; 10.821      ; 58         ; 0.000 ; 2.090 ;
+;    Cell                ;        ; 18    ; 7.915       ; 42         ; 0.000 ; 1.350 ;
+;    uTco                ;        ; 1     ; 0.000       ; 0          ; 0.000 ; 0.000 ;
+;  Required Path         ;        ;       ;             ;            ;       ;       ;
+;   Clock                ;        ;       ;             ;            ;       ;       ;
+;    IC                  ;        ; 3     ; 2.237       ; 59         ; 0.000 ; 1.850 ;
+;    Cell                ;        ; 3     ; 1.538       ; 41         ; 0.285 ; 0.761 ;
++------------------------+--------+-------+-------------+------------+-------+-------+
+Note: Negative delays are omitted from totals when calculating percentages
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Data Arrival Path                                                                                                             ;
++----------+---------+----+------+--------+----------------------+--------------------------------------------------------------+
+; Total    ; Incr    ; RF ; Type ; Fanout ; Location             ; Element                                                      ;
++----------+---------+----+------+--------+----------------------+--------------------------------------------------------------+
+; 0.000    ; 0.000   ;    ;      ;        ;                      ; launch edge time                                             ;
+; 4.323    ; 4.323   ;    ;      ;        ;                      ; clock path                                                   ;
+;   0.000  ;   0.000 ;    ;      ;        ;                      ; source latency                                               ;
+;   0.000  ;   0.000 ;    ;      ; 1      ; PIN_V11              ; FPGA_CLK1_50                                                 ;
+;   0.000  ;   0.000 ; RR ; IC   ; 1      ; IOIBUF_X32_Y0_N1     ; FPGA_CLK1_50~input|i                                         ;
+;   0.761  ;   0.761 ; RR ; CELL ; 1      ; IOIBUF_X32_Y0_N1     ; FPGA_CLK1_50~input|o                                         ;
+;   1.184  ;   0.423 ; RR ; IC   ; 1      ; CLKCTRL_G4           ; FPGA_CLK1_50~inputCLKENA0|inclk                              ;
+;   1.494  ;   0.310 ; RR ; CELL ; 1695   ; CLKCTRL_G4           ; FPGA_CLK1_50~inputCLKENA0|outclk                             ;
+;   3.759  ;   2.265 ; RR ; IC   ; 1      ; FF_X24_Y22_N8        ; core|tiles[1].tile|best_score[17]|clk                        ;
+;   4.323  ;   0.564 ; RR ; CELL ; 1      ; FF_X24_Y22_N8        ; igor_top:core|igor_rollout_tile:tiles[1].tile|best_score[17] ;
+; 23.059   ; 18.736  ;    ;      ;        ;                      ; data path                                                    ;
+;   4.323  ;   0.000 ;    ; uTco ; 1      ; FF_X24_Y22_N8        ; igor_top:core|igor_rollout_tile:tiles[1].tile|best_score[17] ;
+;   4.323  ;   0.000 ; FF ; CELL ; 6      ; FF_X24_Y22_N8        ; core|tiles[1].tile|best_score[17]|q                          ;
+;   5.465  ;   1.142 ; FF ; IC   ; 1      ; MLABCELL_X25_Y25_N3  ; core|selector|LessThan0~4|dataa                              ;
+;   6.024  ;   0.559 ; FF ; CELL ; 3      ; MLABCELL_X25_Y25_N3  ; core|selector|LessThan0~4|combout                            ;
+;   6.768  ;   0.744 ; FF ; IC   ; 1      ; LABCELL_X24_Y24_N51  ; core|selector|LessThan0~15|dataa                             ;
+;   7.332  ;   0.564 ; FF ; CELL ; 1      ; LABCELL_X24_Y24_N51  ; core|selector|LessThan0~15|combout                           ;
+;   7.566  ;   0.234 ; FF ; IC   ; 1      ; LABCELL_X24_Y24_N12  ; core|selector|LessThan0~23|datac                             ;
+;   8.006  ;   0.440 ; FR ; CELL ; 2      ; LABCELL_X24_Y24_N12  ; core|selector|LessThan0~23|combout                           ;
+;   8.266  ;   0.260 ; RR ; IC   ; 1      ; LABCELL_X24_Y24_N3   ; core|selector|LessThan0~26|dataf                             ;
+;   8.358  ;   0.092 ; RR ; CELL ; 31     ; LABCELL_X24_Y24_N3   ; core|selector|LessThan0~26|combout                           ;
+;   9.197  ;   0.839 ; RR ; IC   ; 1      ; LABCELL_X19_Y24_N18  ; core|selector|ia[8]~3|datae                                  ;
+;   9.498  ;   0.301 ; RF ; CELL ; 2      ; LABCELL_X19_Y24_N18  ; core|selector|ia[8]~3|combout                                ;
+;   10.540 ;   1.042 ; FF ; IC   ; 1      ; LABCELL_X19_Y23_N45  ; core|selector|LessThan5~9|datae                              ;
+;   10.844 ;   0.304 ; FF ; CELL ; 2      ; LABCELL_X19_Y23_N45  ; core|selector|LessThan5~9|combout                            ;
+;   11.450 ;   0.606 ; FF ; IC   ; 1      ; MLABCELL_X21_Y23_N27 ; core|selector|LessThan5~10|datab                             ;
+;   12.008 ;   0.558 ; FF ; CELL ; 1      ; MLABCELL_X21_Y23_N27 ; core|selector|LessThan5~10|combout                           ;
+;   12.653 ;   0.645 ; FF ; IC   ; 1      ; LABCELL_X24_Y23_N42  ; core|selector|comb~13|datae                                  ;
+;   12.888 ;   0.235 ; FR ; CELL ; 2      ; LABCELL_X24_Y23_N42  ; core|selector|comb~13|combout                                ;
+;   13.102 ;   0.214 ; RR ; IC   ; 1      ; LABCELL_X24_Y23_N30  ; core|selector|comb~14|datab                                  ;
+;   13.685 ;   0.583 ; RF ; CELL ; 25     ; LABCELL_X24_Y23_N30  ; core|selector|comb~14|combout                                ;
+;   14.406 ;   0.721 ; FF ; IC   ; 1      ; LABCELL_X27_Y23_N39  ; core|selector|best_index[4]~5|dataf                          ;
+;   14.488 ;   0.082 ; FF ; CELL ; 8      ; LABCELL_X27_Y23_N39  ; core|selector|best_index[4]~5|combout                        ;
+;   14.880 ;   0.392 ; FF ; IC   ; 2      ; MLABCELL_X28_Y23_N15 ; core|gate|Add0~9|dataf                                       ;
+;   16.041 ;   1.161 ; FR ; CELL ; 1      ; MLABCELL_X28_Y23_N15 ; core|gate|Add0~9|cout                                        ;
+;   16.041 ;   0.000 ; RR ; IC   ; 2      ; MLABCELL_X28_Y23_N18 ; core|gate|Add0~5|cin                                         ;
+;   16.385 ;   0.344 ; RR ; CELL ; 5      ; MLABCELL_X28_Y23_N18 ; core|gate|Add0~5|sumout                                      ;
+;   16.634 ;   0.249 ; RR ; IC   ; 2      ; MLABCELL_X28_Y23_N45 ; core|gate|Add1~1|dataa                                       ;
+;   17.984 ;   1.350 ; RR ; CELL ; 4      ; MLABCELL_X28_Y23_N45 ; core|gate|Add1~1|sumout                                      ;
+;   18.879 ;   0.895 ; RR ; IC   ; 1      ; MLABCELL_X28_Y22_N42 ; core|gate|always0~18|dataf                                   ;
+;   18.975 ;   0.096 ; RF ; CELL ; 1      ; MLABCELL_X28_Y22_N42 ; core|gate|always0~18|combout                                 ;
+;   19.332 ;   0.357 ; FF ; IC   ; 1      ; MLABCELL_X28_Y22_N36 ; core|gate|always0~4|datad                                    ;
+;   19.905 ;   0.573 ; FF ; CELL ; 22     ; MLABCELL_X28_Y22_N36 ; core|gate|always0~4|combout                                  ;
+;   20.296 ;   0.391 ; FF ; IC   ; 1      ; LABCELL_X29_Y22_N24  ; core|gate|omega_command[6]~0|dataf                           ;
+;   20.377 ;   0.081 ; FF ; CELL ; 5      ; LABCELL_X29_Y22_N24  ; core|gate|omega_command[6]~0|combout                         ;
+;   22.467 ;   2.090 ; FF ; IC   ; 1      ; FF_X29_Y22_N20       ; core|previous_w[6]|asdata                                    ;
+;   23.059 ;   0.592 ; FF ; CELL ; 1      ; FF_X29_Y22_N20       ; igor_top:core|previous_w[6]                                  ;
++----------+---------+----+------+--------+----------------------+--------------------------------------------------------------+
+
++-----------------------------------------------------------------------------------------------+
+; Data Required Path                                                                            ;
++----------+---------+----+------+--------+------------------+----------------------------------+
+; Total    ; Incr    ; RF ; Type ; Fanout ; Location         ; Element                          ;
++----------+---------+----+------+--------+------------------+----------------------------------+
+; 20.000   ; 20.000  ;    ;      ;        ;                  ; latch edge time                  ;
+; 23.836   ; 3.836   ;    ;      ;        ;                  ; clock path                       ;
+;   20.000 ;   0.000 ;    ;      ;        ;                  ; source latency                   ;
+;   20.000 ;   0.000 ;    ;      ; 1      ; PIN_V11          ; FPGA_CLK1_50                     ;
+;   20.000 ;   0.000 ; RR ; IC   ; 1      ; IOIBUF_X32_Y0_N1 ; FPGA_CLK1_50~input|i             ;
+;   20.761 ;   0.761 ; RR ; CELL ; 1      ; IOIBUF_X32_Y0_N1 ; FPGA_CLK1_50~input|o             ;
+;   21.148 ;   0.387 ; RR ; IC   ; 1      ; CLKCTRL_G4       ; FPGA_CLK1_50~inputCLKENA0|inclk  ;
+;   21.433 ;   0.285 ; RR ; CELL ; 1695   ; CLKCTRL_G4       ; FPGA_CLK1_50~inputCLKENA0|outclk ;
+;   23.283 ;   1.850 ; RR ; IC   ; 1      ; FF_X29_Y22_N20   ; core|previous_w[6]|clk           ;
+;   23.775 ;   0.492 ; RR ; CELL ; 1      ; FF_X29_Y22_N20   ; igor_top:core|previous_w[6]      ;
+;   23.836 ;   0.061 ;    ;      ;        ;                  ; clock pessimism removed          ;
+; 23.666   ; -0.170  ;    ;      ;        ;                  ; clock uncertainty                ;
+; 23.666   ; 0.000   ;    ; uTsu ; 1      ; FF_X29_Y22_N20   ; igor_top:core|previous_w[6]      ;
++----------+---------+----+------+--------+------------------+----------------------------------+
+
+----------------------------
+; Extra Fitter Information ;
+----------------------------
+HTML report is unavailable in plain text report export.
+
+
+Path #2: Setup slack is 0.613 
+===============================================================================
++-----------------------------------------------------------------------------------+
+; Path Summary                                                                      ;
++--------------------+--------------------------------------------------------------+
+; Property           ; Value                                                        ;
++--------------------+--------------------------------------------------------------+
+; From Node          ; igor_top:core|igor_rollout_tile:tiles[1].tile|best_score[17] ;
+; To Node            ; igor_top:core|previous_w[5]                                  ;
+; Launch Clock       ; FPGA_CLK1_50                                                 ;
+; Latch Clock        ; FPGA_CLK1_50                                                 ;
+; Data Arrival Time  ; 23.057                                                       ;
+; Data Required Time ; 23.670                                                       ;
+; Slack              ; 0.613                                                        ;
++--------------------+--------------------------------------------------------------+
+
++------------------------------------------------------------------------------------+
+; Statistics                                                                         ;
++------------------------+--------+-------+-------------+------------+-------+-------+
+; Property               ; Value  ; Count ; Total Delay ; % of Total ; Min   ; Max   ;
++------------------------+--------+-------+-------------+------------+-------+-------+
+; Setup Relationship     ; 20.000 ;       ;             ;            ;       ;       ;
+; Clock Skew             ; -0.483 ;       ;             ;            ;       ;       ;
+; Data Delay             ; 18.734 ;       ;             ;            ;       ;       ;
+; Number of Logic Levels ;        ; 15    ;             ;            ;       ;       ;
+; Physical Delays        ;        ;       ;             ;            ;       ;       ;
+;  Arrival Path          ;        ;       ;             ;            ;       ;       ;
+;   Clock                ;        ;       ;             ;            ;       ;       ;
+;    IC                  ;        ; 3     ; 2.688       ; 62         ; 0.000 ; 2.265 ;
+;    Cell                ;        ; 3     ; 1.635       ; 38         ; 0.310 ; 0.761 ;
+;   Data                 ;        ;       ;             ;            ;       ;       ;
+;    IC                  ;        ; 17    ; 10.821      ; 58         ; 0.000 ; 2.090 ;
+;    Cell                ;        ; 18    ; 7.913       ; 42         ; 0.000 ; 1.350 ;
+;    uTco                ;        ; 1     ; 0.000       ; 0          ; 0.000 ; 0.000 ;
+;  Required Path         ;        ;       ;             ;            ;       ;       ;
+;   Clock                ;        ;       ;             ;            ;       ;       ;
+;    IC                  ;        ; 3     ; 2.237       ; 59         ; 0.000 ; 1.850 ;
+;    Cell                ;        ; 3     ; 1.542       ; 41         ; 0.285 ; 0.761 ;
++------------------------+--------+-------+-------------+------------+-------+-------+
+Note: Negative delays are omitted from totals when calculating percentages
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Data Arrival Path                                                                                                             ;
++----------+---------+----+------+--------+----------------------+--------------------------------------------------------------+
+; Total    ; Incr    ; RF ; Type ; Fanout ; Location             ; Element                                                      ;
++----------+---------+----+------+--------+----------------------+--------------------------------------------------------------+
+; 0.000    ; 0.000   ;    ;      ;        ;                      ; launch edge time                                             ;
+; 4.323    ; 4.323   ;    ;      ;        ;                      ; clock path                                                   ;
+;   0.000  ;   0.000 ;    ;      ;        ;                      ; source latency                                               ;
+;   0.000  ;   0.000 ;    ;      ; 1      ; PIN_V11              ; FPGA_CLK1_50                                                 ;
+;   0.000  ;   0.000 ; RR ; IC   ; 1      ; IOIBUF_X32_Y0_N1     ; FPGA_CLK1_50~input|i                                         ;
+;   0.761  ;   0.761 ; RR ; CELL ; 1      ; IOIBUF_X32_Y0_N1     ; FPGA_CLK1_50~input|o                                         ;
+;   1.184  ;   0.423 ; RR ; IC   ; 1      ; CLKCTRL_G4           ; FPGA_CLK1_50~inputCLKENA0|inclk                              ;
+;   1.494  ;   0.310 ; RR ; CELL ; 1695   ; CLKCTRL_G4           ; FPGA_CLK1_50~inputCLKENA0|outclk                             ;
+;   3.759  ;   2.265 ; RR ; IC   ; 1      ; FF_X24_Y22_N8        ; core|tiles[1].tile|best_score[17]|clk                        ;
+;   4.323  ;   0.564 ; RR ; CELL ; 1      ; FF_X24_Y22_N8        ; igor_top:core|igor_rollout_tile:tiles[1].tile|best_score[17] ;
+; 23.057   ; 18.734  ;    ;      ;        ;                      ; data path                                                    ;
+;   4.323  ;   0.000 ;    ; uTco ; 1      ; FF_X24_Y22_N8        ; igor_top:core|igor_rollout_tile:tiles[1].tile|best_score[17] ;
+;   4.323  ;   0.000 ; FF ; CELL ; 6      ; FF_X24_Y22_N8        ; core|tiles[1].tile|best_score[17]|q                          ;
+;   5.465  ;   1.142 ; FF ; IC   ; 1      ; MLABCELL_X25_Y25_N3  ; core|selector|LessThan0~4|dataa                              ;
+;   6.024  ;   0.559 ; FF ; CELL ; 3      ; MLABCELL_X25_Y25_N3  ; core|selector|LessThan0~4|combout                            ;
+;   6.768  ;   0.744 ; FF ; IC   ; 1      ; LABCELL_X24_Y24_N51  ; core|selector|LessThan0~15|dataa                             ;
+;   7.332  ;   0.564 ; FF ; CELL ; 1      ; LABCELL_X24_Y24_N51  ; core|selector|LessThan0~15|combout                           ;
+;   7.566  ;   0.234 ; FF ; IC   ; 1      ; LABCELL_X24_Y24_N12  ; core|selector|LessThan0~23|datac                             ;
+;   8.006  ;   0.440 ; FR ; CELL ; 2      ; LABCELL_X24_Y24_N12  ; core|selector|LessThan0~23|combout                           ;
+;   8.266  ;   0.260 ; RR ; IC   ; 1      ; LABCELL_X24_Y24_N3   ; core|selector|LessThan0~26|dataf                             ;
+;   8.358  ;   0.092 ; RR ; CELL ; 31     ; LABCELL_X24_Y24_N3   ; core|selector|LessThan0~26|combout                           ;
+;   9.197  ;   0.839 ; RR ; IC   ; 1      ; LABCELL_X19_Y24_N18  ; core|selector|ia[8]~3|datae                                  ;
+;   9.498  ;   0.301 ; RF ; CELL ; 2      ; LABCELL_X19_Y24_N18  ; core|selector|ia[8]~3|combout                                ;
+;   10.540 ;   1.042 ; FF ; IC   ; 1      ; LABCELL_X19_Y23_N45  ; core|selector|LessThan5~9|datae                              ;
+;   10.844 ;   0.304 ; FF ; CELL ; 2      ; LABCELL_X19_Y23_N45  ; core|selector|LessThan5~9|combout                            ;
+;   11.450 ;   0.606 ; FF ; IC   ; 1      ; MLABCELL_X21_Y23_N27 ; core|selector|LessThan5~10|datab                             ;
+;   12.008 ;   0.558 ; FF ; CELL ; 1      ; MLABCELL_X21_Y23_N27 ; core|selector|LessThan5~10|combout                           ;
+;   12.653 ;   0.645 ; FF ; IC   ; 1      ; LABCELL_X24_Y23_N42  ; core|selector|comb~13|datae                                  ;
+;   12.888 ;   0.235 ; FR ; CELL ; 2      ; LABCELL_X24_Y23_N42  ; core|selector|comb~13|combout                                ;
+;   13.102 ;   0.214 ; RR ; IC   ; 1      ; LABCELL_X24_Y23_N30  ; core|selector|comb~14|datab                                  ;
+;   13.685 ;   0.583 ; RF ; CELL ; 25     ; LABCELL_X24_Y23_N30  ; core|selector|comb~14|combout                                ;
+;   14.406 ;   0.721 ; FF ; IC   ; 1      ; LABCELL_X27_Y23_N39  ; core|selector|best_index[4]~5|dataf                          ;
+;   14.488 ;   0.082 ; FF ; CELL ; 8      ; LABCELL_X27_Y23_N39  ; core|selector|best_index[4]~5|combout                        ;
+;   14.880 ;   0.392 ; FF ; IC   ; 2      ; MLABCELL_X28_Y23_N15 ; core|gate|Add0~9|dataf                                       ;
+;   16.041 ;   1.161 ; FR ; CELL ; 1      ; MLABCELL_X28_Y23_N15 ; core|gate|Add0~9|cout                                        ;
+;   16.041 ;   0.000 ; RR ; IC   ; 2      ; MLABCELL_X28_Y23_N18 ; core|gate|Add0~5|cin                                         ;
+;   16.385 ;   0.344 ; RR ; CELL ; 5      ; MLABCELL_X28_Y23_N18 ; core|gate|Add0~5|sumout                                      ;
+;   16.634 ;   0.249 ; RR ; IC   ; 2      ; MLABCELL_X28_Y23_N45 ; core|gate|Add1~1|dataa                                       ;
+;   17.984 ;   1.350 ; RR ; CELL ; 4      ; MLABCELL_X28_Y23_N45 ; core|gate|Add1~1|sumout                                      ;
+;   18.879 ;   0.895 ; RR ; IC   ; 1      ; MLABCELL_X28_Y22_N42 ; core|gate|always0~18|dataf                                   ;
+;   18.975 ;   0.096 ; RF ; CELL ; 1      ; MLABCELL_X28_Y22_N42 ; core|gate|always0~18|combout                                 ;
+;   19.332 ;   0.357 ; FF ; IC   ; 1      ; MLABCELL_X28_Y22_N36 ; core|gate|always0~4|datad                                    ;
+;   19.905 ;   0.573 ; FF ; CELL ; 22     ; MLABCELL_X28_Y22_N36 ; core|gate|always0~4|combout                                  ;
+;   20.296 ;   0.391 ; FF ; IC   ; 1      ; LABCELL_X29_Y22_N24  ; core|gate|omega_command[6]~0|dataf                           ;
+;   20.377 ;   0.081 ; FF ; CELL ; 5      ; LABCELL_X29_Y22_N24  ; core|gate|omega_command[6]~0|combout                         ;
+;   22.467 ;   2.090 ; FF ; IC   ; 1      ; FF_X29_Y22_N19       ; core|previous_w[5]|asdata                                    ;
+;   23.057 ;   0.590 ; FF ; CELL ; 1      ; FF_X29_Y22_N19       ; igor_top:core|previous_w[5]                                  ;
++----------+---------+----+------+--------+----------------------+--------------------------------------------------------------+
+
++-----------------------------------------------------------------------------------------------+
+; Data Required Path                                                                            ;
++----------+---------+----+------+--------+------------------+----------------------------------+
+; Total    ; Incr    ; RF ; Type ; Fanout ; Location         ; Element                          ;
++----------+---------+----+------+--------+------------------+----------------------------------+
+; 20.000   ; 20.000  ;    ;      ;        ;                  ; latch edge time                  ;
+; 23.840   ; 3.840   ;    ;      ;        ;                  ; clock path                       ;
+;   20.000 ;   0.000 ;    ;      ;        ;                  ; source latency                   ;
+;   20.000 ;   0.000 ;    ;      ; 1      ; PIN_V11          ; FPGA_CLK1_50                     ;
+;   20.000 ;   0.000 ; RR ; IC   ; 1      ; IOIBUF_X32_Y0_N1 ; FPGA_CLK1_50~input|i             ;
+;   20.761 ;   0.761 ; RR ; CELL ; 1      ; IOIBUF_X32_Y0_N1 ; FPGA_CLK1_50~input|o             ;
+;   21.148 ;   0.387 ; RR ; IC   ; 1      ; CLKCTRL_G4       ; FPGA_CLK1_50~inputCLKENA0|inclk  ;
+;   21.433 ;   0.285 ; RR ; CELL ; 1695   ; CLKCTRL_G4       ; FPGA_CLK1_50~inputCLKENA0|outclk ;
+;   23.283 ;   1.850 ; RR ; IC   ; 1      ; FF_X29_Y22_N19   ; core|previous_w[5]|clk           ;
+;   23.779 ;   0.496 ; RR ; CELL ; 1      ; FF_X29_Y22_N19   ; igor_top:core|previous_w[5]      ;
+;   23.840 ;   0.061 ;    ;      ;        ;                  ; clock pessimism removed          ;
+; 23.670   ; -0.170  ;    ;      ;        ;                  ; clock uncertainty                ;
+; 23.670   ; 0.000   ;    ; uTsu ; 1      ; FF_X29_Y22_N19   ; igor_top:core|previous_w[5]      ;
++----------+---------+----+------+--------+------------------+----------------------------------+
+
+----------------------------
+; Extra Fitter Information ;
+----------------------------
+HTML report is unavailable in plain text report export.
+
+
+Path #3: Setup slack is 0.616 
+===============================================================================
++-----------------------------------------------------------------------------------+
+; Path Summary                                                                      ;
++--------------------+--------------------------------------------------------------+
+; Property           ; Value                                                        ;
++--------------------+--------------------------------------------------------------+
+; From Node          ; igor_top:core|igor_rollout_tile:tiles[1].tile|best_score[17] ;
+; To Node            ; igor_top:core|previous_w[6]                                  ;
+; Launch Clock       ; FPGA_CLK1_50                                                 ;
+; Latch Clock        ; FPGA_CLK1_50                                                 ;
+; Data Arrival Time  ; 23.050                                                       ;
+; Data Required Time ; 23.666                                                       ;
+; Slack              ; 0.616                                                        ;
++--------------------+--------------------------------------------------------------+
+
++------------------------------------------------------------------------------------+
+; Statistics                                                                         ;
++------------------------+--------+-------+-------------+------------+-------+-------+
+; Property               ; Value  ; Count ; Total Delay ; % of Total ; Min   ; Max   ;
++------------------------+--------+-------+-------------+------------+-------+-------+
+; Setup Relationship     ; 20.000 ;       ;             ;            ;       ;       ;
+; Clock Skew             ; -0.487 ;       ;             ;            ;       ;       ;
+; Data Delay             ; 18.727 ;       ;             ;            ;       ;       ;
+; Number of Logic Levels ;        ; 15    ;             ;            ;       ;       ;
+; Physical Delays        ;        ;       ;             ;            ;       ;       ;
+;  Arrival Path          ;        ;       ;             ;            ;       ;       ;
+;   Clock                ;        ;       ;             ;            ;       ;       ;
+;    IC                  ;        ; 3     ; 2.688       ; 62         ; 0.000 ; 2.265 ;
+;    Cell                ;        ; 3     ; 1.635       ; 38         ; 0.310 ; 0.761 ;
+;   Data                 ;        ;       ;             ;            ;       ;       ;
+;    IC                  ;        ; 17    ; 10.604      ; 57         ; 0.000 ; 2.090 ;
+;    Cell                ;        ; 18    ; 8.123       ; 43         ; 0.000 ; 1.350 ;
+;    uTco                ;        ; 1     ; 0.000       ; 0          ; 0.000 ; 0.000 ;
+;  Required Path         ;        ;       ;             ;            ;       ;       ;
+;   Clock                ;        ;       ;             ;            ;       ;       ;
+;    IC                  ;        ; 3     ; 2.237       ; 59         ; 0.000 ; 1.850 ;
+;    Cell                ;        ; 3     ; 1.538       ; 41         ; 0.285 ; 0.761 ;
++------------------------+--------+-------+-------------+------------+-------+-------+
+Note: Negative delays are omitted from totals when calculating percentages
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Data Arrival Path                                                                                                             ;
++----------+---------+----+------+--------+----------------------+--------------------------------------------------------------+
+; Total    ; Incr    ; RF ; Type ; Fanout ; Location             ; Element                                                      ;
++----------+---------+----+------+--------+----------------------+--------------------------------------------------------------+
+; 0.000    ; 0.000   ;    ;      ;        ;                      ; launch edge time                                             ;
+; 4.323    ; 4.323   ;    ;      ;        ;                      ; clock path                                                   ;
+;   0.000  ;   0.000 ;    ;      ;        ;                      ; source latency                                               ;
+;   0.000  ;   0.000 ;    ;      ; 1      ; PIN_V11              ; FPGA_CLK1_50                                                 ;
+;   0.000  ;   0.000 ; RR ; IC   ; 1      ; IOIBUF_X32_Y0_N1     ; FPGA_CLK1_50~input|i                                         ;
+;   0.761  ;   0.761 ; RR ; CELL ; 1      ; IOIBUF_X32_Y0_N1     ; FPGA_CLK1_50~input|o                                         ;
+;   1.184  ;   0.423 ; RR ; IC   ; 1      ; CLKCTRL_G4           ; FPGA_CLK1_50~inputCLKENA0|inclk                              ;
+;   1.494  ;   0.310 ; RR ; CELL ; 1695   ; CLKCTRL_G4           ; FPGA_CLK1_50~inputCLKENA0|outclk                             ;
+;   3.759  ;   2.265 ; RR ; IC   ; 1      ; FF_X24_Y22_N8        ; core|tiles[1].tile|best_score[17]|clk                        ;
+;   4.323  ;   0.564 ; RR ; CELL ; 1      ; FF_X24_Y22_N8        ; igor_top:core|igor_rollout_tile:tiles[1].tile|best_score[17] ;
+; 23.050   ; 18.727  ;    ;      ;        ;                      ; data path                                                    ;
+;   4.323  ;   0.000 ;    ; uTco ; 1      ; FF_X24_Y22_N8        ; igor_top:core|igor_rollout_tile:tiles[1].tile|best_score[17] ;
+;   4.323  ;   0.000 ; FF ; CELL ; 6      ; FF_X24_Y22_N8        ; core|tiles[1].tile|best_score[17]|q                          ;
+;   5.465  ;   1.142 ; FF ; IC   ; 1      ; MLABCELL_X25_Y25_N3  ; core|selector|LessThan0~4|dataa                              ;
+;   6.024  ;   0.559 ; FF ; CELL ; 3      ; MLABCELL_X25_Y25_N3  ; core|selector|LessThan0~4|combout                            ;
+;   6.768  ;   0.744 ; FF ; IC   ; 1      ; LABCELL_X24_Y24_N51  ; core|selector|LessThan0~15|dataa                             ;
+;   7.332  ;   0.564 ; FF ; CELL ; 1      ; LABCELL_X24_Y24_N51  ; core|selector|LessThan0~15|combout                           ;
+;   7.566  ;   0.234 ; FF ; IC   ; 1      ; LABCELL_X24_Y24_N12  ; core|selector|LessThan0~23|datac                             ;
+;   8.006  ;   0.440 ; FR ; CELL ; 2      ; LABCELL_X24_Y24_N12  ; core|selector|LessThan0~23|combout                           ;
+;   8.266  ;   0.260 ; RR ; IC   ; 1      ; LABCELL_X24_Y24_N3   ; core|selector|LessThan0~26|dataf                             ;
+;   8.358  ;   0.092 ; RR ; CELL ; 31     ; LABCELL_X24_Y24_N3   ; core|selector|LessThan0~26|combout                           ;
+;   9.200  ;   0.842 ; RR ; IC   ; 1      ; LABCELL_X19_Y24_N24  ; core|selector|ia[7]~2|datae                                  ;
+;   9.501  ;   0.301 ; RF ; CELL ; 2      ; LABCELL_X19_Y24_N24  ; core|selector|ia[7]~2|combout                                ;
+;   10.323 ;   0.822 ; FF ; IC   ; 1      ; LABCELL_X19_Y23_N45  ; core|selector|LessThan5~9|datad                              ;
+;   10.835 ;   0.512 ; FF ; CELL ; 2      ; LABCELL_X19_Y23_N45  ; core|selector|LessThan5~9|combout                            ;
+;   11.441 ;   0.606 ; FF ; IC   ; 1      ; MLABCELL_X21_Y23_N27 ; core|selector|LessThan5~10|datab                             ;
+;   11.999 ;   0.558 ; FF ; CELL ; 1      ; MLABCELL_X21_Y23_N27 ; core|selector|LessThan5~10|combout                           ;
+;   12.644 ;   0.645 ; FF ; IC   ; 1      ; LABCELL_X24_Y23_N42  ; core|selector|comb~13|datae                                  ;
+;   12.879 ;   0.235 ; FR ; CELL ; 2      ; LABCELL_X24_Y23_N42  ; core|selector|comb~13|combout                                ;
+;   13.093 ;   0.214 ; RR ; IC   ; 1      ; LABCELL_X24_Y23_N30  ; core|selector|comb~14|datab                                  ;
+;   13.676 ;   0.583 ; RF ; CELL ; 25     ; LABCELL_X24_Y23_N30  ; core|selector|comb~14|combout                                ;
+;   14.397 ;   0.721 ; FF ; IC   ; 1      ; LABCELL_X27_Y23_N39  ; core|selector|best_index[4]~5|dataf                          ;
+;   14.479 ;   0.082 ; FF ; CELL ; 8      ; LABCELL_X27_Y23_N39  ; core|selector|best_index[4]~5|combout                        ;
+;   14.871 ;   0.392 ; FF ; IC   ; 2      ; MLABCELL_X28_Y23_N15 ; core|gate|Add0~9|dataf                                       ;
+;   16.032 ;   1.161 ; FR ; CELL ; 1      ; MLABCELL_X28_Y23_N15 ; core|gate|Add0~9|cout                                        ;
+;   16.032 ;   0.000 ; RR ; IC   ; 2      ; MLABCELL_X28_Y23_N18 ; core|gate|Add0~5|cin                                         ;
+;   16.376 ;   0.344 ; RR ; CELL ; 5      ; MLABCELL_X28_Y23_N18 ; core|gate|Add0~5|sumout                                      ;
+;   16.625 ;   0.249 ; RR ; IC   ; 2      ; MLABCELL_X28_Y23_N45 ; core|gate|Add1~1|dataa                                       ;
+;   17.975 ;   1.350 ; RR ; CELL ; 4      ; MLABCELL_X28_Y23_N45 ; core|gate|Add1~1|sumout                                      ;
+;   18.870 ;   0.895 ; RR ; IC   ; 1      ; MLABCELL_X28_Y22_N42 ; core|gate|always0~18|dataf                                   ;
+;   18.966 ;   0.096 ; RF ; CELL ; 1      ; MLABCELL_X28_Y22_N42 ; core|gate|always0~18|combout                                 ;
+;   19.323 ;   0.357 ; FF ; IC   ; 1      ; MLABCELL_X28_Y22_N36 ; core|gate|always0~4|datad                                    ;
+;   19.896 ;   0.573 ; FF ; CELL ; 22     ; MLABCELL_X28_Y22_N36 ; core|gate|always0~4|combout                                  ;
+;   20.287 ;   0.391 ; FF ; IC   ; 1      ; LABCELL_X29_Y22_N24  ; core|gate|omega_command[6]~0|dataf                           ;
+;   20.368 ;   0.081 ; FF ; CELL ; 5      ; LABCELL_X29_Y22_N24  ; core|gate|omega_command[6]~0|combout                         ;
+;   22.458 ;   2.090 ; FF ; IC   ; 1      ; FF_X29_Y22_N20       ; core|previous_w[6]|asdata                                    ;
+;   23.050 ;   0.592 ; FF ; CELL ; 1      ; FF_X29_Y22_N20       ; igor_top:core|previous_w[6]                                  ;
++----------+---------+----+------+--------+----------------------+--------------------------------------------------------------+
+
++-----------------------------------------------------------------------------------------------+
+; Data Required Path                                                                            ;
++----------+---------+----+------+--------+------------------+----------------------------------+
+; Total    ; Incr    ; RF ; Type ; Fanout ; Location         ; Element                          ;
++----------+---------+----+------+--------+------------------+----------------------------------+
+; 20.000   ; 20.000  ;    ;      ;        ;                  ; latch edge time                  ;
+; 23.836   ; 3.836   ;    ;      ;        ;                  ; clock path                       ;
+;   20.000 ;   0.000 ;    ;      ;        ;                  ; source latency                   ;
+;   20.000 ;   0.000 ;    ;      ; 1      ; PIN_V11          ; FPGA_CLK1_50                     ;
+;   20.000 ;   0.000 ; RR ; IC   ; 1      ; IOIBUF_X32_Y0_N1 ; FPGA_CLK1_50~input|i             ;
+;   20.761 ;   0.761 ; RR ; CELL ; 1      ; IOIBUF_X32_Y0_N1 ; FPGA_CLK1_50~input|o             ;
+;   21.148 ;   0.387 ; RR ; IC   ; 1      ; CLKCTRL_G4       ; FPGA_CLK1_50~inputCLKENA0|inclk  ;
+;   21.433 ;   0.285 ; RR ; CELL ; 1695   ; CLKCTRL_G4       ; FPGA_CLK1_50~inputCLKENA0|outclk ;
+;   23.283 ;   1.850 ; RR ; IC   ; 1      ; FF_X29_Y22_N20   ; core|previous_w[6]|clk           ;
+;   23.775 ;   0.492 ; RR ; CELL ; 1      ; FF_X29_Y22_N20   ; igor_top:core|previous_w[6]      ;
+;   23.836 ;   0.061 ;    ;      ;        ;                  ; clock pessimism removed          ;
+; 23.666   ; -0.170  ;    ;      ;        ;                  ; clock uncertainty                ;
+; 23.666   ; 0.000   ;    ; uTsu ; 1      ; FF_X29_Y22_N20   ; igor_top:core|previous_w[6]      ;
++----------+---------+----+------+--------+------------------+----------------------------------+
+
+----------------------------
+; Extra Fitter Information ;
+----------------------------
+HTML report is unavailable in plain text report export.
+
+
+Path #4: Setup slack is 0.622 
+===============================================================================
++-----------------------------------------------------------------------------------+
+; Path Summary                                                                      ;
++--------------------+--------------------------------------------------------------+
+; Property           ; Value                                                        ;
++--------------------+--------------------------------------------------------------+
+; From Node          ; igor_top:core|igor_rollout_tile:tiles[1].tile|best_score[17] ;
+; To Node            ; igor_top:core|previous_w[5]                                  ;
+; Launch Clock       ; FPGA_CLK1_50                                                 ;
+; Latch Clock        ; FPGA_CLK1_50                                                 ;
+; Data Arrival Time  ; 23.048                                                       ;
+; Data Required Time ; 23.670                                                       ;
+; Slack              ; 0.622                                                        ;
++--------------------+--------------------------------------------------------------+
+
++------------------------------------------------------------------------------------+
+; Statistics                                                                         ;
++------------------------+--------+-------+-------------+------------+-------+-------+
+; Property               ; Value  ; Count ; Total Delay ; % of Total ; Min   ; Max   ;
++------------------------+--------+-------+-------------+------------+-------+-------+
+; Setup Relationship     ; 20.000 ;       ;             ;            ;       ;       ;
+; Clock Skew             ; -0.483 ;       ;             ;            ;       ;       ;
+; Data Delay             ; 18.725 ;       ;             ;            ;       ;       ;
+; Number of Logic Levels ;        ; 15    ;             ;            ;       ;       ;
+; Physical Delays        ;        ;       ;             ;            ;       ;       ;
+;  Arrival Path          ;        ;       ;             ;            ;       ;       ;
+;   Clock                ;        ;       ;             ;            ;       ;       ;
+;    IC                  ;        ; 3     ; 2.688       ; 62         ; 0.000 ; 2.265 ;
+;    Cell                ;        ; 3     ; 1.635       ; 38         ; 0.310 ; 0.761 ;
+;   Data                 ;        ;       ;             ;            ;       ;       ;
+;    IC                  ;        ; 17    ; 10.604      ; 57         ; 0.000 ; 2.090 ;
+;    Cell                ;        ; 18    ; 8.121       ; 43         ; 0.000 ; 1.350 ;
+;    uTco                ;        ; 1     ; 0.000       ; 0          ; 0.000 ; 0.000 ;
+;  Required Path         ;        ;       ;             ;            ;       ;       ;
+;   Clock                ;        ;       ;             ;            ;       ;       ;
+;    IC                  ;        ; 3     ; 2.237       ; 59         ; 0.000 ; 1.850 ;
+;    Cell                ;        ; 3     ; 1.542       ; 41         ; 0.285 ; 0.761 ;
++------------------------+--------+-------+-------------+------------+-------+-------+
+Note: Negative delays are omitted from totals when calculating percentages
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Data Arrival Path                                                                                                             ;
++----------+---------+----+------+--------+----------------------+--------------------------------------------------------------+
+; Total    ; Incr    ; RF ; Type ; Fanout ; Location             ; Element                                                      ;
++----------+---------+----+------+--------+----------------------+--------------------------------------------------------------+
+; 0.000    ; 0.000   ;    ;      ;        ;                      ; launch edge time                                             ;
+; 4.323    ; 4.323   ;    ;      ;        ;                      ; clock path                                                   ;
+;   0.000  ;   0.000 ;    ;      ;        ;                      ; source latency                                               ;
+;   0.000  ;   0.000 ;    ;      ; 1      ; PIN_V11              ; FPGA_CLK1_50                                                 ;
+;   0.000  ;   0.000 ; RR ; IC   ; 1      ; IOIBUF_X32_Y0_N1     ; FPGA_CLK1_50~input|i                                         ;
+;   0.761  ;   0.761 ; RR ; CELL ; 1      ; IOIBUF_X32_Y0_N1     ; FPGA_CLK1_50~input|o                                         ;
+;   1.184  ;   0.423 ; RR ; IC   ; 1      ; CLKCTRL_G4           ; FPGA_CLK1_50~inputCLKENA0|inclk                              ;
+;   1.494  ;   0.310 ; RR ; CELL ; 1695   ; CLKCTRL_G4           ; FPGA_CLK1_50~inputCLKENA0|outclk                             ;
+;   3.759  ;   2.265 ; RR ; IC   ; 1      ; FF_X24_Y22_N8        ; core|tiles[1].tile|best_score[17]|clk                        ;
+;   4.323  ;   0.564 ; RR ; CELL ; 1      ; FF_X24_Y22_N8        ; igor_top:core|igor_rollout_tile:tiles[1].tile|best_score[17] ;
+; 23.048   ; 18.725  ;    ;      ;        ;                      ; data path                                                    ;
+;   4.323  ;   0.000 ;    ; uTco ; 1      ; FF_X24_Y22_N8        ; igor_top:core|igor_rollout_tile:tiles[1].tile|best_score[17] ;
+;   4.323  ;   0.000 ; FF ; CELL ; 6      ; FF_X24_Y22_N8        ; core|tiles[1].tile|best_score[17]|q                          ;
+;   5.465  ;   1.142 ; FF ; IC   ; 1      ; MLABCELL_X25_Y25_N3  ; core|selector|LessThan0~4|dataa                              ;
+;   6.024  ;   0.559 ; FF ; CELL ; 3      ; MLABCELL_X25_Y25_N3  ; core|selector|LessThan0~4|combout                            ;
+;   6.768  ;   0.744 ; FF ; IC   ; 1      ; LABCELL_X24_Y24_N51  ; core|selector|LessThan0~15|dataa                             ;
+;   7.332  ;   0.564 ; FF ; CELL ; 1      ; LABCELL_X24_Y24_N51  ; core|selector|LessThan0~15|combout                           ;
+;   7.566  ;   0.234 ; FF ; IC   ; 1      ; LABCELL_X24_Y24_N12  ; core|selector|LessThan0~23|datac                             ;
+;   8.006  ;   0.440 ; FR ; CELL ; 2      ; LABCELL_X24_Y24_N12  ; core|selector|LessThan0~23|combout                           ;
+;   8.266  ;   0.260 ; RR ; IC   ; 1      ; LABCELL_X24_Y24_N3   ; core|selector|LessThan0~26|dataf                             ;
+;   8.358  ;   0.092 ; RR ; CELL ; 31     ; LABCELL_X24_Y24_N3   ; core|selector|LessThan0~26|combout                           ;
+;   9.200  ;   0.842 ; RR ; IC   ; 1      ; LABCELL_X19_Y24_N24  ; core|selector|ia[7]~2|datae                                  ;
+;   9.501  ;   0.301 ; RF ; CELL ; 2      ; LABCELL_X19_Y24_N24  ; core|selector|ia[7]~2|combout                                ;
+;   10.323 ;   0.822 ; FF ; IC   ; 1      ; LABCELL_X19_Y23_N45  ; core|selector|LessThan5~9|datad                              ;
+;   10.835 ;   0.512 ; FF ; CELL ; 2      ; LABCELL_X19_Y23_N45  ; core|selector|LessThan5~9|combout                            ;
+;   11.441 ;   0.606 ; FF ; IC   ; 1      ; MLABCELL_X21_Y23_N27 ; core|selector|LessThan5~10|datab                             ;
+;   11.999 ;   0.558 ; FF ; CELL ; 1      ; MLABCELL_X21_Y23_N27 ; core|selector|LessThan5~10|combout                           ;
+;   12.644 ;   0.645 ; FF ; IC   ; 1      ; LABCELL_X24_Y23_N42  ; core|selector|comb~13|datae                                  ;
+;   12.879 ;   0.235 ; FR ; CELL ; 2      ; LABCELL_X24_Y23_N42  ; core|selector|comb~13|combout                                ;
+;   13.093 ;   0.214 ; RR ; IC   ; 1      ; LABCELL_X24_Y23_N30  ; core|selector|comb~14|datab                                  ;
+;   13.676 ;   0.583 ; RF ; CELL ; 25     ; LABCELL_X24_Y23_N30  ; core|selector|comb~14|combout                                ;
+;   14.397 ;   0.721 ; FF ; IC   ; 1      ; LABCELL_X27_Y23_N39  ; core|selector|best_index[4]~5|dataf                          ;
+;   14.479 ;   0.082 ; FF ; CELL ; 8      ; LABCELL_X27_Y23_N39  ; core|selector|best_index[4]~5|combout                        ;
+;   14.871 ;   0.392 ; FF ; IC   ; 2      ; MLABCELL_X28_Y23_N15 ; core|gate|Add0~9|dataf                                       ;
+;   16.032 ;   1.161 ; FR ; CELL ; 1      ; MLABCELL_X28_Y23_N15 ; core|gate|Add0~9|cout                                        ;
+;   16.032 ;   0.000 ; RR ; IC   ; 2      ; MLABCELL_X28_Y23_N18 ; core|gate|Add0~5|cin                                         ;
+;   16.376 ;   0.344 ; RR ; CELL ; 5      ; MLABCELL_X28_Y23_N18 ; core|gate|Add0~5|sumout                                      ;
+;   16.625 ;   0.249 ; RR ; IC   ; 2      ; MLABCELL_X28_Y23_N45 ; core|gate|Add1~1|dataa                                       ;
+;   17.975 ;   1.350 ; RR ; CELL ; 4      ; MLABCELL_X28_Y23_N45 ; core|gate|Add1~1|sumout                                      ;
+;   18.870 ;   0.895 ; RR ; IC   ; 1      ; MLABCELL_X28_Y22_N42 ; core|gate|always0~18|dataf                                   ;
+;   18.966 ;   0.096 ; RF ; CELL ; 1      ; MLABCELL_X28_Y22_N42 ; core|gate|always0~18|combout                                 ;
+;   19.323 ;   0.357 ; FF ; IC   ; 1      ; MLABCELL_X28_Y22_N36 ; core|gate|always0~4|datad                                    ;
+;   19.896 ;   0.573 ; FF ; CELL ; 22     ; MLABCELL_X28_Y22_N36 ; core|gate|always0~4|combout                                  ;
+;   20.287 ;   0.391 ; FF ; IC   ; 1      ; LABCELL_X29_Y22_N24  ; core|gate|omega_command[6]~0|dataf                           ;
+;   20.368 ;   0.081 ; FF ; CELL ; 5      ; LABCELL_X29_Y22_N24  ; core|gate|omega_command[6]~0|combout                         ;
+;   22.458 ;   2.090 ; FF ; IC   ; 1      ; FF_X29_Y22_N19       ; core|previous_w[5]|asdata                                    ;
+;   23.048 ;   0.590 ; FF ; CELL ; 1      ; FF_X29_Y22_N19       ; igor_top:core|previous_w[5]                                  ;
++----------+---------+----+------+--------+----------------------+--------------------------------------------------------------+
+
++-----------------------------------------------------------------------------------------------+
+; Data Required Path                                                                            ;
++----------+---------+----+------+--------+------------------+----------------------------------+
+; Total    ; Incr    ; RF ; Type ; Fanout ; Location         ; Element                          ;
++----------+---------+----+------+--------+------------------+----------------------------------+
+; 20.000   ; 20.000  ;    ;      ;        ;                  ; latch edge time                  ;
+; 23.840   ; 3.840   ;    ;      ;        ;                  ; clock path                       ;
+;   20.000 ;   0.000 ;    ;      ;        ;                  ; source latency                   ;
+;   20.000 ;   0.000 ;    ;      ; 1      ; PIN_V11          ; FPGA_CLK1_50                     ;
+;   20.000 ;   0.000 ; RR ; IC   ; 1      ; IOIBUF_X32_Y0_N1 ; FPGA_CLK1_50~input|i             ;
+;   20.761 ;   0.761 ; RR ; CELL ; 1      ; IOIBUF_X32_Y0_N1 ; FPGA_CLK1_50~input|o             ;
+;   21.148 ;   0.387 ; RR ; IC   ; 1      ; CLKCTRL_G4       ; FPGA_CLK1_50~inputCLKENA0|inclk  ;
+;   21.433 ;   0.285 ; RR ; CELL ; 1695   ; CLKCTRL_G4       ; FPGA_CLK1_50~inputCLKENA0|outclk ;
+;   23.283 ;   1.850 ; RR ; IC   ; 1      ; FF_X29_Y22_N19   ; core|previous_w[5]|clk           ;
+;   23.779 ;   0.496 ; RR ; CELL ; 1      ; FF_X29_Y22_N19   ; igor_top:core|previous_w[5]      ;
+;   23.840 ;   0.061 ;    ;      ;        ;                  ; clock pessimism removed          ;
+; 23.670   ; -0.170  ;    ;      ;        ;                  ; clock uncertainty                ;
+; 23.670   ; 0.000   ;    ; uTsu ; 1      ; FF_X29_Y22_N19   ; igor_top:core|previous_w[5]      ;
++----------+---------+----+------+--------+------------------+----------------------------------+
+
+----------------------------
+; Extra Fitter Information ;
+----------------------------
+HTML report is unavailable in plain text report export.
+
+
+Path #5: Setup slack is 0.625 
+===============================================================================
++----------------------------------------------------------------------------------+
+; Path Summary                                                                     ;
++--------------------+-------------------------------------------------------------+
+; Property           ; Value                                                       ;
++--------------------+-------------------------------------------------------------+
+; From Node          ; igor_top:core|igor_rollout_tile:tiles[0].tile|best_score[8] ;
+; To Node            ; igor_top:core|previous_w[6]                                 ;
+; Launch Clock       ; FPGA_CLK1_50                                                ;
+; Latch Clock        ; FPGA_CLK1_50                                                ;
+; Data Arrival Time  ; 23.041                                                      ;
+; Data Required Time ; 23.666                                                      ;
+; Slack              ; 0.625                                                       ;
++--------------------+-------------------------------------------------------------+
+
++------------------------------------------------------------------------------------+
+; Statistics                                                                         ;
++------------------------+--------+-------+-------------+------------+-------+-------+
+; Property               ; Value  ; Count ; Total Delay ; % of Total ; Min   ; Max   ;
++------------------------+--------+-------+-------------+------------+-------+-------+
+; Setup Relationship     ; 20.000 ;       ;             ;            ;       ;       ;
+; Clock Skew             ; -0.492 ;       ;             ;            ;       ;       ;
+; Data Delay             ; 18.713 ;       ;             ;            ;       ;       ;
+; Number of Logic Levels ;        ; 15    ;             ;            ;       ;       ;
+; Physical Delays        ;        ;       ;             ;            ;       ;       ;
+;  Arrival Path          ;        ;       ;             ;            ;       ;       ;
+;   Clock                ;        ;       ;             ;            ;       ;       ;
+;    IC                  ;        ; 3     ; 2.687       ; 62         ; 0.000 ; 2.264 ;
+;    Cell                ;        ; 3     ; 1.641       ; 38         ; 0.310 ; 0.761 ;
+;   Data                 ;        ;       ;             ;            ;       ;       ;
+;    IC                  ;        ; 17    ; 10.878      ; 58         ; 0.000 ; 2.090 ;
+;    Cell                ;        ; 18    ; 7.835       ; 42         ; 0.000 ; 1.350 ;
+;    uTco                ;        ; 1     ; 0.000       ; 0          ; 0.000 ; 0.000 ;
+;  Required Path         ;        ;       ;             ;            ;       ;       ;
+;   Clock                ;        ;       ;             ;            ;       ;       ;
+;    IC                  ;        ; 3     ; 2.237       ; 59         ; 0.000 ; 1.850 ;
+;    Cell                ;        ; 3     ; 1.538       ; 41         ; 0.285 ; 0.761 ;
++------------------------+--------+-------+-------------+------------+-------+-------+
+Note: Negative delays are omitted from totals when calculating percentages
+
++------------------------------------------------------------------------------------------------------------------------------+
+; Data Arrival Path                                                                                                            ;
++----------+---------+----+------+--------+----------------------+-------------------------------------------------------------+
+; Total    ; Incr    ; RF ; Type ; Fanout ; Location             ; Element                                                     ;
++----------+---------+----+------+--------+----------------------+-------------------------------------------------------------+
+; 0.000    ; 0.000   ;    ;      ;        ;                      ; launch edge time                                            ;
+; 4.328    ; 4.328   ;    ;      ;        ;                      ; clock path                                                  ;
+;   0.000  ;   0.000 ;    ;      ;        ;                      ; source latency                                              ;
+;   0.000  ;   0.000 ;    ;      ; 1      ; PIN_V11              ; FPGA_CLK1_50                                                ;
+;   0.000  ;   0.000 ; RR ; IC   ; 1      ; IOIBUF_X32_Y0_N1     ; FPGA_CLK1_50~input|i                                        ;
+;   0.761  ;   0.761 ; RR ; CELL ; 1      ; IOIBUF_X32_Y0_N1     ; FPGA_CLK1_50~input|o                                        ;
+;   1.184  ;   0.423 ; RR ; IC   ; 1      ; CLKCTRL_G4           ; FPGA_CLK1_50~inputCLKENA0|inclk                             ;
+;   1.494  ;   0.310 ; RR ; CELL ; 1695   ; CLKCTRL_G4           ; FPGA_CLK1_50~inputCLKENA0|outclk                            ;
+;   3.758  ;   2.264 ; RR ; IC   ; 1      ; FF_X24_Y23_N35       ; core|tiles[0].tile|best_score[8]|clk                        ;
+;   4.328  ;   0.570 ; RR ; CELL ; 1      ; FF_X24_Y23_N35       ; igor_top:core|igor_rollout_tile:tiles[0].tile|best_score[8] ;
+; 23.041   ; 18.713  ;    ;      ;        ;                      ; data path                                                   ;
+;   4.328  ;   0.000 ;    ; uTco ; 1      ; FF_X24_Y23_N35       ; igor_top:core|igor_rollout_tile:tiles[0].tile|best_score[8] ;
+;   4.328  ;   0.000 ; FF ; CELL ; 5      ; FF_X24_Y23_N35       ; core|tiles[0].tile|best_score[8]|q                          ;
+;   5.203  ;   0.875 ; FF ; IC   ; 1      ; LABCELL_X24_Y22_N27  ; core|selector|LessThan0~6|dataa                             ;
+;   5.750  ;   0.547 ; FR ; CELL ; 3      ; LABCELL_X24_Y22_N27  ; core|selector|LessThan0~6|combout                           ;
+;   6.296  ;   0.546 ; RR ; IC   ; 1      ; LABCELL_X23_Y22_N18  ; core|selector|LessThan0~13|datac                            ;
+;   6.759  ;   0.463 ; RF ; CELL ; 1      ; LABCELL_X23_Y22_N18  ; core|selector|LessThan0~13|combout                          ;
+;   7.488  ;   0.729 ; FF ; IC   ; 1      ; LABCELL_X24_Y24_N12  ; core|selector|LessThan0~23|datab                            ;
+;   8.048  ;   0.560 ; FF ; CELL ; 2      ; LABCELL_X24_Y24_N12  ; core|selector|LessThan0~23|combout                          ;
+;   8.288  ;   0.240 ; FF ; IC   ; 1      ; LABCELL_X24_Y24_N3   ; core|selector|LessThan0~26|dataf                            ;
+;   8.373  ;   0.085 ; FF ; CELL ; 31     ; LABCELL_X24_Y24_N3   ; core|selector|LessThan0~26|combout                          ;
+;   9.259  ;   0.886 ; FF ; IC   ; 1      ; LABCELL_X19_Y24_N18  ; core|selector|ia[8]~3|datae                                 ;
+;   9.480  ;   0.221 ; FF ; CELL ; 2      ; LABCELL_X19_Y24_N18  ; core|selector|ia[8]~3|combout                               ;
+;   10.522 ;   1.042 ; FF ; IC   ; 1      ; LABCELL_X19_Y23_N45  ; core|selector|LessThan5~9|datae                             ;
+;   10.826 ;   0.304 ; FF ; CELL ; 2      ; LABCELL_X19_Y23_N45  ; core|selector|LessThan5~9|combout                           ;
+;   11.432 ;   0.606 ; FF ; IC   ; 1      ; MLABCELL_X21_Y23_N27 ; core|selector|LessThan5~10|datab                            ;
+;   11.990 ;   0.558 ; FF ; CELL ; 1      ; MLABCELL_X21_Y23_N27 ; core|selector|LessThan5~10|combout                          ;
+;   12.635 ;   0.645 ; FF ; IC   ; 1      ; LABCELL_X24_Y23_N42  ; core|selector|comb~13|datae                                 ;
+;   12.870 ;   0.235 ; FR ; CELL ; 2      ; LABCELL_X24_Y23_N42  ; core|selector|comb~13|combout                               ;
+;   13.084 ;   0.214 ; RR ; IC   ; 1      ; LABCELL_X24_Y23_N30  ; core|selector|comb~14|datab                                 ;
+;   13.667 ;   0.583 ; RF ; CELL ; 25     ; LABCELL_X24_Y23_N30  ; core|selector|comb~14|combout                               ;
+;   14.388 ;   0.721 ; FF ; IC   ; 1      ; LABCELL_X27_Y23_N39  ; core|selector|best_index[4]~5|dataf                         ;
+;   14.470 ;   0.082 ; FF ; CELL ; 8      ; LABCELL_X27_Y23_N39  ; core|selector|best_index[4]~5|combout                       ;
+;   14.862 ;   0.392 ; FF ; IC   ; 2      ; MLABCELL_X28_Y23_N15 ; core|gate|Add0~9|dataf                                      ;
+;   16.023 ;   1.161 ; FR ; CELL ; 1      ; MLABCELL_X28_Y23_N15 ; core|gate|Add0~9|cout                                       ;
+;   16.023 ;   0.000 ; RR ; IC   ; 2      ; MLABCELL_X28_Y23_N18 ; core|gate|Add0~5|cin                                        ;
+;   16.367 ;   0.344 ; RR ; CELL ; 5      ; MLABCELL_X28_Y23_N18 ; core|gate|Add0~5|sumout                                     ;
+;   16.616 ;   0.249 ; RR ; IC   ; 2      ; MLABCELL_X28_Y23_N45 ; core|gate|Add1~1|dataa                                      ;
+;   17.966 ;   1.350 ; RR ; CELL ; 4      ; MLABCELL_X28_Y23_N45 ; core|gate|Add1~1|sumout                                     ;
+;   18.861 ;   0.895 ; RR ; IC   ; 1      ; MLABCELL_X28_Y22_N42 ; core|gate|always0~18|dataf                                  ;
+;   18.957 ;   0.096 ; RF ; CELL ; 1      ; MLABCELL_X28_Y22_N42 ; core|gate|always0~18|combout                                ;
+;   19.314 ;   0.357 ; FF ; IC   ; 1      ; MLABCELL_X28_Y22_N36 ; core|gate|always0~4|datad                                   ;
+;   19.887 ;   0.573 ; FF ; CELL ; 22     ; MLABCELL_X28_Y22_N36 ; core|gate|always0~4|combout                                 ;
+;   20.278 ;   0.391 ; FF ; IC   ; 1      ; LABCELL_X29_Y22_N24  ; core|gate|omega_command[6]~0|dataf                          ;
+;   20.359 ;   0.081 ; FF ; CELL ; 5      ; LABCELL_X29_Y22_N24  ; core|gate|omega_command[6]~0|combout                        ;
+;   22.449 ;   2.090 ; FF ; IC   ; 1      ; FF_X29_Y22_N20       ; core|previous_w[6]|asdata                                   ;
+;   23.041 ;   0.592 ; FF ; CELL ; 1      ; FF_X29_Y22_N20       ; igor_top:core|previous_w[6]                                 ;
++----------+---------+----+------+--------+----------------------+-------------------------------------------------------------+
+
++-----------------------------------------------------------------------------------------------+
+; Data Required Path                                                                            ;
++----------+---------+----+------+--------+------------------+----------------------------------+
+; Total    ; Incr    ; RF ; Type ; Fanout ; Location         ; Element                          ;
++----------+---------+----+------+--------+------------------+----------------------------------+
+; 20.000   ; 20.000  ;    ;      ;        ;                  ; latch edge time                  ;
+; 23.836   ; 3.836   ;    ;      ;        ;                  ; clock path                       ;
+;   20.000 ;   0.000 ;    ;      ;        ;                  ; source latency                   ;
+;   20.000 ;   0.000 ;    ;      ; 1      ; PIN_V11          ; FPGA_CLK1_50                     ;
+;   20.000 ;   0.000 ; RR ; IC   ; 1      ; IOIBUF_X32_Y0_N1 ; FPGA_CLK1_50~input|i             ;
+;   20.761 ;   0.761 ; RR ; CELL ; 1      ; IOIBUF_X32_Y0_N1 ; FPGA_CLK1_50~input|o             ;
+;   21.148 ;   0.387 ; RR ; IC   ; 1      ; CLKCTRL_G4       ; FPGA_CLK1_50~inputCLKENA0|inclk  ;
+;   21.433 ;   0.285 ; RR ; CELL ; 1695   ; CLKCTRL_G4       ; FPGA_CLK1_50~inputCLKENA0|outclk ;
+;   23.283 ;   1.850 ; RR ; IC   ; 1      ; FF_X29_Y22_N20   ; core|previous_w[6]|clk           ;
+;   23.775 ;   0.492 ; RR ; CELL ; 1      ; FF_X29_Y22_N20   ; igor_top:core|previous_w[6]      ;
+;   23.836 ;   0.061 ;    ;      ;        ;                  ; clock pessimism removed          ;
+; 23.666   ; -0.170  ;    ;      ;        ;                  ; clock uncertainty                ;
+; 23.666   ; 0.000   ;    ; uTsu ; 1      ; FF_X29_Y22_N20   ; igor_top:core|previous_w[6]      ;
++----------+---------+----+------+--------+------------------+----------------------------------+
+
+----------------------------
+; Extra Fitter Information ;
+----------------------------
+HTML report is unavailable in plain text report export.
+
+
+Path #6: Setup slack is 0.630 
+===============================================================================
++-----------------------------------------------------------------------------------+
+; Path Summary                                                                      ;
++--------------------+--------------------------------------------------------------+
+; Property           ; Value                                                        ;
++--------------------+--------------------------------------------------------------+
+; From Node          ; igor_top:core|igor_rollout_tile:tiles[1].tile|best_score[17] ;
+; To Node            ; igor_top:core|previous_w[6]                                  ;
+; Launch Clock       ; FPGA_CLK1_50                                                 ;
+; Latch Clock        ; FPGA_CLK1_50                                                 ;
+; Data Arrival Time  ; 23.036                                                       ;
+; Data Required Time ; 23.666                                                       ;
+; Slack              ; 0.630                                                        ;
++--------------------+--------------------------------------------------------------+
+
++------------------------------------------------------------------------------------+
+; Statistics                                                                         ;
++------------------------+--------+-------+-------------+------------+-------+-------+
+; Property               ; Value  ; Count ; Total Delay ; % of Total ; Min   ; Max   ;
++------------------------+--------+-------+-------------+------------+-------+-------+
+; Setup Relationship     ; 20.000 ;       ;             ;            ;       ;       ;
+; Clock Skew             ; -0.487 ;       ;             ;            ;       ;       ;
+; Data Delay             ; 18.713 ;       ;             ;            ;       ;       ;
+; Number of Logic Levels ;        ; 15    ;             ;            ;       ;       ;
+; Physical Delays        ;        ;       ;             ;            ;       ;       ;
+;  Arrival Path          ;        ;       ;             ;            ;       ;       ;
+;   Clock                ;        ;       ;             ;            ;       ;       ;
+;    IC                  ;        ; 3     ; 2.688       ; 62         ; 0.000 ; 2.265 ;
+;    Cell                ;        ; 3     ; 1.635       ; 38         ; 0.310 ; 0.761 ;
+;   Data                 ;        ;       ;             ;            ;       ;       ;
+;    IC                  ;        ; 20    ; 10.605      ; 57         ; 0.000 ; 2.090 ;
+;    Cell                ;        ; 21    ; 8.108       ; 43         ; 0.000 ; 0.881 ;
+;    uTco                ;        ; 1     ; 0.000       ; 0          ; 0.000 ; 0.000 ;
+;  Required Path         ;        ;       ;             ;            ;       ;       ;
+;   Clock                ;        ;       ;             ;            ;       ;       ;
+;    IC                  ;        ; 3     ; 2.237       ; 59         ; 0.000 ; 1.850 ;
+;    Cell                ;        ; 3     ; 1.538       ; 41         ; 0.285 ; 0.761 ;
++------------------------+--------+-------+-------------+------------+-------+-------+
+Note: Negative delays are omitted from totals when calculating percentages
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Data Arrival Path                                                                                                             ;
++----------+---------+----+------+--------+----------------------+--------------------------------------------------------------+
+; Total    ; Incr    ; RF ; Type ; Fanout ; Location             ; Element                                                      ;
++----------+---------+----+------+--------+----------------------+--------------------------------------------------------------+
+; 0.000    ; 0.000   ;    ;      ;        ;                      ; launch edge time                                             ;
+; 4.323    ; 4.323   ;    ;      ;        ;                      ; clock path                                                   ;
+;   0.000  ;   0.000 ;    ;      ;        ;                      ; source latency                                               ;
+;   0.000  ;   0.000 ;    ;      ; 1      ; PIN_V11              ; FPGA_CLK1_50                                                 ;
+;   0.000  ;   0.000 ; RR ; IC   ; 1      ; IOIBUF_X32_Y0_N1     ; FPGA_CLK1_50~input|i                                         ;
+;   0.761  ;   0.761 ; RR ; CELL ; 1      ; IOIBUF_X32_Y0_N1     ; FPGA_CLK1_50~input|o                                         ;
+;   1.184  ;   0.423 ; RR ; IC   ; 1      ; CLKCTRL_G4           ; FPGA_CLK1_50~inputCLKENA0|inclk                              ;
+;   1.494  ;   0.310 ; RR ; CELL ; 1695   ; CLKCTRL_G4           ; FPGA_CLK1_50~inputCLKENA0|outclk                             ;
+;   3.759  ;   2.265 ; RR ; IC   ; 1      ; FF_X24_Y22_N8        ; core|tiles[1].tile|best_score[17]|clk                        ;
+;   4.323  ;   0.564 ; RR ; CELL ; 1      ; FF_X24_Y22_N8        ; igor_top:core|igor_rollout_tile:tiles[1].tile|best_score[17] ;
+; 23.036   ; 18.713  ;    ;      ;        ;                      ; data path                                                    ;
+;   4.323  ;   0.000 ;    ; uTco ; 1      ; FF_X24_Y22_N8        ; igor_top:core|igor_rollout_tile:tiles[1].tile|best_score[17] ;
+;   4.323  ;   0.000 ; FF ; CELL ; 6      ; FF_X24_Y22_N8        ; core|tiles[1].tile|best_score[17]|q                          ;
+;   5.465  ;   1.142 ; FF ; IC   ; 1      ; MLABCELL_X25_Y25_N3  ; core|selector|LessThan0~4|dataa                              ;
+;   6.024  ;   0.559 ; FF ; CELL ; 3      ; MLABCELL_X25_Y25_N3  ; core|selector|LessThan0~4|combout                            ;
+;   6.768  ;   0.744 ; FF ; IC   ; 1      ; LABCELL_X24_Y24_N51  ; core|selector|LessThan0~15|dataa                             ;
+;   7.332  ;   0.564 ; FF ; CELL ; 1      ; LABCELL_X24_Y24_N51  ; core|selector|LessThan0~15|combout                           ;
+;   7.566  ;   0.234 ; FF ; IC   ; 1      ; LABCELL_X24_Y24_N12  ; core|selector|LessThan0~23|datac                             ;
+;   8.006  ;   0.440 ; FR ; CELL ; 2      ; LABCELL_X24_Y24_N12  ; core|selector|LessThan0~23|combout                           ;
+;   8.266  ;   0.260 ; RR ; IC   ; 1      ; LABCELL_X24_Y24_N3   ; core|selector|LessThan0~26|dataf                             ;
+;   8.358  ;   0.092 ; RR ; CELL ; 31     ; LABCELL_X24_Y24_N3   ; core|selector|LessThan0~26|combout                           ;
+;   9.197  ;   0.839 ; RR ; IC   ; 1      ; LABCELL_X19_Y24_N18  ; core|selector|ia[8]~3|datae                                  ;
+;   9.498  ;   0.301 ; RF ; CELL ; 2      ; LABCELL_X19_Y24_N18  ; core|selector|ia[8]~3|combout                                ;
+;   10.540 ;   1.042 ; FF ; IC   ; 1      ; LABCELL_X19_Y23_N45  ; core|selector|LessThan5~9|datae                              ;
+;   10.882 ;   0.342 ; FR ; CELL ; 2      ; LABCELL_X19_Y23_N45  ; core|selector|LessThan5~9|combout                            ;
+;   11.434 ;   0.552 ; RR ; IC   ; 1      ; MLABCELL_X21_Y23_N27 ; core|selector|LessThan5~10|datab                             ;
+;   12.016 ;   0.582 ; RR ; CELL ; 1      ; MLABCELL_X21_Y23_N27 ; core|selector|LessThan5~10|combout                           ;
+;   12.602 ;   0.586 ; RR ; IC   ; 1      ; LABCELL_X24_Y23_N42  ; core|selector|comb~13|datae                                  ;
+;   12.907 ;   0.305 ; RF ; CELL ; 2      ; LABCELL_X24_Y23_N42  ; core|selector|comb~13|combout                                ;
+;   13.105 ;   0.198 ; FF ; IC   ; 1      ; LABCELL_X24_Y23_N30  ; core|selector|comb~14|datab                                  ;
+;   13.681 ;   0.576 ; FR ; CELL ; 25     ; LABCELL_X24_Y23_N30  ; core|selector|comb~14|combout                                ;
+;   14.073 ;   0.392 ; RR ; IC   ; 1      ; MLABCELL_X25_Y23_N30 ; core|selector|winner[0]~0|dataf                              ;
+;   14.173 ;   0.100 ; RF ; CELL ; 2      ; MLABCELL_X25_Y23_N30 ; core|selector|winner[0]~0|combout                            ;
+;   14.969 ;   0.796 ; FF ; IC   ; 2      ; MLABCELL_X28_Y23_N3  ; core|gate|Add0~29|datac                                      ;
+;   15.850 ;   0.881 ; FF ; CELL ; 1      ; MLABCELL_X28_Y23_N3  ; core|gate|Add0~29|cout                                       ;
+;   15.850 ;   0.000 ; FF ; IC   ; 2      ; MLABCELL_X28_Y23_N6  ; core|gate|Add0~25|cin                                        ;
+;   15.896 ;   0.046 ; FF ; CELL ; 1      ; MLABCELL_X28_Y23_N6  ; core|gate|Add0~25|cout                                       ;
+;   15.896 ;   0.000 ; FF ; IC   ; 2      ; MLABCELL_X28_Y23_N9  ; core|gate|Add0~21|cin                                        ;
+;   15.896 ;   0.000 ; FF ; CELL ; 1      ; MLABCELL_X28_Y23_N9  ; core|gate|Add0~21|cout                                       ;
+;   15.896 ;   0.000 ; FF ; IC   ; 2      ; MLABCELL_X28_Y23_N12 ; core|gate|Add0~17|cin                                        ;
+;   16.268 ;   0.372 ; FR ; CELL ; 3      ; MLABCELL_X28_Y23_N12 ; core|gate|Add0~17|sumout                                     ;
+;   16.536 ;   0.268 ; RR ; IC   ; 2      ; MLABCELL_X28_Y23_N39 ; core|gate|Add1~17|datac                                      ;
+;   17.402 ;   0.866 ; RF ; CELL ; 1      ; MLABCELL_X28_Y23_N39 ; core|gate|Add1~17|cout                                       ;
+;   17.402 ;   0.000 ; FF ; IC   ; 2      ; MLABCELL_X28_Y23_N42 ; core|gate|Add1~5|cin                                         ;
+;   17.773 ;   0.371 ; FR ; CELL ; 3      ; MLABCELL_X28_Y23_N42 ; core|gate|Add1~5|sumout                                      ;
+;   18.487 ;   0.714 ; RR ; IC   ; 1      ; MLABCELL_X28_Y22_N42 ; core|gate|always0~18|datac                                   ;
+;   18.952 ;   0.465 ; RF ; CELL ; 1      ; MLABCELL_X28_Y22_N42 ; core|gate|always0~18|combout                                 ;
+;   19.309 ;   0.357 ; FF ; IC   ; 1      ; MLABCELL_X28_Y22_N36 ; core|gate|always0~4|datad                                    ;
+;   19.882 ;   0.573 ; FF ; CELL ; 22     ; MLABCELL_X28_Y22_N36 ; core|gate|always0~4|combout                                  ;
+;   20.273 ;   0.391 ; FF ; IC   ; 1      ; LABCELL_X29_Y22_N24  ; core|gate|omega_command[6]~0|dataf                           ;
+;   20.354 ;   0.081 ; FF ; CELL ; 5      ; LABCELL_X29_Y22_N24  ; core|gate|omega_command[6]~0|combout                         ;
+;   22.444 ;   2.090 ; FF ; IC   ; 1      ; FF_X29_Y22_N20       ; core|previous_w[6]|asdata                                    ;
+;   23.036 ;   0.592 ; FF ; CELL ; 1      ; FF_X29_Y22_N20       ; igor_top:core|previous_w[6]                                  ;
++----------+---------+----+------+--------+----------------------+--------------------------------------------------------------+
+
++-----------------------------------------------------------------------------------------------+
+; Data Required Path                                                                            ;
++----------+---------+----+------+--------+------------------+----------------------------------+
+; Total    ; Incr    ; RF ; Type ; Fanout ; Location         ; Element                          ;
++----------+---------+----+------+--------+------------------+----------------------------------+
+; 20.000   ; 20.000  ;    ;      ;        ;                  ; latch edge time                  ;
+; 23.836   ; 3.836   ;    ;      ;        ;                  ; clock path                       ;
+;   20.000 ;   0.000 ;    ;      ;        ;                  ; source latency                   ;
+;   20.000 ;   0.000 ;    ;      ; 1      ; PIN_V11          ; FPGA_CLK1_50                     ;
+;   20.000 ;   0.000 ; RR ; IC   ; 1      ; IOIBUF_X32_Y0_N1 ; FPGA_CLK1_50~input|i             ;
+;   20.761 ;   0.761 ; RR ; CELL ; 1      ; IOIBUF_X32_Y0_N1 ; FPGA_CLK1_50~input|o             ;
+;   21.148 ;   0.387 ; RR ; IC   ; 1      ; CLKCTRL_G4       ; FPGA_CLK1_50~inputCLKENA0|inclk  ;
+;   21.433 ;   0.285 ; RR ; CELL ; 1695   ; CLKCTRL_G4       ; FPGA_CLK1_50~inputCLKENA0|outclk ;
+;   23.283 ;   1.850 ; RR ; IC   ; 1      ; FF_X29_Y22_N20   ; core|previous_w[6]|clk           ;
+;   23.775 ;   0.492 ; RR ; CELL ; 1      ; FF_X29_Y22_N20   ; igor_top:core|previous_w[6]      ;
+;   23.836 ;   0.061 ;    ;      ;        ;                  ; clock pessimism removed          ;
+; 23.666   ; -0.170  ;    ;      ;        ;                  ; clock uncertainty                ;
+; 23.666   ; 0.000   ;    ; uTsu ; 1      ; FF_X29_Y22_N20   ; igor_top:core|previous_w[6]      ;
++----------+---------+----+------+--------+------------------+----------------------------------+
+
+----------------------------
+; Extra Fitter Information ;
+----------------------------
+HTML report is unavailable in plain text report export.
+
+
+Path #7: Setup slack is 0.631 
+===============================================================================
++----------------------------------------------------------------------------------+
+; Path Summary                                                                     ;
++--------------------+-------------------------------------------------------------+
+; Property           ; Value                                                       ;
++--------------------+-------------------------------------------------------------+
+; From Node          ; igor_top:core|igor_rollout_tile:tiles[0].tile|best_score[8] ;
+; To Node            ; igor_top:core|previous_w[5]                                 ;
+; Launch Clock       ; FPGA_CLK1_50                                                ;
+; Latch Clock        ; FPGA_CLK1_50                                                ;
+; Data Arrival Time  ; 23.039                                                      ;
+; Data Required Time ; 23.670                                                      ;
+; Slack              ; 0.631                                                       ;
++--------------------+-------------------------------------------------------------+
+
++------------------------------------------------------------------------------------+
+; Statistics                                                                         ;
++------------------------+--------+-------+-------------+------------+-------+-------+
+; Property               ; Value  ; Count ; Total Delay ; % of Total ; Min   ; Max   ;
++------------------------+--------+-------+-------------+------------+-------+-------+
+; Setup Relationship     ; 20.000 ;       ;             ;            ;       ;       ;
+; Clock Skew             ; -0.488 ;       ;             ;            ;       ;       ;
+; Data Delay             ; 18.711 ;       ;             ;            ;       ;       ;
+; Number of Logic Levels ;        ; 15    ;             ;            ;       ;       ;
+; Physical Delays        ;        ;       ;             ;            ;       ;       ;
+;  Arrival Path          ;        ;       ;             ;            ;       ;       ;
+;   Clock                ;        ;       ;             ;            ;       ;       ;
+;    IC                  ;        ; 3     ; 2.687       ; 62         ; 0.000 ; 2.264 ;
+;    Cell                ;        ; 3     ; 1.641       ; 38         ; 0.310 ; 0.761 ;
+;   Data                 ;        ;       ;             ;            ;       ;       ;
+;    IC                  ;        ; 17    ; 10.878      ; 58         ; 0.000 ; 2.090 ;
+;    Cell                ;        ; 18    ; 7.833       ; 42         ; 0.000 ; 1.350 ;
+;    uTco                ;        ; 1     ; 0.000       ; 0          ; 0.000 ; 0.000 ;
+;  Required Path         ;        ;       ;             ;            ;       ;       ;
+;   Clock                ;        ;       ;             ;            ;       ;       ;
+;    IC                  ;        ; 3     ; 2.237       ; 59         ; 0.000 ; 1.850 ;
+;    Cell                ;        ; 3     ; 1.542       ; 41         ; 0.285 ; 0.761 ;
++------------------------+--------+-------+-------------+------------+-------+-------+
+Note: Negative delays are omitted from totals when calculating percentages
+
++------------------------------------------------------------------------------------------------------------------------------+
+; Data Arrival Path                                                                                                            ;
++----------+---------+----+------+--------+----------------------+-------------------------------------------------------------+
+; Total    ; Incr    ; RF ; Type ; Fanout ; Location             ; Element                                                     ;
++----------+---------+----+------+--------+----------------------+-------------------------------------------------------------+
+; 0.000    ; 0.000   ;    ;      ;        ;                      ; launch edge time                                            ;
+; 4.328    ; 4.328   ;    ;      ;        ;                      ; clock path                                                  ;
+;   0.000  ;   0.000 ;    ;      ;        ;                      ; source latency                                              ;
+;   0.000  ;   0.000 ;    ;      ; 1      ; PIN_V11              ; FPGA_CLK1_50                                                ;
+;   0.000  ;   0.000 ; RR ; IC   ; 1      ; IOIBUF_X32_Y0_N1     ; FPGA_CLK1_50~input|i                                        ;
+;   0.761  ;   0.761 ; RR ; CELL ; 1      ; IOIBUF_X32_Y0_N1     ; FPGA_CLK1_50~input|o                                        ;
+;   1.184  ;   0.423 ; RR ; IC   ; 1      ; CLKCTRL_G4           ; FPGA_CLK1_50~inputCLKENA0|inclk                             ;
+;   1.494  ;   0.310 ; RR ; CELL ; 1695   ; CLKCTRL_G4           ; FPGA_CLK1_50~inputCLKENA0|outclk                            ;
+;   3.758  ;   2.264 ; RR ; IC   ; 1      ; FF_X24_Y23_N35       ; core|tiles[0].tile|best_score[8]|clk                        ;
+;   4.328  ;   0.570 ; RR ; CELL ; 1      ; FF_X24_Y23_N35       ; igor_top:core|igor_rollout_tile:tiles[0].tile|best_score[8] ;
+; 23.039   ; 18.711  ;    ;      ;        ;                      ; data path                                                   ;
+;   4.328  ;   0.000 ;    ; uTco ; 1      ; FF_X24_Y23_N35       ; igor_top:core|igor_rollout_tile:tiles[0].tile|best_score[8] ;
+;   4.328  ;   0.000 ; FF ; CELL ; 5      ; FF_X24_Y23_N35       ; core|tiles[0].tile|best_score[8]|q                          ;
+;   5.203  ;   0.875 ; FF ; IC   ; 1      ; LABCELL_X24_Y22_N27  ; core|selector|LessThan0~6|dataa                             ;
+;   5.750  ;   0.547 ; FR ; CELL ; 3      ; LABCELL_X24_Y22_N27  ; core|selector|LessThan0~6|combout                           ;
+;   6.296  ;   0.546 ; RR ; IC   ; 1      ; LABCELL_X23_Y22_N18  ; core|selector|LessThan0~13|datac                            ;
+;   6.759  ;   0.463 ; RF ; CELL ; 1      ; LABCELL_X23_Y22_N18  ; core|selector|LessThan0~13|combout                          ;
+;   7.488  ;   0.729 ; FF ; IC   ; 1      ; LABCELL_X24_Y24_N12  ; core|selector|LessThan0~23|datab                            ;
+;   8.048  ;   0.560 ; FF ; CELL ; 2      ; LABCELL_X24_Y24_N12  ; core|selector|LessThan0~23|combout                          ;
+;   8.288  ;   0.240 ; FF ; IC   ; 1      ; LABCELL_X24_Y24_N3   ; core|selector|LessThan0~26|dataf                            ;
+;   8.373  ;   0.085 ; FF ; CELL ; 31     ; LABCELL_X24_Y24_N3   ; core|selector|LessThan0~26|combout                          ;
+;   9.259  ;   0.886 ; FF ; IC   ; 1      ; LABCELL_X19_Y24_N18  ; core|selector|ia[8]~3|datae                                 ;
+;   9.480  ;   0.221 ; FF ; CELL ; 2      ; LABCELL_X19_Y24_N18  ; core|selector|ia[8]~3|combout                               ;
+;   10.522 ;   1.042 ; FF ; IC   ; 1      ; LABCELL_X19_Y23_N45  ; core|selector|LessThan5~9|datae                             ;
+;   10.826 ;   0.304 ; FF ; CELL ; 2      ; LABCELL_X19_Y23_N45  ; core|selector|LessThan5~9|combout                           ;
+;   11.432 ;   0.606 ; FF ; IC   ; 1      ; MLABCELL_X21_Y23_N27 ; core|selector|LessThan5~10|datab                            ;
+;   11.990 ;   0.558 ; FF ; CELL ; 1      ; MLABCELL_X21_Y23_N27 ; core|selector|LessThan5~10|combout                          ;
+;   12.635 ;   0.645 ; FF ; IC   ; 1      ; LABCELL_X24_Y23_N42  ; core|selector|comb~13|datae                                 ;
+;   12.870 ;   0.235 ; FR ; CELL ; 2      ; LABCELL_X24_Y23_N42  ; core|selector|comb~13|combout                               ;
+;   13.084 ;   0.214 ; RR ; IC   ; 1      ; LABCELL_X24_Y23_N30  ; core|selector|comb~14|datab                                 ;
+;   13.667 ;   0.583 ; RF ; CELL ; 25     ; LABCELL_X24_Y23_N30  ; core|selector|comb~14|combout                               ;
+;   14.388 ;   0.721 ; FF ; IC   ; 1      ; LABCELL_X27_Y23_N39  ; core|selector|best_index[4]~5|dataf                         ;
+;   14.470 ;   0.082 ; FF ; CELL ; 8      ; LABCELL_X27_Y23_N39  ; core|selector|best_index[4]~5|combout                       ;
+;   14.862 ;   0.392 ; FF ; IC   ; 2      ; MLABCELL_X28_Y23_N15 ; core|gate|Add0~9|dataf                                      ;
+;   16.023 ;   1.161 ; FR ; CELL ; 1      ; MLABCELL_X28_Y23_N15 ; core|gate|Add0~9|cout                                       ;
+;   16.023 ;   0.000 ; RR ; IC   ; 2      ; MLABCELL_X28_Y23_N18 ; core|gate|Add0~5|cin                                        ;
+;   16.367 ;   0.344 ; RR ; CELL ; 5      ; MLABCELL_X28_Y23_N18 ; core|gate|Add0~5|sumout                                     ;
+;   16.616 ;   0.249 ; RR ; IC   ; 2      ; MLABCELL_X28_Y23_N45 ; core|gate|Add1~1|dataa                                      ;
+;   17.966 ;   1.350 ; RR ; CELL ; 4      ; MLABCELL_X28_Y23_N45 ; core|gate|Add1~1|sumout                                     ;
+;   18.861 ;   0.895 ; RR ; IC   ; 1      ; MLABCELL_X28_Y22_N42 ; core|gate|always0~18|dataf                                  ;
+;   18.957 ;   0.096 ; RF ; CELL ; 1      ; MLABCELL_X28_Y22_N42 ; core|gate|always0~18|combout                                ;
+;   19.314 ;   0.357 ; FF ; IC   ; 1      ; MLABCELL_X28_Y22_N36 ; core|gate|always0~4|datad                                   ;
+;   19.887 ;   0.573 ; FF ; CELL ; 22     ; MLABCELL_X28_Y22_N36 ; core|gate|always0~4|combout                                 ;
+;   20.278 ;   0.391 ; FF ; IC   ; 1      ; LABCELL_X29_Y22_N24  ; core|gate|omega_command[6]~0|dataf                          ;
+;   20.359 ;   0.081 ; FF ; CELL ; 5      ; LABCELL_X29_Y22_N24  ; core|gate|omega_command[6]~0|combout                        ;
+;   22.449 ;   2.090 ; FF ; IC   ; 1      ; FF_X29_Y22_N19       ; core|previous_w[5]|asdata                                   ;
+;   23.039 ;   0.590 ; FF ; CELL ; 1      ; FF_X29_Y22_N19       ; igor_top:core|previous_w[5]                                 ;
++----------+---------+----+------+--------+----------------------+-------------------------------------------------------------+
+
++-----------------------------------------------------------------------------------------------+
+; Data Required Path                                                                            ;
++----------+---------+----+------+--------+------------------+----------------------------------+
+; Total    ; Incr    ; RF ; Type ; Fanout ; Location         ; Element                          ;
++----------+---------+----+------+--------+------------------+----------------------------------+
+; 20.000   ; 20.000  ;    ;      ;        ;                  ; latch edge time                  ;
+; 23.840   ; 3.840   ;    ;      ;        ;                  ; clock path                       ;
+;   20.000 ;   0.000 ;    ;      ;        ;                  ; source latency                   ;
+;   20.000 ;   0.000 ;    ;      ; 1      ; PIN_V11          ; FPGA_CLK1_50                     ;
+;   20.000 ;   0.000 ; RR ; IC   ; 1      ; IOIBUF_X32_Y0_N1 ; FPGA_CLK1_50~input|i             ;
+;   20.761 ;   0.761 ; RR ; CELL ; 1      ; IOIBUF_X32_Y0_N1 ; FPGA_CLK1_50~input|o             ;
+;   21.148 ;   0.387 ; RR ; IC   ; 1      ; CLKCTRL_G4       ; FPGA_CLK1_50~inputCLKENA0|inclk  ;
+;   21.433 ;   0.285 ; RR ; CELL ; 1695   ; CLKCTRL_G4       ; FPGA_CLK1_50~inputCLKENA0|outclk ;
+;   23.283 ;   1.850 ; RR ; IC   ; 1      ; FF_X29_Y22_N19   ; core|previous_w[5]|clk           ;
+;   23.779 ;   0.496 ; RR ; CELL ; 1      ; FF_X29_Y22_N19   ; igor_top:core|previous_w[5]      ;
+;   23.840 ;   0.061 ;    ;      ;        ;                  ; clock pessimism removed          ;
+; 23.670   ; -0.170  ;    ;      ;        ;                  ; clock uncertainty                ;
+; 23.670   ; 0.000   ;    ; uTsu ; 1      ; FF_X29_Y22_N19   ; igor_top:core|previous_w[5]      ;
++----------+---------+----+------+--------+------------------+----------------------------------+
+
+----------------------------
+; Extra Fitter Information ;
+----------------------------
+HTML report is unavailable in plain text report export.
+
+
+Path #8: Setup slack is 0.634 
+===============================================================================
++----------------------------------------------------------------------------------+
+; Path Summary                                                                     ;
++--------------------+-------------------------------------------------------------+
+; Property           ; Value                                                       ;
++--------------------+-------------------------------------------------------------+
+; From Node          ; igor_top:core|igor_rollout_tile:tiles[0].tile|best_score[8] ;
+; To Node            ; igor_top:core|previous_w[6]                                 ;
+; Launch Clock       ; FPGA_CLK1_50                                                ;
+; Latch Clock        ; FPGA_CLK1_50                                                ;
+; Data Arrival Time  ; 23.032                                                      ;
+; Data Required Time ; 23.666                                                      ;
+; Slack              ; 0.634                                                       ;
++--------------------+-------------------------------------------------------------+
+
++------------------------------------------------------------------------------------+
+; Statistics                                                                         ;
++------------------------+--------+-------+-------------+------------+-------+-------+
+; Property               ; Value  ; Count ; Total Delay ; % of Total ; Min   ; Max   ;
++------------------------+--------+-------+-------------+------------+-------+-------+
+; Setup Relationship     ; 20.000 ;       ;             ;            ;       ;       ;
+; Clock Skew             ; -0.492 ;       ;             ;            ;       ;       ;
+; Data Delay             ; 18.704 ;       ;             ;            ;       ;       ;
+; Number of Logic Levels ;        ; 15    ;             ;            ;       ;       ;
+; Physical Delays        ;        ;       ;             ;            ;       ;       ;
+;  Arrival Path          ;        ;       ;             ;            ;       ;       ;
+;   Clock                ;        ;       ;             ;            ;       ;       ;
+;    IC                  ;        ; 3     ; 2.687       ; 62         ; 0.000 ; 2.264 ;
+;    Cell                ;        ; 3     ; 1.641       ; 38         ; 0.310 ; 0.761 ;
+;   Data                 ;        ;       ;             ;            ;       ;       ;
+;    IC                  ;        ; 17    ; 10.661      ; 57         ; 0.000 ; 2.090 ;
+;    Cell                ;        ; 18    ; 8.043       ; 43         ; 0.000 ; 1.350 ;
+;    uTco                ;        ; 1     ; 0.000       ; 0          ; 0.000 ; 0.000 ;
+;  Required Path         ;        ;       ;             ;            ;       ;       ;
+;   Clock                ;        ;       ;             ;            ;       ;       ;
+;    IC                  ;        ; 3     ; 2.237       ; 59         ; 0.000 ; 1.850 ;
+;    Cell                ;        ; 3     ; 1.538       ; 41         ; 0.285 ; 0.761 ;
++------------------------+--------+-------+-------------+------------+-------+-------+
+Note: Negative delays are omitted from totals when calculating percentages
+
++------------------------------------------------------------------------------------------------------------------------------+
+; Data Arrival Path                                                                                                            ;
++----------+---------+----+------+--------+----------------------+-------------------------------------------------------------+
+; Total    ; Incr    ; RF ; Type ; Fanout ; Location             ; Element                                                     ;
++----------+---------+----+------+--------+----------------------+-------------------------------------------------------------+
+; 0.000    ; 0.000   ;    ;      ;        ;                      ; launch edge time                                            ;
+; 4.328    ; 4.328   ;    ;      ;        ;                      ; clock path                                                  ;
+;   0.000  ;   0.000 ;    ;      ;        ;                      ; source latency                                              ;
+;   0.000  ;   0.000 ;    ;      ; 1      ; PIN_V11              ; FPGA_CLK1_50                                                ;
+;   0.000  ;   0.000 ; RR ; IC   ; 1      ; IOIBUF_X32_Y0_N1     ; FPGA_CLK1_50~input|i                                        ;
+;   0.761  ;   0.761 ; RR ; CELL ; 1      ; IOIBUF_X32_Y0_N1     ; FPGA_CLK1_50~input|o                                        ;
+;   1.184  ;   0.423 ; RR ; IC   ; 1      ; CLKCTRL_G4           ; FPGA_CLK1_50~inputCLKENA0|inclk                             ;
+;   1.494  ;   0.310 ; RR ; CELL ; 1695   ; CLKCTRL_G4           ; FPGA_CLK1_50~inputCLKENA0|outclk                            ;
+;   3.758  ;   2.264 ; RR ; IC   ; 1      ; FF_X24_Y23_N35       ; core|tiles[0].tile|best_score[8]|clk                        ;
+;   4.328  ;   0.570 ; RR ; CELL ; 1      ; FF_X24_Y23_N35       ; igor_top:core|igor_rollout_tile:tiles[0].tile|best_score[8] ;
+; 23.032   ; 18.704  ;    ;      ;        ;                      ; data path                                                   ;
+;   4.328  ;   0.000 ;    ; uTco ; 1      ; FF_X24_Y23_N35       ; igor_top:core|igor_rollout_tile:tiles[0].tile|best_score[8] ;
+;   4.328  ;   0.000 ; FF ; CELL ; 5      ; FF_X24_Y23_N35       ; core|tiles[0].tile|best_score[8]|q                          ;
+;   5.203  ;   0.875 ; FF ; IC   ; 1      ; LABCELL_X24_Y22_N27  ; core|selector|LessThan0~6|dataa                             ;
+;   5.750  ;   0.547 ; FR ; CELL ; 3      ; LABCELL_X24_Y22_N27  ; core|selector|LessThan0~6|combout                           ;
+;   6.296  ;   0.546 ; RR ; IC   ; 1      ; LABCELL_X23_Y22_N18  ; core|selector|LessThan0~13|datac                            ;
+;   6.759  ;   0.463 ; RF ; CELL ; 1      ; LABCELL_X23_Y22_N18  ; core|selector|LessThan0~13|combout                          ;
+;   7.488  ;   0.729 ; FF ; IC   ; 1      ; LABCELL_X24_Y24_N12  ; core|selector|LessThan0~23|datab                            ;
+;   8.048  ;   0.560 ; FF ; CELL ; 2      ; LABCELL_X24_Y24_N12  ; core|selector|LessThan0~23|combout                          ;
+;   8.288  ;   0.240 ; FF ; IC   ; 1      ; LABCELL_X24_Y24_N3   ; core|selector|LessThan0~26|dataf                            ;
+;   8.373  ;   0.085 ; FF ; CELL ; 31     ; LABCELL_X24_Y24_N3   ; core|selector|LessThan0~26|combout                          ;
+;   9.262  ;   0.889 ; FF ; IC   ; 1      ; LABCELL_X19_Y24_N24  ; core|selector|ia[7]~2|datae                                 ;
+;   9.483  ;   0.221 ; FF ; CELL ; 2      ; LABCELL_X19_Y24_N24  ; core|selector|ia[7]~2|combout                               ;
+;   10.305 ;   0.822 ; FF ; IC   ; 1      ; LABCELL_X19_Y23_N45  ; core|selector|LessThan5~9|datad                             ;
+;   10.817 ;   0.512 ; FF ; CELL ; 2      ; LABCELL_X19_Y23_N45  ; core|selector|LessThan5~9|combout                           ;
+;   11.423 ;   0.606 ; FF ; IC   ; 1      ; MLABCELL_X21_Y23_N27 ; core|selector|LessThan5~10|datab                            ;
+;   11.981 ;   0.558 ; FF ; CELL ; 1      ; MLABCELL_X21_Y23_N27 ; core|selector|LessThan5~10|combout                          ;
+;   12.626 ;   0.645 ; FF ; IC   ; 1      ; LABCELL_X24_Y23_N42  ; core|selector|comb~13|datae                                 ;
+;   12.861 ;   0.235 ; FR ; CELL ; 2      ; LABCELL_X24_Y23_N42  ; core|selector|comb~13|combout                               ;
+;   13.075 ;   0.214 ; RR ; IC   ; 1      ; LABCELL_X24_Y23_N30  ; core|selector|comb~14|datab                                 ;
+;   13.658 ;   0.583 ; RF ; CELL ; 25     ; LABCELL_X24_Y23_N30  ; core|selector|comb~14|combout                               ;
+;   14.379 ;   0.721 ; FF ; IC   ; 1      ; LABCELL_X27_Y23_N39  ; core|selector|best_index[4]~5|dataf                         ;
+;   14.461 ;   0.082 ; FF ; CELL ; 8      ; LABCELL_X27_Y23_N39  ; core|selector|best_index[4]~5|combout                       ;
+;   14.853 ;   0.392 ; FF ; IC   ; 2      ; MLABCELL_X28_Y23_N15 ; core|gate|Add0~9|dataf                                      ;
+;   16.014 ;   1.161 ; FR ; CELL ; 1      ; MLABCELL_X28_Y23_N15 ; core|gate|Add0~9|cout                                       ;
+;   16.014 ;   0.000 ; RR ; IC   ; 2      ; MLABCELL_X28_Y23_N18 ; core|gate|Add0~5|cin                                        ;
+;   16.358 ;   0.344 ; RR ; CELL ; 5      ; MLABCELL_X28_Y23_N18 ; core|gate|Add0~5|sumout                                     ;
+;   16.607 ;   0.249 ; RR ; IC   ; 2      ; MLABCELL_X28_Y23_N45 ; core|gate|Add1~1|dataa                                      ;
+;   17.957 ;   1.350 ; RR ; CELL ; 4      ; MLABCELL_X28_Y23_N45 ; core|gate|Add1~1|sumout                                     ;
+;   18.852 ;   0.895 ; RR ; IC   ; 1      ; MLABCELL_X28_Y22_N42 ; core|gate|always0~18|dataf                                  ;
+;   18.948 ;   0.096 ; RF ; CELL ; 1      ; MLABCELL_X28_Y22_N42 ; core|gate|always0~18|combout                                ;
+;   19.305 ;   0.357 ; FF ; IC   ; 1      ; MLABCELL_X28_Y22_N36 ; core|gate|always0~4|datad                                   ;
+;   19.878 ;   0.573 ; FF ; CELL ; 22     ; MLABCELL_X28_Y22_N36 ; core|gate|always0~4|combout                                 ;
+;   20.269 ;   0.391 ; FF ; IC   ; 1      ; LABCELL_X29_Y22_N24  ; core|gate|omega_command[6]~0|dataf                          ;
+;   20.350 ;   0.081 ; FF ; CELL ; 5      ; LABCELL_X29_Y22_N24  ; core|gate|omega_command[6]~0|combout                        ;
+;   22.440 ;   2.090 ; FF ; IC   ; 1      ; FF_X29_Y22_N20       ; core|previous_w[6]|asdata                                   ;
+;   23.032 ;   0.592 ; FF ; CELL ; 1      ; FF_X29_Y22_N20       ; igor_top:core|previous_w[6]                                 ;
++----------+---------+----+------+--------+----------------------+-------------------------------------------------------------+
+
++-----------------------------------------------------------------------------------------------+
+; Data Required Path                                                                            ;
++----------+---------+----+------+--------+------------------+----------------------------------+
+; Total    ; Incr    ; RF ; Type ; Fanout ; Location         ; Element                          ;
++----------+---------+----+------+--------+------------------+----------------------------------+
+; 20.000   ; 20.000  ;    ;      ;        ;                  ; latch edge time                  ;
+; 23.836   ; 3.836   ;    ;      ;        ;                  ; clock path                       ;
+;   20.000 ;   0.000 ;    ;      ;        ;                  ; source latency                   ;
+;   20.000 ;   0.000 ;    ;      ; 1      ; PIN_V11          ; FPGA_CLK1_50                     ;
+;   20.000 ;   0.000 ; RR ; IC   ; 1      ; IOIBUF_X32_Y0_N1 ; FPGA_CLK1_50~input|i             ;
+;   20.761 ;   0.761 ; RR ; CELL ; 1      ; IOIBUF_X32_Y0_N1 ; FPGA_CLK1_50~input|o             ;
+;   21.148 ;   0.387 ; RR ; IC   ; 1      ; CLKCTRL_G4       ; FPGA_CLK1_50~inputCLKENA0|inclk  ;
+;   21.433 ;   0.285 ; RR ; CELL ; 1695   ; CLKCTRL_G4       ; FPGA_CLK1_50~inputCLKENA0|outclk ;
+;   23.283 ;   1.850 ; RR ; IC   ; 1      ; FF_X29_Y22_N20   ; core|previous_w[6]|clk           ;
+;   23.775 ;   0.492 ; RR ; CELL ; 1      ; FF_X29_Y22_N20   ; igor_top:core|previous_w[6]      ;
+;   23.836 ;   0.061 ;    ;      ;        ;                  ; clock pessimism removed          ;
+; 23.666   ; -0.170  ;    ;      ;        ;                  ; clock uncertainty                ;
+; 23.666   ; 0.000   ;    ; uTsu ; 1      ; FF_X29_Y22_N20   ; igor_top:core|previous_w[6]      ;
++----------+---------+----+------+--------+------------------+----------------------------------+
+
+----------------------------
+; Extra Fitter Information ;
+----------------------------
+HTML report is unavailable in plain text report export.
+
+
+Path #9: Setup slack is 0.636 
+===============================================================================
++-----------------------------------------------------------------------------------+
+; Path Summary                                                                      ;
++--------------------+--------------------------------------------------------------+
+; Property           ; Value                                                        ;
++--------------------+--------------------------------------------------------------+
+; From Node          ; igor_top:core|igor_rollout_tile:tiles[1].tile|best_score[17] ;
+; To Node            ; igor_top:core|previous_w[5]                                  ;
+; Launch Clock       ; FPGA_CLK1_50                                                 ;
+; Latch Clock        ; FPGA_CLK1_50                                                 ;
+; Data Arrival Time  ; 23.034                                                       ;
+; Data Required Time ; 23.670                                                       ;
+; Slack              ; 0.636                                                        ;
++--------------------+--------------------------------------------------------------+
+
++------------------------------------------------------------------------------------+
+; Statistics                                                                         ;
++------------------------+--------+-------+-------------+------------+-------+-------+
+; Property               ; Value  ; Count ; Total Delay ; % of Total ; Min   ; Max   ;
++------------------------+--------+-------+-------------+------------+-------+-------+
+; Setup Relationship     ; 20.000 ;       ;             ;            ;       ;       ;
+; Clock Skew             ; -0.483 ;       ;             ;            ;       ;       ;
+; Data Delay             ; 18.711 ;       ;             ;            ;       ;       ;
+; Number of Logic Levels ;        ; 15    ;             ;            ;       ;       ;
+; Physical Delays        ;        ;       ;             ;            ;       ;       ;
+;  Arrival Path          ;        ;       ;             ;            ;       ;       ;
+;   Clock                ;        ;       ;             ;            ;       ;       ;
+;    IC                  ;        ; 3     ; 2.688       ; 62         ; 0.000 ; 2.265 ;
+;    Cell                ;        ; 3     ; 1.635       ; 38         ; 0.310 ; 0.761 ;
+;   Data                 ;        ;       ;             ;            ;       ;       ;
+;    IC                  ;        ; 20    ; 10.605      ; 57         ; 0.000 ; 2.090 ;
+;    Cell                ;        ; 21    ; 8.106       ; 43         ; 0.000 ; 0.881 ;
+;    uTco                ;        ; 1     ; 0.000       ; 0          ; 0.000 ; 0.000 ;
+;  Required Path         ;        ;       ;             ;            ;       ;       ;
+;   Clock                ;        ;       ;             ;            ;       ;       ;
+;    IC                  ;        ; 3     ; 2.237       ; 59         ; 0.000 ; 1.850 ;
+;    Cell                ;        ; 3     ; 1.542       ; 41         ; 0.285 ; 0.761 ;
++------------------------+--------+-------+-------------+------------+-------+-------+
+Note: Negative delays are omitted from totals when calculating percentages
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Data Arrival Path                                                                                                             ;
++----------+---------+----+------+--------+----------------------+--------------------------------------------------------------+
+; Total    ; Incr    ; RF ; Type ; Fanout ; Location             ; Element                                                      ;
++----------+---------+----+------+--------+----------------------+--------------------------------------------------------------+
+; 0.000    ; 0.000   ;    ;      ;        ;                      ; launch edge time                                             ;
+; 4.323    ; 4.323   ;    ;      ;        ;                      ; clock path                                                   ;
+;   0.000  ;   0.000 ;    ;      ;        ;                      ; source latency                                               ;
+;   0.000  ;   0.000 ;    ;      ; 1      ; PIN_V11              ; FPGA_CLK1_50                                                 ;
+;   0.000  ;   0.000 ; RR ; IC   ; 1      ; IOIBUF_X32_Y0_N1     ; FPGA_CLK1_50~input|i                                         ;
+;   0.761  ;   0.761 ; RR ; CELL ; 1      ; IOIBUF_X32_Y0_N1     ; FPGA_CLK1_50~input|o                                         ;
+;   1.184  ;   0.423 ; RR ; IC   ; 1      ; CLKCTRL_G4           ; FPGA_CLK1_50~inputCLKENA0|inclk                              ;
+;   1.494  ;   0.310 ; RR ; CELL ; 1695   ; CLKCTRL_G4           ; FPGA_CLK1_50~inputCLKENA0|outclk                             ;
+;   3.759  ;   2.265 ; RR ; IC   ; 1      ; FF_X24_Y22_N8        ; core|tiles[1].tile|best_score[17]|clk                        ;
+;   4.323  ;   0.564 ; RR ; CELL ; 1      ; FF_X24_Y22_N8        ; igor_top:core|igor_rollout_tile:tiles[1].tile|best_score[17] ;
+; 23.034   ; 18.711  ;    ;      ;        ;                      ; data path                                                    ;
+;   4.323  ;   0.000 ;    ; uTco ; 1      ; FF_X24_Y22_N8        ; igor_top:core|igor_rollout_tile:tiles[1].tile|best_score[17] ;
+;   4.323  ;   0.000 ; FF ; CELL ; 6      ; FF_X24_Y22_N8        ; core|tiles[1].tile|best_score[17]|q                          ;
+;   5.465  ;   1.142 ; FF ; IC   ; 1      ; MLABCELL_X25_Y25_N3  ; core|selector|LessThan0~4|dataa                              ;
+;   6.024  ;   0.559 ; FF ; CELL ; 3      ; MLABCELL_X25_Y25_N3  ; core|selector|LessThan0~4|combout                            ;
+;   6.768  ;   0.744 ; FF ; IC   ; 1      ; LABCELL_X24_Y24_N51  ; core|selector|LessThan0~15|dataa                             ;
+;   7.332  ;   0.564 ; FF ; CELL ; 1      ; LABCELL_X24_Y24_N51  ; core|selector|LessThan0~15|combout                           ;
+;   7.566  ;   0.234 ; FF ; IC   ; 1      ; LABCELL_X24_Y24_N12  ; core|selector|LessThan0~23|datac                             ;
+;   8.006  ;   0.440 ; FR ; CELL ; 2      ; LABCELL_X24_Y24_N12  ; core|selector|LessThan0~23|combout                           ;
+;   8.266  ;   0.260 ; RR ; IC   ; 1      ; LABCELL_X24_Y24_N3   ; core|selector|LessThan0~26|dataf                             ;
+;   8.358  ;   0.092 ; RR ; CELL ; 31     ; LABCELL_X24_Y24_N3   ; core|selector|LessThan0~26|combout                           ;
+;   9.197  ;   0.839 ; RR ; IC   ; 1      ; LABCELL_X19_Y24_N18  ; core|selector|ia[8]~3|datae                                  ;
+;   9.498  ;   0.301 ; RF ; CELL ; 2      ; LABCELL_X19_Y24_N18  ; core|selector|ia[8]~3|combout                                ;
+;   10.540 ;   1.042 ; FF ; IC   ; 1      ; LABCELL_X19_Y23_N45  ; core|selector|LessThan5~9|datae                              ;
+;   10.882 ;   0.342 ; FR ; CELL ; 2      ; LABCELL_X19_Y23_N45  ; core|selector|LessThan5~9|combout                            ;
+;   11.434 ;   0.552 ; RR ; IC   ; 1      ; MLABCELL_X21_Y23_N27 ; core|selector|LessThan5~10|datab                             ;
+;   12.016 ;   0.582 ; RR ; CELL ; 1      ; MLABCELL_X21_Y23_N27 ; core|selector|LessThan5~10|combout                           ;
+;   12.602 ;   0.586 ; RR ; IC   ; 1      ; LABCELL_X24_Y23_N42  ; core|selector|comb~13|datae                                  ;
+;   12.907 ;   0.305 ; RF ; CELL ; 2      ; LABCELL_X24_Y23_N42  ; core|selector|comb~13|combout                                ;
+;   13.105 ;   0.198 ; FF ; IC   ; 1      ; LABCELL_X24_Y23_N30  ; core|selector|comb~14|datab                                  ;
+;   13.681 ;   0.576 ; FR ; CELL ; 25     ; LABCELL_X24_Y23_N30  ; core|selector|comb~14|combout                                ;
+;   14.073 ;   0.392 ; RR ; IC   ; 1      ; MLABCELL_X25_Y23_N30 ; core|selector|winner[0]~0|dataf                              ;
+;   14.173 ;   0.100 ; RF ; CELL ; 2      ; MLABCELL_X25_Y23_N30 ; core|selector|winner[0]~0|combout                            ;
+;   14.969 ;   0.796 ; FF ; IC   ; 2      ; MLABCELL_X28_Y23_N3  ; core|gate|Add0~29|datac                                      ;
+;   15.850 ;   0.881 ; FF ; CELL ; 1      ; MLABCELL_X28_Y23_N3  ; core|gate|Add0~29|cout                                       ;
+;   15.850 ;   0.000 ; FF ; IC   ; 2      ; MLABCELL_X28_Y23_N6  ; core|gate|Add0~25|cin                                        ;
+;   15.896 ;   0.046 ; FF ; CELL ; 1      ; MLABCELL_X28_Y23_N6  ; core|gate|Add0~25|cout                                       ;
+;   15.896 ;   0.000 ; FF ; IC   ; 2      ; MLABCELL_X28_Y23_N9  ; core|gate|Add0~21|cin                                        ;
+;   15.896 ;   0.000 ; FF ; CELL ; 1      ; MLABCELL_X28_Y23_N9  ; core|gate|Add0~21|cout                                       ;
+;   15.896 ;   0.000 ; FF ; IC   ; 2      ; MLABCELL_X28_Y23_N12 ; core|gate|Add0~17|cin                                        ;
+;   16.268 ;   0.372 ; FR ; CELL ; 3      ; MLABCELL_X28_Y23_N12 ; core|gate|Add0~17|sumout                                     ;
+;   16.536 ;   0.268 ; RR ; IC   ; 2      ; MLABCELL_X28_Y23_N39 ; core|gate|Add1~17|datac                                      ;
+;   17.402 ;   0.866 ; RF ; CELL ; 1      ; MLABCELL_X28_Y23_N39 ; core|gate|Add1~17|cout                                       ;
+;   17.402 ;   0.000 ; FF ; IC   ; 2      ; MLABCELL_X28_Y23_N42 ; core|gate|Add1~5|cin                                         ;
+;   17.773 ;   0.371 ; FR ; CELL ; 3      ; MLABCELL_X28_Y23_N42 ; core|gate|Add1~5|sumout                                      ;
+;   18.487 ;   0.714 ; RR ; IC   ; 1      ; MLABCELL_X28_Y22_N42 ; core|gate|always0~18|datac                                   ;
+;   18.952 ;   0.465 ; RF ; CELL ; 1      ; MLABCELL_X28_Y22_N42 ; core|gate|always0~18|combout                                 ;
+;   19.309 ;   0.357 ; FF ; IC   ; 1      ; MLABCELL_X28_Y22_N36 ; core|gate|always0~4|datad                                    ;
+;   19.882 ;   0.573 ; FF ; CELL ; 22     ; MLABCELL_X28_Y22_N36 ; core|gate|always0~4|combout                                  ;
+;   20.273 ;   0.391 ; FF ; IC   ; 1      ; LABCELL_X29_Y22_N24  ; core|gate|omega_command[6]~0|dataf                           ;
+;   20.354 ;   0.081 ; FF ; CELL ; 5      ; LABCELL_X29_Y22_N24  ; core|gate|omega_command[6]~0|combout                         ;
+;   22.444 ;   2.090 ; FF ; IC   ; 1      ; FF_X29_Y22_N19       ; core|previous_w[5]|asdata                                    ;
+;   23.034 ;   0.590 ; FF ; CELL ; 1      ; FF_X29_Y22_N19       ; igor_top:core|previous_w[5]                                  ;
++----------+---------+----+------+--------+----------------------+--------------------------------------------------------------+
+
++-----------------------------------------------------------------------------------------------+
+; Data Required Path                                                                            ;
++----------+---------+----+------+--------+------------------+----------------------------------+
+; Total    ; Incr    ; RF ; Type ; Fanout ; Location         ; Element                          ;
++----------+---------+----+------+--------+------------------+----------------------------------+
+; 20.000   ; 20.000  ;    ;      ;        ;                  ; latch edge time                  ;
+; 23.840   ; 3.840   ;    ;      ;        ;                  ; clock path                       ;
+;   20.000 ;   0.000 ;    ;      ;        ;                  ; source latency                   ;
+;   20.000 ;   0.000 ;    ;      ; 1      ; PIN_V11          ; FPGA_CLK1_50                     ;
+;   20.000 ;   0.000 ; RR ; IC   ; 1      ; IOIBUF_X32_Y0_N1 ; FPGA_CLK1_50~input|i             ;
+;   20.761 ;   0.761 ; RR ; CELL ; 1      ; IOIBUF_X32_Y0_N1 ; FPGA_CLK1_50~input|o             ;
+;   21.148 ;   0.387 ; RR ; IC   ; 1      ; CLKCTRL_G4       ; FPGA_CLK1_50~inputCLKENA0|inclk  ;
+;   21.433 ;   0.285 ; RR ; CELL ; 1695   ; CLKCTRL_G4       ; FPGA_CLK1_50~inputCLKENA0|outclk ;
+;   23.283 ;   1.850 ; RR ; IC   ; 1      ; FF_X29_Y22_N19   ; core|previous_w[5]|clk           ;
+;   23.779 ;   0.496 ; RR ; CELL ; 1      ; FF_X29_Y22_N19   ; igor_top:core|previous_w[5]      ;
+;   23.840 ;   0.061 ;    ;      ;        ;                  ; clock pessimism removed          ;
+; 23.670   ; -0.170  ;    ;      ;        ;                  ; clock uncertainty                ;
+; 23.670   ; 0.000   ;    ; uTsu ; 1      ; FF_X29_Y22_N19   ; igor_top:core|previous_w[5]      ;
++----------+---------+----+------+--------+------------------+----------------------------------+
+
+----------------------------
+; Extra Fitter Information ;
+----------------------------
+HTML report is unavailable in plain text report export.
+
+
+Path #10: Setup slack is 0.639 
+===============================================================================
++-----------------------------------------------------------------------------------+
+; Path Summary                                                                      ;
++--------------------+--------------------------------------------------------------+
+; Property           ; Value                                                        ;
++--------------------+--------------------------------------------------------------+
+; From Node          ; igor_top:core|igor_rollout_tile:tiles[1].tile|best_score[17] ;
+; To Node            ; igor_top:core|previous_w[6]                                  ;
+; Launch Clock       ; FPGA_CLK1_50                                                 ;
+; Latch Clock        ; FPGA_CLK1_50                                                 ;
+; Data Arrival Time  ; 23.027                                                       ;
+; Data Required Time ; 23.666                                                       ;
+; Slack              ; 0.639                                                        ;
++--------------------+--------------------------------------------------------------+
+
++------------------------------------------------------------------------------------+
+; Statistics                                                                         ;
++------------------------+--------+-------+-------------+------------+-------+-------+
+; Property               ; Value  ; Count ; Total Delay ; % of Total ; Min   ; Max   ;
++------------------------+--------+-------+-------------+------------+-------+-------+
+; Setup Relationship     ; 20.000 ;       ;             ;            ;       ;       ;
+; Clock Skew             ; -0.487 ;       ;             ;            ;       ;       ;
+; Data Delay             ; 18.704 ;       ;             ;            ;       ;       ;
+; Number of Logic Levels ;        ; 15    ;             ;            ;       ;       ;
+; Physical Delays        ;        ;       ;             ;            ;       ;       ;
+;  Arrival Path          ;        ;       ;             ;            ;       ;       ;
+;   Clock                ;        ;       ;             ;            ;       ;       ;
+;    IC                  ;        ; 3     ; 2.688       ; 62         ; 0.000 ; 2.265 ;
+;    Cell                ;        ; 3     ; 1.635       ; 38         ; 0.310 ; 0.761 ;
+;   Data                 ;        ;       ;             ;            ;       ;       ;
+;    IC                  ;        ; 20    ; 10.529      ; 56         ; 0.000 ; 2.090 ;
+;    Cell                ;        ; 21    ; 8.175       ; 44         ; 0.000 ; 0.881 ;
+;    uTco                ;        ; 1     ; 0.000       ; 0          ; 0.000 ; 0.000 ;
+;  Required Path         ;        ;       ;             ;            ;       ;       ;
+;   Clock                ;        ;       ;             ;            ;       ;       ;
+;    IC                  ;        ; 3     ; 2.237       ; 59         ; 0.000 ; 1.850 ;
+;    Cell                ;        ; 3     ; 1.538       ; 41         ; 0.285 ; 0.761 ;
++------------------------+--------+-------+-------------+------------+-------+-------+
+Note: Negative delays are omitted from totals when calculating percentages
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Data Arrival Path                                                                                                             ;
++----------+---------+----+------+--------+----------------------+--------------------------------------------------------------+
+; Total    ; Incr    ; RF ; Type ; Fanout ; Location             ; Element                                                      ;
++----------+---------+----+------+--------+----------------------+--------------------------------------------------------------+
+; 0.000    ; 0.000   ;    ;      ;        ;                      ; launch edge time                                             ;
+; 4.323    ; 4.323   ;    ;      ;        ;                      ; clock path                                                   ;
+;   0.000  ;   0.000 ;    ;      ;        ;                      ; source latency                                               ;
+;   0.000  ;   0.000 ;    ;      ; 1      ; PIN_V11              ; FPGA_CLK1_50                                                 ;
+;   0.000  ;   0.000 ; RR ; IC   ; 1      ; IOIBUF_X32_Y0_N1     ; FPGA_CLK1_50~input|i                                         ;
+;   0.761  ;   0.761 ; RR ; CELL ; 1      ; IOIBUF_X32_Y0_N1     ; FPGA_CLK1_50~input|o                                         ;
+;   1.184  ;   0.423 ; RR ; IC   ; 1      ; CLKCTRL_G4           ; FPGA_CLK1_50~inputCLKENA0|inclk                              ;
+;   1.494  ;   0.310 ; RR ; CELL ; 1695   ; CLKCTRL_G4           ; FPGA_CLK1_50~inputCLKENA0|outclk                             ;
+;   3.759  ;   2.265 ; RR ; IC   ; 1      ; FF_X24_Y22_N8        ; core|tiles[1].tile|best_score[17]|clk                        ;
+;   4.323  ;   0.564 ; RR ; CELL ; 1      ; FF_X24_Y22_N8        ; igor_top:core|igor_rollout_tile:tiles[1].tile|best_score[17] ;
+; 23.027   ; 18.704  ;    ;      ;        ;                      ; data path                                                    ;
+;   4.323  ;   0.000 ;    ; uTco ; 1      ; FF_X24_Y22_N8        ; igor_top:core|igor_rollout_tile:tiles[1].tile|best_score[17] ;
+;   4.323  ;   0.000 ; FF ; CELL ; 6      ; FF_X24_Y22_N8        ; core|tiles[1].tile|best_score[17]|q                          ;
+;   5.465  ;   1.142 ; FF ; IC   ; 1      ; MLABCELL_X25_Y25_N3  ; core|selector|LessThan0~4|dataa                              ;
+;   6.024  ;   0.559 ; FF ; CELL ; 3      ; MLABCELL_X25_Y25_N3  ; core|selector|LessThan0~4|combout                            ;
+;   6.768  ;   0.744 ; FF ; IC   ; 1      ; LABCELL_X24_Y24_N51  ; core|selector|LessThan0~15|dataa                             ;
+;   7.332  ;   0.564 ; FF ; CELL ; 1      ; LABCELL_X24_Y24_N51  ; core|selector|LessThan0~15|combout                           ;
+;   7.566  ;   0.234 ; FF ; IC   ; 1      ; LABCELL_X24_Y24_N12  ; core|selector|LessThan0~23|datac                             ;
+;   8.006  ;   0.440 ; FR ; CELL ; 2      ; LABCELL_X24_Y24_N12  ; core|selector|LessThan0~23|combout                           ;
+;   8.266  ;   0.260 ; RR ; IC   ; 1      ; LABCELL_X24_Y24_N3   ; core|selector|LessThan0~26|dataf                             ;
+;   8.358  ;   0.092 ; RR ; CELL ; 31     ; LABCELL_X24_Y24_N3   ; core|selector|LessThan0~26|combout                           ;
+;   9.200  ;   0.842 ; RR ; IC   ; 1      ; LABCELL_X19_Y24_N24  ; core|selector|ia[7]~2|datae                                  ;
+;   9.501  ;   0.301 ; RF ; CELL ; 2      ; LABCELL_X19_Y24_N24  ; core|selector|ia[7]~2|combout                                ;
+;   10.323 ;   0.822 ; FF ; IC   ; 1      ; LABCELL_X19_Y23_N45  ; core|selector|LessThan5~9|datad                              ;
+;   10.835 ;   0.512 ; FF ; CELL ; 2      ; LABCELL_X19_Y23_N45  ; core|selector|LessThan5~9|combout                            ;
+;   11.441 ;   0.606 ; FF ; IC   ; 1      ; MLABCELL_X21_Y23_N27 ; core|selector|LessThan5~10|datab                             ;
+;   11.999 ;   0.558 ; FF ; CELL ; 1      ; MLABCELL_X21_Y23_N27 ; core|selector|LessThan5~10|combout                           ;
+;   12.644 ;   0.645 ; FF ; IC   ; 1      ; LABCELL_X24_Y23_N42  ; core|selector|comb~13|datae                                  ;
+;   12.879 ;   0.235 ; FR ; CELL ; 2      ; LABCELL_X24_Y23_N42  ; core|selector|comb~13|combout                                ;
+;   13.093 ;   0.214 ; RR ; IC   ; 1      ; LABCELL_X24_Y23_N30  ; core|selector|comb~14|datab                                  ;
+;   13.676 ;   0.583 ; RF ; CELL ; 25     ; LABCELL_X24_Y23_N30  ; core|selector|comb~14|combout                                ;
+;   14.080 ;   0.404 ; FF ; IC   ; 1      ; MLABCELL_X25_Y23_N30 ; core|selector|winner[0]~0|dataf                              ;
+;   14.164 ;   0.084 ; FF ; CELL ; 2      ; MLABCELL_X25_Y23_N30 ; core|selector|winner[0]~0|combout                            ;
+;   14.960 ;   0.796 ; FF ; IC   ; 2      ; MLABCELL_X28_Y23_N3  ; core|gate|Add0~29|datac                                      ;
+;   15.841 ;   0.881 ; FF ; CELL ; 1      ; MLABCELL_X28_Y23_N3  ; core|gate|Add0~29|cout                                       ;
+;   15.841 ;   0.000 ; FF ; IC   ; 2      ; MLABCELL_X28_Y23_N6  ; core|gate|Add0~25|cin                                        ;
+;   15.887 ;   0.046 ; FF ; CELL ; 1      ; MLABCELL_X28_Y23_N6  ; core|gate|Add0~25|cout                                       ;
+;   15.887 ;   0.000 ; FF ; IC   ; 2      ; MLABCELL_X28_Y23_N9  ; core|gate|Add0~21|cin                                        ;
+;   15.887 ;   0.000 ; FF ; CELL ; 1      ; MLABCELL_X28_Y23_N9  ; core|gate|Add0~21|cout                                       ;
+;   15.887 ;   0.000 ; FF ; IC   ; 2      ; MLABCELL_X28_Y23_N12 ; core|gate|Add0~17|cin                                        ;
+;   16.259 ;   0.372 ; FR ; CELL ; 3      ; MLABCELL_X28_Y23_N12 ; core|gate|Add0~17|sumout                                     ;
+;   16.527 ;   0.268 ; RR ; IC   ; 2      ; MLABCELL_X28_Y23_N39 ; core|gate|Add1~17|datac                                      ;
+;   17.393 ;   0.866 ; RF ; CELL ; 1      ; MLABCELL_X28_Y23_N39 ; core|gate|Add1~17|cout                                       ;
+;   17.393 ;   0.000 ; FF ; IC   ; 2      ; MLABCELL_X28_Y23_N42 ; core|gate|Add1~5|cin                                         ;
+;   17.764 ;   0.371 ; FR ; CELL ; 3      ; MLABCELL_X28_Y23_N42 ; core|gate|Add1~5|sumout                                      ;
+;   18.478 ;   0.714 ; RR ; IC   ; 1      ; MLABCELL_X28_Y22_N42 ; core|gate|always0~18|datac                                   ;
+;   18.943 ;   0.465 ; RF ; CELL ; 1      ; MLABCELL_X28_Y22_N42 ; core|gate|always0~18|combout                                 ;
+;   19.300 ;   0.357 ; FF ; IC   ; 1      ; MLABCELL_X28_Y22_N36 ; core|gate|always0~4|datad                                    ;
+;   19.873 ;   0.573 ; FF ; CELL ; 22     ; MLABCELL_X28_Y22_N36 ; core|gate|always0~4|combout                                  ;
+;   20.264 ;   0.391 ; FF ; IC   ; 1      ; LABCELL_X29_Y22_N24  ; core|gate|omega_command[6]~0|dataf                           ;
+;   20.345 ;   0.081 ; FF ; CELL ; 5      ; LABCELL_X29_Y22_N24  ; core|gate|omega_command[6]~0|combout                         ;
+;   22.435 ;   2.090 ; FF ; IC   ; 1      ; FF_X29_Y22_N20       ; core|previous_w[6]|asdata                                    ;
+;   23.027 ;   0.592 ; FF ; CELL ; 1      ; FF_X29_Y22_N20       ; igor_top:core|previous_w[6]                                  ;
++----------+---------+----+------+--------+----------------------+--------------------------------------------------------------+
+
++-----------------------------------------------------------------------------------------------+
+; Data Required Path                                                                            ;
++----------+---------+----+------+--------+------------------+----------------------------------+
+; Total    ; Incr    ; RF ; Type ; Fanout ; Location         ; Element                          ;
++----------+---------+----+------+--------+------------------+----------------------------------+
+; 20.000   ; 20.000  ;    ;      ;        ;                  ; latch edge time                  ;
+; 23.836   ; 3.836   ;    ;      ;        ;                  ; clock path                       ;
+;   20.000 ;   0.000 ;    ;      ;        ;                  ; source latency                   ;
+;   20.000 ;   0.000 ;    ;      ; 1      ; PIN_V11          ; FPGA_CLK1_50                     ;
+;   20.000 ;   0.000 ; RR ; IC   ; 1      ; IOIBUF_X32_Y0_N1 ; FPGA_CLK1_50~input|i             ;
+;   20.761 ;   0.761 ; RR ; CELL ; 1      ; IOIBUF_X32_Y0_N1 ; FPGA_CLK1_50~input|o             ;
+;   21.148 ;   0.387 ; RR ; IC   ; 1      ; CLKCTRL_G4       ; FPGA_CLK1_50~inputCLKENA0|inclk  ;
+;   21.433 ;   0.285 ; RR ; CELL ; 1695   ; CLKCTRL_G4       ; FPGA_CLK1_50~inputCLKENA0|outclk ;
+;   23.283 ;   1.850 ; RR ; IC   ; 1      ; FF_X29_Y22_N20   ; core|previous_w[6]|clk           ;
+;   23.775 ;   0.492 ; RR ; CELL ; 1      ; FF_X29_Y22_N20   ; igor_top:core|previous_w[6]      ;
+;   23.836 ;   0.061 ;    ;      ;        ;                  ; clock pessimism removed          ;
+; 23.666   ; -0.170  ;    ;      ;        ;                  ; clock uncertainty                ;
+; 23.666   ; 0.000   ;    ; uTsu ; 1      ; FF_X29_Y22_N20   ; igor_top:core|previous_w[6]      ;
++----------+---------+----+------+--------+------------------+----------------------------------+
+
+----------------------------
+; Extra Fitter Information ;
+----------------------------
+HTML report is unavailable in plain text report export.
+
+

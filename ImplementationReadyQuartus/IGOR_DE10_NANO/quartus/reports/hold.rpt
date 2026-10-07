@@ -1,0 +1,944 @@
+----------------
+; Command Info ;
+----------------
+Report Timing: Found 10 hold paths (0 violated).  Worst case slack is 0.252 
+
+Tcl Command:
+    report_timing -hold -file reports/hold.rpt -npaths 10 -detail full_path
+
+Options:
+    -hold 
+    -npaths 10 
+    -detail full_path 
+    -file {reports/hold.rpt} 
+
+Delay Model:
+    Slow 1100mV 100C Model
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Summary of Paths                                                                                                                                                                          ;
++-------+------------------------------------------------------+-----------------------------------------------------+--------------+--------------+--------------+------------+------------+
+; Slack ; From Node                                            ; To Node                                             ; Launch Clock ; Latch Clock  ; Relationship ; Clock Skew ; Data Delay ;
++-------+------------------------------------------------------+-----------------------------------------------------+--------------+--------------+--------------+------------+------------+
+; 0.252 ; igor_top:core|igor_rollout_tile:tiles[2].tile|y[12]  ; igor_top:core|igor_rollout_tile:tiles[2].tile|y[12] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.106      ; 0.358      ;
+; 0.265 ; igor_top:core|igor_rollout_tile:tiles[1].tile|y[20]  ; igor_top:core|igor_rollout_tile:tiles[1].tile|y[20] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.105      ; 0.370      ;
+; 0.272 ; igor_top:core|igor_rollout_tile:tiles[0].tile|y[20]  ; igor_top:core|igor_rollout_tile:tiles[0].tile|y[20] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.108      ; 0.380      ;
+; 0.289 ; igor_top:core|igor_rollout_tile:tiles[3].tile|x[21]  ; igor_top:core|igor_rollout_tile:tiles[3].tile|x[21] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.108      ; 0.397      ;
+; 0.336 ; igor_top:core|latency_cycles[14]                     ; igor_uart_protocol:serial|response_sample[14]       ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.118      ; 0.454      ;
+; 0.368 ; igor_uart_protocol:serial|respond_delay[1]~DUPLICATE ; igor_uart_protocol:serial|respond_delay[0]          ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.089      ; 0.457      ;
+; 0.383 ; igor_top:core|latency_cycles[30]                     ; igor_uart_protocol:serial|response_sample[30]       ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.113      ; 0.496      ;
+; 0.401 ; igor_uart_protocol:serial|out_frame[16]              ; igor_uart_protocol:serial|tx_data[0]                ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.119      ; 0.520      ;
+; 0.412 ; igor_uart_protocol:serial|payload[2]                 ; igor_neural_core:neural|inputs_rtl_0_bypass[5]      ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.542      ; 0.954      ;
+; 0.415 ; igor_uart_protocol:serial|timer[8]                   ; igor_uart_protocol:serial|timer[8]                  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.108      ; 0.523      ;
++-------+------------------------------------------------------+-----------------------------------------------------+--------------+--------------+--------------+------------+------------+
+
+Path #1: Hold slack is 0.252 
+===============================================================================
++--------------------------------------------------------------------------+
+; Path Summary                                                             ;
++--------------------+-----------------------------------------------------+
+; Property           ; Value                                               ;
++--------------------+-----------------------------------------------------+
+; From Node          ; igor_top:core|igor_rollout_tile:tiles[2].tile|y[12] ;
+; To Node            ; igor_top:core|igor_rollout_tile:tiles[2].tile|y[12] ;
+; Launch Clock       ; FPGA_CLK1_50                                        ;
+; Latch Clock        ; FPGA_CLK1_50                                        ;
+; Data Arrival Time  ; 4.096                                               ;
+; Data Required Time ; 3.844                                               ;
+; Slack              ; 0.252                                               ;
++--------------------+-----------------------------------------------------+
+
++-----------------------------------------------------------------------------------+
+; Statistics                                                                        ;
++------------------------+-------+-------+-------------+------------+-------+-------+
+; Property               ; Value ; Count ; Total Delay ; % of Total ; Min   ; Max   ;
++------------------------+-------+-------+-------------+------------+-------+-------+
+; Hold Relationship      ; 0.000 ;       ;             ;            ;       ;       ;
+; Clock Skew             ; 0.106 ;       ;             ;            ;       ;       ;
+; Data Delay             ; 0.358 ;       ;             ;            ;       ;       ;
+; Number of Logic Levels ;       ; 1     ;             ;            ;       ;       ;
+; Physical Delays        ;       ;       ;             ;            ;       ;       ;
+;  Arrival Path          ;       ;       ;             ;            ;       ;       ;
+;   Clock                ;       ;       ;             ;            ;       ;       ;
+;    IC                  ;       ; 3     ; 2.221       ; 59         ; 0.000 ; 1.834 ;
+;    Cell                ;       ; 3     ; 1.517       ; 41         ; 0.285 ; 0.761 ;
+;   Data                 ;       ;       ;             ;            ;       ;       ;
+;    IC                  ;       ; 2     ; 0.226       ; 63         ; 0.000 ; 0.226 ;
+;    Cell                ;       ; 3     ; 0.132       ; 37         ; 0.000 ; 0.069 ;
+;    uTco                ;       ; 1     ; 0.000       ; 0          ; 0.000 ; 0.000 ;
+;  Required Path         ;       ;       ;             ;            ;       ;       ;
+;   Clock                ;       ;       ;             ;            ;       ;       ;
+;    IC                  ;       ; 3     ; 2.671       ; 62         ; 0.000 ; 2.248 ;
+;    Cell                ;       ; 3     ; 1.619       ; 38         ; 0.310 ; 0.761 ;
++------------------------+-------+-------+-------------+------------+-------+-------+
+Note: Negative delays are omitted from totals when calculating percentages
+
++--------------------------------------------------------------------------------------------------------------------+
+; Data Arrival Path                                                                                                  ;
++---------+---------+----+------+--------+---------------------+-----------------------------------------------------+
+; Total   ; Incr    ; RF ; Type ; Fanout ; Location            ; Element                                             ;
++---------+---------+----+------+--------+---------------------+-----------------------------------------------------+
+; 0.000   ; 0.000   ;    ;      ;        ;                     ; launch edge time                                    ;
+; 3.738   ; 3.738   ;    ;      ;        ;                     ; clock path                                          ;
+;   0.000 ;   0.000 ;    ;      ;        ;                     ; source latency                                      ;
+;   0.000 ;   0.000 ;    ;      ; 1      ; PIN_V11             ; FPGA_CLK1_50                                        ;
+;   0.000 ;   0.000 ; RR ; IC   ; 1      ; IOIBUF_X32_Y0_N1    ; FPGA_CLK1_50~input|i                                ;
+;   0.761 ;   0.761 ; RR ; CELL ; 1      ; IOIBUF_X32_Y0_N1    ; FPGA_CLK1_50~input|o                                ;
+;   1.148 ;   0.387 ; RR ; IC   ; 1      ; CLKCTRL_G4          ; FPGA_CLK1_50~inputCLKENA0|inclk                     ;
+;   1.433 ;   0.285 ; RR ; CELL ; 1695   ; CLKCTRL_G4          ; FPGA_CLK1_50~inputCLKENA0|outclk                    ;
+;   3.267 ;   1.834 ; RR ; IC   ; 1      ; FF_X21_Y29_N8       ; core|tiles[2].tile|y[12]|clk                        ;
+;   3.738 ;   0.471 ; RR ; CELL ; 1      ; FF_X21_Y29_N8       ; igor_top:core|igor_rollout_tile:tiles[2].tile|y[12] ;
+; 4.096   ; 0.358   ;    ;      ;        ;                     ; data path                                           ;
+;   3.738 ;   0.000 ;    ; uTco ; 1      ; FF_X21_Y29_N8       ; igor_top:core|igor_rollout_tile:tiles[2].tile|y[12] ;
+;   3.738 ;   0.000 ; FF ; CELL ; 36     ; FF_X21_Y29_N8       ; core|tiles[2].tile|y[12]|q                          ;
+;   3.964 ;   0.226 ; FF ; IC   ; 2      ; MLABCELL_X21_Y29_N6 ; core|tiles[2].tile|stepper|Add2~93|dataf            ;
+;   4.033 ;   0.069 ; FF ; CELL ; 1      ; MLABCELL_X21_Y29_N6 ; core|tiles[2].tile|stepper|Add2~93|sumout           ;
+;   4.033 ;   0.000 ; FF ; IC   ; 1      ; FF_X21_Y29_N8       ; core|tiles[2].tile|y[12]|d                          ;
+;   4.096 ;   0.063 ; FF ; CELL ; 1      ; FF_X21_Y29_N8       ; igor_top:core|igor_rollout_tile:tiles[2].tile|y[12] ;
++---------+---------+----+------+--------+---------------------+-----------------------------------------------------+
+
++------------------------------------------------------------------------------------------------------------------+
+; Data Required Path                                                                                               ;
++---------+----------+----+------+--------+------------------+-----------------------------------------------------+
+; Total   ; Incr     ; RF ; Type ; Fanout ; Location         ; Element                                             ;
++---------+----------+----+------+--------+------------------+-----------------------------------------------------+
+; 0.000   ; 0.000    ;    ;      ;        ;                  ; latch edge time                                     ;
+; 3.844   ; 3.844    ;    ;      ;        ;                  ; clock path                                          ;
+;   0.000 ;   0.000  ;    ;      ;        ;                  ; source latency                                      ;
+;   0.000 ;   0.000  ;    ;      ; 1      ; PIN_V11          ; FPGA_CLK1_50                                        ;
+;   0.000 ;   0.000  ; RR ; IC   ; 1      ; IOIBUF_X32_Y0_N1 ; FPGA_CLK1_50~input|i                                ;
+;   0.761 ;   0.761  ; RR ; CELL ; 1      ; IOIBUF_X32_Y0_N1 ; FPGA_CLK1_50~input|o                                ;
+;   1.184 ;   0.423  ; RR ; IC   ; 1      ; CLKCTRL_G4       ; FPGA_CLK1_50~inputCLKENA0|inclk                     ;
+;   1.494 ;   0.310  ; RR ; CELL ; 1695   ; CLKCTRL_G4       ; FPGA_CLK1_50~inputCLKENA0|outclk                    ;
+;   3.742 ;   2.248  ; RR ; IC   ; 1      ; FF_X21_Y29_N8    ; core|tiles[2].tile|y[12]|clk                        ;
+;   4.290 ;   0.548  ; RR ; CELL ; 1      ; FF_X21_Y29_N8    ; igor_top:core|igor_rollout_tile:tiles[2].tile|y[12] ;
+;   3.844 ;   -0.446 ;    ;      ;        ;                  ; clock pessimism removed                             ;
+; 3.844   ; 0.000    ;    ;      ;        ;                  ; clock uncertainty                                   ;
+; 3.844   ; 0.000    ;    ; uTh  ; 1      ; FF_X21_Y29_N8    ; igor_top:core|igor_rollout_tile:tiles[2].tile|y[12] ;
++---------+----------+----+------+--------+------------------+-----------------------------------------------------+
+
+----------------------------
+; Extra Fitter Information ;
+----------------------------
+HTML report is unavailable in plain text report export.
+
+
+Path #2: Hold slack is 0.265 
+===============================================================================
++--------------------------------------------------------------------------+
+; Path Summary                                                             ;
++--------------------+-----------------------------------------------------+
+; Property           ; Value                                               ;
++--------------------+-----------------------------------------------------+
+; From Node          ; igor_top:core|igor_rollout_tile:tiles[1].tile|y[20] ;
+; To Node            ; igor_top:core|igor_rollout_tile:tiles[1].tile|y[20] ;
+; Launch Clock       ; FPGA_CLK1_50                                        ;
+; Latch Clock        ; FPGA_CLK1_50                                        ;
+; Data Arrival Time  ; 4.110                                               ;
+; Data Required Time ; 3.845                                               ;
+; Slack              ; 0.265                                               ;
++--------------------+-----------------------------------------------------+
+
++-----------------------------------------------------------------------------------+
+; Statistics                                                                        ;
++------------------------+-------+-------+-------------+------------+-------+-------+
+; Property               ; Value ; Count ; Total Delay ; % of Total ; Min   ; Max   ;
++------------------------+-------+-------+-------------+------------+-------+-------+
+; Hold Relationship      ; 0.000 ;       ;             ;            ;       ;       ;
+; Clock Skew             ; 0.105 ;       ;             ;            ;       ;       ;
+; Data Delay             ; 0.370 ;       ;             ;            ;       ;       ;
+; Number of Logic Levels ;       ; 1     ;             ;            ;       ;       ;
+; Physical Delays        ;       ;       ;             ;            ;       ;       ;
+;  Arrival Path          ;       ;       ;             ;            ;       ;       ;
+;   Clock                ;       ;       ;             ;            ;       ;       ;
+;    IC                  ;       ; 3     ; 2.228       ; 60         ; 0.000 ; 1.841 ;
+;    Cell                ;       ; 3     ; 1.512       ; 40         ; 0.285 ; 0.761 ;
+;   Data                 ;       ;       ;             ;            ;       ;       ;
+;    IC                  ;       ; 2     ; 0.234       ; 63         ; 0.000 ; 0.234 ;
+;    Cell                ;       ; 3     ; 0.136       ; 37         ; 0.000 ; 0.072 ;
+;    uTco                ;       ; 1     ; 0.000       ; 0          ; 0.000 ; 0.000 ;
+;  Required Path         ;       ;       ;             ;            ;       ;       ;
+;   Clock                ;       ;       ;             ;            ;       ;       ;
+;    IC                  ;       ; 3     ; 2.674       ; 62         ; 0.000 ; 2.251 ;
+;    Cell                ;       ; 3     ; 1.614       ; 38         ; 0.310 ; 0.761 ;
++------------------------+-------+-------+-------------+------------+-------+-------+
+Note: Negative delays are omitted from totals when calculating percentages
+
++---------------------------------------------------------------------------------------------------------------------+
+; Data Arrival Path                                                                                                   ;
++---------+---------+----+------+--------+----------------------+-----------------------------------------------------+
+; Total   ; Incr    ; RF ; Type ; Fanout ; Location             ; Element                                             ;
++---------+---------+----+------+--------+----------------------+-----------------------------------------------------+
+; 0.000   ; 0.000   ;    ;      ;        ;                      ; launch edge time                                    ;
+; 3.740   ; 3.740   ;    ;      ;        ;                      ; clock path                                          ;
+;   0.000 ;   0.000 ;    ;      ;        ;                      ; source latency                                      ;
+;   0.000 ;   0.000 ;    ;      ; 1      ; PIN_V11              ; FPGA_CLK1_50                                        ;
+;   0.000 ;   0.000 ; RR ; IC   ; 1      ; IOIBUF_X32_Y0_N1     ; FPGA_CLK1_50~input|i                                ;
+;   0.761 ;   0.761 ; RR ; CELL ; 1      ; IOIBUF_X32_Y0_N1     ; FPGA_CLK1_50~input|o                                ;
+;   1.148 ;   0.387 ; RR ; IC   ; 1      ; CLKCTRL_G4           ; FPGA_CLK1_50~inputCLKENA0|inclk                     ;
+;   1.433 ;   0.285 ; RR ; CELL ; 1695   ; CLKCTRL_G4           ; FPGA_CLK1_50~inputCLKENA0|outclk                    ;
+;   3.274 ;   1.841 ; RR ; IC   ; 1      ; FF_X21_Y17_N32       ; core|tiles[1].tile|y[20]|clk                        ;
+;   3.740 ;   0.466 ; RR ; CELL ; 1      ; FF_X21_Y17_N32       ; igor_top:core|igor_rollout_tile:tiles[1].tile|y[20] ;
+; 4.110   ; 0.370   ;    ;      ;        ;                      ; data path                                           ;
+;   3.740 ;   0.000 ;    ; uTco ; 1      ; FF_X21_Y17_N32       ; igor_top:core|igor_rollout_tile:tiles[1].tile|y[20] ;
+;   3.740 ;   0.000 ; FF ; CELL ; 3      ; FF_X21_Y17_N32       ; core|tiles[1].tile|y[20]|q                          ;
+;   3.974 ;   0.234 ; FF ; IC   ; 2      ; MLABCELL_X21_Y17_N30 ; core|tiles[1].tile|stepper|Add2~29|dataf            ;
+;   4.046 ;   0.072 ; FF ; CELL ; 2      ; MLABCELL_X21_Y17_N30 ; core|tiles[1].tile|stepper|Add2~29|sumout           ;
+;   4.046 ;   0.000 ; FF ; IC   ; 1      ; FF_X21_Y17_N32       ; core|tiles[1].tile|y[20]|d                          ;
+;   4.110 ;   0.064 ; FF ; CELL ; 1      ; FF_X21_Y17_N32       ; igor_top:core|igor_rollout_tile:tiles[1].tile|y[20] ;
++---------+---------+----+------+--------+----------------------+-----------------------------------------------------+
+
++------------------------------------------------------------------------------------------------------------------+
+; Data Required Path                                                                                               ;
++---------+----------+----+------+--------+------------------+-----------------------------------------------------+
+; Total   ; Incr     ; RF ; Type ; Fanout ; Location         ; Element                                             ;
++---------+----------+----+------+--------+------------------+-----------------------------------------------------+
+; 0.000   ; 0.000    ;    ;      ;        ;                  ; latch edge time                                     ;
+; 3.845   ; 3.845    ;    ;      ;        ;                  ; clock path                                          ;
+;   0.000 ;   0.000  ;    ;      ;        ;                  ; source latency                                      ;
+;   0.000 ;   0.000  ;    ;      ; 1      ; PIN_V11          ; FPGA_CLK1_50                                        ;
+;   0.000 ;   0.000  ; RR ; IC   ; 1      ; IOIBUF_X32_Y0_N1 ; FPGA_CLK1_50~input|i                                ;
+;   0.761 ;   0.761  ; RR ; CELL ; 1      ; IOIBUF_X32_Y0_N1 ; FPGA_CLK1_50~input|o                                ;
+;   1.184 ;   0.423  ; RR ; IC   ; 1      ; CLKCTRL_G4       ; FPGA_CLK1_50~inputCLKENA0|inclk                     ;
+;   1.494 ;   0.310  ; RR ; CELL ; 1695   ; CLKCTRL_G4       ; FPGA_CLK1_50~inputCLKENA0|outclk                    ;
+;   3.745 ;   2.251  ; RR ; IC   ; 1      ; FF_X21_Y17_N32   ; core|tiles[1].tile|y[20]|clk                        ;
+;   4.288 ;   0.543  ; RR ; CELL ; 1      ; FF_X21_Y17_N32   ; igor_top:core|igor_rollout_tile:tiles[1].tile|y[20] ;
+;   3.845 ;   -0.443 ;    ;      ;        ;                  ; clock pessimism removed                             ;
+; 3.845   ; 0.000    ;    ;      ;        ;                  ; clock uncertainty                                   ;
+; 3.845   ; 0.000    ;    ; uTh  ; 1      ; FF_X21_Y17_N32   ; igor_top:core|igor_rollout_tile:tiles[1].tile|y[20] ;
++---------+----------+----+------+--------+------------------+-----------------------------------------------------+
+
+----------------------------
+; Extra Fitter Information ;
+----------------------------
+HTML report is unavailable in plain text report export.
+
+
+Path #3: Hold slack is 0.272 
+===============================================================================
++--------------------------------------------------------------------------+
+; Path Summary                                                             ;
++--------------------+-----------------------------------------------------+
+; Property           ; Value                                               ;
++--------------------+-----------------------------------------------------+
+; From Node          ; igor_top:core|igor_rollout_tile:tiles[0].tile|y[20] ;
+; To Node            ; igor_top:core|igor_rollout_tile:tiles[0].tile|y[20] ;
+; Launch Clock       ; FPGA_CLK1_50                                        ;
+; Latch Clock        ; FPGA_CLK1_50                                        ;
+; Data Arrival Time  ; 4.130                                               ;
+; Data Required Time ; 3.858                                               ;
+; Slack              ; 0.272                                               ;
++--------------------+-----------------------------------------------------+
+
++-----------------------------------------------------------------------------------+
+; Statistics                                                                        ;
++------------------------+-------+-------+-------------+------------+-------+-------+
+; Property               ; Value ; Count ; Total Delay ; % of Total ; Min   ; Max   ;
++------------------------+-------+-------+-------------+------------+-------+-------+
+; Hold Relationship      ; 0.000 ;       ;             ;            ;       ;       ;
+; Clock Skew             ; 0.108 ;       ;             ;            ;       ;       ;
+; Data Delay             ; 0.380 ;       ;             ;            ;       ;       ;
+; Number of Logic Levels ;       ; 1     ;             ;            ;       ;       ;
+; Physical Delays        ;       ;       ;             ;            ;       ;       ;
+;  Arrival Path          ;       ;       ;             ;            ;       ;       ;
+;   Clock                ;       ;       ;             ;            ;       ;       ;
+;    IC                  ;       ; 3     ; 2.232       ; 60         ; 0.000 ; 1.845 ;
+;    Cell                ;       ; 3     ; 1.518       ; 40         ; 0.285 ; 0.761 ;
+;   Data                 ;       ;       ;             ;            ;       ;       ;
+;    IC                  ;       ; 2     ; 0.238       ; 63         ; 0.000 ; 0.238 ;
+;    Cell                ;       ; 3     ; 0.142       ; 37         ; 0.000 ; 0.072 ;
+;    uTco                ;       ; 1     ; 0.000       ; 0          ; 0.000 ; 0.000 ;
+;  Required Path         ;       ;       ;             ;            ;       ;       ;
+;   Clock                ;       ;       ;             ;            ;       ;       ;
+;    IC                  ;       ; 3     ; 2.679       ; 62         ; 0.000 ; 2.256 ;
+;    Cell                ;       ; 3     ; 1.622       ; 38         ; 0.310 ; 0.761 ;
++------------------------+-------+-------+-------------+------------+-------+-------+
+Note: Negative delays are omitted from totals when calculating percentages
+
++--------------------------------------------------------------------------------------------------------------------+
+; Data Arrival Path                                                                                                  ;
++---------+---------+----+------+--------+---------------------+-----------------------------------------------------+
+; Total   ; Incr    ; RF ; Type ; Fanout ; Location            ; Element                                             ;
++---------+---------+----+------+--------+---------------------+-----------------------------------------------------+
+; 0.000   ; 0.000   ;    ;      ;        ;                     ; launch edge time                                    ;
+; 3.750   ; 3.750   ;    ;      ;        ;                     ; clock path                                          ;
+;   0.000 ;   0.000 ;    ;      ;        ;                     ; source latency                                      ;
+;   0.000 ;   0.000 ;    ;      ; 1      ; PIN_V11             ; FPGA_CLK1_50                                        ;
+;   0.000 ;   0.000 ; RR ; IC   ; 1      ; IOIBUF_X32_Y0_N1    ; FPGA_CLK1_50~input|i                                ;
+;   0.761 ;   0.761 ; RR ; CELL ; 1      ; IOIBUF_X32_Y0_N1    ; FPGA_CLK1_50~input|o                                ;
+;   1.148 ;   0.387 ; RR ; IC   ; 1      ; CLKCTRL_G4          ; FPGA_CLK1_50~inputCLKENA0|inclk                     ;
+;   1.433 ;   0.285 ; RR ; CELL ; 1695   ; CLKCTRL_G4          ; FPGA_CLK1_50~inputCLKENA0|outclk                    ;
+;   3.278 ;   1.845 ; RR ; IC   ; 1      ; FF_X33_Y24_N32      ; core|tiles[0].tile|y[20]|clk                        ;
+;   3.750 ;   0.472 ; RR ; CELL ; 1      ; FF_X33_Y24_N32      ; igor_top:core|igor_rollout_tile:tiles[0].tile|y[20] ;
+; 4.130   ; 0.380   ;    ;      ;        ;                     ; data path                                           ;
+;   3.750 ;   0.000 ;    ; uTco ; 1      ; FF_X33_Y24_N32      ; igor_top:core|igor_rollout_tile:tiles[0].tile|y[20] ;
+;   3.750 ;   0.000 ; FF ; CELL ; 3      ; FF_X33_Y24_N32      ; core|tiles[0].tile|y[20]|q                          ;
+;   3.988 ;   0.238 ; FF ; IC   ; 2      ; LABCELL_X33_Y24_N30 ; core|tiles[0].tile|stepper|Add2~29|dataf            ;
+;   4.060 ;   0.072 ; FR ; CELL ; 2      ; LABCELL_X33_Y24_N30 ; core|tiles[0].tile|stepper|Add2~29|sumout           ;
+;   4.060 ;   0.000 ; RR ; IC   ; 1      ; FF_X33_Y24_N32      ; core|tiles[0].tile|y[20]|d                          ;
+;   4.130 ;   0.070 ; RR ; CELL ; 1      ; FF_X33_Y24_N32      ; igor_top:core|igor_rollout_tile:tiles[0].tile|y[20] ;
++---------+---------+----+------+--------+---------------------+-----------------------------------------------------+
+
++------------------------------------------------------------------------------------------------------------------+
+; Data Required Path                                                                                               ;
++---------+----------+----+------+--------+------------------+-----------------------------------------------------+
+; Total   ; Incr     ; RF ; Type ; Fanout ; Location         ; Element                                             ;
++---------+----------+----+------+--------+------------------+-----------------------------------------------------+
+; 0.000   ; 0.000    ;    ;      ;        ;                  ; latch edge time                                     ;
+; 3.858   ; 3.858    ;    ;      ;        ;                  ; clock path                                          ;
+;   0.000 ;   0.000  ;    ;      ;        ;                  ; source latency                                      ;
+;   0.000 ;   0.000  ;    ;      ; 1      ; PIN_V11          ; FPGA_CLK1_50                                        ;
+;   0.000 ;   0.000  ; RR ; IC   ; 1      ; IOIBUF_X32_Y0_N1 ; FPGA_CLK1_50~input|i                                ;
+;   0.761 ;   0.761  ; RR ; CELL ; 1      ; IOIBUF_X32_Y0_N1 ; FPGA_CLK1_50~input|o                                ;
+;   1.184 ;   0.423  ; RR ; IC   ; 1      ; CLKCTRL_G4       ; FPGA_CLK1_50~inputCLKENA0|inclk                     ;
+;   1.494 ;   0.310  ; RR ; CELL ; 1695   ; CLKCTRL_G4       ; FPGA_CLK1_50~inputCLKENA0|outclk                    ;
+;   3.750 ;   2.256  ; RR ; IC   ; 1      ; FF_X33_Y24_N32   ; core|tiles[0].tile|y[20]|clk                        ;
+;   4.301 ;   0.551  ; RR ; CELL ; 1      ; FF_X33_Y24_N32   ; igor_top:core|igor_rollout_tile:tiles[0].tile|y[20] ;
+;   3.858 ;   -0.443 ;    ;      ;        ;                  ; clock pessimism removed                             ;
+; 3.858   ; 0.000    ;    ;      ;        ;                  ; clock uncertainty                                   ;
+; 3.858   ; 0.000    ;    ; uTh  ; 1      ; FF_X33_Y24_N32   ; igor_top:core|igor_rollout_tile:tiles[0].tile|y[20] ;
++---------+----------+----+------+--------+------------------+-----------------------------------------------------+
+
+----------------------------
+; Extra Fitter Information ;
+----------------------------
+HTML report is unavailable in plain text report export.
+
+
+Path #4: Hold slack is 0.289 
+===============================================================================
++--------------------------------------------------------------------------+
+; Path Summary                                                             ;
++--------------------+-----------------------------------------------------+
+; Property           ; Value                                               ;
++--------------------+-----------------------------------------------------+
+; From Node          ; igor_top:core|igor_rollout_tile:tiles[3].tile|x[21] ;
+; To Node            ; igor_top:core|igor_rollout_tile:tiles[3].tile|x[21] ;
+; Launch Clock       ; FPGA_CLK1_50                                        ;
+; Latch Clock        ; FPGA_CLK1_50                                        ;
+; Data Arrival Time  ; 4.155                                               ;
+; Data Required Time ; 3.866                                               ;
+; Slack              ; 0.289                                               ;
++--------------------+-----------------------------------------------------+
+
++-----------------------------------------------------------------------------------+
+; Statistics                                                                        ;
++------------------------+-------+-------+-------------+------------+-------+-------+
+; Property               ; Value ; Count ; Total Delay ; % of Total ; Min   ; Max   ;
++------------------------+-------+-------+-------------+------------+-------+-------+
+; Hold Relationship      ; 0.000 ;       ;             ;            ;       ;       ;
+; Clock Skew             ; 0.108 ;       ;             ;            ;       ;       ;
+; Data Delay             ; 0.397 ;       ;             ;            ;       ;       ;
+; Number of Logic Levels ;       ; 1     ;             ;            ;       ;       ;
+; Physical Delays        ;       ;       ;             ;            ;       ;       ;
+;  Arrival Path          ;       ;       ;             ;            ;       ;       ;
+;   Clock                ;       ;       ;             ;            ;       ;       ;
+;    IC                  ;       ; 3     ; 2.231       ; 59         ; 0.000 ; 1.844 ;
+;    Cell                ;       ; 3     ; 1.527       ; 41         ; 0.285 ; 0.761 ;
+;   Data                 ;       ;       ;             ;            ;       ;       ;
+;    IC                  ;       ; 2     ; 0.256       ; 64         ; 0.000 ; 0.256 ;
+;    Cell                ;       ; 3     ; 0.141       ; 36         ; 0.000 ; 0.071 ;
+;    uTco                ;       ; 1     ; 0.000       ; 0          ; 0.000 ; 0.000 ;
+;  Required Path         ;       ;       ;             ;            ;       ;       ;
+;   Clock                ;       ;       ;             ;            ;       ;       ;
+;    IC                  ;       ; 3     ; 2.681       ; 62         ; 0.000 ; 2.258 ;
+;    Cell                ;       ; 3     ; 1.631       ; 38         ; 0.310 ; 0.761 ;
++------------------------+-------+-------+-------------+------------+-------+-------+
+Note: Negative delays are omitted from totals when calculating percentages
+
++--------------------------------------------------------------------------------------------------------------------+
+; Data Arrival Path                                                                                                  ;
++---------+---------+----+------+--------+---------------------+-----------------------------------------------------+
+; Total   ; Incr    ; RF ; Type ; Fanout ; Location            ; Element                                             ;
++---------+---------+----+------+--------+---------------------+-----------------------------------------------------+
+; 0.000   ; 0.000   ;    ;      ;        ;                     ; launch edge time                                    ;
+; 3.758   ; 3.758   ;    ;      ;        ;                     ; clock path                                          ;
+;   0.000 ;   0.000 ;    ;      ;        ;                     ; source latency                                      ;
+;   0.000 ;   0.000 ;    ;      ; 1      ; PIN_V11             ; FPGA_CLK1_50                                        ;
+;   0.000 ;   0.000 ; RR ; IC   ; 1      ; IOIBUF_X32_Y0_N1    ; FPGA_CLK1_50~input|i                                ;
+;   0.761 ;   0.761 ; RR ; CELL ; 1      ; IOIBUF_X32_Y0_N1    ; FPGA_CLK1_50~input|o                                ;
+;   1.148 ;   0.387 ; RR ; IC   ; 1      ; CLKCTRL_G4          ; FPGA_CLK1_50~inputCLKENA0|inclk                     ;
+;   1.433 ;   0.285 ; RR ; CELL ; 1695   ; CLKCTRL_G4          ; FPGA_CLK1_50~inputCLKENA0|outclk                    ;
+;   3.277 ;   1.844 ; RR ; IC   ; 1      ; FF_X16_Y25_N35      ; core|tiles[3].tile|x[21]|clk                        ;
+;   3.758 ;   0.481 ; RR ; CELL ; 1      ; FF_X16_Y25_N35      ; igor_top:core|igor_rollout_tile:tiles[3].tile|x[21] ;
+; 4.155   ; 0.397   ;    ;      ;        ;                     ; data path                                           ;
+;   3.758 ;   0.000 ;    ; uTco ; 1      ; FF_X16_Y25_N35      ; igor_top:core|igor_rollout_tile:tiles[3].tile|x[21] ;
+;   3.758 ;   0.000 ; FF ; CELL ; 3      ; FF_X16_Y25_N35      ; core|tiles[3].tile|x[21]|q                          ;
+;   4.014 ;   0.256 ; FF ; IC   ; 2      ; LABCELL_X16_Y25_N33 ; core|tiles[3].tile|stepper|Add1~9|dataf             ;
+;   4.085 ;   0.071 ; FF ; CELL ; 2      ; LABCELL_X16_Y25_N33 ; core|tiles[3].tile|stepper|Add1~9|sumout            ;
+;   4.085 ;   0.000 ; FF ; IC   ; 1      ; FF_X16_Y25_N35      ; core|tiles[3].tile|x[21]|d                          ;
+;   4.155 ;   0.070 ; FF ; CELL ; 1      ; FF_X16_Y25_N35      ; igor_top:core|igor_rollout_tile:tiles[3].tile|x[21] ;
++---------+---------+----+------+--------+---------------------+-----------------------------------------------------+
+
++------------------------------------------------------------------------------------------------------------------+
+; Data Required Path                                                                                               ;
++---------+----------+----+------+--------+------------------+-----------------------------------------------------+
+; Total   ; Incr     ; RF ; Type ; Fanout ; Location         ; Element                                             ;
++---------+----------+----+------+--------+------------------+-----------------------------------------------------+
+; 0.000   ; 0.000    ;    ;      ;        ;                  ; latch edge time                                     ;
+; 3.866   ; 3.866    ;    ;      ;        ;                  ; clock path                                          ;
+;   0.000 ;   0.000  ;    ;      ;        ;                  ; source latency                                      ;
+;   0.000 ;   0.000  ;    ;      ; 1      ; PIN_V11          ; FPGA_CLK1_50                                        ;
+;   0.000 ;   0.000  ; RR ; IC   ; 1      ; IOIBUF_X32_Y0_N1 ; FPGA_CLK1_50~input|i                                ;
+;   0.761 ;   0.761  ; RR ; CELL ; 1      ; IOIBUF_X32_Y0_N1 ; FPGA_CLK1_50~input|o                                ;
+;   1.184 ;   0.423  ; RR ; IC   ; 1      ; CLKCTRL_G4       ; FPGA_CLK1_50~inputCLKENA0|inclk                     ;
+;   1.494 ;   0.310  ; RR ; CELL ; 1695   ; CLKCTRL_G4       ; FPGA_CLK1_50~inputCLKENA0|outclk                    ;
+;   3.752 ;   2.258  ; RR ; IC   ; 1      ; FF_X16_Y25_N35   ; core|tiles[3].tile|x[21]|clk                        ;
+;   4.312 ;   0.560  ; RR ; CELL ; 1      ; FF_X16_Y25_N35   ; igor_top:core|igor_rollout_tile:tiles[3].tile|x[21] ;
+;   3.866 ;   -0.446 ;    ;      ;        ;                  ; clock pessimism removed                             ;
+; 3.866   ; 0.000    ;    ;      ;        ;                  ; clock uncertainty                                   ;
+; 3.866   ; 0.000    ;    ; uTh  ; 1      ; FF_X16_Y25_N35   ; igor_top:core|igor_rollout_tile:tiles[3].tile|x[21] ;
++---------+----------+----+------+--------+------------------+-----------------------------------------------------+
+
+----------------------------
+; Extra Fitter Information ;
+----------------------------
+HTML report is unavailable in plain text report export.
+
+
+Path #5: Hold slack is 0.336 
+===============================================================================
++--------------------------------------------------------------------+
+; Path Summary                                                       ;
++--------------------+-----------------------------------------------+
+; Property           ; Value                                         ;
++--------------------+-----------------------------------------------+
+; From Node          ; igor_top:core|latency_cycles[14]              ;
+; To Node            ; igor_uart_protocol:serial|response_sample[14] ;
+; Launch Clock       ; FPGA_CLK1_50                                  ;
+; Latch Clock        ; FPGA_CLK1_50                                  ;
+; Data Arrival Time  ; 4.218                                         ;
+; Data Required Time ; 3.882                                         ;
+; Slack              ; 0.336                                         ;
++--------------------+-----------------------------------------------+
+
++-----------------------------------------------------------------------------------+
+; Statistics                                                                        ;
++------------------------+-------+-------+-------------+------------+-------+-------+
+; Property               ; Value ; Count ; Total Delay ; % of Total ; Min   ; Max   ;
++------------------------+-------+-------+-------------+------------+-------+-------+
+; Hold Relationship      ; 0.000 ;       ;             ;            ;       ;       ;
+; Clock Skew             ; 0.118 ;       ;             ;            ;       ;       ;
+; Data Delay             ; 0.454 ;       ;             ;            ;       ;       ;
+; Number of Logic Levels ;       ; 1     ;             ;            ;       ;       ;
+; Physical Delays        ;       ;       ;             ;            ;       ;       ;
+;  Arrival Path          ;       ;       ;             ;            ;       ;       ;
+;   Clock                ;       ;       ;             ;            ;       ;       ;
+;    IC                  ;       ; 3     ; 2.236       ; 59         ; 0.000 ; 1.849 ;
+;    Cell                ;       ; 3     ; 1.528       ; 41         ; 0.285 ; 0.761 ;
+;   Data                 ;       ;       ;             ;            ;       ;       ;
+;    IC                  ;       ; 2     ; 0.339       ; 75         ; 0.000 ; 0.339 ;
+;    Cell                ;       ; 3     ; 0.115       ; 25         ; 0.000 ; 0.067 ;
+;    uTco                ;       ; 1     ; 0.000       ; 0          ; 0.000 ; 0.000 ;
+;  Required Path         ;       ;       ;             ;            ;       ;       ;
+;   Clock                ;       ;       ;             ;            ;       ;       ;
+;    IC                  ;       ; 3     ; 2.683       ; 62         ; 0.000 ; 2.260 ;
+;    Cell                ;       ; 3     ; 1.642       ; 38         ; 0.310 ; 0.761 ;
++------------------------+-------+-------+-------------+------------+-------+-------+
+Note: Negative delays are omitted from totals when calculating percentages
+
++--------------------------------------------------------------------------------------------------------------+
+; Data Arrival Path                                                                                            ;
++---------+---------+----+------+--------+---------------------+-----------------------------------------------+
+; Total   ; Incr    ; RF ; Type ; Fanout ; Location            ; Element                                       ;
++---------+---------+----+------+--------+---------------------+-----------------------------------------------+
+; 0.000   ; 0.000   ;    ;      ;        ;                     ; launch edge time                              ;
+; 3.764   ; 3.764   ;    ;      ;        ;                     ; clock path                                    ;
+;   0.000 ;   0.000 ;    ;      ;        ;                     ; source latency                                ;
+;   0.000 ;   0.000 ;    ;      ; 1      ; PIN_V11             ; FPGA_CLK1_50                                  ;
+;   0.000 ;   0.000 ; RR ; IC   ; 1      ; IOIBUF_X32_Y0_N1    ; FPGA_CLK1_50~input|i                          ;
+;   0.761 ;   0.761 ; RR ; CELL ; 1      ; IOIBUF_X32_Y0_N1    ; FPGA_CLK1_50~input|o                          ;
+;   1.148 ;   0.387 ; RR ; IC   ; 1      ; CLKCTRL_G4          ; FPGA_CLK1_50~inputCLKENA0|inclk               ;
+;   1.433 ;   0.285 ; RR ; CELL ; 1695   ; CLKCTRL_G4          ; FPGA_CLK1_50~inputCLKENA0|outclk              ;
+;   3.282 ;   1.849 ; RR ; IC   ; 1      ; FF_X30_Y20_N22      ; core|latency_cycles[14]|clk                   ;
+;   3.764 ;   0.482 ; RR ; CELL ; 1      ; FF_X30_Y20_N22      ; igor_top:core|latency_cycles[14]              ;
+; 4.218   ; 0.454   ;    ;      ;        ;                     ; data path                                     ;
+;   3.764 ;   0.000 ;    ; uTco ; 1      ; FF_X30_Y20_N22      ; igor_top:core|latency_cycles[14]              ;
+;   3.764 ;   0.000 ; FF ; CELL ; 1      ; FF_X30_Y20_N22      ; core|latency_cycles[14]|q                     ;
+;   4.103 ;   0.339 ; FF ; IC   ; 1      ; LABCELL_X30_Y20_N45 ; Selector17~1|dataf                            ;
+;   4.151 ;   0.048 ; FF ; CELL ; 1      ; LABCELL_X30_Y20_N45 ; Selector17~1|combout                          ;
+;   4.151 ;   0.000 ; FF ; IC   ; 1      ; FF_X30_Y20_N46      ; serial|response_sample[14]|d                  ;
+;   4.218 ;   0.067 ; FF ; CELL ; 1      ; FF_X30_Y20_N46      ; igor_uart_protocol:serial|response_sample[14] ;
++---------+---------+----+------+--------+---------------------+-----------------------------------------------+
+
++------------------------------------------------------------------------------------------------------------+
+; Data Required Path                                                                                         ;
++---------+----------+----+------+--------+------------------+-----------------------------------------------+
+; Total   ; Incr     ; RF ; Type ; Fanout ; Location         ; Element                                       ;
++---------+----------+----+------+--------+------------------+-----------------------------------------------+
+; 0.000   ; 0.000    ;    ;      ;        ;                  ; latch edge time                               ;
+; 3.882   ; 3.882    ;    ;      ;        ;                  ; clock path                                    ;
+;   0.000 ;   0.000  ;    ;      ;        ;                  ; source latency                                ;
+;   0.000 ;   0.000  ;    ;      ; 1      ; PIN_V11          ; FPGA_CLK1_50                                  ;
+;   0.000 ;   0.000  ; RR ; IC   ; 1      ; IOIBUF_X32_Y0_N1 ; FPGA_CLK1_50~input|i                          ;
+;   0.761 ;   0.761  ; RR ; CELL ; 1      ; IOIBUF_X32_Y0_N1 ; FPGA_CLK1_50~input|o                          ;
+;   1.184 ;   0.423  ; RR ; IC   ; 1      ; CLKCTRL_G4       ; FPGA_CLK1_50~inputCLKENA0|inclk               ;
+;   1.494 ;   0.310  ; RR ; CELL ; 1695   ; CLKCTRL_G4       ; FPGA_CLK1_50~inputCLKENA0|outclk              ;
+;   3.754 ;   2.260  ; RR ; IC   ; 1      ; FF_X30_Y20_N46   ; serial|response_sample[14]|clk                ;
+;   4.325 ;   0.571  ; RR ; CELL ; 1      ; FF_X30_Y20_N46   ; igor_uart_protocol:serial|response_sample[14] ;
+;   3.882 ;   -0.443 ;    ;      ;        ;                  ; clock pessimism removed                       ;
+; 3.882   ; 0.000    ;    ;      ;        ;                  ; clock uncertainty                             ;
+; 3.882   ; 0.000    ;    ; uTh  ; 1      ; FF_X30_Y20_N46   ; igor_uart_protocol:serial|response_sample[14] ;
++---------+----------+----+------+--------+------------------+-----------------------------------------------+
+
+----------------------------
+; Extra Fitter Information ;
+----------------------------
+HTML report is unavailable in plain text report export.
+
+
+Path #6: Hold slack is 0.368 
+===============================================================================
++---------------------------------------------------------------------------+
+; Path Summary                                                              ;
++--------------------+------------------------------------------------------+
+; Property           ; Value                                                ;
++--------------------+------------------------------------------------------+
+; From Node          ; igor_uart_protocol:serial|respond_delay[1]~DUPLICATE ;
+; To Node            ; igor_uart_protocol:serial|respond_delay[0]           ;
+; Launch Clock       ; FPGA_CLK1_50                                         ;
+; Latch Clock        ; FPGA_CLK1_50                                         ;
+; Data Arrival Time  ; 4.265                                                ;
+; Data Required Time ; 3.897                                                ;
+; Slack              ; 0.368                                                ;
++--------------------+------------------------------------------------------+
+
++-----------------------------------------------------------------------------------+
+; Statistics                                                                        ;
++------------------------+-------+-------+-------------+------------+-------+-------+
+; Property               ; Value ; Count ; Total Delay ; % of Total ; Min   ; Max   ;
++------------------------+-------+-------+-------------+------------+-------+-------+
+; Hold Relationship      ; 0.000 ;       ;             ;            ;       ;       ;
+; Clock Skew             ; 0.089 ;       ;             ;            ;       ;       ;
+; Data Delay             ; 0.457 ;       ;             ;            ;       ;       ;
+; Number of Logic Levels ;       ; 1     ;             ;            ;       ;       ;
+; Physical Delays        ;       ;       ;             ;            ;       ;       ;
+;  Arrival Path          ;       ;       ;             ;            ;       ;       ;
+;   Clock                ;       ;       ;             ;            ;       ;       ;
+;    IC                  ;       ; 3     ; 2.243       ; 59         ; 0.000 ; 1.856 ;
+;    Cell                ;       ; 3     ; 1.565       ; 41         ; 0.285 ; 0.761 ;
+;   Data                 ;       ;       ;             ;            ;       ;       ;
+;    IC                  ;       ; 2     ; 0.339       ; 74         ; 0.000 ; 0.339 ;
+;    Cell                ;       ; 3     ; 0.118       ; 26         ; 0.000 ; 0.069 ;
+;    uTco                ;       ; 1     ; 0.000       ; 0          ; 0.000 ; 0.000 ;
+;  Required Path         ;       ;       ;             ;            ;       ;       ;
+;   Clock                ;       ;       ;             ;            ;       ;       ;
+;    IC                  ;       ; 3     ; 2.690       ; 62         ; 0.000 ; 2.267 ;
+;    Cell                ;       ; 3     ; 1.650       ; 38         ; 0.310 ; 0.761 ;
++------------------------+-------+-------+-------------+------------+-------+-------+
+Note: Negative delays are omitted from totals when calculating percentages
+
++---------------------------------------------------------------------------------------------------------------------+
+; Data Arrival Path                                                                                                   ;
++---------+---------+----+------+--------+---------------------+------------------------------------------------------+
+; Total   ; Incr    ; RF ; Type ; Fanout ; Location            ; Element                                              ;
++---------+---------+----+------+--------+---------------------+------------------------------------------------------+
+; 0.000   ; 0.000   ;    ;      ;        ;                     ; launch edge time                                     ;
+; 3.808   ; 3.808   ;    ;      ;        ;                     ; clock path                                           ;
+;   0.000 ;   0.000 ;    ;      ;        ;                     ; source latency                                       ;
+;   0.000 ;   0.000 ;    ;      ; 1      ; PIN_V11             ; FPGA_CLK1_50                                         ;
+;   0.000 ;   0.000 ; RR ; IC   ; 1      ; IOIBUF_X32_Y0_N1    ; FPGA_CLK1_50~input|i                                 ;
+;   0.761 ;   0.761 ; RR ; CELL ; 1      ; IOIBUF_X32_Y0_N1    ; FPGA_CLK1_50~input|o                                 ;
+;   1.148 ;   0.387 ; RR ; IC   ; 1      ; CLKCTRL_G4          ; FPGA_CLK1_50~inputCLKENA0|inclk                      ;
+;   1.433 ;   0.285 ; RR ; CELL ; 1695   ; CLKCTRL_G4          ; FPGA_CLK1_50~inputCLKENA0|outclk                     ;
+;   3.289 ;   1.856 ; RR ; IC   ; 1      ; FF_X42_Y19_N31      ; serial|respond_delay[1]~DUPLICATE|clk                ;
+;   3.808 ;   0.519 ; RR ; CELL ; 1      ; FF_X42_Y19_N31      ; igor_uart_protocol:serial|respond_delay[1]~DUPLICATE ;
+; 4.265   ; 0.457   ;    ;      ;        ;                     ; data path                                            ;
+;   3.808 ;   0.000 ;    ; uTco ; 1      ; FF_X42_Y19_N31      ; igor_uart_protocol:serial|respond_delay[1]~DUPLICATE ;
+;   3.808 ;   0.000 ; FF ; CELL ; 3      ; FF_X42_Y19_N31      ; serial|respond_delay[1]~DUPLICATE|q                  ;
+;   4.147 ;   0.339 ; FF ; IC   ; 1      ; LABCELL_X42_Y19_N18 ; serial|respond_delay[0]~1|dataf                      ;
+;   4.196 ;   0.049 ; FF ; CELL ; 1      ; LABCELL_X42_Y19_N18 ; serial|respond_delay[0]~1|combout                    ;
+;   4.196 ;   0.000 ; FF ; IC   ; 1      ; FF_X42_Y19_N20      ; serial|respond_delay[0]|d                            ;
+;   4.265 ;   0.069 ; FF ; CELL ; 1      ; FF_X42_Y19_N20      ; igor_uart_protocol:serial|respond_delay[0]           ;
++---------+---------+----+------+--------+---------------------+------------------------------------------------------+
+
++---------------------------------------------------------------------------------------------------------+
+; Data Required Path                                                                                      ;
++---------+----------+----+------+--------+------------------+--------------------------------------------+
+; Total   ; Incr     ; RF ; Type ; Fanout ; Location         ; Element                                    ;
++---------+----------+----+------+--------+------------------+--------------------------------------------+
+; 0.000   ; 0.000    ;    ;      ;        ;                  ; latch edge time                            ;
+; 3.897   ; 3.897    ;    ;      ;        ;                  ; clock path                                 ;
+;   0.000 ;   0.000  ;    ;      ;        ;                  ; source latency                             ;
+;   0.000 ;   0.000  ;    ;      ; 1      ; PIN_V11          ; FPGA_CLK1_50                               ;
+;   0.000 ;   0.000  ; RR ; IC   ; 1      ; IOIBUF_X32_Y0_N1 ; FPGA_CLK1_50~input|i                       ;
+;   0.761 ;   0.761  ; RR ; CELL ; 1      ; IOIBUF_X32_Y0_N1 ; FPGA_CLK1_50~input|o                       ;
+;   1.184 ;   0.423  ; RR ; IC   ; 1      ; CLKCTRL_G4       ; FPGA_CLK1_50~inputCLKENA0|inclk            ;
+;   1.494 ;   0.310  ; RR ; CELL ; 1695   ; CLKCTRL_G4       ; FPGA_CLK1_50~inputCLKENA0|outclk           ;
+;   3.761 ;   2.267  ; RR ; IC   ; 1      ; FF_X42_Y19_N20   ; serial|respond_delay[0]|clk                ;
+;   4.340 ;   0.579  ; RR ; CELL ; 1      ; FF_X42_Y19_N20   ; igor_uart_protocol:serial|respond_delay[0] ;
+;   3.897 ;   -0.443 ;    ;      ;        ;                  ; clock pessimism removed                    ;
+; 3.897   ; 0.000    ;    ;      ;        ;                  ; clock uncertainty                          ;
+; 3.897   ; 0.000    ;    ; uTh  ; 1      ; FF_X42_Y19_N20   ; igor_uart_protocol:serial|respond_delay[0] ;
++---------+----------+----+------+--------+------------------+--------------------------------------------+
+
+----------------------------
+; Extra Fitter Information ;
+----------------------------
+HTML report is unavailable in plain text report export.
+
+
+Path #7: Hold slack is 0.383 
+===============================================================================
++--------------------------------------------------------------------+
+; Path Summary                                                       ;
++--------------------+-----------------------------------------------+
+; Property           ; Value                                         ;
++--------------------+-----------------------------------------------+
+; From Node          ; igor_top:core|latency_cycles[30]              ;
+; To Node            ; igor_uart_protocol:serial|response_sample[30] ;
+; Launch Clock       ; FPGA_CLK1_50                                  ;
+; Latch Clock        ; FPGA_CLK1_50                                  ;
+; Data Arrival Time  ; 4.271                                         ;
+; Data Required Time ; 3.888                                         ;
+; Slack              ; 0.383                                         ;
++--------------------+-----------------------------------------------+
+
++-----------------------------------------------------------------------------------+
+; Statistics                                                                        ;
++------------------------+-------+-------+-------------+------------+-------+-------+
+; Property               ; Value ; Count ; Total Delay ; % of Total ; Min   ; Max   ;
++------------------------+-------+-------+-------------+------------+-------+-------+
+; Hold Relationship      ; 0.000 ;       ;             ;            ;       ;       ;
+; Clock Skew             ; 0.113 ;       ;             ;            ;       ;       ;
+; Data Delay             ; 0.496 ;       ;             ;            ;       ;       ;
+; Number of Logic Levels ;       ; 1     ;             ;            ;       ;       ;
+; Physical Delays        ;       ;       ;             ;            ;       ;       ;
+;  Arrival Path          ;       ;       ;             ;            ;       ;       ;
+;   Clock                ;       ;       ;             ;            ;       ;       ;
+;    IC                  ;       ; 3     ; 2.240       ; 59         ; 0.000 ; 1.853 ;
+;    Cell                ;       ; 3     ; 1.535       ; 41         ; 0.285 ; 0.761 ;
+;   Data                 ;       ;       ;             ;            ;       ;       ;
+;    IC                  ;       ; 2     ; 0.379       ; 76         ; 0.000 ; 0.379 ;
+;    Cell                ;       ; 3     ; 0.117       ; 24         ; 0.000 ; 0.069 ;
+;    uTco                ;       ; 1     ; 0.000       ; 0          ; 0.000 ; 0.000 ;
+;  Required Path         ;       ;       ;             ;            ;       ;       ;
+;   Clock                ;       ;       ;             ;            ;       ;       ;
+;    IC                  ;       ; 3     ; 2.686       ; 62         ; 0.000 ; 2.263 ;
+;    Cell                ;       ; 3     ; 1.645       ; 38         ; 0.310 ; 0.761 ;
++------------------------+-------+-------+-------------+------------+-------+-------+
+Note: Negative delays are omitted from totals when calculating percentages
+
++--------------------------------------------------------------------------------------------------------------+
+; Data Arrival Path                                                                                            ;
++---------+---------+----+------+--------+---------------------+-----------------------------------------------+
+; Total   ; Incr    ; RF ; Type ; Fanout ; Location            ; Element                                       ;
++---------+---------+----+------+--------+---------------------+-----------------------------------------------+
+; 0.000   ; 0.000   ;    ;      ;        ;                     ; launch edge time                              ;
+; 3.775   ; 3.775   ;    ;      ;        ;                     ; clock path                                    ;
+;   0.000 ;   0.000 ;    ;      ;        ;                     ; source latency                                ;
+;   0.000 ;   0.000 ;    ;      ; 1      ; PIN_V11             ; FPGA_CLK1_50                                  ;
+;   0.000 ;   0.000 ; RR ; IC   ; 1      ; IOIBUF_X32_Y0_N1    ; FPGA_CLK1_50~input|i                          ;
+;   0.761 ;   0.761 ; RR ; CELL ; 1      ; IOIBUF_X32_Y0_N1    ; FPGA_CLK1_50~input|o                          ;
+;   1.148 ;   0.387 ; RR ; IC   ; 1      ; CLKCTRL_G4          ; FPGA_CLK1_50~inputCLKENA0|inclk               ;
+;   1.433 ;   0.285 ; RR ; CELL ; 1695   ; CLKCTRL_G4          ; FPGA_CLK1_50~inputCLKENA0|outclk              ;
+;   3.286 ;   1.853 ; RR ; IC   ; 1      ; FF_X36_Y19_N32      ; core|latency_cycles[30]|clk                   ;
+;   3.775 ;   0.489 ; RR ; CELL ; 1      ; FF_X36_Y19_N32      ; igor_top:core|latency_cycles[30]              ;
+; 4.271   ; 0.496   ;    ;      ;        ;                     ; data path                                     ;
+;   3.775 ;   0.000 ;    ; uTco ; 1      ; FF_X36_Y19_N32      ; igor_top:core|latency_cycles[30]              ;
+;   3.775 ;   0.000 ; FF ; CELL ; 1      ; FF_X36_Y19_N32      ; core|latency_cycles[30]|q                     ;
+;   4.154 ;   0.379 ; FF ; IC   ; 1      ; LABCELL_X35_Y19_N45 ; Selector1~0|dataf                             ;
+;   4.202 ;   0.048 ; FF ; CELL ; 1      ; LABCELL_X35_Y19_N45 ; Selector1~0|combout                           ;
+;   4.202 ;   0.000 ; FF ; IC   ; 1      ; FF_X35_Y19_N47      ; serial|response_sample[30]|d                  ;
+;   4.271 ;   0.069 ; FF ; CELL ; 1      ; FF_X35_Y19_N47      ; igor_uart_protocol:serial|response_sample[30] ;
++---------+---------+----+------+--------+---------------------+-----------------------------------------------+
+
++------------------------------------------------------------------------------------------------------------+
+; Data Required Path                                                                                         ;
++---------+----------+----+------+--------+------------------+-----------------------------------------------+
+; Total   ; Incr     ; RF ; Type ; Fanout ; Location         ; Element                                       ;
++---------+----------+----+------+--------+------------------+-----------------------------------------------+
+; 0.000   ; 0.000    ;    ;      ;        ;                  ; latch edge time                               ;
+; 3.888   ; 3.888    ;    ;      ;        ;                  ; clock path                                    ;
+;   0.000 ;   0.000  ;    ;      ;        ;                  ; source latency                                ;
+;   0.000 ;   0.000  ;    ;      ; 1      ; PIN_V11          ; FPGA_CLK1_50                                  ;
+;   0.000 ;   0.000  ; RR ; IC   ; 1      ; IOIBUF_X32_Y0_N1 ; FPGA_CLK1_50~input|i                          ;
+;   0.761 ;   0.761  ; RR ; CELL ; 1      ; IOIBUF_X32_Y0_N1 ; FPGA_CLK1_50~input|o                          ;
+;   1.184 ;   0.423  ; RR ; IC   ; 1      ; CLKCTRL_G4       ; FPGA_CLK1_50~inputCLKENA0|inclk               ;
+;   1.494 ;   0.310  ; RR ; CELL ; 1695   ; CLKCTRL_G4       ; FPGA_CLK1_50~inputCLKENA0|outclk              ;
+;   3.757 ;   2.263  ; RR ; IC   ; 1      ; FF_X35_Y19_N47   ; serial|response_sample[30]|clk                ;
+;   4.331 ;   0.574  ; RR ; CELL ; 1      ; FF_X35_Y19_N47   ; igor_uart_protocol:serial|response_sample[30] ;
+;   3.888 ;   -0.443 ;    ;      ;        ;                  ; clock pessimism removed                       ;
+; 3.888   ; 0.000    ;    ;      ;        ;                  ; clock uncertainty                             ;
+; 3.888   ; 0.000    ;    ; uTh  ; 1      ; FF_X35_Y19_N47   ; igor_uart_protocol:serial|response_sample[30] ;
++---------+----------+----+------+--------+------------------+-----------------------------------------------+
+
+----------------------------
+; Extra Fitter Information ;
+----------------------------
+HTML report is unavailable in plain text report export.
+
+
+Path #8: Hold slack is 0.401 
+===============================================================================
++--------------------------------------------------------------+
+; Path Summary                                                 ;
++--------------------+-----------------------------------------+
+; Property           ; Value                                   ;
++--------------------+-----------------------------------------+
+; From Node          ; igor_uart_protocol:serial|out_frame[16] ;
+; To Node            ; igor_uart_protocol:serial|tx_data[0]    ;
+; Launch Clock       ; FPGA_CLK1_50                            ;
+; Latch Clock        ; FPGA_CLK1_50                            ;
+; Data Arrival Time  ; 4.288                                   ;
+; Data Required Time ; 3.887                                   ;
+; Slack              ; 0.401                                   ;
++--------------------+-----------------------------------------+
+
++-----------------------------------------------------------------------------------+
+; Statistics                                                                        ;
++------------------------+-------+-------+-------------+------------+-------+-------+
+; Property               ; Value ; Count ; Total Delay ; % of Total ; Min   ; Max   ;
++------------------------+-------+-------+-------------+------------+-------+-------+
+; Hold Relationship      ; 0.000 ;       ;             ;            ;       ;       ;
+; Clock Skew             ; 0.119 ;       ;             ;            ;       ;       ;
+; Data Delay             ; 0.520 ;       ;             ;            ;       ;       ;
+; Number of Logic Levels ;       ; 1     ;             ;            ;       ;       ;
+; Physical Delays        ;       ;       ;             ;            ;       ;       ;
+;  Arrival Path          ;       ;       ;             ;            ;       ;       ;
+;   Clock                ;       ;       ;             ;            ;       ;       ;
+;    IC                  ;       ; 3     ; 2.234       ; 59         ; 0.000 ; 1.847 ;
+;    Cell                ;       ; 3     ; 1.534       ; 41         ; 0.285 ; 0.761 ;
+;   Data                 ;       ;       ;             ;            ;       ;       ;
+;    IC                  ;       ; 2     ; 0.259       ; 50         ; 0.000 ; 0.259 ;
+;    Cell                ;       ; 3     ; 0.261       ; 50         ; 0.000 ; 0.194 ;
+;    uTco                ;       ; 1     ; 0.000       ; 0          ; 0.000 ; 0.000 ;
+;  Required Path         ;       ;       ;             ;            ;       ;       ;
+;   Clock                ;       ;       ;             ;            ;       ;       ;
+;    IC                  ;       ; 3     ; 2.681       ; 62         ; 0.000 ; 2.258 ;
+;    Cell                ;       ; 3     ; 1.648       ; 38         ; 0.310 ; 0.761 ;
++------------------------+-------+-------+-------------+------------+-------+-------+
+Note: Negative delays are omitted from totals when calculating percentages
+
++--------------------------------------------------------------------------------------------------------+
+; Data Arrival Path                                                                                      ;
++---------+---------+----+------+--------+---------------------+-----------------------------------------+
+; Total   ; Incr    ; RF ; Type ; Fanout ; Location            ; Element                                 ;
++---------+---------+----+------+--------+---------------------+-----------------------------------------+
+; 0.000   ; 0.000   ;    ;      ;        ;                     ; launch edge time                        ;
+; 3.768   ; 3.768   ;    ;      ;        ;                     ; clock path                              ;
+;   0.000 ;   0.000 ;    ;      ;        ;                     ; source latency                          ;
+;   0.000 ;   0.000 ;    ;      ; 1      ; PIN_V11             ; FPGA_CLK1_50                            ;
+;   0.000 ;   0.000 ; RR ; IC   ; 1      ; IOIBUF_X32_Y0_N1    ; FPGA_CLK1_50~input|i                    ;
+;   0.761 ;   0.761 ; RR ; CELL ; 1      ; IOIBUF_X32_Y0_N1    ; FPGA_CLK1_50~input|o                    ;
+;   1.148 ;   0.387 ; RR ; IC   ; 1      ; CLKCTRL_G4          ; FPGA_CLK1_50~inputCLKENA0|inclk         ;
+;   1.433 ;   0.285 ; RR ; CELL ; 1695   ; CLKCTRL_G4          ; FPGA_CLK1_50~inputCLKENA0|outclk        ;
+;   3.280 ;   1.847 ; RR ; IC   ; 1      ; FF_X33_Y21_N59      ; serial|out_frame[16]|clk                ;
+;   3.768 ;   0.488 ; RR ; CELL ; 1      ; FF_X33_Y21_N59      ; igor_uart_protocol:serial|out_frame[16] ;
+; 4.288   ; 0.520   ;    ;      ;        ;                     ; data path                               ;
+;   3.768 ;   0.000 ;    ; uTco ; 1      ; FF_X33_Y21_N59      ; igor_uart_protocol:serial|out_frame[16] ;
+;   3.768 ;   0.000 ; RR ; CELL ; 1      ; FF_X33_Y21_N59      ; serial|out_frame[16]|q                  ;
+;   4.027 ;   0.259 ; RR ; IC   ; 1      ; LABCELL_X33_Y21_N48 ; serial|Mux12~1|datag                    ;
+;   4.221 ;   0.194 ; RR ; CELL ; 1      ; LABCELL_X33_Y21_N48 ; serial|Mux12~1|combout                  ;
+;   4.221 ;   0.000 ; RR ; IC   ; 1      ; FF_X33_Y21_N49      ; serial|tx_data[0]|d                     ;
+;   4.288 ;   0.067 ; RR ; CELL ; 1      ; FF_X33_Y21_N49      ; igor_uart_protocol:serial|tx_data[0]    ;
++---------+---------+----+------+--------+---------------------+-----------------------------------------+
+
++---------------------------------------------------------------------------------------------------+
+; Data Required Path                                                                                ;
++---------+----------+----+------+--------+------------------+--------------------------------------+
+; Total   ; Incr     ; RF ; Type ; Fanout ; Location         ; Element                              ;
++---------+----------+----+------+--------+------------------+--------------------------------------+
+; 0.000   ; 0.000    ;    ;      ;        ;                  ; latch edge time                      ;
+; 3.887   ; 3.887    ;    ;      ;        ;                  ; clock path                           ;
+;   0.000 ;   0.000  ;    ;      ;        ;                  ; source latency                       ;
+;   0.000 ;   0.000  ;    ;      ; 1      ; PIN_V11          ; FPGA_CLK1_50                         ;
+;   0.000 ;   0.000  ; RR ; IC   ; 1      ; IOIBUF_X32_Y0_N1 ; FPGA_CLK1_50~input|i                 ;
+;   0.761 ;   0.761  ; RR ; CELL ; 1      ; IOIBUF_X32_Y0_N1 ; FPGA_CLK1_50~input|o                 ;
+;   1.184 ;   0.423  ; RR ; IC   ; 1      ; CLKCTRL_G4       ; FPGA_CLK1_50~inputCLKENA0|inclk      ;
+;   1.494 ;   0.310  ; RR ; CELL ; 1695   ; CLKCTRL_G4       ; FPGA_CLK1_50~inputCLKENA0|outclk     ;
+;   3.752 ;   2.258  ; RR ; IC   ; 1      ; FF_X33_Y21_N49   ; serial|tx_data[0]|clk                ;
+;   4.329 ;   0.577  ; RR ; CELL ; 1      ; FF_X33_Y21_N49   ; igor_uart_protocol:serial|tx_data[0] ;
+;   3.887 ;   -0.442 ;    ;      ;        ;                  ; clock pessimism removed              ;
+; 3.887   ; 0.000    ;    ;      ;        ;                  ; clock uncertainty                    ;
+; 3.887   ; 0.000    ;    ; uTh  ; 1      ; FF_X33_Y21_N49   ; igor_uart_protocol:serial|tx_data[0] ;
++---------+----------+----+------+--------+------------------+--------------------------------------+
+
+----------------------------
+; Extra Fitter Information ;
+----------------------------
+HTML report is unavailable in plain text report export.
+
+
+Path #9: Hold slack is 0.412 
+===============================================================================
++---------------------------------------------------------------------+
+; Path Summary                                                        ;
++--------------------+------------------------------------------------+
+; Property           ; Value                                          ;
++--------------------+------------------------------------------------+
+; From Node          ; igor_uart_protocol:serial|payload[2]           ;
+; To Node            ; igor_neural_core:neural|inputs_rtl_0_bypass[5] ;
+; Launch Clock       ; FPGA_CLK1_50                                   ;
+; Latch Clock        ; FPGA_CLK1_50                                   ;
+; Data Arrival Time  ; 4.728                                          ;
+; Data Required Time ; 4.316                                          ;
+; Slack              ; 0.412                                          ;
++--------------------+------------------------------------------------+
+
++-----------------------------------------------------------------------------------+
+; Statistics                                                                        ;
++------------------------+-------+-------+-------------+------------+-------+-------+
+; Property               ; Value ; Count ; Total Delay ; % of Total ; Min   ; Max   ;
++------------------------+-------+-------+-------------+------------+-------+-------+
+; Hold Relationship      ; 0.000 ;       ;             ;            ;       ;       ;
+; Clock Skew             ; 0.542 ;       ;             ;            ;       ;       ;
+; Data Delay             ; 0.954 ;       ;             ;            ;       ;       ;
+; Number of Logic Levels ;       ; 1     ;             ;            ;       ;       ;
+; Physical Delays        ;       ;       ;             ;            ;       ;       ;
+;  Arrival Path          ;       ;       ;             ;            ;       ;       ;
+;   Clock                ;       ;       ;             ;            ;       ;       ;
+;    IC                  ;       ; 3     ; 2.238       ; 59         ; 0.000 ; 1.851 ;
+;    Cell                ;       ; 3     ; 1.536       ; 41         ; 0.285 ; 0.761 ;
+;   Data                 ;       ;       ;             ;            ;       ;       ;
+;    IC                  ;       ; 2     ; 0.833       ; 87         ; 0.000 ; 0.833 ;
+;    Cell                ;       ; 3     ; 0.121       ; 13         ; 0.000 ; 0.067 ;
+;    uTco                ;       ; 1     ; 0.000       ; 0          ; 0.000 ; 0.000 ;
+;  Required Path         ;       ;       ;             ;            ;       ;       ;
+;   Clock                ;       ;       ;             ;            ;       ;       ;
+;    IC                  ;       ; 3     ; 2.723       ; 62         ; 0.000 ; 2.300 ;
+;    Cell                ;       ; 3     ; 1.654       ; 38         ; 0.310 ; 0.761 ;
++------------------------+-------+-------+-------------+------------+-------+-------+
+Note: Negative delays are omitted from totals when calculating percentages
+
++---------------------------------------------------------------------------------------------------------------+
+; Data Arrival Path                                                                                             ;
++---------+---------+----+------+--------+---------------------+------------------------------------------------+
+; Total   ; Incr    ; RF ; Type ; Fanout ; Location            ; Element                                        ;
++---------+---------+----+------+--------+---------------------+------------------------------------------------+
+; 0.000   ; 0.000   ;    ;      ;        ;                     ; launch edge time                               ;
+; 3.774   ; 3.774   ;    ;      ;        ;                     ; clock path                                     ;
+;   0.000 ;   0.000 ;    ;      ;        ;                     ; source latency                                 ;
+;   0.000 ;   0.000 ;    ;      ; 1      ; PIN_V11             ; FPGA_CLK1_50                                   ;
+;   0.000 ;   0.000 ; RR ; IC   ; 1      ; IOIBUF_X32_Y0_N1    ; FPGA_CLK1_50~input|i                           ;
+;   0.761 ;   0.761 ; RR ; CELL ; 1      ; IOIBUF_X32_Y0_N1    ; FPGA_CLK1_50~input|o                           ;
+;   1.148 ;   0.387 ; RR ; IC   ; 1      ; CLKCTRL_G4          ; FPGA_CLK1_50~inputCLKENA0|inclk                ;
+;   1.433 ;   0.285 ; RR ; CELL ; 1695   ; CLKCTRL_G4          ; FPGA_CLK1_50~inputCLKENA0|outclk               ;
+;   3.284 ;   1.851 ; RR ; IC   ; 1      ; FF_X46_Y20_N46      ; serial|payload[2]|clk                          ;
+;   3.774 ;   0.490 ; RR ; CELL ; 1      ; FF_X46_Y20_N46      ; igor_uart_protocol:serial|payload[2]           ;
+; 4.728   ; 0.954   ;    ;      ;        ;                     ; data path                                      ;
+;   3.774 ;   0.000 ;    ; uTco ; 1      ; FF_X46_Y20_N46      ; igor_uart_protocol:serial|payload[2]           ;
+;   3.774 ;   0.000 ; RR ; CELL ; 885    ; FF_X46_Y20_N46      ; serial|payload[2]|q                            ;
+;   4.607 ;   0.833 ; RR ; IC   ; 1      ; LABCELL_X50_Y18_N36 ; neural|inputs_rtl_0_bypass[5]~feeder|dataf     ;
+;   4.661 ;   0.054 ; RR ; CELL ; 1      ; LABCELL_X50_Y18_N36 ; neural|inputs_rtl_0_bypass[5]~feeder|combout   ;
+;   4.661 ;   0.000 ; RR ; IC   ; 1      ; FF_X50_Y18_N37      ; neural|inputs_rtl_0_bypass[5]|d                ;
+;   4.728 ;   0.067 ; RR ; CELL ; 1      ; FF_X50_Y18_N37      ; igor_neural_core:neural|inputs_rtl_0_bypass[5] ;
++---------+---------+----+------+--------+---------------------+------------------------------------------------+
+
++-------------------------------------------------------------------------------------------------------------+
+; Data Required Path                                                                                          ;
++---------+----------+----+------+--------+------------------+------------------------------------------------+
+; Total   ; Incr     ; RF ; Type ; Fanout ; Location         ; Element                                        ;
++---------+----------+----+------+--------+------------------+------------------------------------------------+
+; 0.000   ; 0.000    ;    ;      ;        ;                  ; latch edge time                                ;
+; 4.316   ; 4.316    ;    ;      ;        ;                  ; clock path                                     ;
+;   0.000 ;   0.000  ;    ;      ;        ;                  ; source latency                                 ;
+;   0.000 ;   0.000  ;    ;      ; 1      ; PIN_V11          ; FPGA_CLK1_50                                   ;
+;   0.000 ;   0.000  ; RR ; IC   ; 1      ; IOIBUF_X32_Y0_N1 ; FPGA_CLK1_50~input|i                           ;
+;   0.761 ;   0.761  ; RR ; CELL ; 1      ; IOIBUF_X32_Y0_N1 ; FPGA_CLK1_50~input|o                           ;
+;   1.184 ;   0.423  ; RR ; IC   ; 1      ; CLKCTRL_G4       ; FPGA_CLK1_50~inputCLKENA0|inclk                ;
+;   1.494 ;   0.310  ; RR ; CELL ; 1695   ; CLKCTRL_G4       ; FPGA_CLK1_50~inputCLKENA0|outclk               ;
+;   3.794 ;   2.300  ; RR ; IC   ; 1      ; FF_X50_Y18_N37   ; neural|inputs_rtl_0_bypass[5]|clk              ;
+;   4.377 ;   0.583  ; RR ; CELL ; 1      ; FF_X50_Y18_N37   ; igor_neural_core:neural|inputs_rtl_0_bypass[5] ;
+;   4.316 ;   -0.061 ;    ;      ;        ;                  ; clock pessimism removed                        ;
+; 4.316   ; 0.000    ;    ;      ;        ;                  ; clock uncertainty                              ;
+; 4.316   ; 0.000    ;    ; uTh  ; 1      ; FF_X50_Y18_N37   ; igor_neural_core:neural|inputs_rtl_0_bypass[5] ;
++---------+----------+----+------+--------+------------------+------------------------------------------------+
+
+----------------------------
+; Extra Fitter Information ;
+----------------------------
+HTML report is unavailable in plain text report export.
+
+
+Path #10: Hold slack is 0.415 
+===============================================================================
++---------------------------------------------------------+
+; Path Summary                                            ;
++--------------------+------------------------------------+
+; Property           ; Value                              ;
++--------------------+------------------------------------+
+; From Node          ; igor_uart_protocol:serial|timer[8] ;
+; To Node            ; igor_uart_protocol:serial|timer[8] ;
+; Launch Clock       ; FPGA_CLK1_50                       ;
+; Latch Clock        ; FPGA_CLK1_50                       ;
+; Data Arrival Time  ; 4.282                              ;
+; Data Required Time ; 3.867                              ;
+; Slack              ; 0.415                              ;
++--------------------+------------------------------------+
+
++-----------------------------------------------------------------------------------+
+; Statistics                                                                        ;
++------------------------+-------+-------+-------------+------------+-------+-------+
+; Property               ; Value ; Count ; Total Delay ; % of Total ; Min   ; Max   ;
++------------------------+-------+-------+-------------+------------+-------+-------+
+; Hold Relationship      ; 0.000 ;       ;             ;            ;       ;       ;
+; Clock Skew             ; 0.108 ;       ;             ;            ;       ;       ;
+; Data Delay             ; 0.523 ;       ;             ;            ;       ;       ;
+; Number of Logic Levels ;       ; 1     ;             ;            ;       ;       ;
+; Physical Delays        ;       ;       ;             ;            ;       ;       ;
+;  Arrival Path          ;       ;       ;             ;            ;       ;       ;
+;   Clock                ;       ;       ;             ;            ;       ;       ;
+;    IC                  ;       ; 3     ; 2.241       ; 60         ; 0.000 ; 1.854 ;
+;    Cell                ;       ; 3     ; 1.518       ; 40         ; 0.285 ; 0.761 ;
+;   Data                 ;       ;       ;             ;            ;       ;       ;
+;    IC                  ;       ; 2     ; 0.227       ; 43         ; 0.000 ; 0.227 ;
+;    Cell                ;       ; 3     ; 0.296       ; 57         ; 0.000 ; 0.227 ;
+;    uTco                ;       ; 1     ; 0.000       ; 0          ; 0.000 ; 0.000 ;
+;  Required Path         ;       ;       ;             ;            ;       ;       ;
+;   Clock                ;       ;       ;             ;            ;       ;       ;
+;    IC                  ;       ; 3     ; 2.688       ; 62         ; 0.000 ; 2.265 ;
+;    Cell                ;       ; 3     ; 1.622       ; 38         ; 0.310 ; 0.761 ;
++------------------------+-------+-------+-------------+------------+-------+-------+
+Note: Negative delays are omitted from totals when calculating percentages
+
++---------------------------------------------------------------------------------------------------+
+; Data Arrival Path                                                                                 ;
++---------+---------+----+------+--------+---------------------+------------------------------------+
+; Total   ; Incr    ; RF ; Type ; Fanout ; Location            ; Element                            ;
++---------+---------+----+------+--------+---------------------+------------------------------------+
+; 0.000   ; 0.000   ;    ;      ;        ;                     ; launch edge time                   ;
+; 3.759   ; 3.759   ;    ;      ;        ;                     ; clock path                         ;
+;   0.000 ;   0.000 ;    ;      ;        ;                     ; source latency                     ;
+;   0.000 ;   0.000 ;    ;      ; 1      ; PIN_V11             ; FPGA_CLK1_50                       ;
+;   0.000 ;   0.000 ; RR ; IC   ; 1      ; IOIBUF_X32_Y0_N1    ; FPGA_CLK1_50~input|i               ;
+;   0.761 ;   0.761 ; RR ; CELL ; 1      ; IOIBUF_X32_Y0_N1    ; FPGA_CLK1_50~input|o               ;
+;   1.148 ;   0.387 ; RR ; IC   ; 1      ; CLKCTRL_G4          ; FPGA_CLK1_50~inputCLKENA0|inclk    ;
+;   1.433 ;   0.285 ; RR ; CELL ; 1695   ; CLKCTRL_G4          ; FPGA_CLK1_50~inputCLKENA0|outclk   ;
+;   3.287 ;   1.854 ; RR ; IC   ; 1      ; FF_X43_Y24_N26      ; serial|timer[8]|clk                ;
+;   3.759 ;   0.472 ; RR ; CELL ; 1      ; FF_X43_Y24_N26      ; igor_uart_protocol:serial|timer[8] ;
+; 4.282   ; 0.523   ;    ;      ;        ;                     ; data path                          ;
+;   3.759 ;   0.000 ;    ; uTco ; 1      ; FF_X43_Y24_N26      ; igor_uart_protocol:serial|timer[8] ;
+;   3.759 ;   0.000 ; FF ; CELL ; 2      ; FF_X43_Y24_N26      ; serial|timer[8]|q                  ;
+;   3.986 ;   0.227 ; FF ; IC   ; 2      ; LABCELL_X43_Y24_N24 ; serial|Add0~53|datac               ;
+;   4.213 ;   0.227 ; FR ; CELL ; 1      ; LABCELL_X43_Y24_N24 ; serial|Add0~53|sumout              ;
+;   4.213 ;   0.000 ; RR ; IC   ; 1      ; FF_X43_Y24_N26      ; serial|timer[8]|d                  ;
+;   4.282 ;   0.069 ; RR ; CELL ; 1      ; FF_X43_Y24_N26      ; igor_uart_protocol:serial|timer[8] ;
++---------+---------+----+------+--------+---------------------+------------------------------------+
+
++-------------------------------------------------------------------------------------------------+
+; Data Required Path                                                                              ;
++---------+----------+----+------+--------+------------------+------------------------------------+
+; Total   ; Incr     ; RF ; Type ; Fanout ; Location         ; Element                            ;
++---------+----------+----+------+--------+------------------+------------------------------------+
+; 0.000   ; 0.000    ;    ;      ;        ;                  ; latch edge time                    ;
+; 3.867   ; 3.867    ;    ;      ;        ;                  ; clock path                         ;
+;   0.000 ;   0.000  ;    ;      ;        ;                  ; source latency                     ;
+;   0.000 ;   0.000  ;    ;      ; 1      ; PIN_V11          ; FPGA_CLK1_50                       ;
+;   0.000 ;   0.000  ; RR ; IC   ; 1      ; IOIBUF_X32_Y0_N1 ; FPGA_CLK1_50~input|i               ;
+;   0.761 ;   0.761  ; RR ; CELL ; 1      ; IOIBUF_X32_Y0_N1 ; FPGA_CLK1_50~input|o               ;
+;   1.184 ;   0.423  ; RR ; IC   ; 1      ; CLKCTRL_G4       ; FPGA_CLK1_50~inputCLKENA0|inclk    ;
+;   1.494 ;   0.310  ; RR ; CELL ; 1695   ; CLKCTRL_G4       ; FPGA_CLK1_50~inputCLKENA0|outclk   ;
+;   3.759 ;   2.265  ; RR ; IC   ; 1      ; FF_X43_Y24_N26   ; serial|timer[8]|clk                ;
+;   4.310 ;   0.551  ; RR ; CELL ; 1      ; FF_X43_Y24_N26   ; igor_uart_protocol:serial|timer[8] ;
+;   3.867 ;   -0.443 ;    ;      ;        ;                  ; clock pessimism removed            ;
+; 3.867   ; 0.000    ;    ;      ;        ;                  ; clock uncertainty                  ;
+; 3.867   ; 0.000    ;    ; uTh  ; 1      ; FF_X43_Y24_N26   ; igor_uart_protocol:serial|timer[8] ;
++---------+----------+----+------+--------+------------------+------------------------------------+
+
+----------------------------
+; Extra Fitter Information ;
+----------------------------
+HTML report is unavailable in plain text report export.
+
+
