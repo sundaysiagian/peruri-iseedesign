@@ -6,7 +6,7 @@
   <strong>IGOR · Indonesian Gated Onboard Robotics</strong><br>
   <strong>Peruri Chip Hackathon 2026</strong><br>
   <strong>ISeeDesignITB</strong><br>
-  Perencanaan lokal di FPGA dengan alur data yang terlihat, hasil numerik yang diperiksa, dan gerbang izin pada keluaran.
+  Cutting Edge Physical AI Technology for Inference Security
 </p>
 
 <p align="center">
