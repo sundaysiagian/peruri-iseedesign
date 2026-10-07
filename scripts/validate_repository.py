@@ -91,5 +91,10 @@ else:
     print('Release manifest not yet generated')
 if errors:
     print('\n'.join(errors), file=sys.stderr)
+    if any(error.startswith('Release hash differs:') for error in errors):
+        print('After reviewing changed release files, run python scripts/create_manifest.py, '
+              'then rerun this validator and commit evidence/RELEASE_MANIFEST.json '
+              'together with the changed files. README edits also require this step.',
+              file=sys.stderr)
     raise SystemExit(1)
 print(json.dumps({'status':'PASS', 'local_links':links, 'recorded_testcases':testcases, 'sof_images':len(proof['sof_images']), 'quartus_ready_projects':2, 'flowchart_pages':28, 'release_files_verified':verified}, indent=2))

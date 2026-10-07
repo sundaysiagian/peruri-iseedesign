@@ -3,7 +3,8 @@
 </p>
 
 <p align="center">
-  <strong>Peruri Chip Hackathon 2026 · ISeeDesignITB</strong><br>
+  <strong>Peruri Chip Hackathon 2026</strong><br>
+  <strong>ISeeDesignITB</strong><br>
   Perencanaan lokal di FPGA dengan alur data yang terlihat, hasil numerik yang diperiksa, dan gerbang izin pada keluaran.
 </p>
 
