@@ -71,7 +71,7 @@ Paket [JetAuto](docs/JETAUTO.md) menyediakan pengujian motor dan referensi UART 
 | Implementasi FPGA | **DE10-Nano dan DE10-Lite** | [Resource dan timing](docs/PERFORMANCE.md) |
 | Diagram modul | **1 file `.io` dengan 28 halaman** | [Buka sumber diagram](docs/flowcharts/IGOR_RTL_Flowchart.io) |
 
-Angka waktu pada tabel adalah hasil kernel simulasi. Evaluasi DWA lengkap memerlukan 7.938 siklus pada keenam scene yang direkam. Angka ini tidak menyatakan waktu hingga roda bergerak atau keunggulan terhadap CPU yang belum dibandingkan pada beban identik. Cakupan pengukuran, asumsi daya, dan tahapan integrasi dijelaskan pada [catatan hasil](docs/RESULTS_AND_SCOPE.md).
+Angka waktu pada tabel adalah hasil kernel simulasi. Evaluasi DWA lengkap memerlukan 7.938 siklus (158,76 µs) pada keenam scene yang direkam. Berdasarkan pemodelan timing kode C yang ditranslasikan dari model referensi Python, kecepatan kernel 4-tile IGOR diperkirakan sekitar **1,2–1,7× lebih cepat** dibanding prosesor ARM sekelas HPS DE10-Nano (estimasi model, belum diukur langsung pada board), sedangkan prosesor desktop x86 mengeksekusinya dalam **21–37 µs**. Oleh karena itu, nilai jual utama IGOR bukan sekadar kecepatan mentah tunggal, melainkan **waktu eksekusi deterministik (*fixed timing*)**, **beban CPU nol (*zero CPU load*)** pada prosesor utama, serta **skalabilitas arsitektur hingga 16 tile** (diproyeksikan **~40 µs** atau **5–7× lebih cepat**, belum diimplementasikan). Cakupan pengukuran, asumsi daya, dan tahapan integrasi dijelaskan pada [catatan hasil](docs/RESULTS_AND_SCOPE.md).
 
 Implementasi DE10-Nano memakai **4.964 ALM, 131 M10K, dan 10 DSP**, dengan timing memenuhi clock **50 MHz**. Power Analyzer menghasilkan estimasi **506,69 mW** secara vectorless dengan confidence rendah. Ini estimasi rangkaian FPGA, bukan pengukuran konsumsi seluruh board dan HPS. Laporan asli serta hasil DE10-Lite tersedia pada [resource, timing, dan daya](docs/PERFORMANCE.md).
 
@@ -102,7 +102,7 @@ Seluruh eksperimen pelatihan, komparasi numerik PyTorch FP32 vs Hardware Q8.8, s
 
 ### 2. Dashboard Telemetri: PyTorch FP32 vs Hardware Bit-True Q8.8
 
-Evaluasi episode benchmark (seed 101) membandingkan inferensi **PyTorch Float32 asli** dengan **Simulasi Hardware Bit-True Q8.8** membuktikan bahwa kuantisasi perangkat keras mempertahankan presisi kendali tanpa degradasi performa:
+Evaluasi episode benchmark (seed 101) membandingkan inferensi **PyTorch Float32 asli** dengan **Simulasi Hardware Bit-True Q8.8** untuk melihat dampak kuantisasi dan penyederhanaan fungsi aktivasi perangkat keras terhadap lintasan kendali:
 
 <table>
   <tr>
@@ -111,10 +111,10 @@ Evaluasi episode benchmark (seed 101) membandingkan inferensi **PyTorch Float32 
   </tr>
 </table>
 
-* **Panel 1 (Lintasan 2D)**: Trajektori hardware Q8.8 berimpit presisi dengan model PyTorch FP32 hingga mencapai target.
-* **Panel 2 (Discretization Error)**: Galat pointwise aksi $|\Delta u| = |a_{FP32} - a_{Q8.8}|$ berada di orde $\sim 10^{-3}$, menjamin akurasi kendali setara representasi floating-point kontinu.
-* **Panel 3 (Profil Kecepatan 4 Roda)**: Aktuasi keempat motor roda Mecanum berjalan mulus (*smoothness*) tanpa sentakan atau osilasi tajam (*anti-chattering*).
-* **Panel 4 (Safety Clearance Distance)**: Robot konsisten mempertahankan jarak bebas terhadap rintangan di atas ambang aman repulsi ($0,20\text{ m}$) dan tidak pernah menyentuh ambang tabrakan ($0,0\text{ m}$).
+* **Kiri Atas — Perbandingan Lintasan (`PyTorch FP32 vs Hardware Q8.8`)**: Trajektori hardware Q8.8 mengikuti lintasan model PyTorch FP32 hingga mencapai pose target ($\sim 153$ langkah / $15,3\text{ s}$ pada run gambar di atas; serta $108$ langkah FP32 vs $96$ langkah Q8.8 pada log run terbaru di notebook).
+* **Kanan Atas — Profil Kecepatan 4 Roda (`Smoothness & Stability`)**: Menampilkan aktuasi ternormalisasi $[-1, 1]$ keempat motor roda Mecanum (`FL`, `FR`, `RL`, `RR`). Terlihat transisi koreksi cepat pada fase penghindaran rintangan awal (langkah $10 - 40$) sebelum memasuki fase jelajah yang lebih stabil menuju sasaran.
+* **Kiri Bawah — Jarak Bebas ke Rintangan Terdekat (`Safety Margin`)**: Saat melewati celah rintangan, jarak *clearance* sempat turun ke bawah garis *Safety Repulsion Buffer* ($0,45\text{ m}$) hingga minimum $\sim 0,21\text{ m}$ (di atas ambang repulsi $0,20\text{ m}$), namun selalu menjaga margin aman di atas batas tabrakan ($0,0\text{ m}$).
+* **Kanan Bawah — Deviasi Aksi Kuantisasi Bit-True (`Mean Error: 0.0761 atau 7.61%`)**: Rata-rata galat absolut aksi $|\Delta u| = |a_{\text{FP32}} - a_{\text{Q8.8}}|$ pada 100 sampel state tercatat sebesar **$0,0761$ ($7,61\%$)** dengan rentang $0,00 - 0,26$. Galat kuantisasi bit-true Q8.8 murni pada fungsi linear yang sama sebenarnya berada di orde $\sim 4,7 \times 10^{-3}$ ($\approx 1,2\text{ LSB}$); nilai rata-rata **$7,61\%$** pada grafik ini berasal dari penyederhanaan perangkat keras yang mengganti fungsi squashing non-linear $\tanh(\mu)$ bawaan SAC PyTorch dengan saturasi linear *hard-clipping* $[-1, 1]$ tanpa LUT ($\max |\tanh(z) - \text{clip}(z, -1, 1)| \approx 0,238$). Walaupun terdapat deviasi aksi rata-rata $7,61\%$, umpan balik *closed-loop* tetap mengantarkan robot mencapai target dengan selamat.
 
 ### 3. Validasi Keandalan pada 5 Skenario Ekstrem (*Out-of-Distribution Generalization*)
 
@@ -153,6 +153,30 @@ Untuk menguji kemampuan generalisasi di luar kondisi pelatihan nominal, model di
     </td>
   </tr>
 </table>
+
+> **Catatan Reprodusibilitas Gambar vs Log Notebook**: Gambar ringkasan di `notebook/*.png` dan `notebook/*.gif` di atas berasal dari sesi eksekusi visualisasi awal, sedangkan log teks di dalam [notebook/V3_PERURI_Chip_Hackathon_2026_DRL.ipynb](notebook/V3_PERURI_Chip_Hackathon_2026_DRL.ipynb) beserta folder [notebook/outputs/run_20261008_160243/visualizations/](notebook/outputs/run_20261008_160243/visualizations) berasal dari run pelatihan ulang (`run_20261008_160243`). Perbandingan hasil kedua run tercatat sebagai berikut:
+
+| Skenario Uji | Gambar di `notebook/unique_scenarios_validation.png` | Log Notebook (`run_20261008_160243`) |
+|---|---|---|
+| **Seed 101 (Baseline)** | FP32 & Q8.8: **SUCCESS** (~153 steps \| 15,3s) | FP32: **SUCCESS (108 steps \| 10,8s)** · Q8.8: **SUCCESS (96 steps \| 9,6s)** |
+| **OOD 1: Negative X Goal** | FP32: **SUCCESS (88 steps \| 8,8s)** · Q8.8: **SUCCESS (79 steps \| 7,9s)** | FP32: **SUCCESS (92 steps \| 9,2s)** · Q8.8: **SUCCESS (85 steps \| 8,5s)** |
+| **OOD 2: 5-Obstacle Maze** | FP32: **SUCCESS (138 steps \| 13,8s)** · Q8.8: **SUCCESS (131 steps \| 13,1s)** | FP32: **SUCCESS (136 steps \| 13,6s)** · Q8.8: **SUCCESS (126 steps \| 12,6s)** |
+| **OOD 3: Heterogeneous Radius** | FP32: **SUCCESS (129 steps \| 12,9s)** · Q8.8: **SUCCESS (114 steps \| 11,4s)** | FP32: **TIMEOUT (200 steps \| 20,0s)** · Q8.8: **SUCCESS (90 steps \| 9,0s)** |
+| **OOD 4: Slalom Barrier** | FP32: **SUCCESS (101 steps \| 10,1s)** · Q8.8: **SUCCESS (98 steps \| 9,8s)** | FP32: **SUCCESS (138 steps \| 13,8s)** · Q8.8: **SUCCESS (129 steps \| 12,9s)** |
+| **OOD 5: Noise & Heavy Slip** | FP32: **SUCCESS (114 steps \| 11,4s)** · Q8.8: **SUCCESS (111 steps \| 11,1s)** | FP32: **SUCCESS (103 steps \| 10,3s)** · Q8.8: **SUCCESS (98 steps \| 9,8s)** |
+
+### 4. Evaluasi Statistik 50 Episode Acak & Keterbatasan Model AI
+
+Selain pengujian pada 5 skenario OOD terkurasi di atas, model dievaluasi secara statistik pada **50 episode acak** dengan konfigurasi penuh (3 rintangan acak dan toleransi orientasi *docking* ketat $\pm 20^\circ$, tercatat pada Seksi 10 di [notebook/V3_PERURI_Chip_Hackathon_2026_DRL.ipynb](notebook/V3_PERURI_Chip_Hackathon_2026_DRL.ipynb)):
+
+| Metrik Evaluasi (50 Episode Acak) | Hasil Tercatat | Keterangan |
+|---|---:|---|
+| **Success Rate (Mencapai Target)** | **34 / 50 (68,0%)** | Robot berhasil mencapai posisi dan toleransi sudut $\pm 20^\circ$ |
+| **Timeout Rate (Batas Waktu Habis)** | **16 / 50 (32,0%)** | Robot berhenti/berputar melewati batas 200 langkah tanpa tabrakan |
+| **Collision Rate (Tabrakan)** | **0 / 50 (0,0%)** | Tidak ada satupun insiden tabrakan dengan rintangan |
+| **Action Delta Avg (*Smoothness Index*)** | **0,1655** | Sedikit di atas batas ideal $< 0,15$ akibat manuver reaktif jarak dekat |
+
+Temuan **68% keberhasilan dan 32% *timeout* dengan 0% tabrakan** menunjukkan bahwa kebijakan CL-DRL yang dilatih memiliki karakteristik konservatif (*safety-biased*): ketika berhadapan dengan konfigurasi rintangan acak yang menyulitkan penyelarasan sudut akhir ($\pm 20^\circ$), agen memprioritaskan penghindaran tabrakan sehingga waktu habis sebelum *docking* terpenuhi. Hal ini memperkuat alasan arsitektural IGOR untuk memosisikan jaringan saraf sebagai pengusul gerak pendamping yang tetap dikawal oleh evaluator lintasan deterministik **DWA** dan gerbang keselamatan **`igor_safety_security_gate`** pada FPGA.
 
 ## Pilih jalur yang ingin dijalankan
 
