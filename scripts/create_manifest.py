@@ -23,7 +23,7 @@ manifest = {}
 text_files = []
 for name in sorted(paths):
     path = root / name
-    if path == target:
+    if path == target or not path.is_file():
         continue
     data = path.read_bytes()
     if paths[name]:

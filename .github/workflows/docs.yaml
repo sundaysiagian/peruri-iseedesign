@@ -1,5 +1,6 @@
 name: TinyTapeout datasheet
 on:
+  push:
   workflow_dispatch:
 permissions:
   contents: read

@@ -1,5 +1,6 @@
 name: TinyTapeout physical flow
 on:
+  push:
   workflow_dispatch:
 permissions:
   contents: read
@@ -28,11 +29,16 @@ jobs:
           submodules: recursive
       - uses: TinyTapeout/tt-gds-action/gl_test@ihp-cmos5l
   viewer:
-    if: ${{ vars.TT_ENABLE_PAGES == 'true' }}
     needs: gds
     runs-on: ubuntu-24.04
     permissions:
       pages: write
       id-token: write
     steps:
-      - uses: TinyTapeout/tt-gds-action/viewer@ihp-cmos5l
+      - name: Publish GDS viewer
+        uses: TinyTapeout/tt-gds-action/viewer@ihp-cmos5l
+      - name: Show viewer URL
+        shell: bash
+        run: |
+          echo "## GDS Viewer URL" >> "$GITHUB_STEP_SUMMARY"
+          echo "https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/" >> "$GITHUB_STEP_SUMMARY"
