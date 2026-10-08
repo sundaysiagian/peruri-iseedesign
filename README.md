@@ -21,7 +21,8 @@
   <a href="docs/QUICKSTART.md">Mulai di sini</a> ·
   <a href="docs/FPGA_PROGRAMMING.md">Program FPGA</a> ·
   <a href="docs/DEMO_GUIDE.md">Panduan demo</a> ·
-  <a href="docs/TECHNICAL_REPORT.md">Laporan teknis</a>
+  <a href="docs/TECHNICAL_REPORT.md">Laporan teknis</a> ·
+  <a href="#hasil-eksperimen-model-ai-cl-drl-dan-akselerator-q88">Eksperimen AI</a>
 </p>
 
 ## Mengapa IGOR
@@ -49,7 +50,7 @@ Pemeriksa memakai model robot sebagai titik pada costmap yang rintangannya telah
 
 ### Inti AI dan sistem tanpa laptop
 
-Proposal menempatkan pengendali **Soft Actor-Critic (SAC)** sebagai alternatif penentu gerak DWA/DWB. Inti inferensi fixed-point **24 → 64 → 64 → 4** sudah memiliki ROM, instruksi, dan pengujian numerik tersendiri. Penyatuan keluaran AI dengan pemeriksa lintasan dan gerbang menjadi target **Fase 1**. Pengujian DWA dan neural yang ditampilkan di bawah mengukur kedua jalur secara terpisah.
+Proposal menempatkan pengendali **Soft Actor-Critic (SAC)** sebagai alternatif penentu gerak DWA/DWB. Inti inferensi fixed-point **24 → 64 → 64 → 4** sudah memiliki ROM, instruksi, dan pengujian numerik tersendiri. Penyatuan keluaran AI dengan pemeriksa lintasan dan gerbang menjadi target **Fase 1**. Pengujian DWA dan neural yang ditampilkan di bawah mengukur kedua jalur secara terpisah. Dokumentasi eksperimen pelatihan kurikulum (CL-DRL), telemetri, dan validasi generalisasi OOD disajikan pada [seksi eksperimen AI](#hasil-eksperimen-model-ai-cl-drl-dan-akselerator-q88).
 
 DE10-Nano memiliki **FPGA fabric** untuk komputasi dan gerbang, serta **HPS ARM** yang dapat menjalankan Linux. Jalur yang tersedia saat ini memakai UART host untuk pengujian awal. Integrasi sensor, transfer peta melalui HPS, bridge gerbang menuju controller motor, dan pengukuran sensor hingga motor merupakan tahap berikutnya. Target latensi sistem **p99 ≤ 5 ms** berbeda dari hasil kernel **158,76 µs**.
 
@@ -79,6 +80,79 @@ Implementasi DE10-Nano memakai **4.964 ALM, 131 M10K, dan 10 DSP**, dengan timin
 ![Arsitektur IGOR dengan empat evaluator dan lebar data](docs/assets/architecture.svg)
 
 Lihat [breakdown seluruh modul RTL](docs/RTL_MODULES.md), [bit flow](docs/ARCHITECTURE.md), serta [register TinyTapeout](docs/info.md).
+
+## Hasil Eksperimen Model AI: CL-DRL dan Akselerator Q8.8
+
+Sebagai pelengkap evaluasi lintasan deterministik DWA, arsitektur IGOR mengintegrasikan modul kendali otonom berbasis **Curriculum-based Deep Reinforcement Learning (CL-DRL)** menggunakan algoritma **Soft Actor-Critic (SAC)** untuk robot holonomik Mecanum. Model ini dilatih melalui kurikulum 4-tahap progresif dan dikuantisasi penuh ke representasi fixed-point **Q8.8 bit-true signed 16-bit** agar kompatibel langsung dengan akselerator Block RAM (M10K) pada FPGA Cyclone V DE10-Nano.
+
+Seluruh eksperimen pelatihan, komparasi numerik PyTorch FP32 vs Hardware Q8.8, serta pembuatan visualisasi dan ekspor bobot hardware terdokumentasi lengkap dalam notebook [notebook/V3_PERURI_Chip_Hackathon_2026_DRL.ipynb](notebook/V3_PERURI_Chip_Hackathon_2026_DRL.ipynb).
+
+### 1. Arsitektur Jaringan dan Kurikulum 4-Tahap Progresif
+
+* **Topologi Multi-Layer Perceptron (`24 → 64 → 64 → 4`)**:
+  * **24 Input**: 16 jarak sinar LiDAR 2D, koordinat relatif target ($d_{goal}, \theta_{rel}$), orientasi hadap bodi robot terhadap target ($\theta_{yaw}$), dan kecepatan angular 4 roda Mecanum saat ini.
+  * **Hidden Layers**: Dua lapisan tersembunyi masing-masing 64 neuron dengan aktivasi ReLU.
+  * **4 Output**: Kecepatan individual aktuasi 4 roda Mecanum ($v_{FL}, v_{FR}, v_{RL}, v_{RR}$) dalam rentang $[-1.0, 1.0]$.
+  * **Kuantisasi Q8.8**: 1 bit tanda, 7 bit integer, 8 bit fraksional (skala $256.0$). Akumulasi bit-true: $\text{acc} = \sum (w_{q8} \times x_{q8}) + (b_{q8} \ll 8)$.
+* **Desain Kurikulum 4-Tahap (*4-Stage Progressive Curriculum*)**:
+  1. **Tahap 1 — Basic Locomotion**: Lapangan kosong ($0$ rintangan), sasaran dekat ($0,8 - 1,8\text{ m}$), toleransi docking longgar $\pm 55^\circ$. Robot menguasai kinematika holonomik dalam $20 - 40$ langkah per episode.
+  2. **Tahap 2 — Heading Alignment & Obstacle Avoidance**: Jarak menengah ($1,5 - 2,8\text{ m}$), $1 - 2$ rintangan, toleransi docking $\pm 35^\circ$. Robot mempelajari navigasi *Two-Stage Blended Heading* dan manuver mengelak.
+  3. **Tahap 3 — Intermediate Clutter & Tight Yaw**: Jarak jauh ($2,0 - 3,8\text{ m}$), $2 - 3$ rintangan, toleransi docking presisi $\pm 26^\circ$. Penyelarasan orientasi diperketat.
+  4. **Tahap 4 — Full Cluttered Maze Navigation**: Arena penuh ($2,0 - 4,5\text{ m}$), $3 - 5$ rintangan padat/labirin acak, toleransi docking target kompetisi $\pm 20^\circ$.
+
+### 2. Dashboard Telemetri: PyTorch FP32 vs Hardware Bit-True Q8.8
+
+Evaluasi episode benchmark (seed 101) membandingkan inferensi **PyTorch Float32 asli** dengan **Simulasi Hardware Bit-True Q8.8** membuktikan bahwa kuantisasi perangkat keras mempertahankan presisi kendali tanpa degradasi performa:
+
+<table>
+  <tr>
+    <td width="50%"><a href="notebook/telemetry_dashboard.png"><img src="notebook/telemetry_dashboard.png" alt="Dashboard Telemetri Navigasi CL-DRL: FP32 vs Hardware Q8.8" width="100%"></a><br><strong>Dashboard Telemetri (FP32 vs Hardware Q8.8)</strong></td>
+    <td width="50%"><a href="notebook/unique_scenarios_validation.png"><img src="notebook/unique_scenarios_validation.png" alt="Validasi 5 Skenario OOD dan Profil Kecepatan Roda" width="100%"></a><br><strong>Ringkasan Validasi 5 Skenario Uji Ekstrem (OOD)</strong></td>
+  </tr>
+</table>
+
+* **Panel 1 (Lintasan 2D)**: Trajektori hardware Q8.8 berimpit presisi dengan model PyTorch FP32 hingga mencapai target.
+* **Panel 2 (Discretization Error)**: Galat pointwise aksi $|\Delta u| = |a_{FP32} - a_{Q8.8}|$ berada di orde $\sim 10^{-3}$, menjamin akurasi kendali setara representasi floating-point kontinu.
+* **Panel 3 (Profil Kecepatan 4 Roda)**: Aktuasi keempat motor roda Mecanum berjalan mulus (*smoothness*) tanpa sentakan atau osilasi tajam (*anti-chattering*).
+* **Panel 4 (Safety Clearance Distance)**: Robot konsisten mempertahankan jarak bebas terhadap rintangan di atas ambang aman repulsi ($0,20\text{ m}$) dan tidak pernah menyentuh ambang tabrakan ($0,0\text{ m}$).
+
+### 3. Validasi Keandalan pada 5 Skenario Ekstrem (*Out-of-Distribution Generalization*)
+
+Untuk menguji kemampuan generalisasi di luar kondisi pelatihan nominal, model dievaluasi pada 5 skenario ekstrem Out-of-Distribution (OOD):
+
+<table>
+  <tr>
+    <td width="50%" align="center">
+      <a href="notebook/ood1_negative_x.gif"><img src="notebook/ood1_negative_x.gif" alt="OOD 1: Negative X-Quadrant Goal" width="100%"></a><br>
+      <strong>OOD 1: Negative X-Quadrant Goal</strong><br>
+      <em>Target di kuadran negatif (-0.5, 3.2) m membuktikan kemampuan translasi holonomik mundur-lateral tanpa harus berputar haluan secara berlebihan.</em>
+    </td>
+    <td width="50%" align="center">
+      <a href="notebook/ood2_5obstacle_maze.gif"><img src="notebook/ood2_5obstacle_maze.gif" alt="OOD 2: High-Density 5-Obstacle Maze" width="100%"></a><br>
+      <strong>OOD 2: High-Density 5-Obstacle Maze</strong><br>
+      <em>Labirin rapat 5 rintangan; model mengeksekusi manuver detour reaktif berbasis LiDAR tanpa terjebak jalan buntu (dead-end).</em>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" align="center">
+      <a href="notebook/ood3_heterogeneous_radius.gif"><img src="notebook/ood3_heterogeneous_radius.gif" alt="OOD 3: Heterogeneous Radius" width="100%"></a><br>
+      <strong>OOD 3: Heterogeneous Radius</strong><br>
+      <em>Rintangan berukuran heterogen ekstrem (R=0.40 m dan R=0.15 m); membuktikan adaptasi buffer clearance yang fleksibel terhadap geometri non-standar.</em>
+    </td>
+    <td width="50%" align="center">
+      <a href="notebook/ood4_slalom_barrier.gif"><img src="notebook/ood4_slalom_barrier.gif" alt="OOD 4: Slalom Barrier Bypass" width="100%"></a><br>
+      <strong>OOD 4: Slalom Barrier Bypass</strong><br>
+      <em>Navigasi slalom melewati celah sempit 0.75 m di antara rintangan ganda dengan presisi lintasan tinggi.</em>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" align="center">
+      <a href="notebook/ood5_extreme_noise_slip.gif"><img src="notebook/ood5_extreme_noise_slip.gif" alt="OOD 5: Extreme Noise & Heavy Slip" width="52%"></a><br>
+      <strong>OOD 5: Extreme Noise & Heavy Slip</strong><br>
+      <em>Injeksi derau sensor LiDAR (3×) dan selip roda fisik (5×); memvalidasi ketangguhan kontrol closed-loop terhadap gangguan lingkungan dan fisik nyata.</em>
+    </td>
+  </tr>
+</table>
 
 ## Pilih jalur yang ingin dijalankan
 
@@ -150,6 +224,7 @@ peruri-iseedesign/
 ├── fpga_de10_nano/       Proyek Cyclone V yang berdiri sendiri
 ├── fpga_de10_lite/       Proyek MAX 10 yang berdiri sendiri
 ├── robot/                SDK, BAT, UART RTL, dan transport HPS
+├── notebook/             Notebook pelatihan CL-DRL & aset visualisasi
 ├── docs/                 Panduan, laporan teknis, diagram, dan demo
 ├── evidence/             Laporan, waveform, provenance, dan hash
 └── .github/workflows/    Verifikasi serta jalur ASIC opsional
@@ -161,6 +236,7 @@ peruri-iseedesign/
 |---|---|
 | Source RTL, testbench, dan bitstream | `rtl/`, `verification/`, `test/`, dan kedua folder FPGA |
 | Laporan teknis singkat | [TECHNICAL_REPORT.md](docs/TECHNICAL_REPORT.md) |
+| Pelatihan AI & kuantisasi CL-DRL | [notebook/](notebook/) dan [Jupyter Notebook](notebook/V3_PERURI_Chip_Hackathon_2026_DRL.ipynb) |
 | Arsitektur dan flowchart modul | [ARCHITECTURE.md](docs/ARCHITECTURE.md) dan [file `.io`](docs/flowcharts/IGOR_RTL_Flowchart.io) |
 | Panduan demo live pada board | [FPGA_PROGRAMMING.md](docs/FPGA_PROGRAMMING.md) |
 | Rundown video demo 3–5 menit | [DEMO_GUIDE.md](docs/DEMO_GUIDE.md) |

@@ -16,4 +16,4 @@ verification/build/
 test/results.xml
 robot/jetauto/logs/*
 !robot/jetauto/logs/.gitkeep
-
+.vscode/
