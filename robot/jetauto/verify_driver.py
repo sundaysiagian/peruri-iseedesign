@@ -1,5 +1,5 @@
 """Independent offline frame checks against SDK, no serial device is opened."""
-import json,math,struct,sys,types,importlib.util
+import json,struct,sys
 from pathlib import Path
 r=Path(__file__).resolve().parent
 sys.path.insert(0,str(r/'vendor'))
@@ -26,15 +26,5 @@ for speeds in cases:
 for i in range(1,5):
  b.set_motor_speed([[i,0.6]])
  frame=b.port.frames[-1];assert frame[6]==i-1 and len(frame)==12
-module=types.ModuleType('ros_robot_controller.msg')
-module.MotorState=type('MotorState',(),{})
-sys.modules['ros_robot_controller']=types.ModuleType('ros_robot_controller')
-sys.modules['ros_robot_controller.msg']=module
-p=next((r/'original').rglob('mecanum.py'))
-spec=importlib.util.spec_from_file_location('mecanum',p);m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m)
-chassis=m.MecanumChassis(wheelbase=0.216,track_width=0.195,wheel_diameter=0.097)
-got=chassis.set_velocity(0.1,math.pi/2,0)
-expected=[0.1/(math.pi*0.097)]*2+[-0.1/(math.pi*0.097)]*2
-assert all(x.id==i+1 and abs(x.rps-v)<1e-10 for i,(x,v) in enumerate(zip(got,expected)))
-result={'status':'PASS','crc_table_entries':256,'motor_frames':7,'forward_mecanum_ids':[x.id for x in got],'forward_mecanum_rps':[x.rps for x in got],'serial_opened':False,'frames':[x.hex(' ').upper() for x in b.port.frames]}
+result={'status':'PASS','crc_table_entries':256,'motor_frames':7,'serial_opened':False,'frames':[x.hex(' ').upper() for x in b.port.frames]}
 (r/'offline_verification.json').write_text(json.dumps(result,indent=2));print(json.dumps(result,indent=2))

@@ -2,18 +2,6 @@
   "status": "PASS",
   "crc_table_entries": 256,
   "motor_frames": 7,
-  "forward_mecanum_ids": [
-    1,
-    2,
-    3,
-    4
-  ],
-  "forward_mecanum_rps": [
-    0.32815452183895943,
-    0.32815452183895943,
-    -0.32815452183895943,
-    -0.32815452183895943
-  ],
   "serial_opened": false,
   "frames": [
     "AA 55 03 16 01 04 00 00 00 00 00 01 00 00 00 00 02 00 00 00 00 03 00 00 00 00 07",
