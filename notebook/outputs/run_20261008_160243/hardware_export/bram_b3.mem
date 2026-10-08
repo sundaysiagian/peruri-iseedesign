@@ -1,0 +1,10 @@
+// Target Platform : Intel/Altera DE10-Nano (Cyclone V FPGA)
+// Memory Type      : Embedded Block RAM (M10K)
+// Content          : Layer 3 Biases (4)
+// Memory Depth     : 4 words
+// Data Width       : 16 bits (Q8.8 Fixed-Point)
+// -----------------------------------------------------
+0011
+0047
+FFFA
+FFFF
